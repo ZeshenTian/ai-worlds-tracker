@@ -26,12 +26,9 @@ import {
   family,
   familyTone,
   featured,
-  healthLabel,
   isPlayable,
   levelLabel,
-  modeLabel,
   modelFamilies,
-  modes,
   monthOf,
   skillsFor,
   themeLabel,
@@ -51,7 +48,6 @@ const defaults = {
   model: "",
   theme: "",
   tech: "",
-  mode: "",
   level: "",
   license: "",
   month: "",
@@ -79,11 +75,13 @@ function fromLocation(): Filters {
   for (const key of Object.keys(defaults) as (keyof Filters)[]) {
     result[key] = url.get(key) || "";
   }
+  if (result.theme === "other") result.theme = "";
   return result;
 }
 
 function syncUrl(next: Filters) {
   const url = new URL(window.location.href);
+  url.searchParams.delete("mode");
   for (const [key, value] of Object.entries(next)) {
     if (value) url.searchParams.set(key, value);
     else url.searchParams.delete(key);
@@ -116,7 +114,6 @@ function matches(world: World, filters: Filters, omit?: keyof Filters): boolean 
   if (f.model && !world.models_used.some((m) => family(m) === f.model || m === f.model)) return false;
   if (f.theme && world.theme_category !== f.theme) return false;
   if (f.tech && !world.tech_stack.includes(f.tech)) return false;
-  if (f.mode && world.generation_mode !== f.mode) return false;
   if (f.level) {
     if (f.level === "playable" && !isPlayable(world)) return false;
     else if (f.level === "source" && !world.repo_url) return false;
@@ -155,12 +152,6 @@ function compare(a: World, b: World, sort: string) {
   return (b.published_at || "").localeCompare(a.published_at || "");
 }
 
-function statusPillTone(status: string) {
-  if (status === "verified_playable") return "pill-ok";
-  if (status === "login_required" || status === "broken") return "pill-warn";
-  return "pill-neutral";
-}
-
 function cardLead(world: World, lang: Lang) {
   if (lang === "zh") return world.summary;
   return world.summary_en || bestQuote(world);
@@ -178,6 +169,7 @@ function WorldCard({
   onInspect: (world: World) => void;
 }) {
   const t = copy[lang];
+  const theme = themeLabel(world.theme_category, lang);
   const demo = webLink(world.live_demo_url);
   const repo = webLink(world.repo_url);
   const original = webLink(world.original_post_url);
@@ -201,12 +193,10 @@ function WorldCard({
         <WorldPreview world={world} lang={lang} />
         {world.thumbnail_url && (
           <>
-            {playable ? (
-              <span className="cover-badge badge-ok">● {t.playable}</span>
-            ) : world.is_open_source === true ? (
+            {world.is_open_source === true ? (
               <span className="cover-badge badge-blue">{t.openSource}</span>
             ) : null}
-            <span className="cover-theme">{themeLabel(world.theme_category, lang)}</span>
+            {theme && <span className="cover-theme">{theme}</span>}
           </>
         )}
       </button>
@@ -296,6 +286,7 @@ function QuickInspector({
   onClose: () => void;
 }) {
   if (mode === "closed" || !world) return null;
+  const theme = themeLabel(world.theme_category, lang);
   const t = copy[lang];
   const demo = webLink(world.live_demo_url);
   const repo = webLink(world.repo_url);
@@ -308,10 +299,7 @@ function QuickInspector({
   const skills = skillsFor(world, lang);
 
   const kvItems: { label: string; value: string }[] = [
-    { label: t.model, value: world.models_used.join(" · ") || "—" },
-    ...(world.generation_mode !== "unknown"
-      ? [{ label: t.mode, value: modeLabel(world.generation_mode, lang) }]
-      : []),
+    ...(world.models_used.length ? [{ label: t.model, value: world.models_used.join(" · ") }] : []),
     ...(world.tech_stack.length
       ? [{ label: t.techStack, value: world.tech_stack.slice(0, 4).join(" · ") }]
       : []),
@@ -359,10 +347,7 @@ function QuickInspector({
 
           <div className="insp-header">
             <div className="tag-list">
-              {world.demo_health_status === "verified_playable" && (
-                <span className="pill-ok">● {t.playable}</span>
-              )}
-              <span className="pill-neutral">{themeLabel(world.theme_category, lang)}</span>
+              {theme && <span className="pill-neutral">{theme}</span>}
               {(world.is_open_source === true) && (
                 <span className="pill-blue">{t.openSource}</span>
               )}
@@ -497,6 +482,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
   useEffect(() => {
     const restore = () => {
       const next = fromLocation();
+      if (new URLSearchParams(window.location.search).has("mode")) syncUrl(next);
       setFilters(next);
       setLimit(initialAmount);
       window.dispatchEvent(new CustomEvent("wb:query-sync", { detail: next.q }));
@@ -552,7 +538,6 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
   const facetCounts = useMemo(() => {
     const modelBase = worlds.filter((w) => matches(w, filters, "model"));
     const themeBase = worlds.filter((w) => matches(w, filters, "theme"));
-    const modeBase = worlds.filter((w) => matches(w, filters, "mode"));
     const techBase = worlds.filter((w) => matches(w, filters, "tech"));
 
     return {
@@ -565,9 +550,6 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
       ),
       themes: Object.fromEntries(
         Object.keys(themes).map((k) => [k, themeBase.filter((w) => w.theme_category === k).length])
-      ),
-      modes: Object.fromEntries(
-        Object.keys(modes).map((k) => [k, modeBase.filter((w) => w.generation_mode === k).length])
       ),
       tech: Object.fromEntries(
         allTechStacks.map((item) => [item.key, techBase.filter((w) => w.tech_stack.includes(item.key)).length])
@@ -590,7 +572,6 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
     if (filters.model) chips.push({ key: "model", label: filters.model });
     if (filters.theme) chips.push({ key: "theme", label: themeLabel(filters.theme, lang) });
     if (filters.tech) chips.push({ key: "tech", label: filters.tech });
-    if (filters.mode) chips.push({ key: "mode", label: modeLabel(filters.mode, lang) });
     if (filters.play) chips.push({ key: "play", label: t.playable });
     if (filters.license === "open") chips.push({ key: "license", label: t.openSource });
     if (filters.level) {
@@ -666,7 +647,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
             </span>
             <span className="facet-count">{facetCounts.allModels}</span>
           </button>
-          {modelFamilies.map((fam) => (
+          {modelFamilies.filter((fam) => facetCounts.models[fam] || filters.model === fam).map((fam) => (
             <button
               key={fam}
               type="button"
@@ -683,39 +664,8 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
         </div>
 
         <div className="facet-group">
-          <div className="facet-title">{t.facetStatus}</div>
-          <button
-            type="button"
-            className={filters.play ? "facet-item active" : "facet-item"}
-            onClick={() => setField("play", "1")}
-          >
-            <span className="facet-left">
-              <span className="dot dot-ok" aria-hidden="true" />
-              {t.playable}
-            </span>
-            <span className="facet-count count-ok">{count.playable}</span>
-          </button>
-          <button
-            type="button"
-            className={filters.license === "open" ? "facet-item active" : "facet-item"}
-            onClick={() => setField("license", "open")}
-          >
-            <span className="facet-left">{t.openSource}</span>
-            <span className="facet-count count-blue">{count.open}</span>
-          </button>
-          <button
-            type="button"
-            className={filters.wf ? "facet-item active" : "facet-item"}
-            onClick={() => setField("wf", "1")}
-          >
-            <span className="facet-left">{t.hasWorkflow}</span>
-            <span className="facet-count">{count.withWorkflow}</span>
-          </button>
-        </div>
-
-        <div className="facet-group">
           <div className="facet-title">{t.facetThemes}</div>
-          {Object.keys(themes).map((key) => (
+          {Object.keys(themes).filter((key) => key !== "other" && (facetCounts.themes[key] || filters.theme === key)).map((key) => (
             <button
               key={key}
               type="button"
@@ -728,27 +678,21 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
           ))}
         </div>
 
-        <div className="facet-group">
-          <div className="facet-title">{t.facetModes}</div>
-          {(["hybrid_pipeline", "iterative_chat", "one_shot", "agentic_loop"] as const).map((key) => (
-            <button
-              key={key}
-              type="button"
-              className={filters.mode === key ? "facet-item active" : "facet-item"}
-              onClick={() => setField("mode", key)}
-            >
-              <span className="facet-left">{modeLabel(key, lang)}</span>
-              <span className="facet-count">{facetCounts.modes[key] ?? 0}</span>
-            </button>
-          ))}
-        </div>
-
-        <details className="facet-disclosure" open={Boolean(filters.tech || filters.month)}>
+        <details className="facet-disclosure" open={Boolean(filters.tech || filters.month || filters.wf)}>
           <summary>{t.facetMore}</summary>
           <div className="facet-disclosure-body">
+            {count.withWorkflow > 0 && (
+              <button
+                type="button"
+                className={filters.wf ? "mini-facet active" : "mini-facet"}
+                onClick={() => setField("wf", "1")}
+              >
+                {t.hasWorkflow}
+              </button>
+            )}
             <div className="facet-sublabel">{t.techStack}</div>
             <div className="facet-chip-wrap">
-              {allTechStacks.slice(0, 10).map((item) => (
+              {allTechStacks.filter((item) => facetCounts.tech[item.key] || filters.tech === item.key).slice(0, 10).map((item) => (
                 <button
                   key={item.key}
                   type="button"
@@ -947,6 +891,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
               const repo = webLink(world.repo_url);
               const playable = isPlayable(world) && Boolean(demo);
               const hasDemo = Boolean(demo) && world.demo_health_status !== "broken";
+              const theme = themeLabel(world.theme_category, lang);
               const isSelected = inspectorActive && activeWorld?.world_id === world.world_id;
               return (
                 <article
@@ -977,9 +922,6 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                         <a href={caseHref(world)}>{world.title}</a>
                       </h3>
                       <span className="card-author">{byline(world, lang)}</span>
-                      {world.demo_health_status === "verified_playable" && (
-                        <span className="pill-ok">● {t.playable}</span>
-                      )}
                     </div>
                     <p className="list-summary">{cardLead(world, lang)}</p>
                     <div className="tag-list">
@@ -988,7 +930,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                           {m}
                         </span>
                       ))}
-                      <span className="tag">{themeLabel(world.theme_category, lang)}</span>
+                      {theme && <span className="tag">{theme}</span>}
                       {world.tech_stack.slice(0, 3).map((tech) => (
                         <span key={tech} className="tag">
                           {tech}
@@ -1045,8 +987,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                   "--label-2": `"${t.colModel}"`,
                   "--label-3": `"${t.colTheme}"`,
                   "--label-4": `"${t.colStack}"`,
-                  "--label-5": `"${t.colStatus}"`,
-                  "--label-6": `"${t.colActions}"`,
+                  "--label-5": `"${t.colActions}"`,
                 } as React.CSSProperties
               }
             >
@@ -1057,7 +998,6 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                   <th scope="col">{t.colModel}</th>
                   <th scope="col">{t.colTheme}</th>
                   <th scope="col">{t.colStack}</th>
-                  <th scope="col">{t.colStatus}</th>
                   <th scope="col">{t.colActions}</th>
                 </tr>
               </thead>
@@ -1098,7 +1038,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                       </td>
                       <td>{themeLabel(world.theme_category, lang)}</td>
                       <td>
-                        {world.tech_stack.length ? (
+                        {world.tech_stack.length > 0 ? (
                           <div className="tag-list">
                             {world.tech_stack.slice(0, 2).map((tech) => (
                               <span key={tech} className="tag">
@@ -1106,19 +1046,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                               </span>
                             ))}
                           </div>
-                        ) : (
-                          <span className="muted">—</span>
-                        )}
-                      </td>
-                      <td>
-                        <span className={statusPillTone(world.demo_health_status)}>
-                          {healthLabel(world.demo_health_status, lang)}
-                        </span>
-                        {(world.is_open_source === true) && (
-                          <span className="pill-blue" style={{ marginInlineStart: 4 }}>
-                            {t.openSource}
-                          </span>
-                        )}
+                        ) : null}
                       </td>
                       <td>
                         <div className="card-actions">

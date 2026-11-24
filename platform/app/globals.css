@@ -287,6 +287,10 @@ figure {
   text-underline-offset: 3px;
 }
 
+.tag-list:empty {
+  display: none;
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
@@ -1597,8 +1601,7 @@ dialog.cmd-dialog::backdrop {
   --label-2: "模型";
   --label-3: "主题";
   --label-4: "技术栈";
-  --label-5: "验活与开放";
-  --label-6: "操作";
+  --label-5: "操作";
 }
 
 .cost-table {
@@ -1741,8 +1744,9 @@ dialog.cmd-dialog::backdrop {
   .research-table tbody td:nth-child(5)::before {
     content: var(--label-5);
   }
-  .research-table tbody td:nth-child(6)::before {
-    content: var(--label-6);
+  .research-table tbody td:empty,
+  .research-table tbody td:has(> .tag-list:empty) {
+    display: none;
   }
 }
 

@@ -97,3 +97,9 @@ def test_imported_browser_check_must_match_demo_and_be_newer(tmp_path, monkeypat
         assert read_json(state)[case.world_id] == first
     write_json(checks/"health.json",{case.world_id:{**first,"checked_at":"2026-11-24T02:30:00+00:00"}})
     assert merge_checks(tmp_path,tmp_path/"platform",[checks]) == 1
+
+@pytest.mark.parametrize("stack", ["ThreeJS, Codex, browser game", list("ThreeJS, Codex, browser game")])
+def test_optional_technology_tags_preserve_whole_names(stack):
+    row = source_row()
+    row.update(models_used=["Codex"], tech_stack=stack)
+    assert AIWorldCase.model_validate(row).tech_stack == ["Three.js"]

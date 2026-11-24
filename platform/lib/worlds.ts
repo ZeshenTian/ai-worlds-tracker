@@ -37,22 +37,6 @@ export const themesEn: Record<string, string> = {
   other: "Other",
 };
 
-export const modes: Record<string, string> = {
-  one_shot: "单次提示",
-  iterative_chat: "对话迭代",
-  agentic_loop: "智能体循环",
-  hybrid_pipeline: "混合流程",
-  unknown: "未披露",
-};
-
-export const modesEn: Record<string, string> = {
-  one_shot: "One-Shot",
-  iterative_chat: "Iterative",
-  agentic_loop: "Agentic Loop",
-  hybrid_pipeline: "Hybrid",
-  unknown: "Undisclosed",
-};
-
 export const levels: Record<string, string> = {
   video_only: "仅视频",
   prompt_shared: "含提示词",
@@ -67,36 +51,13 @@ export const levelsEn: Record<string, string> = {
   full_repo: "Full Repo",
 };
 
-export const healthLabels: Record<string, string> = {
-  verified_playable: "可试玩",
-  login_required: "需登录",
-  broken: "不可用",
-  no_demo: "无试玩",
-  unverified: "待验证",
-};
-
-export const healthLabelsEn: Record<string, string> = {
-  verified_playable: "Playable",
-  login_required: "Login",
-  broken: "Broken",
-  no_demo: "No Demo",
-  unverified: "Unverified",
-};
-
 export function themeLabel(key: string, lang: Lang) {
-  return (lang === "en" ? themesEn[key] : themes[key]) || (lang === "en" ? "Other" : "其他");
-}
-
-export function modeLabel(key: string, lang: Lang) {
-  return (lang === "en" ? modesEn[key] : modes[key]) || (lang === "en" ? "Undisclosed" : "未披露");
+  if (key === "other") return "";
+  return (lang === "en" ? themesEn[key] : themes[key]) || "";
 }
 
 export function levelLabel(key: string, lang: Lang) {
   return (lang === "en" ? levelsEn[key] : levels[key]) || key;
-}
-
-export function healthLabel(key: string, lang: Lang) {
-  return (lang === "en" ? healthLabelsEn[key] : healthLabels[key]) || key;
 }
 
 export interface World {
@@ -153,7 +114,7 @@ export const featured = [
 export function family(name: string) {
   if (/^(codex|gpt|openai gpt|chatgpt|astra|sol)/i.test(name)) return "GPT";
   if (/^(claude|fable|opus|sonnet)/i.test(name)) return "Claude";
-  if (/^(gemini|neon|argon|hydrogen)/.test(name)) return "Gemini";
+  if (/^(gemini|neon|argon|hydrogen)/i.test(name)) return "Gemini";
   if (/^(world ?labs? )?marble/i.test(name)) return "Marble";
   if (/^kimi/i.test(name)) return "Kimi";
   return name;

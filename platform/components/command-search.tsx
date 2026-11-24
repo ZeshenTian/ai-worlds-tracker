@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUpRight, CirclePlay, CodeXml, Search, X } from "lucide-react";
+import { ArrowUpRight, CodeXml, Search, X } from "lucide-react";
 import { copy, useLang } from "@/lib/i18n";
-import { byline, caseHref, isPlayable, themeLabel, themes, themesEn, worlds } from "@/lib/worlds";
+import { byline, caseHref, themeLabel, themes, themesEn, worlds } from "@/lib/worlds";
 
 export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
   const [lang] = useLang();
@@ -275,16 +275,11 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
                     <div className="cmd-item-main">
                       <strong>{world.title}</strong>
                       <span>
-                        {byline(world, lang)} · {themeLabel(world.theme_category, lang)}
+                        {[byline(world, lang), themeLabel(world.theme_category, lang)].filter(Boolean).join(" · ")}
                       </span>
                     </div>
                     <div className="cmd-item-meta">
                       {world.models_used[0] && <span className="pill-neutral">{world.models_used[0]}</span>}
-                      {isPlayable(world) && (
-                        <span className="pill-ok">
-                          <CirclePlay size={12} /> {t.play}
-                        </span>
-                      )}
                       {world.repo_url && (
                         <span className="pill-blue">
                           <CodeXml size={12} /> {t.sourceCode}

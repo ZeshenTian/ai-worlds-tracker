@@ -10,10 +10,8 @@ import {
   caseHref,
   cleanQuotes,
   familyTone,
-  healthLabel,
   isPlayable,
   levelLabel,
-  modeLabel,
   skillsFor,
   themeLabel,
   webLink,
@@ -41,6 +39,7 @@ export function WorldDetailView({
   const original = webLink(world.original_post_url);
   const playable = isPlayable(world) && Boolean(demo);
   const hasDemo = Boolean(demo) && world.demo_health_status !== "broken";
+  const theme = themeLabel(world.theme_category, lang);
   const date = world.published_at?.slice(0, 10);
   const quotes = cleanQuotes(world);
   const steps = workflowStepsFor(world, lang);
@@ -50,12 +49,9 @@ export function WorldDetailView({
     .filter((u): u is string => Boolean(u));
 
   const facts: { label: string; value: string }[] = [
-    { label: t.model, value: world.models_used.join(" · ") || "—" },
+    ...(world.models_used.length ? [{ label: t.model, value: world.models_used.join(" · ") }] : []),
     ...(world.tech_stack.length
       ? [{ label: t.techStack, value: world.tech_stack.join(" · ") }]
-      : []),
-    ...(world.generation_mode !== "unknown"
-      ? [{ label: t.mode, value: modeLabel(world.generation_mode, lang) }]
       : []),
     { label: t.reproducibility, value: levelLabel(world.reproducibility_level, lang) },
     ...(world.is_open_source !== null
@@ -80,12 +76,7 @@ export function WorldDetailView({
       <section className="detail-intro">
         <div className="detail-intro-copy">
           <div className="tag-list">
-            {world.demo_health_status === "verified_playable" ? (
-              <span className="pill-ok">● {t.playable}</span>
-            ) : (
-              <span className="pill-neutral">{healthLabel(world.demo_health_status, lang)}</span>
-            )}
-            <span className="pill-neutral">{themeLabel(world.theme_category, lang)}</span>
+            {theme && <span className="pill-neutral">{theme}</span>}
             {(world.is_open_source === true) && (
               <span className="pill-blue">{t.openSource}</span>
             )}

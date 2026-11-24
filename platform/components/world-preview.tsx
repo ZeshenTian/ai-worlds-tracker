@@ -45,7 +45,7 @@ export function WorldPreview({
   return (
     <div className={`quote-cover tint-${tint} ${variant === "detail" ? "quote-cover-detail" : ""}`}>
       <div className="quote-cover-top">
-        <span className="quote-kicker">{theme}</span>
+        {theme && <span className="quote-kicker">{theme}</span>}
         {world.is_open_source === true ? (
           <span className="quote-open-pill">
             <CodeXml size={11} aria-hidden="true" />

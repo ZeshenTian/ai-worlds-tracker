@@ -8,7 +8,6 @@ import {
   count,
   family,
   levelLabel,
-  modeLabel,
   monthOf,
   skillsFor,
   themeLabel,
@@ -118,14 +117,6 @@ export function TrendsView() {
 
   const workflowGroups = [
     {
-      label: lang === "en" ? "One-Shot Prompt" : "单轮提示",
-      matches: (w: (typeof worlds)[number]) => w.generation_mode === "one_shot",
-    },
-    {
-      label: lang === "en" ? "Agentic Loop" : "智能体循环",
-      matches: (w: (typeof worlds)[number]) => w.generation_mode === "agentic_loop",
-    },
-    {
       label: lang === "en" ? "Map & Reference Driven" : "参考图与地图驱动",
       matches: (w: (typeof worlds)[number]) =>
         /参考图|地图|图纸|reference image/i.test(w.workflow_steps.join(" ")),
@@ -181,7 +172,7 @@ export function TrendsView() {
         <Bars
           title={t.chartThemes}
           rows={frequencies(
-            (world) => [world.theme_category],
+            (world) => world.theme_category === "other" ? [] : [world.theme_category],
             (k) => themeLabel(k, lang)
           )}
           filter="theme"
@@ -194,14 +185,6 @@ export function TrendsView() {
           filter="tech"
         />
         <Bars title={t.chartTimeline} rows={dates} filter="month" />
-        <Bars
-          title={t.chartModes}
-          rows={frequencies(
-            (world) => [world.generation_mode],
-            (k) => modeLabel(k, lang)
-          )}
-          filter="mode"
-        />
         <Bars
           title={t.chartLevels}
           rows={frequencies(

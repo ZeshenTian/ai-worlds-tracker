@@ -332,6 +332,8 @@ def apply_verified_research(case: AIWorldCase, evidence: dict) -> AIWorldCase:
         if field in {"workflow_steps", "tech_stack", "skills_or_prompts_used", "evidence_quotes"}:
             if field == "evidence_quotes" and not set(value) <= quotes:
                 raise ValueError(f"Unattributed quote for {case.title}")
+            if field == "tech_stack" and isinstance(value, str):
+                value = re.split(r"[,，;；]", value)
             updates[field] = list(dict.fromkeys([*getattr(case, field), *value]))
         elif field == "is_open_source" and value is True and any(
             source.get("field") == "license.spdx_id" and source.get("quotes") == ["MIT"] for source in sources

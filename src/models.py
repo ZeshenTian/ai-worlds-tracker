@@ -136,6 +136,46 @@ def disclosure(cost: float | None, minutes: float | None) -> Disclosure:
             else Disclosure.UNDISCLOSED)
 
 
+TECH_ALIASES = {
+    "#threejs": "Three.js", "threejs": "Three.js", "three.js": "Three.js",
+    "blender": "Blender", "blender-mcp": "Blender MCP",
+    "webgl 2.0": "WebGL2", "web audio api": "Web Audio",
+    "vanilla js": "JavaScript", "antigravity": "Antigravity",
+    "single html": "Single-file HTML",
+}
+NON_TECH_TAGS = {
+    "", "-", "—", "unknown", "undisclosed", "none", "n/a", "other", "未披露", "其他",
+    "3d", "3d cities", "3d racing game", "3d rendering software", "ai agents",
+    "browser", "browser game", "browser 3d game", "click and drag", "code",
+    "flight physics simulation", "host cli", "plain modules", "physics pieces",
+    "voxel san francisco bay area in the browser", "we rowser wegl", "x-high",
+    "スマホのブラウザ", "ブラウザ", "ブラウザゲーム", "マウス",
+}
+
+
+def technology_tags(raw, models):
+    # Some older imports expanded a comma-delimited string one character at a time.
+    if isinstance(raw, list) and len(raw) > 3 and all(isinstance(v, str) and len(v) == 1 for v in raw):
+        raw = "".join(raw)
+    if isinstance(raw, str):
+        raw = re.split(r"[,，;；]", raw)
+    if not isinstance(raw, list) or not all(isinstance(v, str) for v in raw):
+        return raw
+    seen = {name.strip().casefold() for name in models if isinstance(name, str)}
+    tags = []
+    for value in raw:
+        tag = value.strip()
+        tag = TECH_ALIASES.get(tag.casefold(), tag)
+        key = tag.casefold()
+        if key in seen or key in NON_TECH_TAGS:
+            continue
+        if re.fullmatch(r"(?:claude |gemini )?(?:opus|fable|sonnet|argon|carbon|neon|astra|gpt)(?:[- .0-9a-z]*)", key):
+            continue
+        seen.add(key)
+        tags.append(tag)
+    return tags
+
+
 class AIWorldCase(Record):
     world_id: Text
     title: Text
@@ -180,10 +220,13 @@ class AIWorldCase(Record):
         known_tools = {"three.js", "threejs", "blender", "web audio api", "webgpu", "webgl", "unity", "playcanvas", "babylon.js"}
         supplied = value["models_used"]
         tools = [name for name in supplied if isinstance(name, str) and name.casefold() in known_tools]
-        if not tools:
+        models = [name for name in supplied if name not in tools]
+        if "tech_stack" not in value:
             return value
-        return {**value, "models_used": [name for name in supplied if name not in tools],
-                "tech_stack": list(dict.fromkeys([*value.get("tech_stack", []), *tools]))}
+        stack = technology_tags(value["tech_stack"], models)
+        if isinstance(stack, list) and tools:
+            stack = technology_tags(stack + tools, models)
+        return {**value, "models_used": models, "tech_stack": stack}
 
     @field_validator("published_at", "first_seen_at")
     @classmethod

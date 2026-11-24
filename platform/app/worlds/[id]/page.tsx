@@ -18,7 +18,7 @@ export default async function WorldPage({ params }: Props) {
   if (!world) notFound();
 
   const similar = worlds
-    .filter((item) => item.world_id !== id && item.theme_category === world.theme_category)
+    .filter((item) => world.theme_category !== "other" && item.world_id !== id && item.theme_category === world.theme_category)
     .slice(0, 3);
 
   return (
