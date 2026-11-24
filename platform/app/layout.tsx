@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   icons: { icon: "/atlas-icon.png" },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  colorScheme: "light",
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-CN"><body>{children}</body></html>;
+  return (
+    <html lang="zh-CN">
+      <body>{children}</body>
+    </html>
+  );
 }
