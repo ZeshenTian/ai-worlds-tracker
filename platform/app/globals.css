@@ -564,6 +564,25 @@ figure {
   border-bottom-color: var(--brand);
 }
 
+.lang-toggle {
+  height: 30px;
+  padding: 0 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: var(--bg-page);
+  color: var(--ink-2);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background-color 0.14s ease, color 0.14s ease, border-color 0.14s ease;
+}
+
+.lang-toggle:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border-strong);
+  color: var(--ink);
+}
+
 .nav-submit {
   min-height: 34px;
   padding: 0 13px;
@@ -2354,7 +2373,7 @@ dialog.cmd-dialog::backdrop {
 }
 
 .chart-panel h2 {
-  margin-bottom: 4px;
+  margin-bottom: 12px;
 }
 
 .chart-panel > p {

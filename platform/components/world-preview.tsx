@@ -1,24 +1,28 @@
+"use client";
+
 import { CodeXml } from "lucide-react";
-import {
-  bestQuote,
-  coverTint,
-  sourceHost,
-  themes,
-  type World,
-} from "@/lib/worlds";
+import { copy, useLang, type Lang } from "@/lib/i18n";
+import { bestQuote, coverTint, sourceHost, themeLabel, type World } from "@/lib/worlds";
 
 export function WorldPreview({
   world,
   variant = "card",
+  lang: propLang,
 }: {
   world: World;
   variant?: "card" | "detail";
+  lang?: Lang;
 }) {
+  const [hookLang] = useLang();
+  const lang = propLang ?? hookLang;
+  const t = copy[lang];
+
   if (world.thumbnail_url) {
     return (
       <img
         src={world.thumbnail_url}
-        alt={`${world.title} 的试玩画面`}
+        alt={world.title + (world.cover_source === "x_media" ? (lang === "en" ? " · Original X media" : " · X 原帖配图") : "")}
+        title={world.cover_source === "x_media" ? (lang === "en" ? "Original X media" : "X 原帖配图") : undefined}
         loading={variant === "detail" ? "eager" : "lazy"}
         width={960}
         height={540}
@@ -29,37 +33,27 @@ export function WorldPreview({
   const tint = coverTint(world.theme_category);
   const quote = bestQuote(world);
   const host = sourceHost(world.original_post_url);
-  const kicker =
-    world.workflow_steps.length > 0
-      ? `含 ${world.workflow_steps.length} 步工作流 · 无实景图`
-      : world.source_kind === "primary_page"
-        ? "作品原文摘录 · 无实景图"
-        : "作者原帖摘录 · 无实景图";
+  const theme = themeLabel(world.theme_category, lang);
 
   return (
     <div className={`quote-cover tint-${tint} ${variant === "detail" ? "quote-cover-detail" : ""}`}>
       <div className="quote-cover-top">
-        <span className="quote-kicker">{kicker}</span>
-        {world.is_open_source === true && (
+        <span className="quote-kicker">{theme}</span>
+        {world.is_open_source === true || world.repo_url ? (
           <span className="quote-open-pill">
             <CodeXml size={11} aria-hidden="true" />
-            开源
+            {t.openSource}
           </span>
-        )}
+        ) : world.workflow_steps.length > 0 ? (
+          <span className="quote-kicker">{t.workflowSteps(world.workflow_steps.length)}</span>
+        ) : null}
       </div>
       <p className="quote-excerpt">“{quote}”</p>
       <div className="quote-cover-foot">
-        <span>{themes[world.theme_category] || "其他"}</span>
         {world.tech_stack.length > 0 ? (
-          <>
-            <span aria-hidden="true">·</span>
-            <span>{world.tech_stack.slice(0, 3).join(" · ")}</span>
-          </>
+          <span>{world.tech_stack.slice(0, 3).join(" · ")}</span>
         ) : host ? (
-          <>
-            <span aria-hidden="true">·</span>
-            <span>{host}</span>
-          </>
+          <span>{host}</span>
         ) : null}
       </div>
     </div>

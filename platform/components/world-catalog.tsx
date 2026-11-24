@@ -16,24 +16,30 @@ import {
   Table2,
   X,
 } from "lucide-react";
+import { copy, useLang, type Lang } from "@/lib/i18n";
 import {
+  bestQuote,
   byline,
   caseHref,
+  cleanQuotes,
   count,
   family,
   familyTone,
   featured,
-  healthLabels,
+  healthLabel,
   isPlayable,
-  matchesWorldQuery,
-  levels,
+  levelLabel,
+  modeLabel,
   modelFamilies,
   modes,
   monthOf,
-  reviews,
+  skillsFor,
+  themeLabel,
   themes,
+  themesEn,
   values,
   webLink,
+  workflowStepsFor,
   worlds,
   type World,
 } from "@/lib/worlds";
@@ -65,7 +71,7 @@ const allTechStacks = values("tech_stack")
     key: tech,
     count: worlds.filter((w) => w.tech_stack.includes(tech)).length,
   }))
-  .sort((a, b) => b.count - a.count || a.key.localeCompare(b.key));
+  .sort((a, b) => b.count - a.count || a.key.localeCompare(b.key, "en"));
 
 function fromLocation(): Filters {
   const url = new URLSearchParams(window.location.search);
@@ -87,7 +93,26 @@ function syncUrl(next: Filters) {
 
 function matches(world: World, filters: Filters, omit?: keyof Filters): boolean {
   const f = omit ? { ...filters, [omit]: "" } : filters;
-  if (!matchesWorldQuery(world, f.q)) return false;
+  const terms = f.q.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+  if (terms.length) {
+    const searchable = [
+      world.title,
+      world.summary, world.summary_en, ...(world.workflow_steps_en || []),
+      world.author_handle,
+      world.author_name,
+      ...world.workflow_steps,
+      ...world.skills_or_prompts_used,
+      ...world.evidence_quotes,
+      themes[world.theme_category],
+      themesEn[world.theme_category],
+      ...world.models_used,
+      ...world.tech_stack,
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLocaleLowerCase();
+    if (!terms.every((word) => searchable.includes(word))) return false;
+  }
   if (f.model && !world.models_used.some((m) => family(m) === f.model || m === f.model)) return false;
   if (f.theme && world.theme_category !== f.theme) return false;
   if (f.tech && !world.tech_stack.includes(f.tech)) return false;
@@ -95,15 +120,14 @@ function matches(world: World, filters: Filters, omit?: keyof Filters): boolean 
   if (f.level) {
     if (f.level === "playable" && !isPlayable(world)) return false;
     else if (f.level === "source" && !world.repo_url) return false;
-    else if (f.level === "has_demo" && !(webLink(world.live_demo_url) && world.demo_health_status !== "broken"))
-      return false;
-    else if (f.level !== "playable" && f.level !== "source" && f.level !== "has_demo" && world.reproducibility_level !== f.level)
+    else if (f.level !== "playable" && f.level !== "source" && world.reproducibility_level !== f.level)
       return false;
   }
   if (f.month && monthOf(world) !== f.month) return false;
   if (f.license) {
+    if (f.license === "open" && !(world.is_open_source === true || Boolean(world.repo_url))) return false;
+    if (f.license === "closed" && world.is_open_source !== false) return false;
     if (f.license === "unknown" && world.is_open_source !== null) return false;
-    if (f.license !== "unknown" && world.is_open_source !== (f.license === "open")) return false;
   }
   if (f.cost && world.reported_cost_usd === null) return false;
   if (f.play && !isPlayable(world)) return false;
@@ -137,15 +161,23 @@ function statusPillTone(status: string) {
   return "pill-neutral";
 }
 
+function cardLead(world: World, lang: Lang) {
+  if (lang === "zh") return world.summary;
+  return world.summary_en || bestQuote(world);
+}
+
 function WorldCard({
   world,
   selected,
+  lang,
   onInspect,
 }: {
   world: World;
   selected: boolean;
+  lang: Lang;
   onInspect: (world: World) => void;
 }) {
+  const t = copy[lang];
   const demo = webLink(world.live_demo_url);
   const repo = webLink(world.repo_url);
   const original = webLink(world.original_post_url);
@@ -164,17 +196,17 @@ function WorldCard({
         type="button"
         className="card-cover-btn"
         onClick={() => onInspect(world)}
-        aria-label={`在右侧快速预览 ${world.title}`}
+        aria-label={world.title}
       >
-        <WorldPreview world={world} />
+        <WorldPreview world={world} lang={lang} />
         {world.thumbnail_url && (
           <>
             {playable ? (
-              <span className="cover-badge badge-ok">● 已验活可试玩</span>
+              <span className="cover-badge badge-ok">● {t.playable}</span>
             ) : world.is_open_source === true || repo ? (
-              <span className="cover-badge badge-blue">⌘ 开源仓库</span>
+              <span className="cover-badge badge-blue">{t.openSource}</span>
             ) : null}
-            <span className="cover-theme">{themes[world.theme_category] || "其他"}</span>
+            <span className="cover-theme">{themeLabel(world.theme_category, lang)}</span>
           </>
         )}
       </button>
@@ -184,9 +216,9 @@ function WorldCard({
           <h3>
             <a href={caseHref(world)}>{world.title}</a>
           </h3>
-          <span className="card-author">{byline(world)}</span>
+          <span className="card-author">{byline(world, lang)}</span>
         </div>
-        <p className="card-summary">{world.summary}</p>
+        <p className="card-summary">{cardLead(world, lang)}</p>
         <div className="card-foot">
           <div className="tag-list">
             {world.models_used.slice(0, 1).map((m) => (
@@ -194,11 +226,7 @@ function WorldCard({
                 {m}
               </span>
             ))}
-            {world.tech_stack[0] ? (
-              <span className="tag">{world.tech_stack[0]}</span>
-            ) : (
-              <span className="tag">{levels[world.reproducibility_level]}</span>
-            )}
+            {world.tech_stack[0] && <span className="tag">{world.tech_stack[0]}</span>}
           </div>
           <div className="card-actions">
             {playable && demo ? (
@@ -207,9 +235,8 @@ function WorldCard({
                 href={demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`试玩 ${world.title}（新标签页）`}
               >
-                <CirclePlay size={14} /> 试玩
+                <CirclePlay size={14} /> {t.play}
               </a>
             ) : repo ? (
               <a
@@ -217,9 +244,8 @@ function WorldCard({
                 href={repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`查看 ${world.title} 源码（新标签页）`}
               >
-                <CodeXml size={14} /> 源码
+                <CodeXml size={14} /> {t.sourceCode}
               </a>
             ) : hasDemo && demo ? (
               <a
@@ -227,9 +253,8 @@ function WorldCard({
                 href={demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`访问 ${world.title} 试玩（待验证，新标签页）`}
               >
-                访问试玩 <ArrowUpRight size={13} />
+                {t.visit} <ArrowUpRight size={13} />
               </a>
             ) : null}
             {repo && playable && (
@@ -239,7 +264,7 @@ function WorldCard({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                源码
+                {t.sourceCode}
               </a>
             )}
             {original && (
@@ -249,18 +274,9 @@ function WorldCard({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {world.source_kind === "x_post" ? "原帖" : "原文"}
+                {world.source_kind === "x_post" ? t.originalPost : t.originalPage}
               </a>
             )}
-            <button
-              type="button"
-              className={selected ? "act-inspect is-active" : "act-inspect"}
-              onClick={() => onInspect(world)}
-              aria-label={`快速预览 ${world.title}`}
-              title="快速预览"
-            >
-              {selected ? "预览中" : "快览"}
-            </button>
           </div>
         </div>
       </div>
@@ -271,38 +287,39 @@ function WorldCard({
 function QuickInspector({
   world,
   mode,
+  lang,
   onClose,
 }: {
   world: World | null;
   mode: "auto" | "open" | "closed";
+  lang: Lang;
   onClose: () => void;
 }) {
   if (mode === "closed" || !world) return null;
+  const t = copy[lang];
   const demo = webLink(world.live_demo_url);
   const repo = webLink(world.repo_url);
   const original = webLink(world.original_post_url);
   const playable = isPlayable(world) && Boolean(demo);
   const hasDemo = Boolean(demo) && world.demo_health_status !== "broken";
   const date = world.published_at?.slice(0, 10);
+  const quotes = cleanQuotes(world);
+  const steps = workflowStepsFor(world, lang);
+  const skills = skillsFor(world, lang);
 
   const kvItems: { label: string; value: string }[] = [
-    { label: "使用模型", value: world.models_used.join(" · ") || "未披露" },
-    { label: "生成方式", value: modes[world.generation_mode] || "未披露" },
-    ...(world.tech_stack.length
-      ? [{ label: "技术栈", value: world.tech_stack.slice(0, 4).join(" · ") }]
+    { label: t.model, value: world.models_used.join(" · ") || "—" },
+    ...(world.generation_mode !== "unknown"
+      ? [{ label: t.mode, value: modeLabel(world.generation_mode, lang) }]
       : []),
-    {
-      label: "开放与复现",
-      value:
-        world.is_open_source === true
-          ? `开源 · ${levels[world.reproducibility_level]}`
-          : levels[world.reproducibility_level],
-    },
+    ...(world.tech_stack.length
+      ? [{ label: t.techStack, value: world.tech_stack.slice(0, 4).join(" · ") }]
+      : []),
     ...(world.reported_time_minutes !== null
-      ? [{ label: "制作耗时", value: `${world.reported_time_minutes} 分钟` }]
+      ? [{ label: t.timeLabel, value: t.minutes(world.reported_time_minutes) }]
       : []),
     ...(world.reported_cost_usd !== null
-      ? [{ label: "披露费用", value: `US$ ${world.reported_cost_usd}` }]
+      ? [{ label: t.costLabel, value: `US$ ${world.reported_cost_usd}` }]
       : []),
   ];
 
@@ -315,20 +332,20 @@ function QuickInspector({
       />
       <aside
         className={mode === "auto" ? "wb-inspector is-auto" : "wb-inspector"}
-        aria-label={`快速预览：${world.title}`}
+        aria-label={world.title}
       >
         <div className="insp-head">
-          <span className="insp-label">快速预览 · 案例档案</span>
+          <span className="insp-label">{t.inspectorTitle}</span>
           <div className="insp-head-actions">
             <a href={caseHref(world)} className="insp-full-link">
-              打开完整页面 <ArrowUpRight size={13} />
+              {t.fullPage} <ArrowUpRight size={13} />
             </a>
             <button
               type="button"
               className="icon-btn"
               onClick={onClose}
-              aria-label="关闭快速预览"
-              title="收起预览栏"
+              aria-label={t.closeInspector}
+              title={t.closeInspector}
             >
               <PanelRightClose size={16} />
             </button>
@@ -337,34 +354,32 @@ function QuickInspector({
 
         <div className="insp-body scroller">
           <div className="insp-media">
-            <WorldPreview world={world} variant="detail" />
+            <WorldPreview world={world} variant="detail" lang={lang} />
           </div>
 
           <div className="insp-header">
             <div className="tag-list">
-              <span className={statusPillTone(world.demo_health_status)}>
-                {world.demo_health_status === "verified_playable" ? "● " : ""}
-                {healthLabels[world.demo_health_status]}
-              </span>
-              <span className="pill-neutral">{themes[world.theme_category] || "其他"}</span>
-              {world.is_open_source === true && <span className="pill-blue">⌘ 开源</span>}
-              <span className="pill-neutral">{reviews[world.review_status]}</span>
+              {world.demo_health_status === "verified_playable" && (
+                <span className="pill-ok">● {t.playable}</span>
+              )}
+              <span className="pill-neutral">{themeLabel(world.theme_category, lang)}</span>
+              {(world.is_open_source === true || repo) && (
+                <span className="pill-blue">{t.openSource}</span>
+              )}
             </div>
             <h2>
               <a href={caseHref(world)}>{world.title}</a>
             </h2>
             <p className="insp-byline">
-              {byline(world)}
+              {byline(world, lang)}
               {date && (
                 <>
                   {" · "}
                   <time dateTime={date}>{date}</time>
                 </>
               )}
-              {" · "}
-              {world.source_kind === "primary_page" ? "官方/作品原文" : "X 原帖"}
             </p>
-            <p className="insp-summary">{world.summary}</p>
+            <p className="insp-summary">{cardLead(world, lang)}</p>
           </div>
 
           <div className="insp-cta">
@@ -376,7 +391,7 @@ function QuickInspector({
                 rel="noopener noreferrer"
               >
                 <CirclePlay size={15} />
-                {playable ? "打开在线试玩" : "访问试玩（待验）"}
+                {playable ? t.openDemo : t.visitDemo}
                 <ArrowUpRight size={14} />
               </a>
             )}
@@ -387,7 +402,7 @@ function QuickInspector({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <CodeXml size={15} /> 查看源码
+                <CodeXml size={15} /> {t.sourceCode}
               </a>
             )}
             {original && (
@@ -397,70 +412,68 @@ function QuickInspector({
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Globe2 size={15} /> {world.source_kind === "primary_page" ? "作品原文" : "作者原帖"}
+                <Globe2 size={15} /> {world.source_kind === "primary_page" ? t.originalPage : t.originalPost}
               </a>
             )}
           </div>
 
-          <div className="kv-grid">
-            {kvItems.slice(0, 4).map((item) => (
-              <div className="kv" key={item.label}>
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
-              </div>
-            ))}
-          </div>
-
-          <section className="insp-card">
-            <div className="insp-card-head">
-              <h3>创作工作流</h3>
-              <span>{world.workflow_steps.length ? `${world.workflow_steps.length} 步` : "暂无披露"}</span>
+          {kvItems.length > 0 && (
+            <div className="kv-grid">
+              {kvItems.slice(0, 4).map((item) => (
+                <div className="kv" key={item.label}>
+                  <span>{item.label}</span>
+                  <strong>{item.value}</strong>
+                </div>
+              ))}
             </div>
-            {world.workflow_steps.length > 0 ? (
+          )}
+
+          {steps.length > 0 && (
+            <section className="insp-card">
+              <div className="insp-card-head">
+                <h3>{t.workflow}</h3>
+                <span>{t.workflowSteps(steps.length)}</span>
+              </div>
               <ol className="insp-steps">
-                {world.workflow_steps.map((step, i) => (
+                {steps.map((step, i) => (
                   <li key={step}>
                     <span className="step-badge">{i + 1}</span>
                     <span>{step}</span>
                   </li>
                 ))}
               </ol>
-            ) : (
-              <p className="insp-empty">原帖未拆解详细步骤，可参考下方原文证据或原帖上下文。</p>
-            )}
-            {world.skills_or_prompts_used.length > 0 && (
-              <div className="insp-subblock">
-                <span className="insp-sublabel">工具与提示</span>
-                <div className="tag-list">
-                  {world.skills_or_prompts_used.map((skill) => (
-                    <span className="tag" key={skill}>
-                      {skill}
-                    </span>
-                  ))}
+              {skills.length > 0 && (
+                <div className="insp-subblock">
+                  <span className="insp-sublabel">{t.toolsAndPrompts}</span>
+                  <div className="tag-list">
+                    {skills.map((skill) => (
+                      <span className="tag" key={skill}>
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            )}
-          </section>
-
-          <section className="insp-card">
-            <div className="insp-card-head">
-              <h3>原文证据摘录</h3>
-              {original && (
-                <a href={original} target="_blank" rel="noopener noreferrer" className="text-link">
-                  溯源 <ExternalLink size={12} />
-                </a>
               )}
-            </div>
-            {world.evidence_quotes.length > 0 ? (
+            </section>
+          )}
+
+          {quotes.length > 0 && (
+            <section className="insp-card">
+              <div className="insp-card-head">
+                <h3>{t.evidence}</h3>
+                {original && (
+                  <a href={original} target="_blank" rel="noopener noreferrer" className="text-link">
+                    {t.viewSource} <ExternalLink size={12} />
+                  </a>
+                )}
+              </div>
               <div className="insp-quotes">
-                {world.evidence_quotes.slice(0, 3).map((q) => (
+                {quotes.slice(0, 3).map((q) => (
                   <blockquote key={q}>{q}</blockquote>
                 ))}
               </div>
-            ) : (
-              <p className="insp-empty">暂无原文摘录。</p>
-            )}
-          </section>
+            </section>
+          )}
         </div>
       </aside>
     </>
@@ -468,6 +481,8 @@ function QuickInspector({
 }
 
 export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
+  const [lang] = useLang();
+  const t = copy[lang];
   const [filters, setFilters] = useState<Filters>(defaults);
   const [view, setView] = useState<ViewMode>("grid");
   const [limit, setLimit] = useState(initialAmount);
@@ -475,7 +490,10 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
   const [inspectorMode, setInspectorMode] = useState<"auto" | "open" | "closed">("auto");
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
-  // Restore filters from URL and listen for topbar search & Escape
+  useEffect(() => {
+    document.title = lang === "en" ? "World Atlas" : "生成世界图鉴";
+  }, [lang]);
+
   useEffect(() => {
     const restore = () => {
       const next = fromLocation();
@@ -531,7 +549,6 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
     [filters]
   );
 
-  // Cross-filtered facet counts for intuitive exploration
   const facetCounts = useMemo(() => {
     const modelBase = worlds.filter((w) => matches(w, filters, "model"));
     const themeBase = worlds.filter((w) => matches(w, filters, "theme"));
@@ -553,7 +570,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
         Object.keys(modes).map((k) => [k, modeBase.filter((w) => w.generation_mode === k).length])
       ),
       tech: Object.fromEntries(
-        allTechStacks.map((t) => [t.key, techBase.filter((w) => w.tech_stack.includes(t.key)).length])
+        allTechStacks.map((item) => [item.key, techBase.filter((w) => w.tech_stack.includes(item.key)).length])
       ),
     };
   }, [filters]);
@@ -569,35 +586,30 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
 
   const activeChips = useMemo(() => {
     const chips: { key: keyof Filters; label: string }[] = [];
-    if (filters.q.trim()) chips.push({ key: "q", label: `关键词：${filters.q.trim()}` });
-    if (filters.model) chips.push({ key: "model", label: `模型：${filters.model}` });
-    if (filters.theme) chips.push({ key: "theme", label: `主题：${themes[filters.theme] || filters.theme}` });
-    if (filters.tech) chips.push({ key: "tech", label: `技术栈：${filters.tech}` });
-    if (filters.mode) chips.push({ key: "mode", label: `方式：${modes[filters.mode] || filters.mode}` });
-    if (filters.play) chips.push({ key: "play", label: "已验活可试玩" });
-    if (filters.license) {
-      const map: Record<string, string> = { open: "确认开源", closed: "闭源", unknown: "开源状态未知" };
-      chips.push({ key: "license", label: map[filters.license] || filters.license });
-    }
+    if (filters.q.trim()) chips.push({ key: "q", label: t.chipKeyword(filters.q.trim()) });
+    if (filters.model) chips.push({ key: "model", label: filters.model });
+    if (filters.theme) chips.push({ key: "theme", label: themeLabel(filters.theme, lang) });
+    if (filters.tech) chips.push({ key: "tech", label: filters.tech });
+    if (filters.mode) chips.push({ key: "mode", label: modeLabel(filters.mode, lang) });
+    if (filters.play) chips.push({ key: "play", label: t.playable });
+    if (filters.license === "open") chips.push({ key: "license", label: t.openSource });
     if (filters.level) {
-      const map: Record<string, string> = {
-        playable: "已验活可试玩",
-        source: "有公开源码",
-        has_demo: "有试玩入口",
-        ...levels,
-      };
-      chips.push({ key: "level", label: `复现：${map[filters.level] || filters.level}` });
+      const label =
+        filters.level === "playable"
+          ? t.playable
+          : filters.level === "source"
+            ? t.openSource
+            : levelLabel(filters.level, lang);
+      chips.push({ key: "level", label });
     }
-    if (filters.thumb) chips.push({ key: "thumb", label: "含实景封面" });
-    if (filters.wf) chips.push({ key: "wf", label: "含创作工作流" });
-    if (filters.month) chips.push({ key: "month", label: `月份：${filters.month}` });
-    if (filters.cost) chips.push({ key: "cost", label: "成本已披露" });
+    if (filters.thumb) chips.push({ key: "thumb", label: t.withPreview });
+    if (filters.wf) chips.push({ key: "wf", label: t.hasWorkflow });
+    if (filters.month) chips.push({ key: "month", label: filters.month });
     return chips;
-  }, [filters]);
+  }, [filters, lang, t]);
 
   const hasFilters = activeChips.length > 0;
   const visible = results.slice(0, limit);
-
   const inspectorActive = inspectorMode !== "closed" && Boolean(activeWorld);
 
   function handleInspect(world: World) {
@@ -627,14 +639,14 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
       {/* Left Faceted Sidebar */}
       <aside
         className={sidebarOpen ? "wb-sidebar is-open scroller" : "wb-sidebar scroller"}
-        aria-label="分面筛选栏"
+        aria-label={t.filter}
       >
         <div className="wb-sidebar-mobile-head">
-          <strong>筛选条件</strong>
+          <strong>{t.filter}</strong>
           <button
             type="button"
             className="icon-btn"
-            aria-label="关闭筛选栏"
+            aria-label={t.filterClose}
             onClick={() => setSidebarOpen(false)}
           >
             <X size={16} />
@@ -642,7 +654,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
         </div>
 
         <div className="facet-group">
-          <div className="facet-title">模型家族</div>
+          <div className="facet-title">{t.facetModels}</div>
           <button
             type="button"
             className={!filters.model ? "facet-item active" : "facet-item"}
@@ -650,7 +662,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
           >
             <span className="facet-left">
               <span className="dot dot-all" aria-hidden="true" />
-              全部模型
+              {t.allModels}
             </span>
             <span className="facet-count">{facetCounts.allModels}</span>
           </button>
@@ -671,7 +683,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
         </div>
 
         <div className="facet-group">
-          <div className="facet-title">可用性与开放度</div>
+          <div className="facet-title">{t.facetStatus}</div>
           <button
             type="button"
             className={filters.play ? "facet-item active" : "facet-item"}
@@ -679,61 +691,45 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
           >
             <span className="facet-left">
               <span className="dot dot-ok" aria-hidden="true" />
-              已验活可试玩
+              {t.playable}
             </span>
             <span className="facet-count count-ok">{count.playable}</span>
-          </button>
-          <button
-            type="button"
-            className={filters.level === "has_demo" ? "facet-item active" : "facet-item"}
-            onClick={() => setField("level", "has_demo")}
-          >
-            <span className="facet-left">有试玩入口</span>
-            <span className="facet-count">{count.hasDemo}</span>
           </button>
           <button
             type="button"
             className={filters.license === "open" ? "facet-item active" : "facet-item"}
             onClick={() => setField("license", "open")}
           >
-            <span className="facet-left">确认开源</span>
+            <span className="facet-left">{t.openSource}</span>
             <span className="facet-count count-blue">{count.open}</span>
-          </button>
-          <button
-            type="button"
-            className={filters.level === "source" ? "facet-item active" : "facet-item"}
-            onClick={() => setField("level", "source")}
-          >
-            <span className="facet-left">公开源码仓库</span>
-            <span className="facet-count">{count.repos}</span>
           </button>
           <button
             type="button"
             className={filters.wf ? "facet-item active" : "facet-item"}
             onClick={() => setField("wf", "1")}
           >
-            <span className="facet-left">含创作工作流</span>
+            <span className="facet-left">{t.hasWorkflow}</span>
             <span className="facet-count">{count.withWorkflow}</span>
           </button>
         </div>
 
         <div className="facet-group">
-          <div className="facet-title">世界主题</div>
-          {Object.entries(themes).map(([key, label]) => (
+          <div className="facet-title">{t.facetThemes}</div>
+          {Object.keys(themes).map((key) => (
             <button
               key={key}
               type="button"
               className={filters.theme === key ? "facet-item active" : "facet-item"}
               onClick={() => setField("theme", key)}
             >
-              <span className="facet-left">{label}</span>
+              <span className="facet-left">{themeLabel(key, lang)}</span>
               <span className="facet-count">{facetCounts.themes[key] ?? 0}</span>
             </button>
           ))}
         </div>
 
         <div className="facet-group">
-          <div className="facet-title">生成方式</div>
+          <div className="facet-title">{t.facetModes}</div>
           {(["hybrid_pipeline", "iterative_chat", "one_shot", "agentic_loop"] as const).map((key) => (
             <button
               key={key}
@@ -741,16 +737,16 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
               className={filters.mode === key ? "facet-item active" : "facet-item"}
               onClick={() => setField("mode", key)}
             >
-              <span className="facet-left">{modes[key]}</span>
+              <span className="facet-left">{modeLabel(key, lang)}</span>
               <span className="facet-count">{facetCounts.modes[key] ?? 0}</span>
             </button>
           ))}
         </div>
 
         <details className="facet-disclosure" open={Boolean(filters.tech || filters.month)}>
-          <summary>技术栈与发布月份</summary>
+          <summary>{t.facetMore}</summary>
           <div className="facet-disclosure-body">
-            <div className="facet-sublabel">常用技术栈</div>
+            <div className="facet-sublabel">{t.techStack}</div>
             <div className="facet-chip-wrap">
               {allTechStacks.slice(0, 10).map((item) => (
                 <button
@@ -764,7 +760,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
               ))}
             </div>
 
-            <div className="facet-sublabel">发布月份</div>
+            <div className="facet-sublabel">{t.publishMonth}</div>
             <div className="facet-chip-wrap">
               {months.map((m) => (
                 <button
@@ -783,7 +779,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
         <div className="wb-sidebar-foot">
           <span className="dot dot-ok" aria-hidden="true" />
           <span>
-            同步于 <UpdateTime iso={lastUpdatedAt} /> · 纯静态
+            {t.updatedPrefix} <UpdateTime iso={lastUpdatedAt} />
           </span>
         </div>
       </aside>
@@ -791,7 +787,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
       {/* Center Catalog Workspace */}
       <section className="wb-main scroller" aria-labelledby="catalog-heading">
         <h1 id="catalog-heading" className="sr-only">
-          生成世界图鉴 · 开源交互世界检索工作台
+          {t.brand}
         </h1>
 
         <div className="wb-kpi-row">
@@ -802,7 +798,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
               onClick={() => setSidebarOpen(true)}
               aria-expanded={sidebarOpen}
             >
-              <SlidersHorizontal size={14} /> 筛选
+              <SlidersHorizontal size={14} /> {t.filter}
               {hasFilters && <span className="filter-badge">{activeChips.length}</span>}
             </button>
 
@@ -811,123 +807,125 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
               className={!hasFilters ? "kpi-chip active" : "kpi-chip"}
               onClick={() => update({ ...defaults, sort: filters.sort })}
             >
-              全部案例 <strong>{count.all}</strong>
+              {t.all} <strong>{count.all}</strong>
             </button>
             <button
               type="button"
               className={filters.play ? "kpi-chip ok active-ring" : "kpi-chip ok"}
               onClick={() => setField("play", "1")}
             >
-              ● 已验活可试玩 <strong>{count.playable}</strong>
+              ● {t.playable} <strong>{count.playable}</strong>
             </button>
             <button
               type="button"
               className={filters.license === "open" ? "kpi-chip blue active-ring" : "kpi-chip blue"}
               onClick={() => setField("license", "open")}
             >
-              ⌘ 开源 <strong>{count.open}</strong>
+              {t.openSource} <strong>{count.open}</strong>
             </button>
             <button
               type="button"
               className={filters.thumb ? "kpi-chip active" : "kpi-chip"}
               onClick={() => setField("thumb", "1")}
             >
-              含实景封面 <strong>{count.withThumb}</strong>
+              {t.withPreview} <strong>{count.withThumb}</strong>
             </button>
           </div>
 
           <div className="wb-controls">
             <label className="sort-wrap">
-              <span className="sr-only">排序方式</span>
+              <span className="sr-only">{t.sortFeatured}</span>
               <select
-                aria-label="排序方式"
+                aria-label={t.sortFeatured}
                 value={filters.sort}
                 onChange={(e) => replaceField("sort", e.target.value)}
               >
-                <option value="">排序：精选优先</option>
-                <option value="recent">排序：最新发布</option>
-                <option value="ingested">排序：最近收录</option>
-                <option value="title">排序：案例名称</option>
+                <option value="">{t.sortFeatured}</option>
+                <option value="recent">{t.sortRecent}</option>
+                <option value="ingested">{t.sortIngested}</option>
+                <option value="title">{t.sortTitle}</option>
               </select>
             </label>
 
-            <div className="view-switch" role="group" aria-label="目录视图">
+            <div className="view-switch" role="group" aria-label="View">
               <button
                 type="button"
                 aria-pressed={view === "grid"}
                 onClick={() => setView("grid")}
-                title="卡片视图"
+                title={t.viewGrid}
               >
-                <Grid2X2 size={14} /> <span>卡片</span>
+                <Grid2X2 size={14} /> <span>{t.viewGrid}</span>
               </button>
               <button
                 type="button"
                 aria-pressed={view === "list"}
                 onClick={() => setView("list")}
-                title="列表视图"
+                title={t.viewList}
               >
-                <List size={14} /> <span>列表</span>
+                <List size={14} /> <span>{t.viewList}</span>
               </button>
               <button
                 type="button"
                 aria-pressed={view === "table"}
                 onClick={() => setView("table")}
-                title="研究表格视图"
+                title={t.viewTable}
               >
-                <Table2 size={14} /> <span>表格</span>
+                <Table2 size={14} /> <span>{t.viewTable}</span>
               </button>
             </div>
           </div>
         </div>
 
-        <div className="wb-status-bar">
-          <div className="wb-status-left">
-            <span role="status" className="wb-result-count">
-              显示 <strong>{results.length}</strong> 个世界
-            </span>
-            {activeChips.map((chip) => (
+        {(hasFilters || inspectorMode === "closed") && (
+          <div className="wb-status-bar">
+            <div className="wb-status-left">
+              <span role="status" className="wb-result-count">
+                <strong>{results.length}</strong> / {count.all}
+              </span>
+              {activeChips.map((chip) => (
+                <button
+                  key={chip.key}
+                  type="button"
+                  className="active-chip"
+                  onClick={() => replaceField(chip.key, "")}
+                >
+                  <span>{chip.label}</span>
+                  <X size={12} aria-hidden="true" />
+                </button>
+              ))}
+              {hasFilters && (
+                <button
+                  type="button"
+                  className="reset-link"
+                  onClick={() => update({ ...defaults, sort: filters.sort })}
+                >
+                  {t.clearAll}
+                </button>
+              )}
+            </div>
+            {inspectorMode === "closed" && activeWorld && (
               <button
-                key={chip.key}
                 type="button"
-                className="active-chip"
-                onClick={() => replaceField(chip.key, "")}
+                className="open-inspector-btn"
+                onClick={() => setInspectorMode("open")}
               >
-                <span>{chip.label}</span>
-                <X size={12} aria-hidden="true" />
-              </button>
-            ))}
-            {hasFilters && (
-              <button
-                type="button"
-                className="reset-link"
-                onClick={() => update({ ...defaults, sort: filters.sort })}
-              >
-                清除全部
+                <Eye size={14} /> {t.openInspector}
               </button>
             )}
           </div>
-          {inspectorMode === "closed" && activeWorld && (
-            <button
-              type="button"
-              className="open-inspector-btn"
-              onClick={() => setInspectorMode("open")}
-            >
-              <Eye size={14} /> 展开右侧快览
-            </button>
-          )}
-        </div>
+        )}
 
         {results.length === 0 ? (
           <div className="empty-state">
             <Search size={24} />
-            <h2>没有匹配的案例</h2>
-            <p>可以尝试缩短关键词，或清除部分筛选条件。</p>
+            <h2>{t.emptyTitle}</h2>
+            <p>{t.emptyHint}</p>
             <button
               type="button"
               className="button button-primary"
               onClick={() => update({ ...defaults })}
             >
-              清除全部筛选
+              {t.clearAll}
             </button>
           </div>
         ) : view === "grid" ? (
@@ -937,6 +935,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                 key={world.world_id}
                 world={world}
                 selected={inspectorActive && activeWorld?.world_id === world.world_id}
+                lang={lang}
                 onInspect={handleInspect}
               />
             ))}
@@ -962,13 +961,13 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                     type="button"
                     className="list-thumb"
                     onClick={() => handleInspect(world)}
-                    aria-label={`快速预览 ${world.title}`}
+                    aria-label={world.title}
                   >
                     {world.thumbnail_url ? (
                       <img src={world.thumbnail_url} alt="" loading="lazy" width={192} height={108} />
                     ) : (
                       <span className="list-thumb-text">
-                        {world.is_open_source === true ? "⌘ 开源" : "❝ 引文"}
+                        {themeLabel(world.theme_category, lang)}
                       </span>
                     )}
                   </button>
@@ -977,22 +976,22 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                       <h3>
                         <a href={caseHref(world)}>{world.title}</a>
                       </h3>
-                      <span className="card-author">{byline(world)}</span>
-                      <span className={statusPillTone(world.demo_health_status)}>
-                        {healthLabels[world.demo_health_status]}
-                      </span>
+                      <span className="card-author">{byline(world, lang)}</span>
+                      {world.demo_health_status === "verified_playable" && (
+                        <span className="pill-ok">● {t.playable}</span>
+                      )}
                     </div>
-                    <p className="list-summary">{world.summary}</p>
+                    <p className="list-summary">{cardLead(world, lang)}</p>
                     <div className="tag-list">
                       {world.models_used.map((m) => (
                         <span key={m} className={`tag tag-model tone-${familyTone(m)}`}>
                           {m}
                         </span>
                       ))}
-                      <span className="tag">{themes[world.theme_category] || "其他"}</span>
-                      {world.tech_stack.slice(0, 3).map((t) => (
-                        <span key={t} className="tag">
-                          {t}
+                      <span className="tag">{themeLabel(world.theme_category, lang)}</span>
+                      {world.tech_stack.slice(0, 3).map((tech) => (
+                        <span key={tech} className="tag">
+                          {tech}
                         </span>
                       ))}
                     </div>
@@ -1005,7 +1004,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <CirclePlay size={14} /> 试玩
+                        <CirclePlay size={14} /> {t.play}
                       </a>
                     ) : hasDemo && demo ? (
                       <a
@@ -1014,7 +1013,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        访问试玩 <ArrowUpRight size={13} />
+                        {t.visit} <ArrowUpRight size={13} />
                       </a>
                     ) : null}
                     {repo && (
@@ -1024,16 +1023,9 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <CodeXml size={14} /> 源码
+                        <CodeXml size={14} /> {t.sourceCode}
                       </a>
                     )}
-                    <button
-                      type="button"
-                      className="button button-ghost button-sm"
-                      onClick={() => handleInspect(world)}
-                    >
-                      快览
-                    </button>
                   </div>
                 </article>
               );
@@ -1043,19 +1035,30 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
           <div
             tabIndex={0}
             role="region"
-            aria-label="交互世界研究表格"
+            aria-label={t.viewTable}
             className="table-wrapper"
           >
-            <table className="research-table">
-              <caption className="sr-only">AI 生成交互世界案例目录表格</caption>
+            <table
+              className="research-table"
+              style={
+                {
+                  "--label-2": `"${t.colModel}"`,
+                  "--label-3": `"${t.colTheme}"`,
+                  "--label-4": `"${t.colStack}"`,
+                  "--label-5": `"${t.colStatus}"`,
+                  "--label-6": `"${t.colActions}"`,
+                } as React.CSSProperties
+              }
+            >
+              <caption className="sr-only">{t.brand}</caption>
               <thead>
                 <tr>
-                  <th scope="col">案例</th>
-                  <th scope="col">模型</th>
-                  <th scope="col">主题</th>
-                  <th scope="col">技术栈</th>
-                  <th scope="col">验活与开放</th>
-                  <th scope="col">操作</th>
+                  <th scope="col">{t.colWorld}</th>
+                  <th scope="col">{t.colModel}</th>
+                  <th scope="col">{t.colTheme}</th>
+                  <th scope="col">{t.colStack}</th>
+                  <th scope="col">{t.colStatus}</th>
+                  <th scope="col">{t.colActions}</th>
                 </tr>
               </thead>
               <tbody>
@@ -1080,7 +1083,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                             {world.title}
                           </a>
                           <span className="tbl-sub">
-                            {byline(world)} · {world.summary}
+                            {byline(world, lang)} · {cardLead(world, lang)}
                           </span>
                         </div>
                       </th>
@@ -1093,13 +1096,13 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                           ))}
                         </div>
                       </td>
-                      <td>{themes[world.theme_category] || "其他"}</td>
+                      <td>{themeLabel(world.theme_category, lang)}</td>
                       <td>
                         {world.tech_stack.length ? (
                           <div className="tag-list">
-                            {world.tech_stack.slice(0, 2).map((t) => (
-                              <span key={t} className="tag">
-                                {t}
+                            {world.tech_stack.slice(0, 2).map((tech) => (
+                              <span key={tech} className="tag">
+                                {tech}
                               </span>
                             ))}
                           </div>
@@ -1109,11 +1112,11 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                       </td>
                       <td>
                         <span className={statusPillTone(world.demo_health_status)}>
-                          {healthLabels[world.demo_health_status]}
+                          {healthLabel(world.demo_health_status, lang)}
                         </span>
-                        {world.is_open_source === true && (
+                        {(world.is_open_source === true || repo) && (
                           <span className="pill-blue" style={{ marginInlineStart: 4 }}>
-                            开源
+                            {t.openSource}
                           </span>
                         )}
                       </td>
@@ -1126,7 +1129,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              试玩 ↗
+                              {t.play} ↗
                             </a>
                           ) : hasDemo && demo ? (
                             <a
@@ -1135,7 +1138,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              试玩 ↗
+                              {t.visit} ↗
                             </a>
                           ) : null}
                           {repo && (
@@ -1145,16 +1148,9 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              源码
+                              {t.sourceCode}
                             </a>
                           )}
-                          <button
-                            type="button"
-                            className="act-inspect"
-                            onClick={() => handleInspect(world)}
-                          >
-                            快览
-                          </button>
                         </div>
                       </td>
                     </tr>
@@ -1172,7 +1168,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
               className="button button-subtle"
               onClick={() => setLimit((n) => n + initialAmount)}
             >
-              查看更多案例
+              {t.loadMore}
               <span className="load-more-count">
                 {Math.min(limit, results.length)} / {results.length}
               </span>
@@ -1182,23 +1178,17 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
               className="button button-ghost"
               onClick={() => setLimit(results.length)}
             >
-              全部展开 ({results.length})
+              {t.showAll(results.length)}
             </button>
           </div>
         )}
-
-        <footer className="wb-inline-footer">
-          <span>基于公开原帖与作者发布的项目 · 收录 {count.all} 例</span>
-          <a href="/trends#method" className="text-link">
-            查看统计口径与趋势分析 →
-          </a>
-        </footer>
       </section>
 
       {/* Right Quick Inspector Drawer */}
       <QuickInspector
         world={activeWorld}
         mode={inspectorMode}
+        lang={lang}
         onClose={() => setInspectorMode("closed")}
       />
     </div>

@@ -2,9 +2,12 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, CirclePlay, CodeXml, Search, X } from "lucide-react";
-import { byline, caseHref, isPlayable, matchesWorldQuery, themes, worlds } from "@/lib/worlds";
+import { copy, useLang } from "@/lib/i18n";
+import { byline, caseHref, isPlayable, themeLabel, themes, themesEn, worlds } from "@/lib/worlds";
 
 export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
+  const [lang] = useLang();
+  const t = copy[lang];
   const dialogRef = useRef<HTMLDialogElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const inlineQueryRef = useRef("");
@@ -25,7 +28,6 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
     }
   }, [isHome]);
 
-  // Sync topbar inline search with URL on Home page
   useEffect(() => {
     if (!isHome) return;
     const syncFromUrl = () => {
@@ -49,7 +51,6 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
     };
   }, [isHome]);
 
-  // Global Cmd/Ctrl+K shortcut (opens modal dialog) and "/" shortcut
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
@@ -82,7 +83,6 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [isHome, openModal]);
 
-  // Light-dismiss fallback for browsers without native dialog closedby="any"
   useEffect(() => {
     const dialog = dialogRef.current;
     if (!dialog) return;
@@ -121,13 +121,32 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
     if (dialog?.open) dialog.close();
   }
 
-  const matches = useMemo(
-    () => worlds.filter((world) => matchesWorldQuery(world, query)).slice(0, 8),
-    [query],
-  );
+  const matches = useMemo(() => {
+    const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
+    const list = worlds.filter((w) => {
+      if (!terms.length) return true;
+      const hay = [
+        w.title,
+        w.summary,
+        w.author_name,
+        w.author_handle,
+        themes[w.theme_category],
+        themesEn[w.theme_category],
+        ...w.models_used,
+        ...w.tech_stack,
+        ...w.evidence_quotes,
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLocaleLowerCase();
+      return terms.every((term) => hay.includes(term));
+    });
+    return list.slice(0, 8);
+  }, [query]);
 
   function applyToCatalog(value: string) {
     if (isHome) {
+      inlineQueryRef.current = value;
       setInlineQuery(value);
       window.dispatchEvent(new CustomEvent("wb:query-set", { detail: value }));
       closeModal();
@@ -151,8 +170,8 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
           <input
             id="wb-global-search"
             type="search"
-            aria-label="搜索案例、作者、模型、技术栈或原文摘录"
-            placeholder="搜索案例、作者、模型、技术栈或原文摘录…"
+            aria-label={t.searchPlaceholder}
+            placeholder={t.searchPlaceholder}
             value={inlineQuery}
             onChange={(e) => handleInlineChange(e.target.value)}
           />
@@ -160,7 +179,7 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
             <button
               type="button"
               className="wb-search-clear"
-              aria-label="清空搜索"
+              aria-label={t.searchClear}
               onClick={() => handleInlineChange("")}
             >
               <X size={13} />
@@ -169,8 +188,8 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
             <button
               type="button"
               className="wb-kbd-btn"
-              title="打开快捷搜索面板 (⌘K)"
-              aria-label="打开快捷搜索面板"
+              title={`${t.searchOpen} (⌘K)`}
+              aria-label={t.searchOpen}
               onClick={openModal}
             >
               ⌘K
@@ -182,10 +201,10 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
           type="button"
           className="wb-search-bar wb-search-trigger"
           onClick={openModal}
-          aria-label="打开快捷搜索面板"
+          aria-label={t.searchOpen}
         >
           <Search size={15} className="wb-search-ico" aria-hidden="true" />
-          <span className="wb-search-placeholder">搜索 {worlds.length} 个交互世界、模型或工作流…</span>
+          <span className="wb-search-placeholder">{t.searchPlaceholder}</span>
           <span className="wb-kbd">⌘K</span>
         </button>
       )}
@@ -198,15 +217,14 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
       >
         <div className="cmd-head">
           <h1 id="cmd-dialog-title" className="sr-only">
-            快捷搜索世界案例
+            {t.searchOpen}
           </h1>
           <Search size={17} className="wb-search-ico" aria-hidden="true" />
           <input
             ref={inputRef}
             type="search"
             className="cmd-input"
-            aria-label="搜索世界案例"
-            placeholder="输入案例名、模型（Claude / GPT / Gemini）、技术栈或关键词…"
+            placeholder={t.searchModalPlaceholder}
             value={query}
             onChange={(e) => {
               setQuery(e.target.value);
@@ -215,7 +233,7 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
             onKeyDown={(e) => {
               if (e.key === "ArrowDown") {
                 e.preventDefault();
-                setActiveIndex((i) => Math.min(Math.max(0, matches.length - 1), i + 1));
+                setActiveIndex((i) => Math.min(matches.length - 1, i + 1));
               } else if (e.key === "ArrowUp") {
                 e.preventDefault();
                 setActiveIndex((i) => Math.max(0, i - 1));
@@ -226,7 +244,7 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
             }}
           />
           <form method="dialog">
-            <button type="submit" className="icon-btn" aria-label="关闭快捷搜索">
+            <button type="submit" className="icon-btn" aria-label={t.searchClose}>
               <X size={16} />
             </button>
           </form>
@@ -240,12 +258,12 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
               onClick={() => applyToCatalog(query)}
             >
               <Search size={14} />
-              <span>在工作台目录中筛选 “{query.trim()}”</span>
+              <span>{t.searchFilterCta(query.trim())}</span>
               <ArrowUpRight size={14} />
             </button>
           )}
           {matches.length > 0 ? (
-            <ul className="cmd-list" role="listbox" aria-label="匹配的案例">
+            <ul className="cmd-list" role="listbox" aria-label={t.searchOpen}>
               {matches.map((world, idx) => (
                 <li key={world.world_id}>
                   <a
@@ -257,19 +275,19 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
                     <div className="cmd-item-main">
                       <strong>{world.title}</strong>
                       <span>
-                        {byline(world)} · {themes[world.theme_category] || "其他"}
+                        {byline(world, lang)} · {themeLabel(world.theme_category, lang)}
                       </span>
                     </div>
                     <div className="cmd-item-meta">
                       {world.models_used[0] && <span className="pill-neutral">{world.models_used[0]}</span>}
                       {isPlayable(world) && (
                         <span className="pill-ok">
-                          <CirclePlay size={12} /> 验活
+                          <CirclePlay size={12} /> {t.play}
                         </span>
                       )}
                       {world.repo_url && (
                         <span className="pill-blue">
-                          <CodeXml size={12} /> 源码
+                          <CodeXml size={12} /> {t.sourceCode}
                         </span>
                       )}
                     </div>
@@ -278,14 +296,14 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
               ))}
             </ul>
           ) : (
-            <p className="cmd-empty">没有找到与 “{query}” 匹配的案例。</p>
+            <p className="cmd-empty">{t.searchEmpty(query)}</p>
           )}
         </div>
 
         {open && (
           <div className="cmd-foot">
-            <span>↑↓ 选择 · Enter 打开详情 · Esc 关闭</span>
-            <span>共收录 {worlds.length} 个交互世界</span>
+            <span>{t.searchHints}</span>
+            <span>{t.totalCount(worlds.length)}</span>
           </div>
         )}
       </dialog>

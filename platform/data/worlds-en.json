@@ -1,0 +1,165 @@
+{
+  "world-093a9823a1e6c4452a25aa6b": {
+    "wf": ["Modeled and exported the gallery and exhibits in Blender, then added walking and mouse-look controls with a two-step inspect-and-activate interaction."],
+    "sp": ["Animate silk exhibits differently across calm, breeze, and gust wind states."]
+  },
+  "world-0dd24156697dc6c33188f7f7": {
+    "wf": ["Organized geographic data into streamable street chunks, built landmarks in Blender, and imported buildings and streetscapes into Three.js."],
+    "sp": ["Make streets recognizable by detail for both pedestrians and drivers."]
+  },
+  "world-16298eb4e8e68cde53adf1fb": {
+    "wf": ["Generated the mechanical structures, motion, and camera controls first, then refined rendering stability."],
+    "sp": ["Single-file native WebGL scene with fallback rendering."]
+  },
+  "world-172b196ac6439bae5ce2e2ec": {
+    "wf": ["Validated collisions on ramps and dominoes first, then chained ferry and catapult timing, and finally tuned splashes, camera, and audio."],
+    "sp": ["Test gravity, collisions, and camera tracking with rolling marbles."]
+  },
+  "world-1f58d27ea650a37ef8fdc2b6": {
+    "wf": ["Designed a Mars rover with rocker-bogie suspension.", "Simulated driving across varied terrain."],
+    "sp": []
+  },
+  "world-1f6d9940ae987dd0f4c05372": {
+    "wf": ["Built the game with Gemini 4 Neon and published the browser build on itch.io."],
+    "sp": []
+  },
+  "world-29474e5d16946b3a28edde32": {
+    "wf": ["Published two verbatim Claude Code prompt rounds: first building the seaside festival, then applying five playtest revisions."],
+    "sp": ["threejs-gameplay-systems", "webgpu-threejs-tsl", "Blender MCP"]
+  },
+  "world-2b15cb8c3b6b2752c935d30d": {
+    "wf": ["Started from reference art and a single-palm island prototype, assembled coral reefs in Blender, tied shore foam to wave crests, then polished assets and shading."],
+    "sp": ["Drive wave crest, run-up, and backwash from one traveling wave."]
+  },
+  "world-2c5fc764d1443fb0b8c263b1": {
+    "wf": ["Generated all geometry, materials, and shaders purely in code."],
+    "sp": []
+  },
+  "world-2c81c28fc14fffb069e84d68": {
+    "wf": ["One-shot generated a single-file Three.js game with zero external assets from a basic concept (~30 minutes)."],
+    "sp": []
+  },
+  "world-31c473cd4707b987c36edc02": {
+    "wf": ["Used @loktar00's prompt with Gemini 4 Neon to generate a browser-playable dungeon game.", "Kept readable single-page source and minified shaders/JS via a Node build script into dist/index.html."],
+    "sp": ["Prompt credited to @loktar00"]
+  },
+  "world-42e418e54a0bf38a58de405c": {
+    "wf": ["Built the flying adventure with Gemini 4 Argon during a Gemini hackathon.", "Later refreshed the project with Claude Opus 5.5 and Crayon."],
+    "sp": []
+  },
+  "world-48aa5afb3651d9cd35786d63": {
+    "wf": [
+      "Generated concept art and built a playable vertical slice.",
+      "Iterated on flight, navigation, and planetary landing.",
+      "Migrated rendering to Three.js WebGPU and modeled assets in Blender.",
+      "Captured browser screenshots and state, then edited and re-ran checks.",
+      "Integrated the Blender-modeled AURORA spacecraft to connect landing, walking, and reboarding into one expedition.",
+      "Used Rapier for local planetary walking physics and a Playwright benchmark (90 frame intervals) to compare draw calls and triangle counts."
+    ],
+    "sp": ["Codex", "Playwright"]
+  },
+  "world-4d8440cb7652ab87047733a7": {
+    "wf": ["Creator set goals and reviewed each round while the model planned, coded, ran, and reported checks (~22 hours including pauses)."],
+    "sp": ["Claude Code"]
+  },
+  "world-50be090ced8df88f80e31e5c": {
+    "wf": ["Set art direction via menu and racing concept art, built the first playable track, then added workshop materials and a garage."],
+    "sp": ["Keep workshop props and toy tracks at a shared miniature scale."]
+  },
+  "world-558a3ee85cefb29336a09995": {
+    "wf": ["Compared water styles with concept art, built the first playable voyage, then refined hull, rigging, and buoyancy in Blender."],
+    "sp": ["Ship a steerable voyage first, then tune water and hull motion."]
+  },
+  "world-61dcd739fa7ecc35b28074a6": {
+    "wf": ["Fed Shibuya OpenStreetMap roads, rail lines, and building footprints into Gemini 4 Neon to generate a 3D parkour district."],
+    "sp": []
+  },
+  "world-670b2a8f4587f5fd6ec597b0": {
+    "wf": ["Defined museum layout and walking flow, verified the architectural shell, then iterated on sculpture motion, terrace, and entrance lighting."],
+    "sp": ["Arrange visual effects as walkable exhibits with a first-person controller."]
+  },
+  "world-713939da64ff0969be40e4ea": {
+    "wf": ["Generated geometry, parchment, and ink lines in code within a single source file, then minified inline CSS and scripts for release."],
+    "sp": []
+  },
+  "world-7b1f8075794a139f08240043": {
+    "wf": ["One-shot generated the Three.js game in Google AI Studio."],
+    "sp": []
+  },
+  "world-7f7a55c999212a5e14ce8c43": {
+    "wf": ["Procedurally generated furniture, cloth, and plants with seeded randomness, then baked lighting on CPU (20–30 min rebake noted in README)."],
+    "sp": []
+  },
+  "world-894b60a1a4b26792148885da": {
+    "wf": ["Generated a single GLB sea creature model with Tripo3D.", "Had Claude build the interactive browser seabed scene."],
+    "sp": ["Tripo3D"]
+  },
+  "world-8ca86ee658c31484c96dfed1": {
+    "wf": ["Built repeating colonnades and pointed arches, tuned circulation from floor plans, then refined stained glass, altar, and transepts."],
+    "sp": ["Shift rose window and nave lighting across time of day."]
+  },
+  "world-96c3c640630bc03045c3203a": {
+    "wf": ["Generated the cat parkour game with Gemini 4 Hydrogen and shared the playable link in the creator's reply."],
+    "sp": []
+  },
+  "world-9f59431613d5b227b2bfbeea": {
+    "wf": ["Fed real OpenStreetMap and census data with a single prompt to generate the 3D neighborhood."],
+    "sp": []
+  },
+  "world-c7bdbcd262c3559b69637206": {
+    "wf": ["Generated each 3DGS scene from a single image.", "Linked scenes together with interactive web portals."],
+    "sp": []
+  },
+  "world-ce87d2ea45a7758e22d4251d": {
+    "wf": ["Generated the first playable escape-room build from a single prompt, then applied a few tweaks after friend playtests."],
+    "sp": []
+  },
+  "world-cfbcb73827fc3eddc44047ac": {
+    "wf": ["Had Gemini 4 Neon write the story, rendered the district in Three.js, and placed characters and clues inside enterable bars."],
+    "sp": []
+  },
+  "world-d5125352731996d5b44ada20": {
+    "wf": ["Combined Claude with Ink Studio to build an orbitable scene.", "Sculpted and baked the rainy noodle stall in Ink Studio and bundled it into an offline WebGL single page."],
+    "sp": ["Ink Studio"]
+  },
+  "world-d8b5424c196448a3976185e7": {
+    "wf": ["Used an earlier 2D version as reference to generate the 3D ski mountain."],
+    "sp": []
+  },
+  "world-da4ddd6bdbf0b1c9985e88ab": {
+    "wf": ["Built a walkable twilight trail first, modeled fallen-log landmarks in Blender, then created two additional styles with aligned viewpoints."],
+    "sp": ["Guide players to the campfire through spatial audio."]
+  },
+  "world-e73be2d8bfd6d2b18a590dad": {
+    "wf": ["Hosted on Google AI Studio: players describe buildings and the Gemini API generates 3D voxel structures onto a shared island."],
+    "sp": []
+  },
+  "world-e903a899047e037d94778711": {
+    "wf": ["Prototyped coffee pickup and delivery first, modeled characters and props in Blender, expanded the district, and tuned mobile controls."],
+    "sp": ["Place the courier on a walkable mini-planet so players discover neighbors organically."]
+  },
+  "world-e9389e42ee718bdf9b16eac2": {
+    "wf": ["Generated the underwater habitat, animated sea life, and environment controls first, then adapted the HUD for smaller screens."],
+    "sp": ["Inline procedural geometry and shaders into a single offline HTML file."]
+  },
+  "world-f01df3cce30208f69c7e6454": {
+    "wf": ["GitHub Pages workflow installs dependencies, builds the project on main updates, and publishes dist to GitHub Pages."],
+    "sp": []
+  },
+  "world-f3c3e4e8c331ee2c5e5e4d7b": {
+    "wf": ["Provided a single prompt.", "Model generated the WebGL2 scene inside an HTML file."],
+    "sp": []
+  },
+  "world-f64e28bbd3bbdc6081c37e3a": {
+    "wf": ["Reconstructed startup order from entry code: initialize Three.js scene and physics, generate the city, then add sky, rain, and player."],
+    "sp": []
+  },
+  "world-f859c835042ef32aee8889fa": {
+    "wf": ["Generated the deity statue and protagonist models with Tripo3D.", "Generated the rest of the palace scene in code."],
+    "sp": ["Tripo3D"]
+  },
+  "world-faccba74bbd9542576a42daf": {
+    "wf": ["Researched historical texts and architectural plans.", "Cross-checked references and generated ancient Babylon."],
+    "sp": []
+  }
+}

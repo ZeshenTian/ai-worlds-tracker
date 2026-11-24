@@ -1,0 +1,33 @@
+name: Publish static catalog
+description: Build the bilingual catalog and publish its complete static snapshot
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    - shell: bash
+      working-directory: platform
+      run: npm ci --include=dev && npm run build:static
+    - shell: bash
+      run: |
+        set -eu
+        target=$(mktemp -d)
+        rmdir "$target"
+        if git ls-remote --exit-code --heads origin static-site; then
+          git fetch origin static-site
+          git worktree add --detach "$target" FETCH_HEAD
+        else
+          git worktree add --detach "$target" HEAD
+          git -C "$target" checkout --orphan generated-site
+          git -C "$target" rm -r --quiet .
+        fi
+        rsync -a --delete --exclude=.git --exclude=_next/static/ platform/out/ "$target/"
+        mkdir -p "$target/_next/static"
+        cp -R platform/out/_next/static/. "$target/_next/static/"
+        touch "$target/.nojekyll"
+        git -C "$target" add -A
+        if ! git -C "$target" diff --cached --quiet; then
+          git -C "$target" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -qm 'Publish catalog snapshot'
+          git -C "$target" push origin HEAD:refs/heads/static-site
+        fi

@@ -1,0 +1,21 @@
+name: Publish static catalog
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'platform/**'
+      - '.github/actions/publish-static/**'
+permissions:
+  contents: write
+concurrency:
+  group: worlds-catalog
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: ./.github/actions/publish-static

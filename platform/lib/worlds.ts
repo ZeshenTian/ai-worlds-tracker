@@ -1,4 +1,19 @@
 import dataset from "@/data/worlds.json";
+import enOverrides from "@/data/worlds-en.json";
+import type { Lang } from "./i18n";
+
+const enMap = enOverrides as Record<string, { wf?: string[]; sp?: string[] }>;
+
+export function workflowStepsFor(world: World, lang: Lang): string[] {
+  if (lang === "en" && world.workflow_steps_en?.length) return world.workflow_steps_en;
+  if (lang === "en" && enMap[world.world_id]?.wf) return enMap[world.world_id].wf!;
+  return world.workflow_steps;
+}
+
+export function skillsFor(world: World, lang: Lang): string[] {
+  if (lang === "en" && enMap[world.world_id]?.sp) return enMap[world.world_id].sp!;
+  return world.skills_or_prompts_used;
+}
 
 export const themes: Record<string, string> = {
   nature_ecosystem: "自然生态",
@@ -11,26 +26,78 @@ export const themes: Record<string, string> = {
   other: "其他",
 };
 
+export const themesEn: Record<string, string> = {
+  nature_ecosystem: "Nature",
+  city_diorama: "City",
+  fantasy_rpg: "Fantasy",
+  sci_fi: "Sci-Fi",
+  physics_sim: "Physics",
+  voxel_sandbox: "Voxel",
+  historical: "Historical",
+  other: "Other",
+};
+
 export const modes: Record<string, string> = {
   one_shot: "单次提示",
   iterative_chat: "对话迭代",
   agentic_loop: "智能体循环",
   hybrid_pipeline: "混合流程",
-  unknown: "生成方式未披露",
+  unknown: "未披露",
+};
+
+export const modesEn: Record<string, string> = {
+  one_shot: "One-Shot",
+  iterative_chat: "Iterative",
+  agentic_loop: "Agentic Loop",
+  hybrid_pipeline: "Hybrid",
+  unknown: "Undisclosed",
 };
 
 export const levels: Record<string, string> = {
-  video_only: "仅视频拆解",
-  prompt_shared: "公开提示词",
-  live_demo: "有试玩入口",
+  video_only: "仅视频",
+  prompt_shared: "含提示词",
+  live_demo: "在线试玩",
   full_repo: "完整仓库",
 };
 
-export const reviews: Record<string, string> = {
-  pending: "待复核",
-  approved: "已复核",
-  rejected: "已拒绝",
+export const levelsEn: Record<string, string> = {
+  video_only: "Video Only",
+  prompt_shared: "Prompt Shared",
+  live_demo: "Live Demo",
+  full_repo: "Full Repo",
 };
+
+export const healthLabels: Record<string, string> = {
+  verified_playable: "可试玩",
+  login_required: "需登录",
+  broken: "不可用",
+  no_demo: "无试玩",
+  unverified: "待验证",
+};
+
+export const healthLabelsEn: Record<string, string> = {
+  verified_playable: "Playable",
+  login_required: "Login",
+  broken: "Broken",
+  no_demo: "No Demo",
+  unverified: "Unverified",
+};
+
+export function themeLabel(key: string, lang: Lang) {
+  return (lang === "en" ? themesEn[key] : themes[key]) || (lang === "en" ? "Other" : "其他");
+}
+
+export function modeLabel(key: string, lang: Lang) {
+  return (lang === "en" ? modesEn[key] : modes[key]) || (lang === "en" ? "Undisclosed" : "未披露");
+}
+
+export function levelLabel(key: string, lang: Lang) {
+  return (lang === "en" ? levelsEn[key] : levels[key]) || key;
+}
+
+export function healthLabel(key: string, lang: Lang) {
+  return (lang === "en" ? healthLabelsEn[key] : healthLabels[key]) || key;
+}
 
 export const submissionUrl =
   "https://github.com/ZeshenTian/ai-worlds-tracker/issues/new?template=new-world.yml";
@@ -39,6 +106,10 @@ export interface World {
   world_id: string;
   title: string;
   summary: string;
+  summary_en?: string | null;
+  workflow_steps_en?: string[];
+  cover_source?: string | null;
+  cover_source_url?: string | null;
   theme_category: string;
   models_used: string[];
   tech_stack: string[];
@@ -65,38 +136,12 @@ export interface World {
   related_post_urls: string[];
 }
 
-export const byline = (w: World) =>
-  w.author_name || (w.author_handle ? "@" + w.author_handle : "作者未披露");
+export const byline = (w: World, lang: Lang = "zh") =>
+  w.author_name || (w.author_handle ? "@" + w.author_handle : lang === "en" ? "Unknown" : "匿名");
 
 export const isPlayable = (w: World) => w.demo_health_status === "verified_playable";
 
-export const healthLabels: Record<string, string> = {
-  verified_playable: "已验活可试玩",
-  login_required: "需登录",
-  broken: "试玩不可用",
-  no_demo: "未提供试玩",
-  unverified: "试玩待验证",
-};
-
 export const worlds: World[] = dataset.filter((world) => world.review_status !== "rejected");
-export function matchesWorldQuery(world: World, query: string) {
-  const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
-  if (!terms.length) return true;
-  const searchable = [
-    world.title,
-    world.summary,
-    world.author_name,
-    world.author_handle,
-    themes[world.theme_category],
-    ...world.models_used,
-    ...world.tech_stack,
-    ...world.workflow_steps,
-    ...world.skills_or_prompts_used,
-    ...world.evidence_quotes,
-  ].filter(Boolean).join(" ").toLocaleLowerCase();
-  return terms.every((term) => searchable.includes(term));
-}
-
 export const featured = [
   "1 km² of Indiranagar",
   "Clockwork Observatory",
@@ -131,8 +176,7 @@ export function values(key: "tech_stack" | "models_used") {
 export const count = {
   all: worlds.length,
   playable: worlds.filter(isPlayable).length,
-  hasDemo: worlds.filter((w) => Boolean(webLink(w.live_demo_url)) && w.demo_health_status !== "broken").length,
-  open: worlds.filter((world) => world.is_open_source === true).length,
+  open: worlds.filter((world) => world.is_open_source === true || Boolean(world.repo_url)).length,
   repos: worlds.filter((world) => Boolean(world.repo_url)).length,
   withThumb: worlds.filter((world) => Boolean(world.thumbnail_url)).length,
   withWorkflow: worlds.filter((world) => world.workflow_steps.length > 0).length,
@@ -157,11 +201,19 @@ export function caseHref(world: World) {
   return `/worlds/${world.world_id}`;
 }
 
-export function bestQuote(world: World): string {
-  const candidates = world.evidence_quotes
+const BARE_MODEL_QUOTE = /^(made\s+with\s+)?(claude|gpt|gemini|codex)[\w\s.\-()]{0,24}$/i;
+
+export function cleanQuotes(world: World): string[] {
+  const normalized = world.evidence_quotes
     .map((q) => q.replace(/\s+/g, " ").trim())
-    .filter((q) => q.length >= 24 && !/^(GPT|Claude|Gemini)\b[^.!?,]{0,20}$/i.test(q));
-  const picked = candidates[0] || world.summary;
+    .filter(Boolean);
+  const meaningful = normalized.filter((q) => !BARE_MODEL_QUOTE.test(q));
+  return meaningful.length > 0 ? meaningful : normalized;
+}
+
+export function bestQuote(world: World): string {
+  const quotes = cleanQuotes(world);
+  const picked = quotes.find((q) => q.length >= 20) || quotes[0] || world.summary;
   return picked.length > 136 ? picked.slice(0, 134).trimEnd() + "…" : picked;
 }
 
