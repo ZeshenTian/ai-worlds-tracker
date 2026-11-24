@@ -41,6 +41,58 @@ seed_urls:
 watch_accounts:
   - ai_for_success
   - Bk23544
+  - cyril_remacle
+  - kagigz
+  - BlendiByl
+  - Dimillian
+  - marcthecreatorr
+  - reach_vb
+  - pvncher
+  - dfeinition
+  - DilumSanjaya
+  - Plamskiii
+  - pwappy_com
+  - prasenx
+  - ky__zo
+  - LuminaBench
+  - aGim_asf
+  - kevin_t_ngo
+  - aniketjart
+  - vib3coded
+  - tornikegomareli
+  - SamGCoder
+  - Google
+  - CoderRw11326
+  - aiislove666
+  - LexnLin
+  - tokifyi
+  - thebuggeddev
+  - SahilPanhotra
+  - anshu4321
+  - handsher_NGU
+  - acupofai
+  - petergostev
+  - nan_in_space
+  - notjazii
+  - jacalulu
+  - venturetwins
+  - CapyCola
+  - loktar00
+  - theojaffee
+  - GoogleAI
+  - xikhar
+  - titepommee
+  - L34342Lin
+  - NifftySwiggle
+  - qiqileyuan
+  - literallydenis
+  - kplikethebird
+  - AnthropicAI
+  - claudeai
+  - OpenAIDevs
+  - GoogleDeepMind
+  - patchgg
+  - threejs
 search_queries:
   - '("3D world" OR WebGPU OR "Three.js" OR diorama) (Claude OR Gemini OR GPT) (github.com OR "open source" OR prompt) -is:retweet -is:reply'
   - '("voxel sandbox" OR "procedural world" OR "world explorer") (Claude OR Gemini OR Codex) (has:links OR has:videos) -is:retweet -is:reply'
@@ -48,6 +100,30 @@ search_queries:
   - '(WebGL OR WebGPU) ("one prompt" OR "one shot" OR "agent loop") (has:links OR has:videos) -is:retweet -is:reply'
   - '("3D world" OR "playable" OR "interactive scene" OR "threejs" OR "WebGPU" OR "voxel" OR "shader") (Claude OR Opus OR Sonnet OR Gemini OR GPT OR Codex OR Cursor) has:videos -is:retweet -is:reply'
   - '("交互世界" OR "3D世界" OR "3D场景" OR "单文件HTML") (Claude OR Gemini OR GPT OR Codex) (has:videos OR has:links) -is:retweet -is:reply'
+apify_queries:
+  - 'url:"claude.ai/artifact" (3D OR world OR threejs OR voxel OR walk OR explore) min_faves:20 -is:retweet'
+  - 'url:"chatgpt.site" (3D OR world OR explore OR walk OR threejs OR game) min_faves:10 -is:retweet'
+  - 'url:"patch.gg" (3D OR world OR village OR valley OR explore OR game) min_faves:10 -is:retweet'
+  - 'url:"ai.studio" (3D OR world OR threejs OR game OR explore) min_faves:15 -is:retweet'
+  - '(url:"github.io" OR url:"vercel.app" OR url:"itch.io") (threejs OR WebGPU OR diorama OR shader) (Claude OR Gemini OR GPT OR Codex) min_faves:20 -is:retweet'
+  - '("Fable 5.2" OR "Opus 5.5") (walkthrough OR world OR diorama OR WebGL) min_faves:10 -is:retweet'
+  - '("GPT-6" OR Astra OR Codex) (voxel OR "3D world" OR "walk around") min_faves:10 -is:retweet'
+  - '("Gemini 4" OR Neon OR Argon) (threejs OR playable OR "interactive world") min_faves:10 -is:retweet'
+  - '("vibe coded" OR vibecoded) (Three.js OR WebGPU OR "3D game") min_faves:10 -is:retweet'
+  - '(3DGS OR "Gaussian splat") (Claude OR Gemini OR Codex) (walk OR playable OR explore) min_faves:10 -is:retweet'
+  - '("World Labs" OR Marble) ("walk through" OR interactive OR world) min_faves:10 -is:retweet'
+  - '(R3F OR Babylon.js OR PlayCanvas) (Claude OR GPT OR Gemini) (scene OR world OR game) min_faves:10 -is:retweet'
+  - '(Three.js OR 3D OR ワールド) (Claude OR Gemini OR GPT) (作ってみた OR ブラウザ OR ゲーム) min_faves:30 -is:retweet'
+  - '("交互世界" OR "3D场景" OR "单文件" OR "Three.js") (Claude OR Gemini OR GPT OR Codex) min_faves:10 -is:retweet'
+  - '(散策 OR 箱庭 OR 探索) (Claude OR Gemini OR Codex) (3D OR ゲーム) min_faves:10 -is:retweet'
+  - '(漫游 OR 体素 OR 可试玩) (Claude OR Gemini OR GPT OR Codex) min_faves:10 -is:retweet'
+  - '("single HTML" OR "single prompt") (world OR terrain OR diorama) (Claude OR Gemini OR GPT) min_faves:10 -is:retweet'
+trusted_demo_hosts:
+  - claude.ai
+  - chatgpt.site
+  - patch.gg
+  - ai.studio
+  - aistudio.google.com
 trusted_catalog_hosts:
   - developers.openai.com
   - deepmind.google

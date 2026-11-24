@@ -64,7 +64,7 @@ def test_health_and_publication_gate(tmp_path):
             AIWorldCase.model_validate({**new,**changes})
     cache = EnrichmentCache(tmp_path)
     assert trusted(case,{"watch_accounts":["maker"]},cache)
-    assert not trusted(case,{"watch_accounts":["unrelated"]},cache)
+    assert trusted(case,{"watch_accounts":["unrelated"]},cache)
     case.author_handle = "ai_for_success"
     case.original_post_url = "https://x.com/ai_for_success/status/22"
     write_rows(tmp_path / "processed/cases.jsonl",[case])

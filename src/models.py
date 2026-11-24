@@ -140,6 +140,10 @@ class AIWorldCase(Record):
     world_id: Text
     title: Text
     summary: Text
+    summary_en: Text | None = None
+    workflow_steps_en: list[Text] = Field(default_factory=list)
+    cover_source: Literal["demo", "x_media"] | None = None
+    cover_source_url: WebURL | None = None
     theme_category: Theme
     models_used: list[Text]
     tech_stack: list[Text]
@@ -192,8 +196,8 @@ class AIWorldCase(Record):
             self.demo_health_status = DemoHealth.NO_DEMO
         elif self.demo_health_status == DemoHealth.NO_DEMO:
             raise ValueError("no_demo conflicts with a demo URL")
-        if self.thumbnail_url is not None and (self.thumbnail_url != f"/thumbnails/{self.world_id}.webp"
-                                               or not self.live_demo_url or "/" in self.world_id or ".." in self.world_id):
+        if self.thumbnail_url is not None and (self.thumbnail_url != (f"/thumbnails/{self.world_id}-x.webp" if self.cover_source == "x_media" else f"/thumbnails/{self.world_id}.webp")
+                                               or (not self.live_demo_url and self.cover_source != "x_media") or "/" in self.world_id or ".." in self.world_id):
             raise ValueError("invalid thumbnail path")
         if self.cost_disclosure_status != disclosure(self.reported_cost_usd, self.reported_time_minutes):
             raise ValueError("inconsistent cost disclosure")

@@ -12,7 +12,7 @@ import yaml
 from .enrich_firecrawl import EnrichmentCache
 from .export_and_analyze import REVIEW_FIELDS, write_csv
 from .extract_structured import apply_verified_research
-from .links import repo_root
+from .links import identity_url, post_id, repo_root
 from .models import AIWorldCase, DemoHealth, ReviewStatus
 from .storage import read_json, read_rows, run_lock, write_json, write_rows
 
@@ -20,19 +20,23 @@ from .storage import read_json, read_rows, run_lock, write_json, write_rows
 PROJECT = Path(__file__).resolve().parents[1]
 
 
-def trusted(case, config, cache):
+def trusted(case, config, cache, likes=0):
     host = urlsplit(case.original_post_url).hostname
     catalog = case.source_kind == "primary_page" and host in config.get("trusted_catalog_hosts", [])
     author = case.source_kind == "x_post" and (case.author_handle or "").lower() in {
         account.lower() for account in config.get("watch_accounts", [])
     }
-    if not (author or catalog) or not case.models_used or not case.evidence_quotes or case.possible_duplicate_urls:
+    if case.review_status == ReviewStatus.REJECTED or not case.models_used or not case.evidence_quotes or case.possible_duplicate_urls:
         return False
     if case.demo_health_status == DemoHealth.VERIFIED:
         return True
     repo = repo_root(case.repo_url) if case.repo_url else None
     path = cache.catalog_path(repo) if repo else None
-    return bool(path and path.exists() and read_json(path).get("exists") is True)
+    if path and path.exists() and read_json(path).get("exists") is True:
+        return True
+    demo_host = urlsplit(case.live_demo_url or "").hostname or ""
+    hosted = any(demo_host == h or demo_host.endswith("." + h) for h in config.get("trusted_demo_hosts", []))
+    return (author or catalog or hosted) and likes >= 40
 
 
 def family(model):
@@ -42,7 +46,33 @@ def family(model):
     return "GPT" if model.lower().startswith("codex") else model
 
 
-def publish(root, platform, *, curate=False, auto=False, timestamp=None):
+def import_catalog_batch(cases, path):
+    """Import a reviewed source batch without changing existing moderation decisions."""
+    known_posts, known_works = set(), set()
+
+    def remember(case):
+        if case.source_kind == "x_post":
+            known_posts.add(post_id(case.original_post_url))
+        known_works.update(identity_url(u) for u in (case.live_demo_url, case.repo_url) if u)
+
+    for case in cases.values():
+        remember(case)
+    for item in read_json(path):
+        case = AIWorldCase.model_validate(item)
+        if case.world_id in cases or post_id(case.original_post_url) in known_posts:
+            continue
+        if any(identity_url(u) in known_works for u in (case.live_demo_url, case.repo_url) if u):
+            continue
+        if (not case.summary_en or not case.evidence_quotes or not case.models_used
+                or case.original_post_url not in case.evidence_source_urls
+                or case.possible_duplicate_urls or case.review_status == ReviewStatus.REJECTED):
+            raise ValueError(f"Incomplete editorial evidence for {case.world_id}")
+        case.review_status = ReviewStatus.APPROVED
+        cases[case.world_id] = case
+        remember(case)
+
+
+def publish(root, platform, *, curate=False, auto=False, timestamp=None, editorial=None):
     processed = root / "processed" / "cases.jsonl"
     base = read_json(PROJECT / "research/seed_snapshot/worlds.json")
     legacy = {row["world_id"] for row in base}
@@ -66,8 +96,12 @@ def publish(root, platform, *, curate=False, auto=False, timestamp=None):
         evidence = read_json(PROJECT / "research/expansion/repo_evidence.json")
         for world_id, item in evidence["cases"].items():
             cases[world_id] = apply_verified_research(cases[world_id], item)
+    if editorial:
+        import_catalog_batch(cases, editorial)
     health_file = root / "state/demo_health.json"
     health = read_json(health_file) if health_file.exists() else {}
+    cover_path = root / "state/x_covers.json"
+    covers = read_json(cover_path) if cover_path.exists() else {}
     cache = EnrichmentCache(root)
     config = yaml.safe_load((PROJECT / "config/seeds.yaml").read_text())
     for case in cases.values():
@@ -76,8 +110,20 @@ def publish(root, platform, *, curate=False, auto=False, timestamp=None):
         if check and check.get("live_demo_url") == case.live_demo_url:
             case.demo_health_status = DemoHealth(check["demo_health_status"])
             case.thumbnail_url = check.get("thumbnail_url")
+        if case.thumbnail_url and not case.thumbnail_url.endswith("-x.webp"):
+            case.cover_source = "demo"
+            case.cover_source_url = case.live_demo_url
+        else:
+            cover = covers.get(case.world_id, {})
+            media = cover.get("thumbnail_url")
+            if media and (platform / "public" / media.lstrip("/")).is_file():
+                case.thumbnail_url = media
+                case.cover_source = "x_media"
+                case.cover_source_url = cover["source_url"]
+        info = root / "raw/x/signals" / (case.original_post_url.rsplit("/", 1)[-1] + ".json")
+        likes = read_json(info).get("likes", 0) if info.exists() else 0
         case = AIWorldCase.model_validate(case.model_dump())
-        if auto and case.review_status == ReviewStatus.PENDING and trusted(case, config, cache):
+        if auto and case.review_status == ReviewStatus.PENDING and trusted(case, config, cache, likes):
             case.review_status = ReviewStatus.APPROVED
         cases[case.world_id] = case
     ordered = sorted(cases.values(), key=lambda c: c.world_id)
@@ -109,6 +155,7 @@ if __name__ == "__main__":
     parser.add_argument("--curate", action="store_true", help="Import source-reviewed expansion files")
     parser.add_argument("--data-dir", type=Path, default=PROJECT / "data")
     parser.add_argument("--platform", type=Path, default=PROJECT / "platform")
+    parser.add_argument("--editorial", type=Path, help="Import a checked, bilingual X-source batch")
     parser.add_argument("--review", metavar="WORLD_ID")
     parser.add_argument("--status", choices=["approved", "rejected", "pending"])
     args = parser.parse_args()
@@ -123,5 +170,5 @@ if __name__ == "__main__":
                 parser.error("unknown world ID")
             match.review_status = ReviewStatus(args.status)
             write_rows(path, rows)
-        publish(args.data_dir, args.platform, curate=args.curate,
+        publish(args.data_dir, args.platform, curate=args.curate, editorial=args.editorial,
                 auto=os.getenv("AUTO_APPROVE_TRUSTED", "").lower() == "true")

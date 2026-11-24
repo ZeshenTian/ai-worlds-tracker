@@ -76,7 +76,7 @@ export const copy = {
     playable: "可试玩",
     openSource: "开源",
     hasWorkflow: "含工作流",
-    withPreview: "有实景图",
+    withPreview: "有封面图",
     facetThemes: "主题",
     facetModes: "方式",
     facetMore: "技术栈与月份",

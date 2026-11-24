@@ -18,3 +18,8 @@ data/state/*
 data/processed/*
 !data/processed/cases.jsonl
 .DS_Store
+!data/state/catalog_seeds.json
+!data/state/catalog_attempts.json
+!data/state/extraction_attempts.json
+!data/state/watch_suggestions.json
+!data/state/x_covers.json

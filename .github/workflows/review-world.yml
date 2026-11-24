@@ -39,3 +39,4 @@ jobs:
             git commit -m 'Apply catalog review'
             git push origin HEAD:main
           fi
+      - uses: ./.github/actions/publish-static

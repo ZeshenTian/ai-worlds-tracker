@@ -2,7 +2,7 @@ name: Sync worlds
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 1 * * *"
 permissions:
   contents: write
 concurrency:
@@ -24,14 +24,27 @@ jobs:
           path: |
             data/raw
             data/processed/extraction
-            data/state/sync_state.json
+            data/state/apify_x
           key: worlds-sources-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: worlds-sources-
       - run: uv run playwright install --with-deps chromium
+      - name: Refresh public directory seeds
+        id: catalogs
+        continue-on-error: true
+        run: uv run python -m src.catalog_discovery
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+      - name: Collect X posts and thread evidence
+        id: apify
+        continue-on-error: true
+        timeout-minutes: 8
+        run: uv run python -m src.apify_x --mode incremental --page-size 20 --budget-usd 0.30
+        env:
+          APIFY_API_KEY: ${{ secrets.APIFY_API_KEY }}
       - run: uv run python -m src.sync_catalog
         env:
-          X_ADAPTER: x_api_v2
-          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          X_ADAPTER: apify
+          EXTRACTION_MODEL: gpt-4.1-mini
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY || secrets.FIRECRAWL_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -42,7 +55,7 @@ jobs:
           path: |
             data/raw
             data/processed/extraction
-            data/state/sync_state.json
+            data/state/apify_x
           key: worlds-sources-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Commit snapshot and review queue
         run: |
@@ -52,4 +65,15 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m 'Sync catalog and review queue'
             git push origin HEAD:main
+          fi
+      - uses: ./.github/actions/publish-static
+      - name: Record provider outcomes
+        if: always()
+        env:
+          DIRECTORY_STATUS: ${{ steps.catalogs.outcome }}
+          X_STATUS: ${{ steps.apify.outcome }}
+        run: |
+          echo "Directory discovery $DIRECTORY_STATUS. Apify collection $X_STATUS." >> "$GITHUB_STEP_SUMMARY"
+          if [[ "$DIRECTORY_STATUS" != success || "$X_STATUS" != success ]]; then
+            echo "::warning::Partial discovery; inspect provider steps for details."
           fi

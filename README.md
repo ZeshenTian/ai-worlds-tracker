@@ -19,14 +19,17 @@
 
 **Cloudflare Pages** 在 Workers & Pages 新建 Pages 项目并连接本仓库。生产分支 main，根目录 platform，构建命令 npm run build:static，输出 out，Node 版本 22。后续对 main 的更新会触发重新部署。使用 Direct Upload 项目时，也可以在 GitHub Secrets 配置 CLOUDFLARE_API_TOKEN（Pages Edit）、CLOUDFLARE_ACCOUNT_ID，并在 Variables 设置 CLOUDFLARE_PAGES_PROJECT，然后点 Run workflow 一键发布。[Pages 部署工作流](https://github.com/ZeshenTian/ai-worlds-tracker/actions/workflows/deploy-pages.yml) · [Pages Git 集成说明](https://developers.cloudflare.com/pages/get-started/git-integration/)
 
-## 手动同步和每 6 小时更新
+## 每日采集、审核与发布
 
-1. 在 GitHub → Settings → Secrets and variables → Actions 添加 X_BEARER_TOKEN、OPENAI_API_KEY 和 FIRECRAWL_API_KEY（也支持 FIRECRAWL_TOKEN）。X 应用需要近期检索及主帖读取权限，模型账号需要支持 Structured Outputs。GitHub 提供同名内置 GITHUB_TOKEN。
-2. 在仓库工作流权限中允许写入内容。进入 Actions → Sync worlds → Run workflow 可手动同步。每 6 小时的定时采集目前关闭。如需启用，添加仓库变量 ENABLE_SCHEDULED_SYNC=true；计划运行在 UTC 00、06、12、18 时的第 17 分钟。
-3. 默认严格审核。新候选进入 review_queue.csv。运行 Review a world，输入 world_id 并选择 approved 或 rejected，工作流将决定和新快照一起提交。可设置 AUTO_APPROVE_TRUSTED=true 启用信任策略。仅对白名单监控作者或登记的第一方目录生效，同时要求有原文证据、模型、可验证试玩或经 GitHub 确认存在的仓库，并通过数据校验；拒绝记录保留。
-4. 自动同步依次处理新增种子、各检索式和账号的增量结果、作者自回复、外链富化、结构化抽取、浏览器验活与导出。每路首次最多取最新 30 条，此后传 since_id 并读完所有新结果页。首次未命中的旧帖可加入 seed_urls 回补；近期检索受 X 的回溯窗口约束。状态含 last_tweet_id 和 last_synced_at，缓存含已读主帖、回复、网页及抽取结果。正常重试复用已落盘结果，GitHub 清退缓存后部分请求可能重新发生。
+GitHub Actions 的 Sync worlds 每日北京时间 09:17（UTC 01:17）运行，也可以手动触发。仓库变量 ENABLE_SCHEDULED_SYNC 控制定时执行。工作流读取 APIFY_API_KEY、FIRECRAWL_API_KEY、OPENAI_API_KEY 三个 Secrets。采集、审核和静态发布共用写入锁，原始帖子、互动指标、模型结果和 Apify 游标存入 Actions 缓存。
 
-本地实跑使用 x_api_v2 或 third_party 配置，先执行 uv sync --frozen 和 uv run playwright install chromium，再运行 uv run python -m src.sync_catalog。仅复现二期取证与快照可用以下命令。首次收录时间按本库的登记时间排序，种子使用首次站点建档时间。
+Apify 回溯和增量支持按作者、域名、中英日关键词、模型发布帖回复及引用检索。目录发现使用 Firecrawl，按 X 帖子 ID 去重，定时任务也会通过 X oEmbed 独立回查目录里的原帖。可用数据进入互动阈值筛选、相关性判断、双语抽取、浏览器验活和封面补全。Apify 的日常预算上限为每天 0.30 美元，模型调用和 Firecrawl 另计；默认每轮最多新判 80 组、抽取 12 组、检查 12 个试玩入口。
+
+AUTO_APPROVE_TRUSTED=true 时，有原文证据、明确模型、未标记重复的候选满足以下任一条件即可自动通过：浏览器确认可玩、GitHub API 确认作品仓库存在，或来自监控作者/可信试玩域且获得至少 40 个赞。其余进入 data/exports/review_queue.csv。将选中的 world_id 每行一个放入文本文件，运行 `uv run python -m src.batch_review approved ids.txt` 或将 approved 改为 rejected。每次同步在 data/state/watch_suggestions.json 列出已公开至少两件作品、尚未监控的作者。
+
+完整流程从 Sync worlds 启动。单步重放可依次运行 `python -m src.catalog_discovery`、`python -m src.apify_x --mode incremental --page-size 20 --budget-usd 0.30` 和 `X_ADAPTER=apify python -m src.sync_catalog`。本机可通过 ~/.local/bin/with-ai-keys 加载凭据。静态构建成功后将快照推送至 static-site 分支，生产站点从该分支读取图鉴。仓库审核决定与首次收录时间单独保存在 data/processed/cases.jsonl。
+
+仅复现二期取证与快照可用以下命令。首次收录时间按本库的登记时间排序，种子使用首次站点建档时间。
 
 ```sh
 uv run python -m src.research_evidence

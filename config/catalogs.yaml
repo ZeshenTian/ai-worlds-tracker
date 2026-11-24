@@ -1,0 +1,39 @@
+# Catalog URLs are discovery sources. A creator's original post is checked separately.
+catalogs:
+  - name: Awesome Fable 5.2
+    url: https://raw.githubusercontent.com/fengyiqicoder/awesome-fable-5.2/main/README.md
+  - name: Awesome Fable 5.2 – all games
+    url: https://raw.githubusercontent.com/fengyiqicoder/awesome-fable-5.2/main/all/games.md
+  - name: Awesome Fable 5.2 – all interactive worlds
+    url: https://raw.githubusercontent.com/fengyiqicoder/awesome-fable-5.2/main/all/3d-worlds.md
+  - name: Awesome Claude 3D Videos
+    url: https://raw.githubusercontent.com/sunsiyuan/awesome-claude-3d-videos/main/data/videos.json
+  - name: Awesome Claude Fable 5.2 Videos
+    url: https://raw.githubusercontent.com/mofa-si/awesome-fable-5-2-videos/main/README.md
+  - name: Awesome Kimi K3.1 Videos
+    url: https://raw.githubusercontent.com/yihui-dev/awesome-kimi-k3-1-videos/main/data/videos.json
+  - name: Frontier Games
+    url: https://raw.githubusercontent.com/theolundqvist/frontier-games/main/data/games.yaml
+verified_candidates: research/expansion/catalog_worlds.json
+# X API v2 search operator reference: https://docs.x.com/x-api/posts/search/integrate/operators
+official_threads:
+  - model: Claude Fable 5.2
+    url: https://x.com/claudeai/status/2119867114450268322
+    post_id: "2119867114450268322"
+    evidence_quote: "Introducing Claude Fable 5.2 and Claude Mythos 5.2"
+  - model: GPT-6.2 Astra and Sol
+    url: https://x.com/OpenAI/status/2122750124543926515
+    post_id: "2122750124543926515"
+    evidence_quote: "GPT-6.2 Astra and Sol are now available."
+  - model: Gemini 4 Hydrogen
+    url: https://x.com/GoogleAI/status/2120940683233984862
+    post_id: "2120940683233984862"
+    evidence_quote: "introducing Gemini 4 Hydrogen."
+  - model: Gemini 4 Neon
+    url: https://x.com/GoogleAI/status/2123168242797809944
+    post_id: "2123168242797809944"
+    evidence_quote: "Meet Gemini 4 Neon"
+  - model: Kimi K3.1 Pro
+    url: https://x.com/Kimi_Moonshot/status/2113680701770068067
+    post_id: "2113680701770068067"
+    evidence_quote: "Introducing Kimi K3.1 Pro"

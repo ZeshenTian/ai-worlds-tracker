@@ -444,7 +444,7 @@ async def inspect_page(browser, url: str, output: Path) -> tuple[str, str, str |
         frame = await capture(session)
         for child in page.frames[1:]:
             element = await child.frame_element()
-            box = await element.bounding_box(timeout=600)
+            box = await element.bounding_box()
             if not box or box["width"] * box["height"] < 160000 or not await element.is_visible():
                 continue
             text = await child.evaluate("document.body?.innerText?.trim().slice(0, 180) || ''")
