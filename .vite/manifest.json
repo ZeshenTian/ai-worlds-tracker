@@ -1,0 +1,192 @@
+{
+  "_Icon-D0zGVybZ.js": {
+    "file": "_next/static/chunks/Icon-D0zGVybZ.js",
+    "name": "Icon",
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "_circle-play-DFGklPO1.js": {
+    "file": "_next/static/chunks/circle-play-DFGklPO1.js",
+    "name": "circle-play",
+    "imports": [
+      "_worlds-DyTZQW2g.js"
+    ]
+  },
+  "_framework-D_rUT4EX.js": {
+    "file": "_next/static/chunks/framework-D_rUT4EX.js",
+    "name": "framework",
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js"
+    ]
+  },
+  "_i18n-Cs6TR7St.js": {
+    "file": "_next/static/chunks/i18n-Cs6TR7St.js",
+    "name": "i18n",
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_worlds-DyTZQW2g.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "_rolldown-runtime-C60lm6uB.js": {
+    "file": "_next/static/chunks/rolldown-runtime-C60lm6uB.js",
+    "name": "rolldown-runtime"
+  },
+  "_world-preview-9sGq4tBZ.js": {
+    "file": "_next/static/chunks/world-preview-9sGq4tBZ.js",
+    "name": "world-preview",
+    "imports": [
+      "_worlds-DyTZQW2g.js",
+      "_i18n-Cs6TR7St.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "_worlds-DyTZQW2g.js": {
+    "file": "_next/static/chunks/worlds-DyTZQW2g.js",
+    "name": "worlds",
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_Icon-D0zGVybZ.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "_x-DKynxSqV.js": {
+    "file": "_next/static/chunks/x-DKynxSqV.js",
+    "name": "x",
+    "imports": [
+      "_worlds-DyTZQW2g.js"
+    ]
+  },
+  "app/not-found.tsx": {
+    "file": "_next/static/chunks/not-found-rDwrQ1WC.js",
+    "name": "not-found",
+    "src": "app/not-found.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "components/atlas-shell.tsx",
+      "_i18n-Cs6TR7St.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "components/atlas-shell.tsx": {
+    "file": "_next/static/chunks/atlas-shell-ou1mCuuY.js",
+    "name": "atlas-shell",
+    "src": "components/atlas-shell.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_worlds-DyTZQW2g.js",
+      "_i18n-Cs6TR7St.js",
+      "_circle-play-DFGklPO1.js",
+      "_x-DKynxSqV.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "components/submission-form.tsx": {
+    "file": "_next/static/chunks/submission-form-_kmuhikO.js",
+    "name": "submission-form",
+    "src": "components/submission-form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_worlds-DyTZQW2g.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "components/trends-view.tsx": {
+    "file": "_next/static/chunks/trends-view-CMeRnWSU.js",
+    "name": "trends-view",
+    "src": "components/trends-view.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_worlds-DyTZQW2g.js",
+      "_i18n-Cs6TR7St.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "components/world-catalog.tsx": {
+    "file": "_next/static/chunks/world-catalog-UdGw0hab.js",
+    "name": "world-catalog",
+    "src": "components/world-catalog.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_world-preview-9sGq4tBZ.js",
+      "_worlds-DyTZQW2g.js",
+      "_i18n-Cs6TR7St.js",
+      "_circle-play-DFGklPO1.js",
+      "_x-DKynxSqV.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "components/world-detail-view.tsx": {
+    "file": "_next/static/chunks/world-detail-view-BoNJJyEG.js",
+    "name": "world-detail-view",
+    "src": "components/world-detail-view.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_world-preview-9sGq4tBZ.js",
+      "_worlds-DyTZQW2g.js",
+      "_i18n-Cs6TR7St.js",
+      "_circle-play-DFGklPO1.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js": {
+    "file": "_next/static/chunks/app-route-prefetch-policy-CmEEn2eu.js",
+    "name": "app-route-prefetch-policy",
+    "src": "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "virtual:vinext-app-browser-entry"
+    ]
+  },
+  "node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "_next/static/chunks/layout-segment-context-DKmqoQ71.js",
+    "name": "layout-segment-context",
+    "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "virtual:vinext-app-browser-entry",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "node_modules/vinext/dist/shims/streamed-icons.js": {
+    "file": "_next/static/chunks/streamed-icons-UVeKuoEd.js",
+    "name": "streamed-icons",
+    "src": "node_modules/vinext/dist/shims/streamed-icons.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-D_rUT4EX.js"
+    ]
+  },
+  "virtual:vinext-app-browser-entry": {
+    "file": "_next/static/chunks/index-Mp7ydYBH.js",
+    "name": "index",
+    "src": "virtual:vinext-app-browser-entry",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-C60lm6uB.js",
+      "_framework-D_rUT4EX.js"
+    ],
+    "dynamicImports": [
+      "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
+      "virtual:vinext-app-browser-entry",
+      "components/trends-view.tsx",
+      "node_modules/vinext/dist/shims/layout-segment-context.js",
+      "_Icon-D0zGVybZ.js",
+      "components/atlas-shell.tsx",
+      "components/world-catalog.tsx",
+      "node_modules/vinext/dist/shims/streamed-icons.js",
+      "components/submission-form.tsx",
+      "app/not-found.tsx",
+      "components/world-detail-view.tsx"
+    ]
+  }
+}
