@@ -19,7 +19,7 @@ npm start
 
 ## 更新案例
 
-第一阶段重新导出后，将 `../data/exports/ai_worlds.json` 复制为 `data/worlds.json` 并重新构建。目录、详情和趋势统计读取同一份快照。图鉴会排除标记为 `rejected` 的记录。主题插图由 ImageGen 生成，用于浏览目录。
+在仓库根目录运行 uv run python -m src.publish_catalog，生成审核后的案例与更新时间快照，再重新构建网站。目录、详情和趋势页共用这份数据。卡片封面来自试玩截图；未取得可用画面的案例显示占位。
 
 ## 投稿记录
 

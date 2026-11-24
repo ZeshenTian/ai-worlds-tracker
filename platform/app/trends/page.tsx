@@ -20,13 +20,13 @@ function chartLink(filter: string, key: string) {
 }
 
 function Bars({ title, note, rows, filter, percent = false, accent = "" }: { title: string; note: string; rows: Entry[]; filter?: string; percent?: boolean; accent?: string }) {
-  const largest = Math.max(1,...rows.map(row => row.count));
+  const scale = percent ? Math.max(1, worlds.length) : Math.max(1,...rows.map(row => row.count));
   return (
     <section className={`panel chart-panel ${accent}`}>
       <h2>{title}</h2><p className="muted">{note}</p>
       <ul className="chart-list">
         {rows.map(row => {
-          const inner = <><span className="bar-label">{row.label}</span><span className="bar-track"><span style={{ width: `${row.count / largest * 100}%` }} /></span><strong>{percent ? Math.round(100 * row.count / Math.max(1,worlds.length)) + "%" : row.count}</strong></>;
+          const inner = <><span className="bar-label">{row.label}</span><span className="bar-track"><span style={{ width: `${row.count / scale * 100}%` }} /></span><strong>{percent ? Math.round(100 * row.count / Math.max(1,worlds.length)) + "%" : row.count}</strong></>;
           return <li key={row.key}>{filter && row.count ? <a href={chartLink(filter,row.key)} className="bar-row" aria-label={`查看 ${row.label} 的 ${row.count} 个案例`}>{inner}</a> : <div className="bar-row">{inner}</div>}</li>;
         })}
       </ul>
