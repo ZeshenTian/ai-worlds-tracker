@@ -119,10 +119,13 @@ class OfficialXApiAdapter(BaseXAdapter):
                 raise ValueError("X API repeated a pagination token")
             seen_tokens.add(next_token)
 
-    def incremental_page(self, query, since_id, limit, token=None):
-        params = {"query": query, "max_results": 100 if since_id else min(100, max(10, limit))}
+    def incremental_page(self, query, since_id, limit, token=None, start_time=None):
+        bootstrap = not since_id and not start_time
+        params = {"query": query, "max_results": min(100, max(10, limit)) if bootstrap else 100}
         if since_id:
             params["since_id"] = since_id
+        elif start_time:
+            params["start_time"] = start_time
         if token:
             params["next_token"] = token
         result = self.get("tweets/search/recent", params)
@@ -130,7 +133,7 @@ class OfficialXApiAdapter(BaseXAdapter):
             raise ValueError("Incomplete X search response")
         ids = [item["id"] for item in result.get("data", [])]
         # The first run deliberately starts from the newest bounded window.
-        if not since_id:
+        if bootstrap:
             return ids[:limit], None
         return ids, result.get("meta", {}).get("next_token")
 
@@ -273,9 +276,14 @@ def ingest(adapter: BaseXAdapter, seeds: dict, root: Path, mode: str, limit: int
         for key, query in discovery_queries(seeds).items():
             entry = state.setdefault(key, {})
             if not entry.get("search_complete") and isinstance(adapter, OfficialXApiAdapter):
+                if entry.get("last_synced_at") and not entry.get("last_tweet_id") and not entry.get("start_time"):
+                    # Cover recent-search indexing latency after a previously empty result.
+                    start = max(datetime.fromisoformat(entry["last_synced_at"]) - timedelta(minutes=1),
+                                datetime.now(UTC) - timedelta(days=7) + timedelta(minutes=1))
+                    entry["start_time"] = start.isoformat(timespec="seconds").replace("+00:00", "Z")
                 while True:
                     ids, token = adapter.incremental_page(query, entry.get("last_tweet_id"), limit,
-                                                          entry.get("next_token"))
+                                                          entry.get("next_token"), entry.get("start_time"))
                     if any(not re.fullmatch(r"[0-9]+", i) for i in ids):
                         raise ValueError("Search returned invalid tweet ID")
                     if token and token in entry.get("page_tokens", []):
@@ -298,7 +306,7 @@ def ingest(adapter: BaseXAdapter, seeds: dict, root: Path, mode: str, limit: int
                 records[record.post.tweet_id] = record
             high = max([int(entry.get("last_tweet_id") or 0), *map(int, ids)])
             entry.update(last_tweet_id=str(high) if high else None, last_synced_at=datetime.now(UTC).isoformat())
-            for field in ("pending_ids", "page_tokens", "next_token", "search_complete"):
+            for field in ("pending_ids", "page_tokens", "next_token", "search_complete", "start_time"):
                 entry.pop(field, None)
             write_json(state_path, state)
         return list(records.values())

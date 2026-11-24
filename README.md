@@ -34,6 +34,8 @@ uv run python -m src.verify_demos --input data/exports/ai_worlds.json
 uv run python -m src.publish_catalog --curate
 ```
 
+研究取证默认复用同一认证模式的本地文档缓存；需要刷新来源时使用新的 --run-id。首次实测的批次名为 20261124-auth，保留了完整缓存的本机可以用 --run-id 20261124-auth 重放。
+
 下面保留第一阶段独立采集与离线研究的使用方法。
 
 ## 安装与离线验收

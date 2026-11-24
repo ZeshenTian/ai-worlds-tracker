@@ -11,8 +11,10 @@ from pathlib import Path
 from urllib.parse import quote, urlsplit
 
 import httpx
+from dotenv import load_dotenv
 
-from .enrich_firecrawl import Firecrawl
+from .enrich_firecrawl import EnrichmentCache, Firecrawl
+from .links import repo_root
 from .models import EnrichedLinkContent
 from .storage import digest, read_json, write_json, write_text
 
@@ -191,6 +193,26 @@ def accept(page, quotes):
             raise ValueError(f"Source changed; review excerpt {excerpt!r} at {page.url}")
 
 
+def share_evidence_cache(cases, run_cache, data_root):
+    """Make verified research documents available to normal pipeline runs."""
+    destination = EnrichmentCache(data_root)
+    for entry in cases.values():
+        catalog = entry["repository"]
+        for source in entry["sources"]:
+            url, kind = source["url"], source["kind"]
+            if source["method"] != "firecrawl":
+                continue
+            page = EnrichedLinkContent.model_validate(read_json(run_cache / "firecrawl" / (digest(url) + ".json")))
+            page.kind = kind if kind in {"repository", "readme", "workflow"} else "page"
+            if kind == "repository":
+                url = repo_root(url) or url
+                page.url = url
+                page.repository_owner = catalog.get("owner")
+                page.repository_license = catalog.get("license")
+                write_json(destination.catalog_path(url), catalog)
+            write_json(destination.page_path(url), page.model_dump(mode="json"))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path("."))
@@ -199,6 +221,7 @@ def main():
     parser.add_argument("--workers", type=int, choices=range(1, 5), default=2)
     args = parser.parse_args()
     root = args.root
+    load_dotenv(root / ".env", override=False)
     expansion = root / "research/expansion"
     ledger = root / "data/processed/cases.jsonl"
     if ledger.exists():
@@ -209,7 +232,8 @@ def main():
         rows += json.loads((expansion / name).read_text())
     relevant = {r["world_id"]: r for r in rows if r.get("repo_url") or r["world_id"] in AUTHOR_BUILD_NOTES or
                 r["original_post_url"].startswith("https://developers.openai.com/showcase/")}
-    run_id = args.run_id or datetime.now(UTC).strftime("%Y%m%dT%H%M%S.%fZ")
+    key = os.getenv("FIRECRAWL_API_KEY") or os.getenv("FIRECRAWL_TOKEN", "")
+    run_id = args.run_id or ("authenticated" if key else "keyless")
     if not re.fullmatch(r"[A-Za-z0-9_.-]+", run_id) or run_id in {".", ".."}:
         parser.error("Invalid run ID")
     cache = root / "data/state/research_evidence" / run_id
@@ -217,7 +241,7 @@ def main():
     prior = read_json(target) if target.exists() else {}
     cases, errors = {}, {}
     with httpx.Client(timeout=55, follow_redirects=True) as http:
-        api = Firecrawl(os.environ.get("FIRECRAWL_API_KEY", ""), http, os.environ.get("GITHUB_TOKEN"),
+        api = Firecrawl(key, http, os.environ.get("GITHUB_TOKEN"),
                         public_fallback=True)
         mode = "authenticated" if api.headers else "keyless"
         mode_file = cache / "mode.json"
@@ -242,6 +266,7 @@ def main():
     methods = Counter(s["method"] for case in cases.values() for s in case["sources"])
     output = {"checked_at": datetime.now(UTC).isoformat(), "firecrawl_authentication": mode,
               "source_counts": dict(methods), "cases": dict(sorted(cases.items()))}
+    share_evidence_cache(cases, cache, root / "data")
     write_text(target, json.dumps(output, indent=2, ensure_ascii=False) + "\n")
     print(f"Verified {len(cases)} cases. Source methods {dict(methods)}")
 
