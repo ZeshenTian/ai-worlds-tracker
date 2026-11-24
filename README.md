@@ -110,6 +110,8 @@ uv run python -m src.cli run-all --mode seed
 
 ## 输出与复核
 
+[三阶段验收报告](reports/phase3_acceptance.md)记录了公开案例、试玩验活、来源覆盖、费用和线上复验结果。
+
 - `raw/x/` 保存帖子和线程缓存，`raw/firecrawl/` 按 URL 保存正文与 GitHub 工作流文档。Firecrawl 请求只包含非 X 外链。
 - `processed/cases.jsonl` 按世界 ID 增量更新。证据未变时复用抽取缓存。多个帖子共享仓库或明确的试玩地址时归为一组，优先选仓库作者，再用时间与归属线索排序。仅有媒体或文本相似性的候选会留下待核标记。
 - `exports/ai_worlds.json` 含结构化案例，`ai_worlds.csv` 和 `review_queue.csv` 使用 UTF-8 BOM。审核队列包含待审核案例。执行 `review WORLD_ID approved` 或 `review WORLD_ID rejected` 会更新审核结果并重新导出。
