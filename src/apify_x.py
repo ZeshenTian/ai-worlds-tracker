@@ -77,14 +77,31 @@ class RunLedger:
             try:
                 return self._fetch_once(label, payload)
             except ValueError as exc:
-                # An account concurrency refusal creates no run and incurs no charge.
-                if "concurrent Actor runs" not in str(exc):
+                # A concurrent-run refusal creates no billable run. Wait for an
+                # available account slot before attempting another reservation.
+                match = re.search(r"limit of (\d+) concurrent Actor runs", str(exc))
+                if not match:
                     raise
-                if time.monotonic() + 20 > wait_until:
-                    raise TimeoutError(
-                        "Apify concurrency limit; the pending query will resume later"
-                    ) from exc
-                time.sleep(20)
+                capacity = int(match[1])
+                while True:
+                    if time.monotonic() + 20 > wait_until:
+                        raise TimeoutError(
+                            "Account at capacity; the pending query will resume later"
+                        ) from exc
+                    time.sleep(20)
+                    active = 0
+                    for status in ("RUNNING", "READY"):
+                        response = self.get(
+                            f"{BASE}/actor-runs",
+                            params={"status": status, "limit": capacity},
+                        )
+                        response.raise_for_status()
+                        active += sum(
+                            row["status"] == status
+                            for row in response.json()["data"]["items"]
+                        )
+                    if active < capacity:
+                        break
 
     def _fetch_once(self, label, payload):
         # Serialize admission, then persist the remote run ID before polling. An
@@ -345,6 +362,8 @@ def persist(items, root):
     replies = defaultdict(dict)
     pending = list(items)
     with run_lock(root / "state/apify_x/writes"):
+        orphan_path = root / "state/apify_x/thread_orphans.json"
+        orphans = read_json(orphan_path) if orphan_path.exists() else {}
         for item in pending:
             if (
                 item.get("status") == "empty"
@@ -367,6 +386,22 @@ def persist(items, root):
             if path.exists():
                 previous = RawTweetRecord.model_validate(read_json(path))
                 row.thread = previous.thread
+                row.post.published_at = (
+                    row.post.published_at or previous.post.published_at
+                )
+                if (
+                    row.post.conversation_id == row.post.tweet_id
+                    and previous.post.conversation_id
+                ):
+                    row.post.conversation_id = previous.post.conversation_id
+                row.post.media_keys = list(
+                    dict.fromkeys(previous.post.media_keys + row.post.media_keys)
+                )
+                row.post.referenced_post_ids = list(
+                    dict.fromkeys(
+                        previous.post.referenced_post_ids + row.post.referenced_post_ids
+                    )
+                )
                 row.thread_status = previous.thread_status
                 row.external_urls = list(
                     dict.fromkeys(previous.external_urls + row.external_urls)
@@ -387,9 +422,19 @@ def persist(items, root):
             )
             if row.post.conversation_id != row.post.tweet_id:
                 replies[row.post.conversation_id][row.post.tweet_id] = row.post
+        for tid in seen & orphans.keys():
+            for reply_id in orphans.pop(tid):
+                cached = raw / f"{reply_id}.json"
+                if cached.exists():
+                    reply = RawTweetRecord.model_validate(read_json(cached)).post
+                    if reply.conversation_id == tid:
+                        replies[tid][reply_id] = reply
         for conversation, group in replies.items():
             path = raw / f"{conversation}.json"
             if not path.exists():
+                orphans[conversation] = sorted(
+                    set(orphans.get(conversation, [])) | set(group)
+                )
                 continue
             row = RawTweetRecord.model_validate(read_json(path))
             thread = {p.tweet_id: p for p in row.thread}
@@ -402,6 +447,7 @@ def persist(items, root):
                     row.thread_status = "partial"
                 row = collect_links(row, None, raw / "redirects")
                 write_json(path, row.model_dump(mode="json"))
+        write_json(orphan_path, orphans)
     return seen
 
 
@@ -505,6 +551,59 @@ def thread_queries(ledger, maximum):
     ]
 
 
+def hydrate_thread_roots(ledger):
+    """Recover originals explicitly linked by a creator's own reply with a demo."""
+    root = ledger.root
+    catalog = root / "state/catalog_seeds.json"
+    known = {
+        urlsplit(u).path.strip("/").split("/")[-1]
+        for u in (read_json(catalog).get("seed_urls", []) if catalog.exists() else [])
+    }
+    candidates = {}
+    for path in (root / "raw/apify").glob("*.json"):
+        for post in read_json(path):
+            author = post.get("username") or ""
+            parent = str(post.get("conversation_id") or "")
+            if (
+                not author
+                or not parent.isdigit()
+                or parent in known
+                or (root / "raw/x" / f"{parent}.json").exists()
+                or author.casefold()
+                != (post.get("in_reply_to_screen_name") or "").casefold()
+            ):
+                continue
+            urls = [
+                link.get("expanded_url") or ""
+                for link in post.get("urls", [])
+                if isinstance(link, dict)
+            ]
+            if not any(
+                re.search(
+                    r"(?i)https?://[^/]*(?:chatgpt\.site|patch\.gg|github\.io|itch\.io|vercel\.app)(?:/|$)|"
+                    r"https?://(?:claude\.ai/artifact/|ai\.studio/|github\.com/)",
+                    u,
+                )
+                for u in urls
+            ):
+                continue
+            candidates[parent] = max(
+                candidates.get(parent, 0), post.get("favorite_count") or 0
+            )
+    ids = sorted(candidates, key=lambda tid: (-candidates[tid], tid))[:100]
+    if ids:
+        group = ",".join(sorted(ids))
+        rows = ledger.fetch(
+            f"self-roots-{digest(group)[:16]}",
+            {"mode": "Get a Few Tweets", "tweets": group, "max_results": len(ids)},
+        )
+        found = persist(rows, root)
+        print(
+            f"Recovered {len(found.intersection(ids))} of {len(ids)} linked original posts",
+            flush=True,
+        )
+
+
 def daily_threads(ledger, since, until, maximum=8):
     return [
         (f"{q} since:{since} until:{until}", f"self-replies-{tid}-{until}", 18)
@@ -563,6 +662,76 @@ def history(ledger, config, anchor):
         )
 
 
+def targeted(ledger, anchor):
+    """Look for public play links and gaps in the broad six-month sample."""
+    prior_month = (anchor.month - 7) % 12 + 1
+    prior_year = anchor.year if anchor.month > 6 else anchor.year - 1
+    start = date(
+        prior_year,
+        prior_month,
+        min(anchor.day, calendar.monthrange(prior_year, prior_month)[1]),
+    )
+    end = anchor + timedelta(days=1)
+    domain = (
+        "(url:patch.gg OR url:chatgpt.site OR url:claude.ai/artifact OR url:ai.studio)"
+    )
+    demo = "(game OR world OR walking OR explore OR diorama OR village OR 试玩)"
+    creators = "(from:BlendiByl OR from:prasenx OR from:Dimillian OR from:CapyCola OR from:ai_for_success OR from:jacalulu)"
+    terms = [
+        ("domain-high-likes", f"{domain} {demo} min_faves:20", start, end, 180),
+        (
+            "authors-high-likes",
+            f"{creators} {demo} filter:links min_faves:10",
+            start,
+            end,
+            140,
+        ),
+        (
+            "domain-project-hosts",
+            "(url:github.io OR url:vercel.app OR url:itch.io) (threejs OR diorama OR WebGPU) (Gemini OR Claude OR Codex) min_faves:15",
+            start,
+            end,
+            100,
+        ),
+    ]
+    for host, models in [
+        ("claude.ai/artifact", "(Claude OR Fable OR Opus)"),
+        ("chatgpt.site", "(GPT OR Astra OR Codex)"),
+        ("patch.gg", "(Fable OR Gemini OR Claude OR Codex)"),
+        ("ai.studio", "Gemini"),
+    ]:
+        query = f"url:{host} {models} (3D OR game OR world OR playable) min_faves:5"
+        terms.append(("domain-" + host.split("/")[0], query, start, end, 150))
+    # Sample the initial partial month and the mid-period independently.
+    midpoint = start + timedelta(days=75)
+    for month in [start, midpoint.replace(day=1)]:
+        edge = (month.replace(day=28) + timedelta(days=4)).replace(day=1)
+        terms.append(
+            (
+                "broad-gap",
+                '"three.js" (Gemini OR Claude OR Codex OR GPT)',
+                month,
+                edge,
+                65,
+            )
+        )
+    errors = {}
+    for channel, query, lower, upper, size in terms:
+        label = f"{channel}-{lower}-{upper}"
+        try:
+            search(
+                ledger,
+                query + f" since:{lower} until:{upper} -filter:retweets",
+                label,
+                size,
+            )
+        except (ValueError, httpx.HTTPError, TimeoutError) as exc:
+            errors[label] = str(exc)
+            if "hard budget reached" in str(exc):
+                break
+    write_json(ledger.root / "state/apify_x/targeted_errors.json", errors)
+
+
 def incremental(ledger, config, anchor, page_size):
     """Advance one page per query, rotating fairly even across interrupted CI jobs."""
     path = ledger.root / "state/apify_x/cursors.json"
@@ -618,12 +787,19 @@ def incremental(ledger, config, anchor, page_size):
             term = f"{query} {lower} max_id:{upper} -filter:retweets"
             try:
                 items = search(
-                    ledger, term, f"sync-{source}-{key[:12]}-{upper}", page_size
+                    ledger,
+                    term,
+                    f"sync-{source}-{key[:12]}-{upper}-{cursor.get('retry', 0)}",
+                    page_size,
                 )
             except TimeoutError:
                 return
             except (httpx.HTTPError, ValueError) as exc:
                 cursor["error"] = str(exc)
+                if str(exc).startswith("Partial Apify run"):
+                    # Only retry a known terminal/partial run; ambiguous starts are never
+                    # reissued. Keep both ID bounds until a complete page is durable.
+                    cursor["retry"] = cursor.get("retry", 0) + 1
                 write_json(path, state)
                 if "hard budget reached" in str(exc):
                     break
@@ -652,7 +828,14 @@ def coverage_report(ledger):
     book = read_json(ledger.path) if ledger.path.exists() else {}
     directory = ledger.root / "raw/apify"
     channels = defaultdict(
-        lambda: {"runs": 0, "statuses": Counter(), "post_ids": set(), "dates": []}
+        lambda: {
+            "runs": 0,
+            "statuses": Counter(),
+            "returned_rows": 0,
+            "returned_ids": set(),
+            "post_ids": set(),
+            "dates": [],
+        }
     )
     dates_by_id, all_ids = {}, set()
     total = Decimal(0)
@@ -707,10 +890,25 @@ def coverage_report(ledger):
                 channel = "pilot"
             if channel == "targeted":
                 channel = "authors"
+            if channel == "authoring":
+                channel = "topical"
+            query = entry.get("input", {}).get("query", "")
+            mode = entry.get("input", {}).get("mode")
+            if channel == "topical" and "url:" in query:
+                channel = "domain"
+            if channel in {"official", "claude"}:
+                if mode == "Get Quotes" or "quoted_tweet_id:" in query:
+                    channel = "official_quotes"
+                elif mode == "Get Replies" or "conversation_id:" in query:
+                    channel = "official_replies"
+                else:
+                    channel = "official_mentions"
             if channel == "self":
                 channel = "self_replies"
             bucket = channels[channel]
             bucket["runs"] += 1
+            bucket["returned_rows"] += len(actual)
+            bucket["returned_ids"].update(str(row["id"]) for row in actual)
             bucket["statuses"][entry["status"]] += 1
             if entry["status"] != "SUCCEEDED" or not actual:
                 notes[label] = {
@@ -750,6 +948,7 @@ def coverage_report(ledger):
         "gaps": notes,
     }
     for name, bucket in channels.items():
+        bucket["distinct_returned"] = len(bucket.pop("returned_ids"))
         bucket["unique_ids"] = len(bucket.pop("post_ids"))
         timestamps = bucket.pop("dates")
         bucket["date_range"] = [
@@ -850,7 +1049,15 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--mode",
-        choices=["pilot", "history", "incremental", "threads", "report"],
+        choices=[
+            "pilot",
+            "history",
+            "targeted",
+            "incremental",
+            "threads",
+            "thread-roots",
+            "report",
+        ],
         required=True,
     )
     parser.add_argument("--data-dir", type=Path, default=Path("data"))
@@ -879,11 +1086,15 @@ def main():
         )
         if args.mode == "report":
             coverage_report(ledger)
+        elif args.mode == "targeted":
+            targeted(ledger, args.date)
         elif args.mode == "history":
             history(ledger, config, args.date)
         elif args.mode == "incremental":
             ledger.deadline = time.monotonic() + 360
             incremental(ledger, config, args.date, args.page_size)
+        elif args.mode == "thread-roots":
+            hydrate_thread_roots(ledger)
         elif args.mode == "threads":
             for q, label, limit in daily_threads(
                 ledger, args.date - timedelta(days=183), args.date + timedelta(days=1)

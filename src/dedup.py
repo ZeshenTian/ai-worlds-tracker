@@ -1,4 +1,4 @@
-from collections import defaultdict
+from collections import Counter, defaultdict
 from datetime import UTC, datetime
 from difflib import SequenceMatcher
 import re
@@ -70,6 +70,7 @@ def deduplicate(records: list[RawTweetRecord]) -> list[CaseGroup]:
         ))
 
     texts = [post_text(group.original) for group in cases]
+    counts = [Counter(text) for text in texts]
     for index, current in enumerate(cases):
         current_media = set(current.original.post.media_keys)
         for second in range(index + 1, len(cases)):
@@ -77,10 +78,15 @@ def deduplicate(records: list[RawTweetRecord]) -> list[CaseGroup]:
             if (current.repo_urls or current.demo_urls) and (other.repo_urls or other.demo_urls):
                 continue
             same_media = current_media.intersection(other.original.post.media_keys)
-            similar_text = min(len(texts[index]), len(texts[second])) >= 32 and (
-                SequenceMatcher(None, texts[index], texts[second]).ratio() >= 0.9
-            )
-            if same_media or similar_text:
+            a, b = texts[index], texts[second]
+            combined = len(a) + len(b)
+            # Both tests are upper bounds on the number of characters a matcher can align.
+            if not same_media:
+                if min(len(a), len(b)) < 32 or 20 * min(len(a), len(b)) < 9 * combined:
+                    continue
+                if 20 * sum((counts[index] & counts[second]).values()) < 9 * combined:
+                    continue
+            if same_media or SequenceMatcher(None, a, b).ratio() >= 0.9:
                 current.possible_duplicate_urls.append(other.original.original_url)
                 other.possible_duplicate_urls.append(current.original.original_url)
     return sorted(cases, key=lambda group: int(group.original.post.tweet_id))

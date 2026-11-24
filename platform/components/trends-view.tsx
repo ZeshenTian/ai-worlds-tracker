@@ -160,7 +160,7 @@ export function TrendsView() {
           [
             [Boxes, count.all, t.statTotal, "neutral"],
             [Play, count.playable, t.statPlayable, "ok"],
-            [CodeXml, count.open, t.statRepos, "blue"],
+            [CodeXml, count.repos, t.statRepos, "blue"],
             [Layers3, models.length, t.statModels, "neutral"],
           ] as const
         ).map(([Icon, value, label, tone]) => (

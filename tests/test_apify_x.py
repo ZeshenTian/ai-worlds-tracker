@@ -288,3 +288,11 @@ def test_daily_reservations_ignore_prior_utc_date(tmp_path):
                 {"max_results": 1, "query": "test", "mode": "Advanced Search"},
             )
     assert len(read_json(ledger_path)) == 1
+
+
+def test_self_reply_can_arrive_before_original(tmp_path):
+    x.persist([tweet(11, root=10), tweet(12, root=10, author="visitor")], tmp_path)
+    x.persist([tweet(10)], tmp_path)
+    record = RawTweetRecord.model_validate(read_json(tmp_path / "raw/x/10.json"))
+    assert [r.tweet_id for r in record.thread] == ["11"]
+    assert read_json(tmp_path / "state/apify_x/thread_orphans.json") == {}

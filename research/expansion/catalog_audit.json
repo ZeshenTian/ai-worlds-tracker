@@ -1,0 +1,297 @@
+{
+  "checked_at": "2026-11-24T13:52:31.881979+00:00",
+  "catalog_sha256": "e03f36aab73f1b12e3d9b8de89ed98212ed6fcfd6c1f516863dd5d225d8ceac8",
+  "directory_requests": [
+    {
+      "checked_at": "2026-11-24T13:18:22.105064+00:00",
+      "method": "firecrawl",
+      "name": "Awesome Fable 5.2",
+      "post_count": 112,
+      "primary_candidate_count": 0,
+      "url": "https://raw.githubusercontent.com/fengyiqicoder/awesome-fable-5.2/main/README.md",
+      "status_code": 200
+    },
+    {
+      "checked_at": "2026-11-24T13:18:24.979193+00:00",
+      "method": "firecrawl",
+      "name": "Awesome Fable 5.2 – all games",
+      "post_count": 113,
+      "primary_candidate_count": 0,
+      "url": "https://raw.githubusercontent.com/fengyiqicoder/awesome-fable-5.2/main/all/games.md",
+      "status_code": 200
+    },
+    {
+      "checked_at": "2026-11-24T13:18:26.520699+00:00",
+      "method": "firecrawl",
+      "name": "Awesome Fable 5.2 – all interactive worlds",
+      "post_count": 51,
+      "primary_candidate_count": 0,
+      "url": "https://raw.githubusercontent.com/fengyiqicoder/awesome-fable-5.2/main/all/3d-worlds.md",
+      "status_code": 200
+    },
+    {
+      "checked_at": "2026-11-24T13:18:33.269507+00:00",
+      "method": "firecrawl",
+      "name": "Awesome Claude 3D Videos",
+      "post_count": 706,
+      "primary_candidate_count": 0,
+      "url": "https://raw.githubusercontent.com/sunsiyuan/awesome-claude-3d-videos/main/data/videos.json",
+      "status_code": 200
+    },
+    {
+      "checked_at": "2026-11-24T13:18:35.940963+00:00",
+      "method": "firecrawl",
+      "name": "Awesome Claude Fable 5.2 Videos",
+      "post_count": 368,
+      "primary_candidate_count": 0,
+      "url": "https://raw.githubusercontent.com/mofa-si/awesome-fable-5-2-videos/main/README.md",
+      "status_code": 200
+    },
+    {
+      "checked_at": "2026-11-24T13:18:39.684007+00:00",
+      "method": "firecrawl",
+      "name": "Awesome Kimi K3.1 Videos",
+      "post_count": 176,
+      "primary_candidate_count": 0,
+      "url": "https://raw.githubusercontent.com/yihui-dev/awesome-kimi-k3-1-videos/main/data/videos.json",
+      "status_code": 200
+    },
+    {
+      "checked_at": "2026-11-24T13:27:51.463987+00:00",
+      "method": "firecrawl",
+      "name": "Frontier Games",
+      "post_count": 159,
+      "primary_candidate_count": 0,
+      "url": "https://raw.githubusercontent.com/theolundqvist/frontier-games/main/data/games.yaml",
+      "status_code": 200
+    },
+    {
+      "checked_at": "2026-11-24T13:33:32.932666+00:00",
+      "method": "firecrawl",
+      "name": "Awesome Fable games – source repositories",
+      "post_count": 3,
+      "primary_candidate_count": 105,
+      "url": "https://raw.githubusercontent.com/ygx2378/awesome-fable-5-2-games/master/README.md",
+      "status_code": 200
+    },
+    {
+      "checked_at": "2026-11-24T13:33:36.481162+00:00",
+      "method": "firecrawl",
+      "name": "AIGameShare – creator-published browser games",
+      "post_count": 0,
+      "primary_candidate_count": 595,
+      "url": "https://www.aigameshare.com/sitemap.xml",
+      "status_code": 200
+    },
+    {
+      "checked_at": "2026-11-24T13:40:03.941028+00:00",
+      "method": "firecrawl",
+      "name": "Gemini 4 Carbon projects and primary posts",
+      "post_count": 157,
+      "primary_candidate_count": 0,
+      "url": "https://raw.githubusercontent.com/apimodels/gemini-4-carbon-prompts/HEAD/data/cases.json",
+      "status_code": 200
+    },
+    {
+      "checked_at": "2026-11-24T13:40:07.696255+00:00",
+      "method": "firecrawl",
+      "name": "Gemini 4 Argon source videos",
+      "post_count": 354,
+      "primary_candidate_count": 0,
+      "url": "https://raw.githubusercontent.com/yihui-dev/awesome-gemini4-argon-videos/HEAD/data/videos.json",
+      "status_code": 200
+    }
+  ],
+  "official_release_threads": [
+    {
+      "model": "Claude Fable 5.2",
+      "url": "https://x.com/claudeai/status/2119867114450268322",
+      "post_id": "2119867114450268322",
+      "evidence_quote": "Introducing Claude Fable 5.2 and Claude Mythos 5.2",
+      "verified_with": "X Publish oEmbed"
+    },
+    {
+      "model": "GPT-6.2 Astra and Sol",
+      "url": "https://x.com/OpenAI/status/2122750124543926515",
+      "post_id": "2122750124543926515",
+      "evidence_quote": "GPT-6.2 Astra and Sol are now available.",
+      "verified_with": "X Publish oEmbed"
+    },
+    {
+      "model": "Gemini 4 Hydrogen",
+      "url": "https://x.com/GoogleAI/status/2120940683233984862",
+      "post_id": "2120940683233984862",
+      "evidence_quote": "introducing Gemini 4 Hydrogen.",
+      "verified_with": "X Publish oEmbed"
+    },
+    {
+      "model": "Gemini 4 Neon",
+      "url": "https://x.com/GoogleAI/status/2123168242797809944",
+      "post_id": "2123168242797809944",
+      "evidence_quote": "Meet Gemini 4 Neon",
+      "verified_with": "X Publish oEmbed"
+    },
+    {
+      "model": "Kimi K3.1 Pro",
+      "url": "https://x.com/Kimi_Moonshot/status/2113680701770068067",
+      "post_id": "2113680701770068067",
+      "evidence_quote": "Introducing Kimi K3.1 Pro",
+      "verified_with": "X Publish oEmbed"
+    }
+  ],
+  "coverage": {
+    "catalog_seed_urls": 2119,
+    "catalog_seed_posts_with_successful_oembed": 2067,
+    "verified_oembed_posts_including_supplemental_directories": 2637,
+    "primary_candidate_urls": 700,
+    "unique_curator_linked_project_candidates_after_preliminary_genre_checks_and_existing_post_exclusion": 1255,
+    "x_posts_submitted_for_interactivity_and_attribution_review": 1096,
+    "x_first_review_accepted": 570,
+    "x_second_review_examined": 570,
+    "x_second_review_accepted": 228,
+    "x_bilingual_editorial_review_examined": 228,
+    "x_bilingual_editorial_review_accepted": 191,
+    "x_after_exact_quote_matching_and_deduplication": 182,
+    "github_unique_repository_targets": 134,
+    "github_first_party_readmes_retrieved": 128,
+    "github_source_trees_confirmed": 120,
+    "github_readmes_submitted_for_attribution_review": 105,
+    "github_readmes_accepted_at_text_review": 67,
+    "github_after_source_tree_check_exact_quotes_and_deduplication": 53,
+    "hosted_sitemap_game_pages": 595,
+    "hosted_project_pages_selected_for_spatial_genre_review": 260,
+    "hosted_pages_with_game_schema_creator_credit_and_specific_model_tag": 237,
+    "hosted_games_reviewed": 237,
+    "hosted_accepted_at_text_review": 159,
+    "hosted_after_exact_quotes_and_deduplication": 153,
+    "after_editorial_review_exclusions": {
+      "x": {
+        "quotes": 3,
+        "no evidenced model": 4,
+        "fingerprint": 2
+      },
+      "repo": {
+        "existing repository or title": 6,
+        "source tree not independently confirmed": 3,
+        "benchmark attribution ambiguous": 1,
+        "no model name in verified excerpt": 3,
+        "no matching excerpt": 1
+      },
+      "hosted": {
+        "duplicate project title/creator": 4,
+        "duplicate demo URL": 2
+      }
+    },
+    "confirmed_explicit_open_source_licenses": 22,
+    "new_cases": 388,
+    "new_cases_with_demo_url": 347,
+    "new_cases_with_source_repo": 55,
+    "new_cases_with_disclosed_exact_time": 4,
+    "new_cases_with_disclosed_exact_spend": 0,
+    "model_mentions": {
+      "Claude Fable 5.2": 137,
+      "Claude Opus 5.5": 68,
+      "GPT-6 Astra": 39,
+      "Claude Fable 5": 38,
+      "GPT-5.5": 20,
+      "GPT-6.2 Astra": 12,
+      "GPT-5.6": 11,
+      "Gemini 4 Carbon": 11,
+      "GPT-5": 11,
+      "GPT-6 Pro Astra": 9,
+      "Claude Opus 4.8": 7,
+      "Gemini 4 Argon": 6,
+      "Claude Fable 5.1": 6,
+      "GPT Astra": 5,
+      "Claude": 4,
+      "Claude Code": 4,
+      "Claude Opus 5": 3,
+      "GPT-6 Sol": 2,
+      "Gemini 4 Neon": 2,
+      "Codex": 2,
+      "ChatGPT": 2,
+      "Claude Fable": 2,
+      "Astra": 2,
+      "Gemini Argon": 1,
+      "GLM-5.2": 1,
+      "Claude Opus": 1,
+      "Hermes": 1,
+      "Astra Pro": 1,
+      "DeepSeek": 1,
+      "Argon": 1,
+      "Claude Sonnet 5.5": 1
+    }
+  },
+  "evidence_methods": [
+    "Every X entry has a successful public X Publish oEmbed response from the credited original account, a verbatim excerpt, and an identified curator or project source. The curator name or folder alone is insufficient for model attribution.",
+    "A GitHub source entry requires a first-party README tying the model to a playable spatial project and a repository tree with source files or game assets. Source-only entries link to the repository.",
+    "Hosted projects link to the same creator-published game that provides the title, credited creator, player actions, publication date and project-specific Made with label. The website-wide list of supported tools was excluded.",
+    "Standalone portfolio pages, static scenes, unplayable cutscenes, promotional reposts, simple board games, quizzes and ambiguous demonstrations were excluded. Shared post IDs, canonical demo and repository identities, near-identical titles and duplicate project updates were reviewed. The creator name alone is not grounds for rejection.",
+    "A demo URL records a published project link. Browser verification, screenshots and sign-in gates are maintained separately. Build cost and time refer to the author’s actual project, not to collection expenses."
+  ],
+  "collection_cost": {
+    "authentication": "authenticated Firecrawl; public X Publish oEmbed; public GitHub and creator project pages; metered OpenAI API for editorial review and translation.",
+    "firecrawl_markdown_scrapes_with_successful_responses": 11,
+    "firecrawl_standard_credits_per_scrape": 1,
+    "firecrawl_standard_credits_calculated": 11,
+    "firecrawl_pricing_reference": "https://docs.firecrawl.dev/features/scrape",
+    "paid_x_api_calls_by_this_research_task": 0,
+    "openai_usage_recording": "Partial. Token counts below come directly from successful API responses with captured usage. The first 344 first-pass reviews and first 170 second-pass reviews ran before usage logging was enabled. Their token counts are unavailable. Other jobs or account-wide totals are not included.",
+    "openai_measured": {
+      "requests": 308,
+      "input_tokens": 591105,
+      "cached_input_tokens": 1408,
+      "output_tokens": 175381,
+      "total_tokens": 766486
+    },
+    "openai_breakdown": [
+      {
+        "stage": "audit",
+        "model": "gpt-4.1-mini-2025-04-14",
+        "requests": 54,
+        "input_tokens": 115956,
+        "cached_input_tokens": 0,
+        "output_tokens": 18238,
+        "total_tokens": 134194
+      },
+      {
+        "stage": "classify",
+        "model": "gpt-4.1-mini-2025-04-14",
+        "requests": 131,
+        "input_tokens": 181443,
+        "cached_input_tokens": 1408,
+        "output_tokens": 74692,
+        "total_tokens": 256135
+      },
+      {
+        "stage": "first_party_hosted_games",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "requests": 50,
+        "input_tokens": 59143,
+        "cached_input_tokens": 0,
+        "output_tokens": 23845,
+        "total_tokens": 82988
+      },
+      {
+        "stage": "first_party_readme_extraction",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "requests": 37,
+        "input_tokens": 170605,
+        "cached_input_tokens": 0,
+        "output_tokens": 38112,
+        "total_tokens": 208717
+      },
+      {
+        "stage": "source_review_and_translation",
+        "model": "gpt-5.4-mini-2026-03-17",
+        "requests": 36,
+        "input_tokens": 63958,
+        "cached_input_tokens": 0,
+        "output_tokens": 20494,
+        "total_tokens": 84452
+      }
+    ],
+    "actual_billed_usd": null,
+    "billing_note": "The services did not return a task-specific USD invoice. Credits and measured tokens are reported without assigning an account-wide payment to individual cases."
+  }
+}

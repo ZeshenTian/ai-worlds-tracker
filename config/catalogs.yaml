@@ -14,6 +14,16 @@ catalogs:
     url: https://raw.githubusercontent.com/yihui-dev/awesome-kimi-k3-1-videos/main/data/videos.json
   - name: Frontier Games
     url: https://raw.githubusercontent.com/theolundqvist/frontier-games/main/data/games.yaml
+  - name: Awesome Fable games – source repositories
+    url: https://raw.githubusercontent.com/ygx2378/awesome-fable-5-2-games/master/README.md
+    primary_url_pattern: 'https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+'
+  - name: AIGameShare – creator-published browser games
+    url: https://www.aigameshare.com/sitemap.xml
+    primary_url_pattern: 'https://www\.aigameshare\.com/games/(?!category(?:/|\b))[a-z0-9-]+'
+  - name: Gemini 4 Carbon projects and primary posts
+    url: https://raw.githubusercontent.com/apimodels/gemini-4-carbon-prompts/HEAD/data/cases.json
+  - name: Gemini 4 Argon source videos
+    url: https://raw.githubusercontent.com/yihui-dev/awesome-gemini4-argon-videos/HEAD/data/videos.json
 verified_candidates: research/expansion/catalog_worlds.json
 # X API v2 search operator reference: https://docs.x.com/x-api/posts/search/integrate/operators
 official_threads:

@@ -125,7 +125,7 @@ function matches(world: World, filters: Filters, omit?: keyof Filters): boolean 
   }
   if (f.month && monthOf(world) !== f.month) return false;
   if (f.license) {
-    if (f.license === "open" && !(world.is_open_source === true || Boolean(world.repo_url))) return false;
+    if (f.license === "open" && world.is_open_source !== true) return false;
     if (f.license === "closed" && world.is_open_source !== false) return false;
     if (f.license === "unknown" && world.is_open_source !== null) return false;
   }
@@ -203,7 +203,7 @@ function WorldCard({
           <>
             {playable ? (
               <span className="cover-badge badge-ok">● {t.playable}</span>
-            ) : world.is_open_source === true || repo ? (
+            ) : world.is_open_source === true ? (
               <span className="cover-badge badge-blue">{t.openSource}</span>
             ) : null}
             <span className="cover-theme">{themeLabel(world.theme_category, lang)}</span>
@@ -363,7 +363,7 @@ function QuickInspector({
                 <span className="pill-ok">● {t.playable}</span>
               )}
               <span className="pill-neutral">{themeLabel(world.theme_category, lang)}</span>
-              {(world.is_open_source === true || repo) && (
+              {(world.is_open_source === true) && (
                 <span className="pill-blue">{t.openSource}</span>
               )}
             </div>
@@ -1114,7 +1114,7 @@ export function WorldCatalog({ lastUpdatedAt }: { lastUpdatedAt: string }) {
                         <span className={statusPillTone(world.demo_health_status)}>
                           {healthLabel(world.demo_health_status, lang)}
                         </span>
-                        {(world.is_open_source === true || repo) && (
+                        {(world.is_open_source === true) && (
                           <span className="pill-blue" style={{ marginInlineStart: 4 }}>
                             {t.openSource}
                           </span>

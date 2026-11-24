@@ -108,7 +108,7 @@ def test_sync_reuses_processed_works_and_keeps_discoveries_pending(tmp_path, mon
     from src.enrich_firecrawl import FixtureScraper
     from src.storage import read_rows
 
-    async def verified_elsewhere(*args):
+    async def verified_elsewhere(*args, **kwargs):
         return {}
 
     monkeypatch.setattr("src.sync_catalog.verify", verified_elsewhere)

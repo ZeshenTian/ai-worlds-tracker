@@ -37,10 +37,12 @@ def official_thread_queries(threads: list[dict]) -> list[str]:
 def discover(config: dict, data_dir: Path, scraper: Firecrawl, max_age_hours: float = 24) -> dict:
     state_path = data_dir / "state/catalog_seeds.json"
     cache = data_dir / "raw/catalogs"
-    now = datetime.now(UTC)
+    stale_before = datetime.now(UTC) - timedelta(hours=max_age_hours)
     with run_lock(cache):
         old = read_json(state_path) if state_path.exists() else {}
         seeds = {post_id(url): url for url in old.get("seed_urls", [])}
+        primary = set(old.get("primary_candidate_urls", []))
+        initial_primary = primary.copy()
         initial_ids = set(seeds)
         previous = {s["url"]: s for s in old.get("catalogs", [])}
         sources = []
@@ -51,25 +53,30 @@ def discover(config: dict, data_dir: Path, scraper: Firecrawl, max_age_hours: fl
             try:
                 snapshot = read_json(path) if path.exists() else {}
                 last = previous.get(url)
-                if not snapshot and last and now - datetime.fromisoformat(last["checked_at"]) < timedelta(hours=max_age_hours):
+                if not snapshot and last and datetime.fromisoformat(last["checked_at"]) > stale_before:
                     # A CI checkout may retain the state file without the local raw cache.
                     sources.append({**last, "added_count": 0})
                     continue
-                if not snapshot or now - datetime.fromisoformat(snapshot["checked_at"]) >= timedelta(hours=max_age_hours):
+                if not snapshot or datetime.fromisoformat(snapshot["checked_at"]) <= stale_before:
                     result = scraper.scrape(url)
                     if result.fetch_method != "firecrawl" or not result.markdown:
                         raise ValueError(f"Firecrawl returned {result.status}")
                     urls = catalog_posts(result.markdown)
-                    if not urls:
-                        raise ValueError("Firecrawl returned a directory without any X post URLs")
+                    project_pattern = entry.get("primary_url_pattern")
+                    projects = sorted(set(re.findall(project_pattern, result.markdown))) if project_pattern else []
+                    if not urls and not projects:
+                        raise ValueError("Firecrawl returned a directory without matching post or project links")
                     snapshot = {"checked_at": datetime.now(UTC).isoformat(), "post_urls": list(urls.values()),
-                                "method": result.fetch_method, "status_code": result.status_code}
+                                "method": result.fetch_method, "status_code": result.status_code,
+                                "primary_urls": projects}
                     write_json(path, snapshot)
+                primary.update(snapshot.get("primary_urls", []))
                 before = len(seeds)
                 for link in snapshot["post_urls"]:
                     seeds.setdefault(post_id(link), link)
                 sources.append({**entry, "checked_at": snapshot["checked_at"], "method": snapshot["method"],
-                                "post_count": len(snapshot["post_urls"]), "added_count": len(seeds) - before})
+                                "post_count": len(snapshot["post_urls"]), "added_count": len(seeds) - before,
+                                "primary_candidate_count": len(snapshot.get("primary_urls", []))})
             except (ValueError, OSError, httpx.HTTPError) as error:
                 errors.append({"url": url, "error": str(error)})
                 if url in previous:
@@ -81,9 +88,15 @@ def discover(config: dict, data_dir: Path, scraper: Firecrawl, max_age_hours: fl
                     link = record["original_post_url"]
                     seeds.setdefault(post_id(link), link)
         added = [seeds[number] for number in sorted(set(seeds) - initial_ids, key=int, reverse=True)]
-        final = {"new_seed_urls": added, "seed_urls": [seeds[key] for key in sorted(seeds, key=int, reverse=True)], "catalogs": sources,
-                 "official_thread_queries": official_thread_queries(config.get("official_threads", [])),
-                 "errors": errors}
+        final = {
+            "primary_candidate_urls": sorted(primary),
+            "new_primary_candidate_urls": sorted(primary - initial_primary),
+            "new_seed_urls": added,
+            "seed_urls": [seeds[key] for key in sorted(seeds, key=int, reverse=True)],
+            "catalogs": sources,
+            "official_thread_queries": official_thread_queries(config.get("official_threads", [])),
+            "errors": errors,
+        }
         write_json(state_path, final)
         return final
 

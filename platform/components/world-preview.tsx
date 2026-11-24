@@ -18,11 +18,18 @@ export function WorldPreview({
   const t = copy[lang];
 
   if (world.thumbnail_url) {
+    const source = world.cover_source === "x_media"
+      ? (lang === "en" ? "Original X media" : "X 原帖配图")
+      : world.cover_source === "project_poster"
+        ? (lang === "en" ? "Project page poster" : "作品页面海报")
+      : world.cover_source === "project_media"
+        ? (lang === "en" ? "Creator’s project image" : "作者项目配图")
+        : (lang === "en" ? "Demo screenshot" : "试玩截图");
     return (
       <img
         src={world.thumbnail_url}
-        alt={world.title + (world.cover_source === "x_media" ? (lang === "en" ? " · Original X media" : " · X 原帖配图") : "")}
-        title={world.cover_source === "x_media" ? (lang === "en" ? "Original X media" : "X 原帖配图") : undefined}
+        alt={world.title + " · " + source}
+        title={source}
         loading={variant === "detail" ? "eager" : "lazy"}
         width={960}
         height={540}
@@ -39,7 +46,7 @@ export function WorldPreview({
     <div className={`quote-cover tint-${tint} ${variant === "detail" ? "quote-cover-detail" : ""}`}>
       <div className="quote-cover-top">
         <span className="quote-kicker">{theme}</span>
-        {world.is_open_source === true || world.repo_url ? (
+        {world.is_open_source === true ? (
           <span className="quote-open-pill">
             <CodeXml size={11} aria-hidden="true" />
             {t.openSource}

@@ -153,13 +153,16 @@ export const featured = [
   "Void Explorer",
   "Painted Valley",
 ];
-export const modelFamilies = ["Claude", "GPT", "Gemini"];
-
 export function family(name: string) {
-  return /^codex/i.test(name)
-    ? "GPT"
-    : modelFamilies.find((prefix) => name.toLowerCase().startsWith(prefix.toLowerCase())) || name;
+  if (/^(codex|gpt|openai gpt)/i.test(name)) return "GPT";
+  if (/^(claude|fable|opus|sonnet)/i.test(name)) return "Claude";
+  if (/^gemini/i.test(name)) return "Gemini";
+  if (/^(world labs )?marble/i.test(name)) return "Marble";
+  if (/^kimi/i.test(name)) return "Kimi";
+  return name;
 }
+
+export const modelFamilies = [...new Set(["Claude", "GPT", "Gemini", ...worlds.flatMap(w => w.models_used.map(family))])];
 
 export function familyTone(name: string): "claude" | "gpt" | "gemini" | "other" {
   const f = family(name);
@@ -176,7 +179,7 @@ export function values(key: "tech_stack" | "models_used") {
 export const count = {
   all: worlds.length,
   playable: worlds.filter(isPlayable).length,
-  open: worlds.filter((world) => world.is_open_source === true || Boolean(world.repo_url)).length,
+  open: worlds.filter((world) => world.is_open_source === true).length,
   repos: worlds.filter((world) => Boolean(world.repo_url)).length,
   withThumb: worlds.filter((world) => Boolean(world.thumbnail_url)).length,
   withWorkflow: worlds.filter((world) => world.workflow_steps.length > 0).length,

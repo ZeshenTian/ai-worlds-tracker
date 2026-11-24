@@ -12,6 +12,7 @@ import yaml
 from .catalog_posts import resolve_seeds
 from .qualify_candidates import qualify
 from .x_covers import build as build_covers
+from .primary_covers import build as build_project_covers
 from .cli import FIXTURES, PROJECT, Mode, Pipeline
 from .dedup import deduplicate
 from .enrich_firecrawl import EnrichmentCache, Firecrawl, FixtureScraper
@@ -95,6 +96,7 @@ def sync(pipeline, platform: Path):
                        channel=os.getenv("ATLAS_BROWSER_CHANNEL") or None))
     if not mock:
         build_covers(candidates, root, platform / "public/thumbnails")
+        build_project_covers(candidates, root, platform / "public/thumbnails")
     publish(root, platform, auto=os.getenv("AUTO_APPROVE_TRUSTED", "").lower() == "true")
     public = read_json(platform / "data/worlds.json")
     authors = Counter(c["author_handle"].lower() for c in public if c.get("author_handle"))

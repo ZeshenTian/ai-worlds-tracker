@@ -48,25 +48,37 @@ def family(model):
 
 def import_catalog_batch(cases, path):
     """Import a reviewed source batch without changing existing moderation decisions."""
-    known_posts, known_works = set(), set()
+    known_sources, known_works = set(), set()
+
+    def source_key(case):
+        return post_id(case.original_post_url) if case.source_kind == "x_post" else identity_url(case.original_post_url)
 
     def remember(case):
-        if case.source_kind == "x_post":
-            known_posts.add(post_id(case.original_post_url))
+        known_sources.add(source_key(case))
         known_works.update(identity_url(u) for u in (case.live_demo_url, case.repo_url) if u)
 
     for case in cases.values():
         remember(case)
     for item in read_json(path):
         case = AIWorldCase.model_validate(item)
-        if case.world_id in cases or post_id(case.original_post_url) in known_posts:
+        previous = cases.get(case.world_id)
+        if previous and (source_key(case) != source_key(previous) or previous.review_status == ReviewStatus.REJECTED):
             continue
-        if any(identity_url(u) in known_works for u in (case.live_demo_url, case.repo_url) if u):
+        if not previous and (source_key(case) in known_sources or
+                any(identity_url(u) in known_works for u in (case.live_demo_url, case.repo_url) if u)):
             continue
+        direct = case.original_post_url in case.evidence_source_urls
+        if case.source_kind == "primary_page" and repo_root(case.original_post_url):
+            repo_path = urlsplit(repo_root(case.original_post_url)).path.lower() + "/"
+            direct = direct or any(urlsplit(u).hostname == "raw.githubusercontent.com"
+                                   and urlsplit(u).path.lower().startswith(repo_path)
+                                   for u in case.evidence_source_urls)
         if (not case.summary_en or not case.evidence_quotes or not case.models_used
-                or case.original_post_url not in case.evidence_source_urls
+                or not direct
                 or case.possible_duplicate_urls or case.review_status == ReviewStatus.REJECTED):
             raise ValueError(f"Incomplete editorial evidence for {case.world_id}")
+        if previous:
+            case.first_seen_at = previous.first_seen_at
         case.review_status = ReviewStatus.APPROVED
         cases[case.world_id] = case
         remember(case)
@@ -102,6 +114,8 @@ def publish(root, platform, *, curate=False, auto=False, timestamp=None, editori
     health = read_json(health_file) if health_file.exists() else {}
     cover_path = root / "state/x_covers.json"
     covers = read_json(cover_path) if cover_path.exists() else {}
+    project_path = root / "state/primary_covers.json"
+    project_covers = read_json(project_path) if project_path.exists() else {}
     cache = EnrichmentCache(root)
     config = yaml.safe_load((PROJECT / "config/seeds.yaml").read_text())
     for case in cases.values():
@@ -110,16 +124,19 @@ def publish(root, platform, *, curate=False, auto=False, timestamp=None, editori
         if check and check.get("live_demo_url") == case.live_demo_url:
             case.demo_health_status = DemoHealth(check["demo_health_status"])
             case.thumbnail_url = check.get("thumbnail_url")
-        if case.thumbnail_url and not case.thumbnail_url.endswith("-x.webp"):
+        if case.thumbnail_url == f"/thumbnails/{case.world_id}.webp" and (platform / "public" / case.thumbnail_url.lstrip("/")).is_file():
             case.cover_source = "demo"
             case.cover_source_url = case.live_demo_url
         else:
-            cover = covers.get(case.world_id, {})
-            media = cover.get("thumbnail_url")
-            if media and (platform / "public" / media.lstrip("/")).is_file():
-                case.thumbnail_url = media
-                case.cover_source = "x_media"
-                case.cover_source_url = cover["source_url"]
+            case.thumbnail_url = case.cover_source = case.cover_source_url = None
+            for store, kind in ((covers,"x_media"), (project_covers,"project_media")):
+                cover = store.get(case.world_id, {})
+                media = cover.get("thumbnail_url")
+                if media and (platform / "public" / media.lstrip("/")).is_file():
+                    case.thumbnail_url = media
+                    case.cover_source = "project_poster" if kind == "project_media" and cover.get("cover_source") == "project_poster" else kind
+                    case.cover_source_url = cover["source_url"]
+                    break
         info = root / "raw/x/signals" / (case.original_post_url.rsplit("/", 1)[-1] + ".json")
         likes = read_json(info).get("likes", 0) if info.exists() else 0
         case = AIWorldCase.model_validate(case.model_dump())

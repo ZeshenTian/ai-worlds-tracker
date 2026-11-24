@@ -33,25 +33,33 @@ def qualify(groups, root, *, model, limit):
                 selected.append(g)
         else:
             batch.append((g, path, context))
-    client = None
-    for start in range(0, min(len(batch),limit), 16):
-        items = batch[start:min(start+16,limit)]
-        client = client or OpenAI(timeout=50,max_retries=1)
-        posts = [{"id":g.original.post.tweet_id,"text":ctx} for g,_,ctx in items]
-        response = client.chat.completions.create(model=model, temperature=0, max_tokens=800,
-            response_format={"type":"json_object"},
+    items_to_check = batch[:limit]
+    batches = [items_to_check[i:i+12] for i in range(0, len(items_to_check), 12)]
+    client = OpenAI(timeout=50, max_retries=1) if batches else None
+    while batches:
+        items = batches.pop(0)
+        posts = [{"id": g.original.post.tweet_id, "text": context} for g, _, context in items]
+        response = client.chat.completions.create(
+            model=model, temperature=0, max_tokens=1400, response_format={"type":"json_object"},
             messages=[{"role":"system","content":RULES},{"role":"user","content":json.dumps(posts,ensure_ascii=False)}])
         record_usage(root, model, "gate", response)
-        choice=response.choices[0]
-        if choice.finish_reason != "stop":
-            raise ValueError("Incomplete classifier response")
-        ids=json.loads(choice.message.content)["ids"]
-        if not isinstance(ids,list) or not set(ids) <= {p["id"] for p in posts}:
-            raise ValueError("Classifier returned invalid post IDs")
-        for g,path,_ in items:
-            accepted=g.original.post.tweet_id in ids
-            write_json(path,accepted)
+        choice = response.choices[0]
+        try:
+            ids = json.loads(choice.message.content or "{}").get("ids") if choice.finish_reason == "stop" else None
+            valid = isinstance(ids, list) and all(isinstance(i, str) for i in ids) and set(ids) <= {p["id"] for p in posts}
+        except ValueError:
+            valid = False
+        if not valid:
+            if len(items) > 1:
+                middle = len(items) // 2
+                batches.extend([items[:middle],items[middle:]])
+            else:
+                print(f"Deferred inconclusive classification for {posts[0]['id']}")
+            continue
+        for group, path, _ in items:
+            accepted = group.original.post.tweet_id in ids
+            write_json(path, accepted)
             if accepted:
-                selected.append(g)
+                selected.append(group)
     print(f"Relevance filter retained {len(selected)} of {len(groups)} unseen groups")
     return selected

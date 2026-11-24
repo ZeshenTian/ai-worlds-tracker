@@ -175,9 +175,9 @@ def discover(root, source, *, refresh=False):
     return info
 
 
-def render(data, target):
+def render(data, target, *, frame_index=0):
     with Image.open(BytesIO(data)) as image:
-        image.seek(0)
+        image.seek(frame_index)
         if image.format not in {"JPEG", "PNG", "WEBP", "GIF"}:
             raise ValueError("unsupported attachment format")
         width, height = image.size
