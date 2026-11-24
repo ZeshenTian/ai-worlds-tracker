@@ -1,0 +1,27 @@
+{
+  "900001": {
+    "title": "Mosswood", "summary": "可步行探索的程序化森林。", "theme_category": "nature_ecosystem",
+    "models_used": ["Claude Opus 4.6"], "tech_stack": ["Three.js"], "generation_mode": "unknown",
+    "is_open_source": true, "reproducibility_level": "full_repo", "repo_url": "https://github.com/forestlab/mosswood",
+    "live_demo_url": "https://forestlab.example.org/mosswood", "cost_disclosure_status": "disclosed",
+    "reported_cost_usd": 12.5, "reported_time_minutes": 120,
+    "workflow_steps": ["生成地形", "截图检查世界光照"], "skills_or_prompts_used": ["Playwright"],
+    "evidence_quotes": ["I built Mosswood with Claude Opus 4.6 and Three.js.", "I spent USD 12.50 on model calls.", "It took 2 hours to build.", "The project uses the MIT license.", "Used Claude Opus 4.6 to generate the terrain and then checked screenshots with Playwright."]
+  },
+  "900003": {
+    "title": "Voxel Tide", "summary": "可在浏览器浏览的体素海岛。", "theme_category": "voxel_sandbox",
+    "models_used": ["Gemini 3"], "tech_stack": ["WebGPU"], "generation_mode": "one_shot",
+    "is_open_source": null, "reproducibility_level": "live_demo", "repo_url": null, "live_demo_url": "https://voxelmaker.example.com/tide",
+    "cost_disclosure_status": "undisclosed", "reported_cost_usd": null, "reported_time_minutes": null,
+    "workflow_steps": [], "skills_or_prompts_used": [],
+    "evidence_quotes": ["I made Voxel Tide, a browser voxel island in one prompt using Gemini 3 with WebGPU."]
+  },
+  "900004": {
+    "title": "Terra Blocks", "summary": "可交互的 3D 微缩场景。", "theme_category": "city_diorama",
+    "models_used": ["GPT-5"], "tech_stack": [], "generation_mode": "unknown",
+    "is_open_source": null, "reproducibility_level": "video_only", "repo_url": null, "live_demo_url": null,
+    "cost_disclosure_status": "disclosed", "reported_cost_usd": 25, "reported_time_minutes": 45,
+    "workflow_steps": [], "skills_or_prompts_used": [],
+    "evidence_quotes": ["GPT-5 created my interactive 3D diorama Terra Blocks.", "It would cost USD 25 on another plan.", "Build took 45 minutes."]
+  }
+}

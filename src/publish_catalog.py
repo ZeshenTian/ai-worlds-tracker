@@ -1,0 +1,127 @@
+"""Publish reviewed records and keep the complete moderation ledger separate."""
+import argparse
+from collections import Counter
+from datetime import UTC, datetime
+import os
+from pathlib import Path
+from urllib.parse import urlsplit
+
+from dotenv import load_dotenv
+import yaml
+
+from .enrich_firecrawl import EnrichmentCache
+from .export_and_analyze import REVIEW_FIELDS, write_csv
+from .extract_structured import apply_verified_research
+from .links import repo_root
+from .models import AIWorldCase, DemoHealth, ReviewStatus
+from .storage import read_json, read_rows, run_lock, write_json, write_rows
+
+
+PROJECT = Path(__file__).resolve().parents[1]
+
+
+def trusted(case, config, cache):
+    host = urlsplit(case.original_post_url).hostname
+    catalog = case.source_kind == "primary_page" and host in config.get("trusted_catalog_hosts", [])
+    author = case.source_kind == "x_post" and (case.author_handle or "").lower() in {
+        account.lower() for account in config.get("watch_accounts", [])
+    }
+    if not (author or catalog) or not case.models_used or not case.evidence_quotes or case.possible_duplicate_urls:
+        return False
+    if case.demo_health_status == DemoHealth.VERIFIED:
+        return True
+    repo = repo_root(case.repo_url) if case.repo_url else None
+    path = cache.catalog_path(repo) if repo else None
+    return bool(path and path.exists() and read_json(path).get("exists") is True)
+
+
+def family(model):
+    for name in ("Claude", "Gemini", "GPT"):
+        if model.lower().startswith(name.lower()):
+            return name
+    return "GPT" if model.lower().startswith("codex") else model
+
+
+def publish(root, platform, *, curate=False, auto=False, timestamp=None):
+    processed = root / "processed" / "cases.jsonl"
+    base = read_json(PROJECT / "research/seed_snapshot/worlds.json")
+    legacy = {row["world_id"] for row in base}
+    ledger = read_rows(processed, AIWorldCase) if processed.exists() else []
+    cases = {case.world_id: case for case in ledger}
+    for item in base:
+        cases.setdefault(item["world_id"], AIWorldCase.model_validate(item))
+    now = timestamp or datetime.now(UTC).isoformat(timespec="seconds")
+    if curate:
+        for name in ("gemini", "gpt"):
+            for item in read_json(PROJECT / f"research/expansion/{name}.json"):
+                record = AIWorldCase.model_validate(item)
+                old = cases.get(record.world_id)
+                if old and old.review_status == ReviewStatus.REJECTED:
+                    continue
+                if not record.evidence_quotes or not record.models_used:
+                    raise ValueError(f"Missing curated source evidence: {record.title}")
+                record.review_status = ReviewStatus.APPROVED
+                record.first_seen_at = old.first_seen_at if old else None
+                cases[record.world_id] = record
+        evidence = read_json(PROJECT / "research/expansion/repo_evidence.json")
+        for world_id, item in evidence["cases"].items():
+            cases[world_id] = apply_verified_research(cases[world_id], item)
+    health_file = root / "state/demo_health.json"
+    health = read_json(health_file) if health_file.exists() else {}
+    cache = EnrichmentCache(root)
+    config = yaml.safe_load((PROJECT / "config/seeds.yaml").read_text())
+    for case in cases.values():
+        case.first_seen_at = case.first_seen_at or ("2026-11-24T06:31:01+00:00" if case.world_id in legacy else now)
+        check = health.get(case.world_id, {})
+        if check and check.get("live_demo_url") == case.live_demo_url:
+            case.demo_health_status = DemoHealth(check["demo_health_status"])
+            case.thumbnail_url = check.get("thumbnail_url")
+        case = AIWorldCase.model_validate(case.model_dump())
+        if auto and case.review_status == ReviewStatus.PENDING and trusted(case, config, cache):
+            case.review_status = ReviewStatus.APPROVED
+        cases[case.world_id] = case
+    ordered = sorted(cases.values(), key=lambda c: c.world_id)
+    public = [c for c in ordered if c.review_status == ReviewStatus.APPROVED or
+              (c.world_id in legacy and c.review_status == ReviewStatus.PENDING)]
+    data = [c.model_dump(mode="json") for c in public]
+    queue = [c.model_dump(mode="json") for c in ordered if c.review_status == ReviewStatus.PENDING]
+    write_rows(processed, ordered)
+    exports = root / "exports"
+    write_csv(exports / "review_queue.csv", queue, REVIEW_FIELDS)
+    write_json(exports / "ai_worlds.json", data)
+    write_csv(exports / "ai_worlds.csv", data, list(AIWorldCase.model_fields))
+    meta = {
+        "last_updated_at": now, "total": len(public),
+        "model_counts": dict(Counter(m for c in public for m in set(c.models_used))),
+        "model_family_counts": dict(Counter(m for c in public for m in set(map(family,c.models_used)))),
+        "playable_count": sum(c.demo_health_status == DemoHealth.VERIFIED for c in public),
+        "open_source_count": sum(c.is_open_source is True for c in public),
+    }
+    write_json(exports / "meta.json", meta)
+    write_json(platform / "data/worlds.json", data)
+    write_json(platform / "data/meta.json", meta)
+    print(f"{len(public)} public cases, {len(queue)} pending; {meta['playable_count']} verified playable")
+
+
+if __name__ == "__main__":
+    load_dotenv(PROJECT / ".env", override=False)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--curate", action="store_true", help="Import source-reviewed expansion files")
+    parser.add_argument("--data-dir", type=Path, default=PROJECT / "data")
+    parser.add_argument("--platform", type=Path, default=PROJECT / "platform")
+    parser.add_argument("--review", metavar="WORLD_ID")
+    parser.add_argument("--status", choices=["approved", "rejected", "pending"])
+    args = parser.parse_args()
+    if bool(args.review) != bool(args.status):
+        parser.error("--review and --status must be supplied together")
+    with run_lock(args.data_dir):
+        if args.review:
+            path = args.data_dir / "processed/cases.jsonl"
+            rows = read_rows(path, AIWorldCase)
+            match = next((row for row in rows if row.world_id == args.review), None)
+            if not match:
+                parser.error("unknown world ID")
+            match.review_status = ReviewStatus(args.status)
+            write_rows(path, rows)
+        publish(args.data_dir, args.platform, curate=args.curate,
+                auto=os.getenv("AUTO_APPROVE_TRUSTED", "").lower() == "true")

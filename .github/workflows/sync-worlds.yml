@@ -1,0 +1,55 @@
+name: Sync worlds
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 */6 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: worlds-catalog
+  cancel-in-progress: false
+jobs:
+  sync:
+    if: github.event_name == 'workflow_dispatch' || vars.ENABLE_SCHEDULED_SYNC == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 100
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen --python 3.11
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            data/raw
+            data/processed/extraction
+            data/state/sync_state.json
+          key: worlds-sources-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: worlds-sources-
+      - run: uv run playwright install --with-deps chromium
+      - run: uv run python -m src.sync_catalog
+        env:
+          X_ADAPTER: x_api_v2
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY || secrets.FIRECRAWL_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTO_APPROVE_TRUSTED: ${{ vars.AUTO_APPROVE_TRUSTED || 'false' }}
+      - uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: |
+            data/raw
+            data/processed/extraction
+            data/state/sync_state.json
+          key: worlds-sources-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Commit snapshot and review queue
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/state data/processed/cases.jsonl data/exports platform/data platform/public/thumbnails
+          if ! git diff --cached --quiet; then
+            git commit -m 'Sync catalog and review queue'
+            git push origin HEAD:main
+          fi

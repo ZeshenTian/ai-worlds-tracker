@@ -1,0 +1,8 @@
+seed_urls:
+  - https://x.com/forestlab/status/900001
+  - https://x.com/worlddigest/status/900002
+  - https://x.com/voxelmaker/status/900003
+  - https://x.com/dioramadev/status/900004
+watch_accounts: []
+search_queries:
+  - WebGPU

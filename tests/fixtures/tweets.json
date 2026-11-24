@@ -1,0 +1,34 @@
+[
+  {
+    "post": {
+      "tweet_id": "900001", "author_handle": "forestlab", "conversation_id": "900001",
+      "text": "I built Mosswood with Claude Opus 4.6 and Three.js. It is a procedural forest you can walk through. Playable demo: https://t.co/moss",
+      "expanded_urls": {"https://t.co/moss": "https://forestlab.example.org/mosswood?utm_source=x"},
+      "published_at": "2026-10-22T18:00:00Z"
+    },
+    "thread": [
+      {"tweet_id": "900011", "author_handle": "forestlab", "conversation_id": "900001", "text": "Source: https://github.com/ForestLab/Mosswood/tree/main. I spent USD 12.50 on model calls. It took 2 hours to build. The project uses the MIT license."}
+    ],
+    "thread_status": "fixture"
+  },
+  {
+    "post": {"tweet_id": "900002", "author_handle": "worlddigest", "published_at": "2026-10-22T12:30:00Z", "text": "Mosswood by @forestlab: https://github.com/forestlab/mosswood?utm_source=feed."},
+    "thread_status": "fixture"
+  },
+  {
+    "post": {
+      "tweet_id": "900003", "author_handle": "voxelmaker", "published_at": "2026-10-23T12:00:00Z",
+      "text": "I made Voxel Tide, a browser voxel island in one prompt using Gemini 3 with WebGPU. Demo: https://voxelmaker.example.com/tide. Reference post: https://twitter.com/i/web/status/900001.",
+      "media_keys": ["demo-tide"]
+    },
+    "thread_status": "fixture"
+  },
+  {
+    "post": {
+      "tweet_id": "900004", "author_handle": "dioramadev",
+      "text": "GPT-5 created my interactive 3D diorama Terra Blocks. It would cost USD 25 on another plan. Build took 45 minutes.",
+      "media_keys": ["demo-terra"]
+    },
+    "thread_status": "fixture"
+  }
+]

@@ -1,0 +1,922 @@
+{
+  "2122682962647122403": {
+    "title": "Papertrails",
+    "summary": "可探索的立体纸雕世界，地形与建筑像立体书一样从地面弹起。",
+    "theme_category": "nature_ecosystem",
+    "models_used": [
+      "Claude Fable 5.2",
+      "Claude Opus 5.5"
+    ],
+    "tech_stack": [
+      "Three.js"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "full_repo",
+    "repo_url": "https://github.com/xikhar/papertrails",
+    "live_demo_url": "https://xikhar.github.io/papertrails/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Built with Fable 5.2 and Opus 5.5, runs in the browser with three.js"
+    ]
+  },
+  "2120694003230560585": {
+    "title": "Painted Valley",
+    "summary": "可探索的手绘风格山谷。",
+    "theme_category": "nature_ecosystem",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": true,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://patch.gg/blendi/painted-valley",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "used fable 5.2 to make this delightful ghibli inspired scene",
+      "playable, and open source:"
+    ]
+  },
+  "2120866958790848953": {
+    "title": "Ancient Babylon, 600 BC",
+    "summary": "根据历史文献与建筑图纸重建的古巴比伦场景。",
+    "theme_category": "historical",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://claude.ai/artifact/CTjrZXVdUgKJ6qJXrvvr28",
+    "cost_disclosure_status": "partial",
+    "reported_cost_usd": null,
+    "reported_time_minutes": 480,
+    "workflow_steps": [
+      "检索历史文献与建筑图纸",
+      "比对参考资料并生成古巴比伦场景"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "fable 5.2 is honestly incredible at simulating entire worlds - it built me ancient Babylon, circa 600 BC, in just 8 hours"
+    ]
+  },
+  "2119938067758772403": {
+    "title": "1 km² of Indiranagar",
+    "summary": "以地图数据生成的班加罗尔街区三维场景。",
+    "theme_category": "city_diorama",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "one_shot",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://indiranagar-live.vercel.app/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "提供实测地图数据与一条提示词生成三维街区"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Claude Fable 5.2 built it from our map data and one prompt."
+    ]
+  },
+  "2120167560700383572": {
+    "title": "Rome, AD 320",
+    "summary": "以公元 320 年罗马为主题的交互式场景。",
+    "theme_category": "historical",
+    "models_used": [
+      "Claude Fable 5.2 (Max)"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://fable-rome.surge.sh/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "$2,618 prompt - this is what Fable 5.2 (Max) built overnight"
+    ]
+  },
+  "2120910879361548565": {
+    "title": "Room at Dawn",
+    "summary": "由代码生成几何与材质的写实清晨卧室。",
+    "theme_category": "other",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [
+      "Three.js"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "full_repo",
+    "repo_url": "https://github.com/leonxlnx/room-at-dawn",
+    "live_demo_url": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "I built a realistic bedroom with Fable 5.2 in threejs"
+    ]
+  },
+  "2120561077385867663": {
+    "title": "ER-6 Terrain Explorer",
+    "summary": "可操作采用摇臂转向架悬架的火星车在起伏地形中行驶。",
+    "theme_category": "physics_sim",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://fable-rover.vercel.app/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "按火星车悬架设计车辆",
+      "模拟车辆行驶于多种地形"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "I asked it to design a vehicle with rocker-bogie suspension",
+      "To test Fable 5.2's reasoning"
+    ]
+  },
+  "2124439671006748853": {
+    "title": "The Blue Hour",
+    "summary": "以装饰艺术风格绘制的夜间城市三维场景。",
+    "theme_category": "city_diorama",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": true,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://patch.gg/play/blendi/the-blue-hour",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "this 3D scene, all drawn in code by Fable 5.2, open sourced it too"
+    ]
+  },
+  "2120312766544437738": {
+    "title": "Bay Area Through Time",
+    "summary": "可按年份浏览旧金山湾区街区的历史模拟。",
+    "theme_category": "historical",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://bay.theojaffee.net/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "I used Fable 5.2 to simulate the Bay Area through 250 years of history."
+    ]
+  },
+  "2120943068321054975": {
+    "title": "The Garden",
+    "summary": "以 WebGPU 呈现的三维花园。",
+    "theme_category": "nature_ecosystem",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [
+      "Rust",
+      "WebAssembly",
+      "WebGPU"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://samg-coder.github.io/solstice-garden/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Created by Fable 5.2",
+      "Rust to WASM using the WebGPU"
+    ]
+  },
+  "2122006851298693277": {
+    "title": "紫曜宫",
+    "summary": "以道观和山景为主题的可探索场景。",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "hybrid_pipeline",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://www.taoistvibe.com/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "用 Tripo3D 生成神像和主角模型",
+      "用代码生成其余场景"
+    ],
+    "skills_or_prompts_used": [
+      "Tripo3D"
+    ],
+    "evidence_quotes": [
+      "就用 fable 5.2 +tripo3d制作了一个道观“紫曜宫”。",
+      "神像和主角模型是用tripo3d，其他都是代码生成。"
+    ]
+  },
+  "2122274109795054036": {
+    "title": "Hidden Layers",
+    "summary": "在温室中跟随玻璃翼蝶穿越多层景观。",
+    "theme_category": "nature_ecosystem",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://butterfly.kyzo.io/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "使用代码生成几何体、材质与着色器"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Fable 5.2's ability to build aesthetic 3d scenes",
+      "All geometry, materials and shaders are generated in code.",
+      "1.32 billion tokens. $905 api…"
+    ]
+  },
+  "2120330644261589051": {
+    "title": "A Claude demo you can walk into",
+    "summary": "可走进场景并坐到电脑前体验 Claude。",
+    "theme_category": "other",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://claude.ai/artifact/R6YBDkAm2GjAC5A65D9djx",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Fable 5.2 made a Claude demo",
+      "Walk in and sit at any computer:"
+    ]
+  },
+  "2120104517282775514": {
+    "title": "Voxel World in a Bottle",
+    "summary": "装在玻璃瓶里的体素世界。",
+    "theme_category": "voxel_sandbox",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://claude.ai/artifact/9EgZpErM17kH2a9Q3WXW6f",
+    "cost_disclosure_status": "partial",
+    "reported_cost_usd": null,
+    "reported_time_minutes": 30,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Fable 5.2 built an entire voxel world inside a bottle\n\n30 minutes. $12.81"
+    ]
+  },
+  "2120314459793355262": {
+    "title": "Impossible Spaces",
+    "summary": "以不可能空间为主题的三维体验。",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": true,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://patch.gg/blendi/impossible-spaces",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "used fable 5.2 to make this trippy \"impossible spaces\" experience",
+      "open-source too!"
+    ]
+  },
+  "2124115057101664380": {
+    "title": "Rain-Soaked Noodle Stall",
+    "summary": "可拖动旋转、从不同角度看的雨中面摊微缩场景。",
+    "theme_category": "city_diorama",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "full_repo",
+    "repo_url": "https://github.com/cola5939/pixel-dioramas",
+    "live_demo_url": "https://claude.ai/artifact/HCzUsvWqERjQcgJjRuUUFo",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "结合 Claude 与 Ink Studio 制作可旋转场景"
+    ],
+    "skills_or_prompts_used": [
+      "Ink Studio"
+    ],
+    "evidence_quotes": [
+      "这个场景用 Claude Fable 5.2 和 @JungleSilicon 的 Ink Studio 制作。",
+      "也是一个能拖动旋转、从任意角度看的网页。"
+    ]
+  },
+  "2119890973560054072": {
+    "title": "3D Sailing Ship",
+    "summary": "用代码构建的三维帆船场景。",
+    "theme_category": "other",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [
+      "Three.js"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://claude.ai/artifact/7ge282etTXSS4edGFTFa85",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [
+      "Claude Code"
+    ],
+    "evidence_quotes": [
+      "Fable 5.2 (3D Sailing Ship)",
+      "medium reasoning on claude code, est. ~38 minutes ~$17",
+      "it built this in Three.js"
+    ]
+  },
+  "2119905661505122575": {
+    "title": "Pirate Ship",
+    "summary": "海上航行的三维海盗船场景。",
+    "theme_category": "other",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "one_shot",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://tests.jazii.dev/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "fable 5.2: 3d pirate ship sailing across ocean",
+      "this was one shot",
+      "took about 1 hour 30 mins"
+    ]
+  },
+  "2123021723188744248": {
+    "title": "Coralback Ray",
+    "summary": "在浏览器中游动的三维鳐鱼与海床场景。",
+    "theme_category": "nature_ecosystem",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "hybrid_pipeline",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://coralback-ray.wasmer.app/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "提供 Tripo3D 生成的 GLB 模型",
+      "交由 Claude 生成浏览器场景"
+    ],
+    "skills_or_prompts_used": [
+      "Tripo3D"
+    ],
+    "evidence_quotes": [
+      "a living 3D sea creature swimming right inside your browser, built entirely with Claude Fable 5.2.",
+      "a single GLB model generated with @tripoai."
+    ]
+  },
+  "2123618324823388410": {
+    "title": "Pixel Village",
+    "summary": "由代码绘制、可在浏览器运行的像素村庄。",
+    "theme_category": "city_diorama",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": true,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://patch.gg/blendi/pixel-village",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "made this dreamy pixel village using fable 5.2",
+      "every pixel is drawn by code, runs in the browser, and open source:"
+    ]
+  },
+  "2120020272153764172": {
+    "title": "Vancouver From Above",
+    "summary": "从空中俯瞰的温哥华三维场景。",
+    "theme_category": "city_diorama",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [
+      "Three.js"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://vancouver.webly.site/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "asked fable 5.2 to recreate vancouver from above in three.js"
+    ]
+  },
+  "2120212714484330999": {
+    "title": "Windblown",
+    "summary": "操控角色穿过传送门，探索八个由单张图像生成的场景。",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [
+      "3D Gaussian Splatting"
+    ],
+    "generation_mode": "hybrid_pipeline",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://windblown.vercel.app/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "由单张图像生成每个 3DGS 场景",
+      "组合为带传送门的交互网页"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Fable 5.2 to build an interactive web piece where you walk a girl through eight worlds.",
+      "The girl and scenes are all 3DGS, each generated from a single image."
+    ]
+  },
+  "2119900775727902732": {
+    "title": "Jerusalem at Passover",
+    "summary": "以逾越节为背景重建的历史耶路撒冷。",
+    "theme_category": "historical",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://fable-jerusalem.vercel.app/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "this immersive 3D model of Jerusalem that Fable 5.2 built for me."
+    ]
+  },
+  "2121961933540917658": {
+    "title": "Summer Festival",
+    "summary": "可步行探索的动漫风格海边夜祭。",
+    "theme_category": "city_diorama",
+    "models_used": [
+      "Claude Fable 5.2",
+      "Claude Opus 5.5"
+    ],
+    "tech_stack": [
+      "Three.js",
+      "WebGPU"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "full_repo",
+    "repo_url": "https://github.com/starknightt/summer-festival",
+    "live_demo_url": "https://starknightt.github.io/summer-festival/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "claude opus 5.5 and fable 5.2 made the coziest game",
+      "GitHub - StarKnightt/summer-festival: An anime-style seaside town summer festival you walk through — three.js on WebGPU · GitHub"
+    ]
+  },
+  "2120227696261120225": {
+    "title": "Matrix Vibe",
+    "summary": "可飞行探索的雨夜科幻城市。",
+    "theme_category": "sci_fi",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "full_repo",
+    "repo_url": "https://github.com/tornikegomareli/matrix",
+    "live_demo_url": "https://feelthematrix.com/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "I've tested Fable 5.2 and built city inspired by the Matrix atmosphere",
+      "You can fly there and feel the vibe"
+    ]
+  },
+  "2120432591606067359": {
+    "title": "Pine Hollow",
+    "summary": "从旧二维原型扩展生成的三维滑雪山。",
+    "theme_category": "nature_ecosystem",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://loktar00.github.io/pine-hollow/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "以旧二维版本为参考生成三维滑雪山"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "I used Fable 5.2 and told it to make a ski hill in 3d based on this old Deepseek 2d version I did."
+    ]
+  },
+  "2120933859999059970": {
+    "title": "Pixel Art to 3D World",
+    "summary": "将像素画转成可交互三维世界。",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://claude.ai/artifact/HGk1WNqTgrGEE8ndBkEipB",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Fable 5.2 coded this pixel art as an interactive 3D world."
+    ]
+  },
+  "2119910478025789655": {
+    "title": "Galaxy Dive",
+    "summary": "可驾驶视角飞入的星系场景。",
+    "theme_category": "sci_fi",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://galaxy-dive.vercel.app/",
+    "cost_disclosure_status": "partial",
+    "reported_cost_usd": null,
+    "reported_time_minutes": 20,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Fable 5.2 took 20 min",
+      "fly into it yourself"
+    ]
+  },
+  "2119918363799376270": {
+    "title": "Voxel Colosseum",
+    "summary": "将两种模型生成的体素斗兽场并排比较，呈现不同观察尺度。",
+    "theme_category": "voxel_sandbox",
+    "models_used": [
+      "Claude Fable 5.2",
+      "Claude Opus 5.5"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://claude.ai/artifact/7nmzhxeamcunJbKVK32ptz",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Fable 5.2 vs. Opus 5.5",
+      "Asked both to build a voxel Colosseum."
+    ]
+  },
+  "2121259736217911357": {
+    "title": "Red Wing",
+    "summary": "可点击舱门、登机并探索舱室的三维私人飞机。",
+    "theme_category": "other",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://madebysourasith-sudo.github.io/red-wing-jet/",
+    "cost_disclosure_status": "partial",
+    "reported_cost_usd": null,
+    "reported_time_minutes": 2880,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Spent the last 2 days building a private jet with Claude Fable 5.2",
+      "You can walk around it, click the door"
+    ]
+  },
+  "2121286814103421012": {
+    "title": "Da Vinci’s Living Codex",
+    "summary": "把达·芬奇笔记变成可翻阅的三维书籍和机械展示。",
+    "theme_category": "historical",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [
+      "Three.js"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "full_repo",
+    "repo_url": "https://github.com/coding-nanami/davinci-mechanics",
+    "live_demo_url": "https://davinci-mechanics.vercel.app/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "I used Fable 5.2 to turn Leonardo da Vinci’s 15th-century notebooks into an interactive 3D book",
+      "GitHub - coding-nanami/davinci-mechanics: Leonardo da Vinci's ornithopter, self-propelled cart and aerial screw, drawn in ink and rebuilt in timber in the browser. Everything generated in code (Three.js). · GitHub"
+    ]
+  },
+  "2120030246108066195": {
+    "title": "A Hamlet on a Giant Snail",
+    "summary": "巨型蜗牛驮着村落穿过山谷，场景有实时光影和昼夜循环。",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [
+      "WebGL2",
+      "Single-file HTML"
+    ],
+    "generation_mode": "one_shot",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://claude.ai/artifact/BCDCNHRTq3y9W4Px3xc4DN",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "给出单条提示词",
+      "让模型在 HTML 文件中生成 WebGL2 场景"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "One prompt to Claude Fable 5.2: \"bring a 3D castle to life in an HTML file.\"",
+      "Hand-written WebGL2, no libraries, no assets"
+    ]
+  },
+  "2120119243043995748": {
+    "title": "Wooden Pagoda Transformation",
+    "summary": "可拖动旋转并触发变身的五层木塔。",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [
+      "Three.js"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://claude.ai/artifact/UqU4w7jSr6pzF2McsbyQjJ",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Claude Fable 5.2 也太离谱了吧",
+      "全是 three.js，浏览器里实时跑。",
+      "网页能自己拖着转、点一下变身"
+    ]
+  },
+  "2122048423528485116": {
+    "title": "Francis Turbine Explorer",
+    "summary": "可剖开、拆解并运行的三维水轮机教学场景。",
+    "theme_category": "physics_sim",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://cyrilremacle-byte.github.io/francis-turbine-explorer/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "I built an interactive 3D Francis turbine you can cut open, pull apart and run yourself.",
+      "Made with Claude Fable 5.2"
+    ]
+  },
+  "2088809522001584214": {
+    "title": "LOA",
+    "summary": "由 Gemini 生成的 Three.js 开放世界游戏。",
+    "theme_category": "other",
+    "models_used": [
+      "Gemini 3.7 Flash"
+    ],
+    "tech_stack": [
+      "Three.js"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "full_repo",
+    "repo_url": "https://github.com/nifftyswiggle/leageofanimals-game",
+    "live_demo_url": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Gemini 3.7 Flash knows what to do!",
+      "built this open world three.js game"
+    ]
+  },
+  "2089689560242680242": {
+    "title": "Funya Yuki",
+    "summary": "可跨 PC 与安卓联机的三维打雪仗游戏。",
+    "theme_category": "physics_sim",
+    "models_used": [
+      "Gemini 3.7 Flash"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://pwappy-com.github.io/example-apps/funya-yuki/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Gemini 3.7 Flash だけでオンライン対戦ができる3D雪合戦ゲームを作ってみました"
+    ]
+  },
+  "2095969249055375491": {
+    "title": "Void Explorer",
+    "summary": "从恒星间飞行到行星着陆，再步行探索程序化地表。",
+    "theme_category": "sci_fi",
+    "models_used": [
+      "GPT-6 Astra"
+    ],
+    "tech_stack": [
+      "Three.js",
+      "WebGPU",
+      "WebGL2",
+      "Blender"
+    ],
+    "generation_mode": "agentic_loop",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://void-explorer.openai.chatgpt.site/",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "生成概念图并搭建试玩切片",
+      "迭代飞行、导航和地表着陆",
+      "迁移 WebGPU 渲染并用 Blender 建模",
+      "在浏览器检查截图和状态，再修改并重跑测试"
+    ],
+    "skills_or_prompts_used": [
+      "Codex",
+      "Playwright"
+    ],
+    "evidence_quotes": [
+      "Here is Void Explorer! You can explore a beautiful universe full of Earth-sized planets and star systems!",
+      "GPT-6 Astra",
+      "moving the renderer to Three.js’s WebGPU architecture",
+      "capture a screenshot, and check the state behind it."
+    ]
+  }
+}

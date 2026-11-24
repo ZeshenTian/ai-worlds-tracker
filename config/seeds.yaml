@@ -1,0 +1,53 @@
+seed_urls:
+  - https://x.com/ai_for_success/status/2123467103110078747
+  - https://x.com/Bk23544/status/2123791331541807385
+  - https://x.com/xikhar/status/2122682962647122403
+  - https://x.com/BlendiByl/status/2120694003230560585
+  - https://x.com/literallydenis/status/2120866958790848953
+  - https://x.com/anshu4321/status/2119938067758772403
+  - https://x.com/petergostev/status/2120167560700383572
+  - https://x.com/LexnLin/status/2120910879361548565
+  - https://x.com/DilumSanjaya/status/2120561077385867663
+  - https://x.com/BlendiByl/status/2124439671006748853
+  - https://x.com/theojaffee/status/2120312766544437738
+  - https://x.com/SamGCoder/status/2120943068321054975
+  - https://x.com/qiqileyuan/status/2122006851298693277
+  - https://x.com/ky__zo/status/2122274109795054036
+  - https://x.com/dfeinition/status/2120330644261589051
+  - https://x.com/vib3coded/status/2120104517282775514
+  - https://x.com/BlendiByl/status/2120314459793355262
+  - https://x.com/CapyCola/status/2124115057101664380
+  - https://x.com/marcthecreatorr/status/2119890973560054072
+  - https://x.com/notjazii/status/2119905661505122575
+  - https://x.com/thebuggeddev/status/2123021723188744248
+  - https://x.com/BlendiByl/status/2123618324823388410
+  - https://x.com/tokifyi/status/2120020272153764172
+  - https://x.com/nan_in_space/status/2120212714484330999
+  - https://x.com/kplikethebird/status/2119900775727902732
+  - https://x.com/prasenx/status/2121961933540917658
+  - https://x.com/tornikegomareli/status/2120227696261120225
+  - https://x.com/loktar00/status/2120432591606067359
+  - https://x.com/dfeinition/status/2120933859999059970
+  - https://x.com/handsher_NGU/status/2119910478025789655
+  - https://x.com/aGim_asf/status/2119918363799376270
+  - https://x.com/titepommee/status/2121259736217911357
+  - https://x.com/CoderRw11326/status/2121286814103421012
+  - https://x.com/L34342Lin/status/2120030246108066195
+  - https://x.com/acupofai/status/2120119243043995748
+  - https://x.com/cyril_remacle/status/2122048423528485116
+  - https://x.com/NifftySwiggle/status/2088809522001584214
+  - https://x.com/pwappy_com/status/2089689560242680242
+  - https://x.com/Dimillian/status/2095969249055375491
+watch_accounts:
+  - ai_for_success
+  - Bk23544
+search_queries:
+  - '("3D world" OR WebGPU OR "Three.js" OR diorama) (Claude OR Gemini OR GPT) (github.com OR "open source" OR prompt) -is:retweet -is:reply'
+  - '("voxel sandbox" OR "procedural world" OR "world explorer") (Claude OR Gemini OR Codex) (has:links OR has:videos) -is:retweet -is:reply'
+  - '("walking simulator" OR "3D browser game") ("Claude Code" OR Codex OR Gemini) (demo OR github.com) -is:retweet -is:reply'
+  - '(WebGL OR WebGPU) ("one prompt" OR "one shot" OR "agent loop") (has:links OR has:videos) -is:retweet -is:reply'
+  - '("3D world" OR "playable" OR "interactive scene" OR "threejs" OR "WebGPU" OR "voxel" OR "shader") (Claude OR Opus OR Sonnet OR Gemini OR GPT OR Codex OR Cursor) has:videos -is:retweet -is:reply'
+  - '("交互世界" OR "3D世界" OR "3D场景" OR "单文件HTML") (Claude OR Gemini OR GPT OR Codex) (has:videos OR has:links) -is:retweet -is:reply'
+trusted_catalog_hosts:
+  - developers.openai.com
+  - deepmind.google

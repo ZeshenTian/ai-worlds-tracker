@@ -1,0 +1,483 @@
+[
+  {
+    "world_id": "world-172b196ac6439bae5ce2e2ec",
+    "title": "Escapement",
+    "summary": "在桌面机械装置中观看弹珠沿斜轨滚动，依次触发多米诺骨牌、渡台与弹射器。",
+    "theme_category": "physics_sim",
+    "models_used": [
+      "GPT-6.2 Astra"
+    ],
+    "tech_stack": [],
+    "generation_mode": "iterative_chat",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://escapement.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/escapement",
+    "source_kind": "primary_page",
+    "author_name": "Eric Provencher",
+    "author_handle": "pvncher",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "先用斜轨和骨牌验证碰撞，再衔接渡台和弹射器的触发时序，最后调整水花、镜头与声音。"
+    ],
+    "skills_or_prompts_used": [
+      "用弹珠测试重力、碰撞和镜头追踪。"
+    ],
+    "evidence_quotes": [
+      "GPT-6.2 Astra",
+      "Watch a marble run set a mechanical chain reaction in motion."
+    ],
+    "dedup_fingerprint": "https://escapement.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-0dd24156697dc6c33188f7f7",
+    "title": "Paris Atlas",
+    "summary": "步行或驾驶穿过巴黎街道，辨认凯旋门、先贤祠与歌剧院大道的沿街店铺。",
+    "theme_category": "city_diorama",
+    "models_used": [
+      "GPT-6.2 Astra"
+    ],
+    "tech_stack": [
+      "Codex",
+      "Blender",
+      "Three.js"
+    ],
+    "generation_mode": "hybrid_pipeline",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://paris-atlas-street-explorer.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/paris-atlas",
+    "source_kind": "primary_page",
+    "author_name": "Thomas Ricouard",
+    "author_handle": "Dimillian",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "把地理数据整理成可分块加载的街区，在 Blender 建造地标，再把建筑和街景导入 Three.js。"
+    ],
+    "skills_or_prompts_used": [
+      "让行人和驾驶者都能凭街道细节辨认位置。"
+    ],
+    "evidence_quotes": [
+      "GPT-6.2 Astra",
+      "Codex brought Blender landmarks into Three.js"
+    ],
+    "dedup_fingerprint": "https://paris-atlas-street-explorer.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-8ca86ee658c31484c96dfed1",
+    "title": "Notre Damn",
+    "summary": "走进巴黎圣母院的数字重建，穿过哥特式中殿与侧廊，改变日照观察玫瑰窗投下的光。",
+    "theme_category": "historical",
+    "models_used": [
+      "GPT-6.2 Astra"
+    ],
+    "tech_stack": [
+      "Codex",
+      "JavaScript"
+    ],
+    "generation_mode": "iterative_chat",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://cathedral-walk.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/notre-damn",
+    "source_kind": "primary_page",
+    "author_name": "Thomas Ricouard",
+    "author_handle": "Dimillian",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "搭建重复的柱列与尖拱，按平面图调整动线，再反复校对彩窗、祭坛和两侧耳堂。"
+    ],
+    "skills_or_prompts_used": [
+      "让玫瑰窗和中殿照明随一天中的时间变化。"
+    ],
+    "evidence_quotes": [
+      "GPT-6.2 Astra",
+      "Explore a 3D reconstruction of Notre-Dame."
+    ],
+    "dedup_fingerprint": "https://cathedral-walk.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-da4ddd6bdbf0b1c9985e88ab",
+    "title": "Forest Walks",
+    "summary": "在黄昏的林间循声寻找营火，保留观察位置切换写实、绘本和玻璃质感的三种森林。",
+    "theme_category": "nature_ecosystem",
+    "models_used": [
+      "GPT-6.2 Astra"
+    ],
+    "tech_stack": [
+      "Codex",
+      "JavaScript",
+      "Blender"
+    ],
+    "generation_mode": "hybrid_pipeline",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://forest-walks-at-dusk.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/forest-walks",
+    "source_kind": "primary_page",
+    "author_name": "Thomas Ricouard",
+    "author_handle": "Dimillian",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "先建立可行走的暮色小径，在 Blender 制作倒木地标，再制作另外两种风格并对齐切换时的视点。"
+    ],
+    "skills_or_prompts_used": [
+      "让玩家通过声音找到营火。"
+    ],
+    "evidence_quotes": [
+      "GPT-6.2 Astra",
+      "Explore the same forest in three different worlds."
+    ],
+    "dedup_fingerprint": "https://forest-walks-at-dusk.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-670b2a8f4587f5fd6ec597b0",
+    "title": "Light & Matter",
+    "summary": "以第一人称参观光与材料博物馆，走过展示空间，观察雕塑、光照与视觉特效。",
+    "theme_category": "physics_sim",
+    "models_used": [
+      "GPT-6.2 Astra"
+    ],
+    "tech_stack": [],
+    "generation_mode": "iterative_chat",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://light-and-matter.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/light-and-matter",
+    "source_kind": "primary_page",
+    "author_name": "Eric Provencher",
+    "author_handle": "pvncher",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "确定博物馆的布局与步行动线，核对建筑外壳，再迭代雕塑动画、露台和入口照明。"
+    ],
+    "skills_or_prompts_used": [
+      "用第一人称控制器把不同视觉特效布置成可参观的展品。"
+    ],
+    "evidence_quotes": [
+      "GPT-6.2 Astra",
+      "Build a museum with a first-person controller and interactive visual effects exhibits."
+    ],
+    "dedup_fingerprint": "https://light-and-matter.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-50be090ced8df88f80e31e5c",
+    "title": "Velocity Loop",
+    "summary": "在微缩工坊中驾驶玩具车挑战计时赛道，尝试不同车辆并刷新成绩。",
+    "theme_category": "other",
+    "models_used": [
+      "GPT-6 Astra"
+    ],
+    "tech_stack": [],
+    "generation_mode": "iterative_chat",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://velocity-loop.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/velocity-loop",
+    "source_kind": "primary_page",
+    "author_name": "VB Srivastav",
+    "author_handle": "reach_vb",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "以菜单和竞速概念图确定方向，搭建首条可玩的赛道，试玩后补充工坊材料与车库。"
+    ],
+    "skills_or_prompts_used": [
+      "让工坊道具和玩具赛道共享微缩比例。"
+    ],
+    "evidence_quotes": [
+      "GPT-6 Astra",
+      "A 3D toy-car time-trial game set in miniature workshops."
+    ],
+    "dedup_fingerprint": "https://velocity-loop.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-e9389e42ee718bdf9b16eac2",
+    "title": "Abyssal",
+    "summary": "观察程序生成的发光鱼群、水母与珊瑚，通过环境控件探索深海生态场景。",
+    "theme_category": "nature_ecosystem",
+    "models_used": [
+      "GPT-6 Astra"
+    ],
+    "tech_stack": [
+      "Codex",
+      "HTML",
+      "JavaScript",
+      "WebGL"
+    ],
+    "generation_mode": "iterative_chat",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://abyssal-ecosystem-astra-20260901.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/abyssal-bioluminescent-ecosystem",
+    "source_kind": "primary_page",
+    "author_name": "VB Srivastav",
+    "author_handle": "reach_vb",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "先生成海底栖息地、动画生物与环境控件，再为较小屏幕调整界面布局。"
+    ],
+    "skills_or_prompts_used": [
+      "把程序几何和着色器内联到可离线运行的单个 HTML 页面。"
+    ],
+    "evidence_quotes": [
+      "GPT-6 Astra",
+      "Generate the underwater habitat, animated organisms, and environmental controls."
+    ],
+    "dedup_fingerprint": "https://abyssal-ecosystem-astra-20260901.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-16298eb4e8e68cde53adf1fb",
+    "title": "Clockwork Observatory",
+    "summary": "操控相机观察机械天文台的变形过程，查看石阶、桥梁与黄铜齿轮如何改变建筑形态。",
+    "theme_category": "physics_sim",
+    "models_used": [
+      "GPT-6 Astra"
+    ],
+    "tech_stack": [
+      "Codex",
+      "HTML",
+      "JavaScript",
+      "WebGL"
+    ],
+    "generation_mode": "iterative_chat",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://kinetic-architecture-astra-20260901.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/impossible-kinetic-architecture",
+    "source_kind": "primary_page",
+    "author_name": "VB Srivastav",
+    "author_handle": "reach_vb",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "先生成机械结构、运动与相机控制，再修正渲染稳定性。"
+    ],
+    "skills_or_prompts_used": [
+      "用浏览器原生 WebGL 实现单文件场景，并提供降级渲染。"
+    ],
+    "evidence_quotes": [
+      "GPT-6 Astra",
+      "Generate the observatory, moving mechanisms, and camera controls."
+    ],
+    "dedup_fingerprint": "https://kinetic-architecture-astra-20260901.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-e903a899047e037d94778711",
+    "title": "Little Ritual",
+    "summary": "从咖啡馆出发，在可环游的小行星街区寻找邻居，把手中的咖啡逐杯送到。",
+    "theme_category": "city_diorama",
+    "models_used": [
+      "GPT-6 Astra"
+    ],
+    "tech_stack": [
+      "Codex",
+      "TypeScript",
+      "Blender"
+    ],
+    "generation_mode": "hybrid_pipeline",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://little-ritual.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/little-ritual",
+    "source_kind": "primary_page",
+    "author_name": "Jeff Wang",
+    "author_handle": null,
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "先做出取咖啡和配送的玩法，再用 Blender 制作角色与道具，扩建街区后优化移动端操作。"
+    ],
+    "skills_or_prompts_used": [
+      "把配送员放在能徒步绕行的小行星上，让玩家自己发现邻居。"
+    ],
+    "evidence_quotes": [
+      "GPT-6 Astra",
+      "A 3D coffee-delivery game on a small spherical world."
+    ],
+    "dedup_fingerprint": "https://little-ritual.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-093a9823a1e6c4452a25aa6b",
+    "title": "Physics museum",
+    "summary": "在三维科学馆内自由行走，点击展品近看并启动五项演示，观察织物、风与接触等物理现象。",
+    "theme_category": "physics_sim",
+    "models_used": [
+      "GPT-6 Astra"
+    ],
+    "tech_stack": [
+      "Codex",
+      "TypeScript",
+      "Blender"
+    ],
+    "generation_mode": "hybrid_pipeline",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://astra-museum-of-motion.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/physics-museum",
+    "source_kind": "primary_page",
+    "author_name": "Katia Gil Guzman",
+    "author_handle": "kagigz",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "在 Blender 制作并导出展厅和展品，然后加入行走与鼠标视角，把近看和启动设计成连续两次操作。"
+    ],
+    "skills_or_prompts_used": [
+      "让丝绸展品对静风、微风和阵风表现出不同的摆动。"
+    ],
+    "evidence_quotes": [
+      "GPT-6 Astra",
+      "A 3D science museum with five interactive exhibits."
+    ],
+    "dedup_fingerprint": "https://astra-museum-of-motion.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-558a3ee85cefb29336a09995",
+    "title": "Sunwake",
+    "summary": "驾驶帆船越过涌浪驶向灯塔，在航行中观察波面和帆船动作。",
+    "theme_category": "other",
+    "models_used": [
+      "GPT-6 Astra"
+    ],
+    "tech_stack": [
+      "Codex",
+      "TypeScript",
+      "Blender"
+    ],
+    "generation_mode": "hybrid_pipeline",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://sunwake-the-last-light.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/sunwake",
+    "source_kind": "primary_page",
+    "author_name": "Thomas Ricouard",
+    "author_handle": "Dimillian",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "用概念图比较水面风格，制作首段可玩的航程，接着在 Blender 细化船体、索具和船体入水状态。"
+    ],
+    "skills_or_prompts_used": [
+      "先完成一段能操舵的航程，再调整水体与船的运动感。"
+    ],
+    "evidence_quotes": [
+      "GPT-6 Astra",
+      "A sailing game about crossing wild seas and reaching lighthouses."
+    ],
+    "dedup_fingerprint": "https://sunwake-the-last-light.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  },
+  {
+    "world_id": "world-2b15cb8c3b6b2752c935d30d",
+    "title": "Tidegarden",
+    "summary": "在实时热带海岛场景中观察近岸珊瑚、随风摇曳的棕榈与海浪冲上海滩的过程。",
+    "theme_category": "nature_ecosystem",
+    "models_used": [
+      "GPT-6 Astra"
+    ],
+    "tech_stack": [
+      "Codex",
+      "Blender",
+      "Oriel"
+    ],
+    "generation_mode": "hybrid_pipeline",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://tidegarden.openai.chatgpt.site/",
+    "original_post_url": "https://developers.openai.com/showcase/tidegarden",
+    "source_kind": "primary_page",
+    "author_name": "Eric Provencher",
+    "author_handle": "pvncher",
+    "published_at": null,
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "从参考图与单棵棕榈的小岛原型起步，在 Blender 组合珊瑚群，让浪峰驱动岸边泡沫，最后优化资产和着色。"
+    ],
+    "skills_or_prompts_used": [
+      "让浪峰、冲岸和回落由同一道行进波驱动。"
+    ],
+    "evidence_quotes": [
+      "GPT-6 Astra",
+      "A 3D tropical island with a living reef and rolling waves."
+    ],
+    "dedup_fingerprint": "https://tidegarden.openai.chatgpt.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": []
+  }
+]

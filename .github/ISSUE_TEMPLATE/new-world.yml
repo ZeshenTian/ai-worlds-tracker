@@ -1,0 +1,31 @@
+name: 提交新世界
+description: 推荐可追溯的 AI 交互世界案例
+title: "[新世界] "
+body:
+  - type: input
+    id: title
+    attributes:
+      label: 作品名称
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 作者 X 原帖或第一方项目介绍
+      placeholder: https://example.org/
+    validations:
+      required: true
+  - type: input
+    id: demo
+    attributes:
+      label: 试玩链接
+  - type: input
+    id: repo
+    attributes:
+      label: 源码仓库
+      placeholder: https://github.com/
+  - type: textarea
+    id: workflow
+    attributes:
+      label: 模型与工作流依据
+      description: 可附作者公开的提示、构建步骤或复盘链接。

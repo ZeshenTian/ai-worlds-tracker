@@ -1,0 +1,18 @@
+{
+  "pages": {
+    "https://github.com/forestlab/mosswood": {"markdown": "# Mosswood\nThree.js procedural forest. MIT license."},
+    "https://github.com/forestlab/mosswood/blob/main/README.md": {"markdown": "# Mosswood\nUsed Claude Opus 4.6 to generate the terrain and then checked screenshots with Playwright."},
+    "https://github.com/forestlab/mosswood/blob/main/CLAUDE.md": {"markdown": "Run a Playwright screenshot check whenever the world lighting changes."},
+    "https://forestlab.example.org/mosswood": {"markdown": "Mosswood walkable forest demo."},
+    "https://voxelmaker.example.com/tide": {"markdown": "Voxel Tide interactive island demo."}
+  },
+  "repositories": {
+    "https://github.com/forestlab/mosswood": {
+      "exists": true, "license": "MIT", "owner": "forestlab",
+      "files": [
+        {"url": "https://github.com/forestlab/mosswood/blob/main/README.md", "kind": "readme"},
+        {"url": "https://github.com/forestlab/mosswood/blob/main/CLAUDE.md", "kind": "workflow"}
+      ]
+    }
+  }
+}

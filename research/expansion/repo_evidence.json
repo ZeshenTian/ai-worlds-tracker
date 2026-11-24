@@ -1,0 +1,923 @@
+{
+  "checked_at": "2026-11-24T07:34:19.321326+00:00",
+  "firecrawl_authentication": "authenticated",
+  "source_counts": {
+    "firecrawl": 37,
+    "publisher_html": 5,
+    "github_api": 4
+  },
+  "cases": {
+    "world-093a9823a1e6c4452a25aa6b": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/physics-museum",
+          "retrieved_url": "https://developers.openai.com/showcase/physics-museum",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6 Astra",
+            "A 3D science museum with five interactive exhibits."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-0dd24156697dc6c33188f7f7": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/paris-atlas",
+          "retrieved_url": "https://developers.openai.com/showcase/paris-atlas",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "quote_check": "checked_against_primary"
+        },
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/paris-atlas",
+          "retrieved_url": "https://developers.openai.com/showcase/paris-atlas",
+          "method": "publisher_html",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6.2 Astra",
+            "Codex brought Blender landmarks into Three.js"
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-16298eb4e8e68cde53adf1fb": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/impossible-kinetic-architecture",
+          "retrieved_url": "https://developers.openai.com/showcase/impossible-kinetic-architecture",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "quote_check": "checked_against_primary"
+        },
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/impossible-kinetic-architecture",
+          "retrieved_url": "https://developers.openai.com/showcase/impossible-kinetic-architecture",
+          "method": "publisher_html",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6 Astra",
+            "Generate the observatory, moving mechanisms, and camera controls."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-172b196ac6439bae5ce2e2ec": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/escapement",
+          "retrieved_url": "https://developers.openai.com/showcase/escapement",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6.2 Astra",
+            "Watch a marble run set a mechanical chain reaction in motion."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-29474e5d16946b3a28edde32": {
+      "patch": {
+        "is_open_source": true,
+        "workflow_steps": [
+          "作者公开了发给 Claude Code 的两轮原始提示，先构建海边祭典，再根据试玩提出五项修订。"
+        ],
+        "skills_or_prompts_used": [
+          "threejs-gameplay-systems",
+          "webgpu-threejs-tsl",
+          "Blender MCP"
+        ],
+        "evidence_quotes": [
+          "The prompts given to Claude Code to build this game, in order and verbatim.",
+          "threejs-gameplay-systems",
+          "webgpu-threejs-tsl",
+          "blender through the mcp"
+        ]
+      },
+      "sources": [
+        {
+          "kind": "repository",
+          "url": "https://github.com/starknightt/summer-festival",
+          "retrieved_url": "https://github.com/starknightt/summer-festival",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": []
+        },
+        {
+          "kind": "license",
+          "url": "https://api.github.com/repos/starknightt/summer-festival",
+          "method": "github_api",
+          "field": "license.spdx_id",
+          "quotes": [
+            "MIT"
+          ]
+        },
+        {
+          "kind": "automation",
+          "url": "https://github.com/StarKnightt/summer-festival/blob/main/.github/workflows/pages.yml",
+          "retrieved_url": "https://github.com/StarKnightt/summer-festival/blob/main/.github/workflows/pages.yml",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "blob_sha": "58b6b87ea9582c4e4388a508f42582c43b0c208c"
+        },
+        {
+          "kind": "workflow",
+          "url": "https://github.com/StarKnightt/summer-festival/blob/main/PROMPTS.md",
+          "retrieved_url": "https://github.com/StarKnightt/summer-festival/blob/main/PROMPTS.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "The prompts given to Claude Code to build this game, in order and verbatim.",
+            "threejs-gameplay-systems",
+            "webgpu-threejs-tsl",
+            "blender through the mcp"
+          ],
+          "blob_sha": "b8fc644959123a846b02f40647e867c08e36ff8e"
+        },
+        {
+          "kind": "readme",
+          "url": "https://github.com/StarKnightt/summer-festival/blob/main/README.md",
+          "retrieved_url": "https://github.com/StarKnightt/summer-festival/blob/main/README.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "blob_sha": "83e7940a0c833e4b4217d606a5117a4fc433c0e3"
+        }
+      ],
+      "repository": {
+        "checked_at": "2026-11-24T07:20:57.589367+00:00",
+        "default_branch": "main",
+        "exists": true,
+        "files": [
+          {
+            "blob_sha": "58b6b87ea9582c4e4388a508f42582c43b0c208c",
+            "kind": "automation",
+            "path": ".github/workflows/pages.yml",
+            "url": "https://github.com/StarKnightt/summer-festival/blob/main/.github/workflows/pages.yml"
+          },
+          {
+            "blob_sha": "b8fc644959123a846b02f40647e867c08e36ff8e",
+            "kind": "workflow",
+            "path": "PROMPTS.md",
+            "url": "https://github.com/StarKnightt/summer-festival/blob/main/PROMPTS.md"
+          },
+          {
+            "blob_sha": "83e7940a0c833e4b4217d606a5117a4fc433c0e3",
+            "kind": "readme",
+            "path": "README.md",
+            "url": "https://github.com/StarKnightt/summer-festival/blob/main/README.md"
+          }
+        ],
+        "license": "MIT",
+        "owner": "StarKnightt",
+        "refresh_note": "GitHub rate limit; reused the previously verified public tree.",
+        "refresh_status_code": 403,
+        "tree_sha": "2a19a0224e3b01e576572fbe0feba8c2b492faf1",
+        "tree_url": "https://api.github.com/repos/starknightt/summer-festival/git/trees/main?recursive=1",
+        "truncated": false
+      }
+    },
+    "world-2b15cb8c3b6b2752c935d30d": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/tidegarden",
+          "retrieved_url": "https://developers.openai.com/showcase/tidegarden",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6 Astra",
+            "A 3D tropical island with a living reef and rolling waves."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-31c473cd4707b987c36edc02": {
+      "patch": {
+        "workflow_steps": [
+          "作者保留可读的单页源代码，通过 Node 构建脚本压缩着色器和 JavaScript，生成 dist/index.html。"
+        ],
+        "tech_stack": [
+          "Node.js",
+          "Terser"
+        ],
+        "evidence_quotes": [
+          "index.html stays the readable source.",
+          "goes through terser."
+        ]
+      },
+      "sources": [
+        {
+          "kind": "repository",
+          "url": "https://github.com/kevintngo/dungeon-game",
+          "retrieved_url": "https://github.com/kevintngo/dungeon-game",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": []
+        },
+        {
+          "kind": "source_code",
+          "url": "https://github.com/kevintngo/dungeon-game/blob/main/build.js",
+          "retrieved_url": "https://github.com/kevintngo/dungeon-game/blob/main/build.js",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "index.html stays the readable source.",
+            "goes through terser."
+          ]
+        }
+      ],
+      "repository": {
+        "checked_at": "2026-11-24T07:20:57.589367+00:00",
+        "default_branch": "main",
+        "exists": true,
+        "files": [],
+        "license": null,
+        "owner": "kevintngo",
+        "refresh_note": "GitHub rate limit; reused the previously verified public tree.",
+        "refresh_status_code": 403,
+        "tree_sha": "e260e1a365c95b0b7660d61e287e449a1e7bcfac",
+        "tree_url": "https://api.github.com/repos/kevintngo/dungeon-game/git/trees/main?recursive=1",
+        "truncated": false
+      }
+    },
+    "world-48aa5afb3651d9cd35786d63": {
+      "patch": {
+        "workflow_steps": [
+          "将 Blender 制作的 AURORA 飞船接入游戏，把着陆、步行与重登飞船连成同一次地面探险。",
+          "作者用 Rapier 在局部物理世界处理步行；更换飞船模型前后，用同一项 Playwright 测试采集 90 个帧间隔，并比较绘制调用与三角形数。"
+        ],
+        "evidence_quotes": [
+          "Model AURORA in Blender and integrate the spacecraft into the game.",
+          "Connect landing, walking, and reboarding into one planetary expedition.",
+          "collected 90 frame intervals",
+          "small local physics world"
+        ],
+        "tech_stack": [
+          "Rapier"
+        ]
+      },
+      "sources": [
+        {
+          "kind": "author_build_process",
+          "url": "https://developers.openai.com/showcase/void-explorer",
+          "retrieved_url": "https://developers.openai.com/showcase/void-explorer",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "quote_check": "checked_against_primary"
+        },
+        {
+          "kind": "author_build_process",
+          "url": "https://developers.openai.com/showcase/void-explorer",
+          "retrieved_url": "https://developers.openai.com/showcase/void-explorer",
+          "method": "publisher_html",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "Model AURORA in Blender and integrate the spacecraft into the game.",
+            "Connect landing, walking, and reboarding into one planetary expedition."
+          ]
+        },
+        {
+          "kind": "author_build_process",
+          "url": "https://developers.openai.com/blog/how-to-build-games-with-astra",
+          "retrieved_url": "https://developers.openai.com/blog/how-to-build-games-with-astra",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "collected 90 frame intervals",
+            "small local physics world"
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-4d8440cb7652ab87047733a7": {
+      "patch": {
+        "workflow_steps": [
+          "作者提出目标并检查每轮结果，模型规划、编写、运行并回报检查结果。作者记载对话大约持续 22 小时，包含中途停顿。"
+        ],
+        "skills_or_prompts_used": [
+          "Claude Code"
+        ],
+        "evidence_quotes": [
+          "The model planned the change, wrote it, ran it",
+          "The conversation ran for about 22 hours, pauses included"
+        ]
+      },
+      "sources": [
+        {
+          "kind": "repository",
+          "url": "https://github.com/tornikegomareli/matrix",
+          "retrieved_url": "https://github.com/tornikegomareli/matrix",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": []
+        },
+        {
+          "kind": "readme",
+          "url": "https://github.com/tornikegomareli/Matrix/blob/main/README.md",
+          "retrieved_url": "https://github.com/tornikegomareli/Matrix/blob/main/README.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "blob_sha": "0fcb021b0d4e1c13648531e0d32c7745b61b14cc"
+        },
+        {
+          "kind": "workflow",
+          "url": "https://github.com/tornikegomareli/Matrix/blob/main/docs/architecture.md",
+          "retrieved_url": "https://github.com/tornikegomareli/Matrix/blob/main/docs/architecture.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "blob_sha": "0d65667cad360eb6b8e3add00ae00efb614a1062"
+        },
+        {
+          "kind": "workflow",
+          "url": "https://github.com/tornikegomareli/Matrix/blob/main/docs/experiment.md",
+          "retrieved_url": "https://github.com/tornikegomareli/Matrix/blob/main/docs/experiment.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "The model planned the change, wrote it, ran it",
+            "The conversation ran for about 22 hours, pauses included"
+          ],
+          "blob_sha": "af99892021a5a5fdaab86ff403221788c950fd2b"
+        }
+      ],
+      "repository": {
+        "checked_at": "2026-11-24T07:20:57.589367+00:00",
+        "default_branch": "main",
+        "exists": true,
+        "files": [
+          {
+            "blob_sha": "0fcb021b0d4e1c13648531e0d32c7745b61b14cc",
+            "kind": "readme",
+            "path": "README.md",
+            "url": "https://github.com/tornikegomareli/Matrix/blob/main/README.md"
+          },
+          {
+            "blob_sha": "0d65667cad360eb6b8e3add00ae00efb614a1062",
+            "kind": "workflow",
+            "path": "docs/architecture.md",
+            "url": "https://github.com/tornikegomareli/Matrix/blob/main/docs/architecture.md"
+          },
+          {
+            "blob_sha": "af99892021a5a5fdaab86ff403221788c950fd2b",
+            "kind": "workflow",
+            "path": "docs/experiment.md",
+            "url": "https://github.com/tornikegomareli/Matrix/blob/main/docs/experiment.md"
+          }
+        ],
+        "license": null,
+        "owner": "tornikegomareli",
+        "refresh_note": "GitHub rate limit; reused the previously verified public tree.",
+        "refresh_status_code": 403,
+        "tree_sha": "59de85388f301b6e79a586e431a7ad06d5efd968",
+        "tree_url": "https://api.github.com/repos/tornikegomareli/matrix/git/trees/main?recursive=1",
+        "truncated": false
+      }
+    },
+    "world-50be090ced8df88f80e31e5c": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/velocity-loop",
+          "retrieved_url": "https://developers.openai.com/showcase/velocity-loop",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6 Astra",
+            "A 3D toy-car time-trial game set in miniature workshops."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-558a3ee85cefb29336a09995": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/sunwake",
+          "retrieved_url": "https://developers.openai.com/showcase/sunwake",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6 Astra",
+            "A sailing game about crossing wild seas and reaching lighthouses."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-670b2a8f4587f5fd6ec597b0": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/light-and-matter",
+          "retrieved_url": "https://developers.openai.com/showcase/light-and-matter",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "quote_check": "checked_against_primary"
+        },
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/light-and-matter",
+          "retrieved_url": "https://developers.openai.com/showcase/light-and-matter",
+          "method": "publisher_html",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6.2 Astra",
+            "Build a museum with a first-person controller and interactive visual effects exhibits."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-713939da64ff0969be40e4ea": {
+      "patch": {
+        "is_open_source": true,
+        "workflow_steps": [
+          "用代码生成几何体、纸页与墨线，在单页源文件中维护场景，再把内联样式和脚本压缩到发布版本。"
+        ],
+        "evidence_quotes": [
+          "Everything is generated in code: the geometry, the paper, the ink lines",
+          "minifies the inline CSS and scripts into `dist/index.html`"
+        ]
+      },
+      "sources": [
+        {
+          "kind": "repository",
+          "url": "https://github.com/coding-nanami/davinci-mechanics",
+          "retrieved_url": "https://github.com/coding-nanami/davinci-mechanics",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": []
+        },
+        {
+          "kind": "license",
+          "url": "https://api.github.com/repos/coding-nanami/davinci-mechanics",
+          "method": "github_api",
+          "field": "license.spdx_id",
+          "quotes": [
+            "MIT"
+          ]
+        },
+        {
+          "kind": "readme",
+          "url": "https://github.com/coding-nanami/davinci-mechanics/blob/main/README.md",
+          "retrieved_url": "https://github.com/coding-nanami/davinci-mechanics/blob/main/README.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "Everything is generated in code: the geometry, the paper, the ink lines",
+            "minifies the inline CSS and scripts into `dist/index.html`"
+          ],
+          "blob_sha": "b2d59d276d5b3a0c3a89b395ca004997b328bfb3"
+        }
+      ],
+      "repository": {
+        "checked_at": "2026-11-24T07:20:57.589367+00:00",
+        "default_branch": "main",
+        "exists": true,
+        "files": [
+          {
+            "blob_sha": "b2d59d276d5b3a0c3a89b395ca004997b328bfb3",
+            "kind": "readme",
+            "path": "README.md",
+            "url": "https://github.com/coding-nanami/davinci-mechanics/blob/main/README.md"
+          }
+        ],
+        "license": "MIT",
+        "owner": "coding-nanami",
+        "refresh_note": "GitHub rate limit; reused the previously verified public tree.",
+        "refresh_status_code": 403,
+        "tree_sha": "e8a518e6cb443f48acb1a510a5c6ec038cf7a5e7",
+        "tree_url": "https://api.github.com/repos/coding-nanami/davinci-mechanics/git/trees/main?recursive=1",
+        "truncated": false
+      }
+    },
+    "world-7f7a55c999212a5e14ce8c43": {
+      "patch": {
+        "is_open_source": true,
+        "workflow_steps": [
+          "用固定随机种子生成家具、布料和植物，再用 CPU 烘焙光照。README 所列 20 至 30 分钟指光照重新烘焙的时长。"
+        ],
+        "evidence_quotes": [
+          "furniture, cloth, plants and trees are generated procedurally with seeded randomness",
+          "re-bake the lighting (CPU, ~20–30 min)"
+        ]
+      },
+      "sources": [
+        {
+          "kind": "repository",
+          "url": "https://github.com/leonxlnx/room-at-dawn",
+          "retrieved_url": "https://github.com/leonxlnx/room-at-dawn",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": []
+        },
+        {
+          "kind": "license",
+          "url": "https://api.github.com/repos/leonxlnx/room-at-dawn",
+          "method": "github_api",
+          "field": "license.spdx_id",
+          "quotes": [
+            "MIT"
+          ]
+        },
+        {
+          "kind": "readme",
+          "url": "https://github.com/Leonxlnx/room-at-dawn/blob/main/README.md",
+          "retrieved_url": "https://github.com/Leonxlnx/room-at-dawn/blob/main/README.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "furniture, cloth, plants and trees are generated procedurally with seeded randomness",
+            "re-bake the lighting (CPU, ~20–30 min)"
+          ],
+          "blob_sha": "0f82230465538470f4382a9001a7271677c5a12d"
+        },
+        {
+          "kind": "workflow",
+          "url": "https://github.com/Leonxlnx/room-at-dawn/blob/main/docs/ARCHITECTURE.md",
+          "retrieved_url": "https://github.com/Leonxlnx/room-at-dawn/blob/main/docs/ARCHITECTURE.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "blob_sha": "a64bca0584439b9e1d33fd2a1a3c7cf2b5b3c347"
+        }
+      ],
+      "repository": {
+        "checked_at": "2026-11-24T07:20:57.589367+00:00",
+        "default_branch": "main",
+        "exists": true,
+        "files": [
+          {
+            "blob_sha": "0f82230465538470f4382a9001a7271677c5a12d",
+            "kind": "readme",
+            "path": "README.md",
+            "url": "https://github.com/Leonxlnx/room-at-dawn/blob/main/README.md"
+          },
+          {
+            "blob_sha": "a64bca0584439b9e1d33fd2a1a3c7cf2b5b3c347",
+            "kind": "workflow",
+            "path": "docs/ARCHITECTURE.md",
+            "url": "https://github.com/Leonxlnx/room-at-dawn/blob/main/docs/ARCHITECTURE.md"
+          }
+        ],
+        "license": "MIT",
+        "owner": "Leonxlnx",
+        "refresh_note": "GitHub rate limit; reused the previously verified public tree.",
+        "refresh_status_code": 403,
+        "tree_sha": "aab8be218aa051bbb2e22b82916962619c951747",
+        "tree_url": "https://api.github.com/repos/leonxlnx/room-at-dawn/git/trees/main?recursive=1",
+        "truncated": false
+      }
+    },
+    "world-8ca86ee658c31484c96dfed1": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/notre-damn",
+          "retrieved_url": "https://developers.openai.com/showcase/notre-damn",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6.2 Astra",
+            "Explore a 3D reconstruction of Notre-Dame."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-d5125352731996d5b44ada20": {
+      "patch": {
+        "workflow_steps": [
+          "在 Ink Studio 雕刻与烘焙雨夜面摊，把场景预先打包进可离线打开的 WebGL 单页。"
+        ],
+        "skills_or_prompts_used": [
+          "Ink Studio"
+        ],
+        "evidence_quotes": [
+          "Small pixel-art dioramas sculpted, baked and rendered with Ink Studio.",
+          "场景在构建时预先烘焙进页面"
+        ]
+      },
+      "sources": [
+        {
+          "kind": "repository",
+          "url": "https://github.com/cola5939/pixel-dioramas",
+          "retrieved_url": "https://github.com/cola5939/pixel-dioramas",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": []
+        },
+        {
+          "kind": "readme",
+          "url": "https://github.com/cola5939/pixel-dioramas/blob/main/README.md",
+          "retrieved_url": "https://github.com/cola5939/pixel-dioramas/blob/main/README.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "Small pixel-art dioramas sculpted, baked and rendered with Ink Studio.",
+            "场景在构建时预先烘焙进页面"
+          ],
+          "blob_sha": "0c1853d998d6cf2ea3977a6bbf5da970cee2e884"
+        }
+      ],
+      "repository": {
+        "checked_at": "2026-11-24T07:20:57.589367+00:00",
+        "default_branch": "main",
+        "exists": true,
+        "files": [
+          {
+            "blob_sha": "0c1853d998d6cf2ea3977a6bbf5da970cee2e884",
+            "kind": "readme",
+            "path": "README.md",
+            "url": "https://github.com/cola5939/pixel-dioramas/blob/main/README.md"
+          }
+        ],
+        "license": null,
+        "owner": "cola5939",
+        "refresh_note": "GitHub rate limit; reused the previously verified public tree.",
+        "refresh_status_code": 403,
+        "tree_sha": "55cdc4a59f900000ec4afb5290e3495686c28c6f",
+        "tree_url": "https://api.github.com/repos/cola5939/pixel-dioramas/git/trees/main?recursive=1",
+        "truncated": false
+      }
+    },
+    "world-da4ddd6bdbf0b1c9985e88ab": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/forest-walks",
+          "retrieved_url": "https://developers.openai.com/showcase/forest-walks",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6.2 Astra",
+            "Explore the same forest in three different worlds."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-e903a899047e037d94778711": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/little-ritual",
+          "retrieved_url": "https://developers.openai.com/showcase/little-ritual",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6 Astra",
+            "A 3D coffee-delivery game on a small spherical world."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-e9389e42ee718bdf9b16eac2": {
+      "patch": {},
+      "sources": [
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/abyssal-bioluminescent-ecosystem",
+          "retrieved_url": "https://developers.openai.com/showcase/abyssal-bioluminescent-ecosystem",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "quote_check": "checked_against_primary"
+        },
+        {
+          "kind": "publisher_build_process",
+          "url": "https://developers.openai.com/showcase/abyssal-bioluminescent-ecosystem",
+          "retrieved_url": "https://developers.openai.com/showcase/abyssal-bioluminescent-ecosystem",
+          "method": "publisher_html",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "GPT-6 Astra",
+            "Generate the underwater habitat, animated organisms, and environmental controls."
+          ]
+        }
+      ],
+      "repository": {}
+    },
+    "world-f01df3cce30208f69c7e6454": {
+      "patch": {
+        "is_open_source": true,
+        "workflow_steps": [
+          "仓库的 Pages 工作流在 main 分支更新时安装依赖、构建项目，并把 dist 目录发布到 GitHub Pages。"
+        ],
+        "evidence_quotes": [
+          "npm ci",
+          "npm run build",
+          "actions/upload-pages-artifact@v3",
+          "actions/deploy-pages@v4"
+        ]
+      },
+      "sources": [
+        {
+          "kind": "repository",
+          "url": "https://github.com/xikhar/papertrails",
+          "retrieved_url": "https://github.com/xikhar/papertrails",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": []
+        },
+        {
+          "kind": "license",
+          "url": "https://api.github.com/repos/xikhar/papertrails",
+          "method": "github_api",
+          "field": "license.spdx_id",
+          "quotes": [
+            "MIT"
+          ]
+        },
+        {
+          "kind": "automation",
+          "url": "https://github.com/xikhar/papertrails/blob/main/.github/workflows/pages.yml",
+          "retrieved_url": "https://github.com/xikhar/papertrails/blob/main/.github/workflows/pages.yml",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "npm ci",
+            "npm run build",
+            "actions/upload-pages-artifact@v3",
+            "actions/deploy-pages@v4"
+          ],
+          "blob_sha": "57b3442439bba90d93c03ded3b641b10abfb076f"
+        },
+        {
+          "kind": "readme",
+          "url": "https://github.com/xikhar/papertrails/blob/main/README.md",
+          "retrieved_url": "https://github.com/xikhar/papertrails/blob/main/README.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "blob_sha": "f17333ecfa2b046219ab5584b08c1c4adc9de28c"
+        }
+      ],
+      "repository": {
+        "checked_at": "2026-11-24T07:20:57.589367+00:00",
+        "default_branch": "main",
+        "exists": true,
+        "files": [
+          {
+            "blob_sha": "57b3442439bba90d93c03ded3b641b10abfb076f",
+            "kind": "automation",
+            "path": ".github/workflows/pages.yml",
+            "url": "https://github.com/xikhar/papertrails/blob/main/.github/workflows/pages.yml"
+          },
+          {
+            "blob_sha": "f17333ecfa2b046219ab5584b08c1c4adc9de28c",
+            "kind": "readme",
+            "path": "README.md",
+            "url": "https://github.com/xikhar/papertrails/blob/main/README.md"
+          }
+        ],
+        "license": "MIT",
+        "owner": "xikhar",
+        "refresh_note": "GitHub rate limit; reused the previously verified public tree.",
+        "refresh_status_code": 403,
+        "tree_sha": "5a284f71164ea3bd54ee788553e21f7f21a1b7b7",
+        "tree_url": "https://api.github.com/repos/xikhar/papertrails/git/trees/main?recursive=1",
+        "truncated": false
+      }
+    },
+    "world-f64e28bbd3bbdc6081c37e3a": {
+      "patch": {
+        "workflow_steps": [
+          "从游戏入口复现初始化顺序：建立 Three.js 场景和物理系统，生成城市，再加入天空、降雨与玩家。"
+        ],
+        "evidence_quotes": [
+          "this.initThree();",
+          "this.city.generateCity();",
+          "this.initRain();"
+        ]
+      },
+      "sources": [
+        {
+          "kind": "repository",
+          "url": "https://github.com/nifftyswiggle/leageofanimals-game",
+          "retrieved_url": "https://github.com/nifftyswiggle/leageofanimals-game",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": []
+        },
+        {
+          "kind": "readme",
+          "url": "https://github.com/NifftySwiggle/LeageOfAnimals-Game/blob/main/README.md",
+          "retrieved_url": "https://github.com/NifftySwiggle/LeageOfAnimals-Game/blob/main/README.md",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [],
+          "blob_sha": "a28c443d98de6f33e2aa01ef31911dcd03a540fc"
+        },
+        {
+          "kind": "source_code",
+          "url": "https://github.com/nifftyswiggle/leageofanimals-game/blob/main/js/main.js",
+          "retrieved_url": "https://github.com/nifftyswiggle/leageofanimals-game/blob/main/js/main.js",
+          "method": "firecrawl",
+          "status_code": 200,
+          "firecrawl_status_code": 200,
+          "quotes": [
+            "this.initThree();",
+            "this.city.generateCity();",
+            "this.initRain();"
+          ]
+        }
+      ],
+      "repository": {
+        "checked_at": "2026-11-24T07:20:57.589367+00:00",
+        "default_branch": "main",
+        "exists": true,
+        "files": [
+          {
+            "blob_sha": "a28c443d98de6f33e2aa01ef31911dcd03a540fc",
+            "kind": "readme",
+            "path": "README.md",
+            "url": "https://github.com/NifftySwiggle/LeageOfAnimals-Game/blob/main/README.md"
+          }
+        ],
+        "license": null,
+        "owner": "NifftySwiggle",
+        "refresh_note": "GitHub rate limit; reused the previously verified public tree.",
+        "refresh_status_code": 403,
+        "tree_sha": "bde79649e37fdc8d2104248137ce49bed93d22fd",
+        "tree_url": "https://api.github.com/repos/nifftyswiggle/leageofanimals-game/git/trees/main?recursive=1",
+        "truncated": false
+      }
+    }
+  }
+}

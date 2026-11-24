@@ -1,0 +1,370 @@
+[
+  {
+    "world_id": "world-96c3c640630bc03045c3203a",
+    "title": "Skyseed: Pip’s Tempest Run",
+    "summary": "操控小猫 Pip 在三座浮岛之间跳跃，在暴风雨前找回十二颗种子。",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "Gemini 4 Hydrogen"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://01a1b677-97ba-7006-a384-e83b3e5793db.arena.site/",
+    "original_post_url": "https://x.com/SahilPanhotra/status/2119102771173769262",
+    "author_handle": "SahilPanhotra",
+    "published_at": "2026-11-07T16:20:46.330000+00:00",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "用 Gemini 4 Hydrogen 生成猫咪跑酷游戏，并在作者回复中分享试玩入口。"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "made a fun little cat parkour game with GEMINI 4 HYDROGEN",
+      "link in comments if you wanna play"
+    ],
+    "dedup_fingerprint": "https://01a1b677-97ba-7006-a384-e83b3e5793db.arena.site",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": [],
+    "author_name": "Sahil Panhotra | Indie Builder"
+  },
+  {
+    "world_id": "world-42e418e54a0bf38a58de405c",
+    "title": "Skywake: Kite & Mo’s Big Flight",
+    "summary": "骑乘飞行生物 Mo 掠过潟湖与石柱群，穿越飞行路线并与沿途角色互动。",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "Gemini 4 Argon",
+      "Claude Opus 5.5"
+    ],
+    "tech_stack": [
+      "Crayon"
+    ],
+    "generation_mode": "hybrid_pipeline",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://app.usecrayon.ai/play/992c2130-43da-416b-a577-aed9514d3057",
+    "original_post_url": "https://x.com/aniketjart/status/2117508141076378029",
+    "author_handle": "aniketjart",
+    "published_at": "2026-11-03T06:44:16.888000+00:00",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "在 Gemini 黑客松期间用 Gemini 4 Argon 制作飞行冒险。",
+      "随后用 Claude Opus 5.5 和 Crayon 更新作品。"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Built this flying quest game for a Gemini hackathon recently!",
+      "Created with Gemini 4 Argon, and refreshed with Opus 5.5 and @usecrayon."
+    ],
+    "dedup_fingerprint": "https://app.usecrayon.ai/play/992c2130-43da-416b-a577-aed9514d3057",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": [],
+    "author_name": "Aniket J"
+  },
+  {
+    "world_id": "world-e73be2d8bfd6d2b18a590dad",
+    "title": "Geminisland",
+    "summary": "访客在共享体素岛上选择地块，输入想建造的建筑，再切换为第一人称游览。",
+    "theme_category": "voxel_sandbox",
+    "models_used": [
+      "Gemini 4 Hydrogen"
+    ],
+    "tech_stack": [
+      "Gemini API",
+      "Google AI Studio"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://aistudio.google.com/apps/bundled/geminisland?showPreview=true&showAssistant=true&fullscreenApplet=true",
+    "original_post_url": "https://x.com/GoogleAI/status/2120940684924403798",
+    "author_handle": "GoogleAI",
+    "published_at": "2026-11-12T18:03:59.115000+00:00",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "在 Google AI Studio 提供试玩。玩家描述建筑，Gemini API 将其生成为三维体素结构并加入共享岛屿。"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "introducing Gemini 4 Hydrogen",
+      "build new 3D voxel structures with Hydrogen on the Gemini API into a shared island in real time."
+    ],
+    "dedup_fingerprint": "https://aistudio.google.com/apps/bundled/geminisland?showPreview=true&showAssistant=true&fullscreenApplet=true",
+    "review_status": "pending",
+    "related_post_urls": [
+      "https://x.com/GoogleAI/status/2120940683233984862"
+    ],
+    "possible_duplicate_urls": [],
+    "author_name": "Google AI"
+  },
+  {
+    "world_id": "world-7b1f8075794a139f08240043",
+    "title": "Pelican Bicycle 3D",
+    "summary": "让鹈鹕沿落日海滨骑车，控制转向、刹车和振翅，或切换到漫游视角。",
+    "theme_category": "other",
+    "models_used": [
+      "Gemini 4 Hydrogen"
+    ],
+    "tech_stack": [
+      "Three.js",
+      "Google AI Studio"
+    ],
+    "generation_mode": "one_shot",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://app.aiyu.chat/pelican.html",
+    "original_post_url": "https://x.com/aiislove666/status/2121218443336876183",
+    "author_handle": "aiislove666",
+    "published_at": "2026-11-13T12:27:41.881000+00:00",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "在 Google AI Studio 中一次提示生成 Three.js 游戏。"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Gemini 4 Hydrogen one shot pelican game powered by three js.",
+      "I made this in Google AI studio"
+    ],
+    "dedup_fingerprint": "https://app.aiyu.chat/pelican.html",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": [],
+    "author_name": "Frainky"
+  },
+  {
+    "world_id": "world-61dcd739fa7ecc35b28074a6",
+    "title": "Neon Scramble",
+    "summary": "控制街景小黄人穿过东京涩谷十字路口，变道、跳跃，前往 Google 东京办公室。",
+    "theme_category": "city_diorama",
+    "models_used": [
+      "Gemini 4 Neon"
+    ],
+    "tech_stack": [
+      "OpenStreetMap",
+      "Web Audio"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://neon-scramble.ai.studio/",
+    "original_post_url": "https://x.com/Google/status/2123548127080656938",
+    "author_handle": "Google",
+    "published_at": "2026-11-19T22:45:01.769000+00:00",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "将涩谷的道路、铁路线和建筑轮廓作为输入，让 Gemini 4 Neon 生成可跑酷的三维街区。"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Built with Gemini 4 Neon",
+      "OpenStreetMap data (654 roads, 70 rail lines, and 280 building footprints)",
+      "custom Web Audio"
+    ],
+    "dedup_fingerprint": "https://neon-scramble.ai.studio",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": [],
+    "author_name": "Google"
+  },
+  {
+    "world_id": "world-31c473cd4707b987c36edc02",
+    "title": "Torchlight Depths",
+    "summary": "在着色器绘制的地下墓穴中寻找钥匙，穿过被火把照亮的走廊，探索更深的关卡。",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "Gemini 4 Neon"
+    ],
+    "tech_stack": [
+      "HTML",
+      "Shaders"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "full_repo",
+    "repo_url": "https://github.com/kevintngo/dungeon-game",
+    "live_demo_url": "https://kevintngo.github.io/dungeon-game/",
+    "original_post_url": "https://x.com/kevin_t_ngo/status/2125001629850345678",
+    "author_handle": "kevin_t_ngo",
+    "published_at": "2026-11-23T23:00:43.834000+00:00",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "采用 @loktar00 的提示词让 Gemini 4 Neon 生成浏览器可运行的地牢游戏。"
+    ],
+    "skills_or_prompts_used": [
+      "原帖将提示词归于 @loktar00。"
+    ],
+    "evidence_quotes": [
+      "Shader-rendered game in a 100KB HTML file, playable in the browser.",
+      "Made with Gemini 4 Neon using @loktar00's prompt."
+    ],
+    "dedup_fingerprint": "https://github.com/kevintngo/dungeon-game",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": [],
+    "author_name": "Kevin Ngo"
+  },
+  {
+    "world_id": "world-ce87d2ea45a7758e22d4251d",
+    "title": "The Astrolabe Chamber",
+    "summary": "在三维天文观测室搜索线索，解开一系列谜题，在午夜前开启密室的门。",
+    "theme_category": "other",
+    "models_used": [
+      "Gemini 4 Neon"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://www.jaclynkonzelmann.com/side-projects/astrolabe-chamber/",
+    "original_post_url": "https://x.com/jacalulu/status/2124325874212446345",
+    "author_handle": "jacalulu",
+    "published_at": "2026-11-22T02:15:31.135000+00:00",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "用单条提示生成首个可玩的密室版本。朋友试玩后，作者又做了几处小改进。"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Gemini 4 Neon",
+      "The first playable version was done after a single prompt!",
+      "which led to a few small improvements I made."
+    ],
+    "dedup_fingerprint": "https://www.jaclynkonzelmann.com/side-projects/astrolabe-chamber",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": [],
+    "author_name": "Jaclyn Konzelmann"
+  },
+  {
+    "world_id": "world-cfbcb73827fc3eddc44047ac",
+    "title": "SUMI GAI: Case File 02:30",
+    "summary": "以第一人称探访东京新宿黄金街的十六间酒吧，询问角色、检查物件并整理案件线索。",
+    "theme_category": "city_diorama",
+    "models_used": [
+      "Gemini 4 Neon"
+    ],
+    "tech_stack": [
+      "Three.js"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://sumi-gai.vercel.app/",
+    "original_post_url": "https://x.com/venturetwins/status/2124568183902449764",
+    "author_handle": "venturetwins",
+    "published_at": "2026-11-22T18:18:22.267000+00:00",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "让 Gemini 4 Neon 编写故事，用 Three.js 渲染街区，再将人物与线索分布到可进入的酒吧。"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Gemini 4 Neon",
+      "It wrote the storyline, rendered the world in Three.js, and populated 16 walk-in bars with characters to interview + clues."
+    ],
+    "dedup_fingerprint": "https://sumi-gai.vercel.app",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": [],
+    "author_name": "Justine Moore"
+  },
+  {
+    "world_id": "world-1f6d9940ae987dd0f4c05372",
+    "title": "Bitbound Isles",
+    "summary": "在三个像素风群岛间探索，通过反射镜、滑冰迷宫等谜题，收集二十四枚星之碎片。",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "Gemini 4 Neon"
+    ],
+    "tech_stack": [],
+    "generation_mode": "unknown",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://plamen0606.itch.io/bitbound-isles",
+    "original_post_url": "https://x.com/Plamskiii/status/2124207921923825985",
+    "author_handle": "Plamskiii",
+    "published_at": "2026-11-21T18:26:49.118000+00:00",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "使用 Gemini 4 Neon 制作游戏，作者通过 itch.io 发布浏览器版本。"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Check out this game I vibecoded with Gemini 4 Neon!"
+    ],
+    "dedup_fingerprint": "https://plamen0606.itch.io/bitbound-isles",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": [],
+    "author_name": "Plamen Kamenov"
+  },
+  {
+    "world_id": "world-2c81c28fc14fffb069e84d68",
+    "title": "Lumina Fighter Jets",
+    "summary": "从航母上起飞，驾驶虚构的喷气机穿过三维群岛上空。",
+    "theme_category": "other",
+    "models_used": [
+      "Gemini 4 Neon"
+    ],
+    "tech_stack": [
+      "Three.js",
+      "HTML"
+    ],
+    "generation_mode": "one_shot",
+    "is_open_source": null,
+    "reproducibility_level": "live_demo",
+    "repo_url": null,
+    "live_demo_url": "https://luminabench.com/games/lumina-fighter-jets/",
+    "original_post_url": "https://x.com/LuminaBench/status/2123778055860523447",
+    "author_handle": "LuminaBench",
+    "published_at": "2026-11-20T13:58:41.062000+00:00",
+    "cost_disclosure_status": "undisclosed",
+    "reported_cost_usd": null,
+    "reported_time_minutes": null,
+    "workflow_steps": [
+      "从基础构想出发，一次生成不依赖外部素材的 Three.js 单文件游戏。作者估计耗时约三十分钟。"
+    ],
+    "skills_or_prompts_used": [],
+    "evidence_quotes": [
+      "Gemini 4 Neon",
+      "1 shot in Three.js",
+      "single .html file with Zero external assets",
+      "Made in around 30 minutes from a basic idea"
+    ],
+    "dedup_fingerprint": "https://luminabench.com/games/lumina-fighter-jets",
+    "review_status": "pending",
+    "related_post_urls": [],
+    "possible_duplicate_urls": [],
+    "author_name": "Lumina"
+  }
+]

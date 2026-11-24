@@ -1,0 +1,678 @@
+[
+  {
+    "post": {
+      "tweet_id": "2123467103110078747",
+      "author_handle": "ai_for_success",
+      "text": "Gemini 4 Neon is wild 🔥🔥 \n\nI gave it one single static image and just asked it to animate it in Three.js. Nothing else.\n\nOn its own, it downloaded Depth Anything V2 Large from Hugging Face, ran it locally on my Mac to generate a depth map, sliced the image into layers and… pic.twitter.com/TanAMFK7KX",
+      "published_at": "2026-11-19T17:23:04.149+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only"
+  },
+  {
+    "post": {
+      "tweet_id": "2123791331541807385",
+      "author_handle": "Bk23544",
+      "text": "I have been adding stuff to Three.js Grassworks, but the demo itself was a bit behind. The grass looked closer to Version 1.1.0 instead of the latest 1.3.0\n\nNow, it is updated as well and uses the latest and greatest features of Three.js Grassworks. It now has new and improved… pic.twitter.com/MEtzjYJMKl",
+      "published_at": "2026-11-20T14:51:26.231+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only"
+  },
+  {
+    "post": {
+      "tweet_id": "2122682962647122403",
+      "author_handle": "xikhar",
+      "text": "Papertrails: an endless papercraft world that pops up around you.\n\nBuilt with Fable 5.2 and Opus 5.5, runs in the browser with three.js\n\nFull prompt and workflow steps below. pic.twitter.com/u4594XQyle",
+      "published_at": "2026-11-17T13:27:10.494+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://github.com/xikhar/papertrails",
+      "https://xikhar.github.io/papertrails/"
+    ],
+    "demo_urls": [
+      "https://xikhar.github.io/papertrails/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120694003230560585",
+      "author_handle": "BlendiByl",
+      "text": "used fable 5.2 to make this delightful ghibli inspired scene 🌳\n\nplayable, and open source: https://t.co/Mi2rwgrY36 https://t.co/yxPPWXFe2G pic.twitter.com/eufet42Q95",
+      "published_at": "2026-11-12T01:43:45.616+00:00",
+      "expanded_urls": {
+        "https://t.co/Mi2rwgrY36": "https://patch.gg/blendi/painted-valley"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://patch.gg/blendi/painted-valley"
+    ],
+    "demo_urls": [
+      "https://patch.gg/blendi/painted-valley"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120866958790848953",
+      "author_handle": "literallydenis",
+      "text": "fable 5.2 is honestly incredible at simulating entire worlds - it built me ancient Babylon, circa 600 BC, in just 8 hours\n\nIt went off and found historical documents and architectural plans on its own, compared things pixel by pixel, and all that\n\nhard to imagine what a Fable… pic.twitter.com/HjQSa1b3HH",
+      "published_at": "2026-11-12T13:11:01.435+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://claude.ai/artifact/CTjrZXVdUgKJ6qJXrvvr28"
+    ],
+    "demo_urls": [
+      "https://claude.ai/artifact/CTjrZXVdUgKJ6qJXrvvr28"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2119938067758772403",
+      "author_handle": "anshu4321",
+      "text": "1 km² of Indiranagar: Claude Fable 5.2 built it from our map data and one prompt. https://t.co/wKQo26oxlR https://t.co/PgHe4NAF9a pic.twitter.com/AhrLU3lzxU",
+      "published_at": "2026-11-09T23:39:56.555+00:00",
+      "expanded_urls": {
+        "https://t.co/wKQo26oxlR": "https://indiranagar-live.vercel.app/"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://indiranagar-live.vercel.app/"
+    ],
+    "demo_urls": [
+      "https://indiranagar-live.vercel.app/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120167560700383572",
+      "author_handle": "petergostev",
+      "text": "$2,618 prompt - this is what Fable 5.2 (Max) built overnight https://t.co/utE5f2X8gK pic.twitter.com/72EaeoNIHp",
+      "published_at": "2026-11-10T14:51:51.936+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://fable-rome.surge.sh/"
+    ],
+    "demo_urls": [
+      "https://fable-rome.surge.sh/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120910879361548565",
+      "author_handle": "LexnLin",
+      "text": "I built a realistic bedroom with Fable 5.2 in threejs\n\neverything you see is code! (no pre-made 3d assets/textures were used) pic.twitter.com/0QsYrhEWXj",
+      "published_at": "2026-11-12T16:05:32.915+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://github.com/leonxlnx/room-at-dawn"
+    ],
+    "demo_urls": []
+  },
+  {
+    "post": {
+      "tweet_id": "2120561077385867663",
+      "author_handle": "DilumSanjaya",
+      "text": "To test Fable 5.2's reasoning, I asked it to design a vehicle with rocker-bogie suspension, the kind NASA's Mars rovers use.\n\nThen simulate it driving over the kinds of terrain you'd find on other worlds.\n\nYou can play with it herehttps://t.co/OAk2v0EPuI pic.twitter.com/xPwtpct0J7",
+      "published_at": "2026-11-11T16:55:33.625+00:00",
+      "expanded_urls": {
+        "https://t.co/OAk2v0EPuI": "https://fable-rover.vercel.app/"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://fable-rover.vercel.app/"
+    ],
+    "demo_urls": [
+      "https://fable-rover.vercel.app/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2124439671006748853",
+      "author_handle": "BlendiByl",
+      "text": "art deco is one of my favorite styles, especially from the animated batman series\n\ni did my best to emulate it in this 3D scene, all drawn in code by Fable 5.2, open sourced it too for anyone who'd like to experiment pic.twitter.com/RfjImVzyHQ",
+      "published_at": "2026-11-22T09:47:42.405+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://patch.gg/play/blendi/the-blue-hour"
+    ],
+    "demo_urls": [
+      "https://patch.gg/play/blendi/the-blue-hour"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120312766544437738",
+      "author_handle": "theojaffee",
+      "text": "I used Fable 5.2 to simulate the Bay Area through 250 years of history.\n\nZoom to any city or neighborhood, select any year back to 1769, and see what it looked like.https://t.co/a3kl1UD7I9 pic.twitter.com/qGvDddBTqq",
+      "published_at": "2026-11-11T00:28:51.707+00:00",
+      "expanded_urls": {
+        "https://t.co/a3kl1UD7I9": "https://bay.theojaffee.net/"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://bay.theojaffee.net/"
+    ],
+    "demo_urls": [
+      "https://bay.theojaffee.net/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120943068321054975",
+      "author_handle": "SamGCoder",
+      "text": "The Garden\nCreated by Fable 5.2\n\nRust to WASM using the WebGPUhttps://t.co/OZS3dwfyFH pic.twitter.com/1OCqjngz1r",
+      "published_at": "2026-11-12T18:13:27.361+00:00",
+      "expanded_urls": {
+        "https://t.co/OZS3dwfyFH": "https://samg-coder.github.io/solstice-garden/"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://samg-coder.github.io/solstice-garden/"
+    ],
+    "demo_urls": [
+      "https://samg-coder.github.io/solstice-garden/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2122006851298693277",
+      "author_handle": "qiqileyuan",
+      "text": "前两天看到painted valley实现的吉卜力画风，很是喜欢。\n正好之前做过一些lofi音乐，一直想做一个类似风格的道教小山。\n\n就用 fable 5.2 +tripo3d制作了一个道观“紫曜宫”。\n神像和主角模型是用tripo3d，其他都是代码生成。\n并用codex生成了如下视频\n音乐用suno。… pic.twitter.com/MiUsEkTmPE",
+      "published_at": "2026-11-15T16:40:32.987+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://www.taoistvibe.com/"
+    ],
+    "demo_urls": [
+      "https://www.taoistvibe.com/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2122274109795054036",
+      "author_handle": "ky__zo",
+      "text": "I tried to test Fable 5.2's ability to build aesthetic 3d scenes without any external tools.\n\nthe result just dropped my jaw. the repo has no model files, no textures and no asset loaders. All geometry, materials and shaders are generated in code.\n\n1.32 billion tokens. $905 api… pic.twitter.com/8GnjSmAkvA",
+      "published_at": "2026-11-16T10:22:32.378+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://butterfly.kyzo.io/"
+    ],
+    "demo_urls": [
+      "https://butterfly.kyzo.io/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120330644261589051",
+      "author_handle": "dfeinition",
+      "text": "Inspired by @rileybrown, Fable 5.2 made a Claude demo that lets you demo Claude (sorta).\n\nWalk in and sit at any computer: https://t.co/FkQQQRTrPX https://t.co/abyYrOVkug pic.twitter.com/uhDdde520l",
+      "published_at": "2026-11-11T01:39:54.087+00:00",
+      "expanded_urls": {
+        "https://t.co/FkQQQRTrPX": "https://claude.ai/artifact/R6YBDkAm2GjAC5A65D9djx"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://claude.ai/artifact/R6YBDkAm2GjAC5A65D9djx"
+    ],
+    "demo_urls": [
+      "https://claude.ai/artifact/R6YBDkAm2GjAC5A65D9djx"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120104517282775514",
+      "author_handle": "vib3coded",
+      "text": "“AI can only build boring landing pages”\n\nFable 5.2 built an entire voxel world inside a bottle\n\n30 minutes. $12.81\n\nStill just a chatbot? 👀 pic.twitter.com/jhO3WKEeQS",
+      "published_at": "2026-11-10T10:41:21.214+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://claude.ai/artifact/9EgZpErM17kH2a9Q3WXW6f"
+    ],
+    "demo_urls": [
+      "https://claude.ai/artifact/9EgZpErM17kH2a9Q3WXW6f"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120314459793355262",
+      "author_handle": "BlendiByl",
+      "text": "used fable 5.2 to make this trippy \"impossible spaces\" experience\n\nopen-source too! https://t.co/yxPPWXFe2G pic.twitter.com/0nl4tIGcxJ",
+      "published_at": "2026-11-11T00:35:35.409+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://patch.gg/blendi/impossible-spaces"
+    ],
+    "demo_urls": [
+      "https://patch.gg/blendi/impossible-spaces"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2124115057101664380",
+      "author_handle": "CapyCola",
+      "text": "最后一位客人一小时前就走了，猫还在。🐈‍⬛🏮\n雨里的面摊，摇晃的灯笼，一锅没人看着的热汤。\n它在等老板回来，还是只在等雨停？\n\n这个场景用 Claude Fable 5.2 和 @JungleSilicon 的 Ink Studio 制作。它不只是视频，也是一个能拖动旋转、从任意角度看的网页。网页和源码都已公开，链接在评论区 👇… pic.twitter.com/vyfZR89PAg",
+      "published_at": "2026-11-21T12:17:48.419+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://github.com/cola5939/pixel-dioramas",
+      "https://claude.ai/artifact/HCzUsvWqERjQcgJjRuUUFo"
+    ],
+    "demo_urls": [
+      "https://claude.ai/artifact/HCzUsvWqERjQcgJjRuUUFo"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2119890973560054072",
+      "author_handle": "marcthecreatorr",
+      "text": "Fable 5.2 (3D Sailing Ship) \n\n- medium reasoning on claude code, est. ~38 minutes ~$17 \n\nAnthropic cooked with this model. it built this in Three.js, no Blender or external 3D assets were used\n\nwe’re getting to the point where 3D scenes built entirely with code are starting to… pic.twitter.com/fDm2EnlUZd",
+      "published_at": "2026-11-09T20:32:48.423+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://claude.ai/artifact/7ge282etTXSS4edGFTFa85"
+    ],
+    "demo_urls": [
+      "https://claude.ai/artifact/7ge282etTXSS4edGFTFa85"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2119905661505122575",
+      "author_handle": "notjazii",
+      "text": "fable 5.2: 3d pirate ship sailing across ocean\n\nthis has to be the craziest output i’ve seen for this prompt. this was one shot and model cooked harder\n\n> took about 1 hour 30 mins\n> used about 35M tokens worth ~$34.4\n\nyou can test it here:  https://t.co/uC9bxNzVYx\n\ni am really… https://t.co/At7A5YPW4P pic.twitter.com/dAyWQ5VdJM",
+      "published_at": "2026-11-09T21:31:10.302+00:00",
+      "expanded_urls": {
+        "https://t.co/uC9bxNzVYx": "https://tests.jazii.dev/"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://tests.jazii.dev/"
+    ],
+    "demo_urls": [
+      "https://tests.jazii.dev/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2123021723188744248",
+      "author_handle": "thebuggeddev",
+      "text": "THIS IS NOT A VIDEO ☠️\n\nIt's a living 3D sea creature swimming right inside your browser, built entirely with Claude Fable 5.2.\n\nAll I gave Claude was a single GLB model generated with @tripoai. It took care of everything else. The design, rigging, animations, and even the entire… pic.twitter.com/oWCjVu5Erh",
+      "published_at": "2026-11-18T11:53:17.301+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://coralback-ray.wasmer.app/"
+    ],
+    "demo_urls": [
+      "https://coralback-ray.wasmer.app/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2123618324823388410",
+      "author_handle": "BlendiByl",
+      "text": "made this dreamy pixel village using fable 5.2 🌅\n\nevery pixel is drawn by code, runs in the browser, and open source: https://t.co/ds1muxx0A6 pic.twitter.com/rXJGs8QBnn",
+      "published_at": "2026-11-20T03:23:58.215+00:00",
+      "expanded_urls": {
+        "https://t.co/ds1muxx0A6": "https://patch.gg/blendi/pixel-village"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://patch.gg/blendi/pixel-village"
+    ],
+    "demo_urls": [
+      "https://patch.gg/blendi/pixel-village"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120020272153764172",
+      "author_handle": "tokifyi",
+      "text": "asked fable 5.2 to recreate vancouver from above in three.js and holy shit, look at thishttps://t.co/UShTgpTc0a pic.twitter.com/aBIQqxSL5g",
+      "published_at": "2026-11-10T05:06:35.610+00:00",
+      "expanded_urls": {
+        "https://t.co/UShTgpTc0a": "https://vancouver.webly.site/"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://vancouver.webly.site/"
+    ],
+    "demo_urls": [
+      "https://vancouver.webly.site/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120212714484330999",
+      "author_handle": "nan_in_space",
+      "text": "I used Fable 5.2 to build an interactive web piece where you walk a girl through eight worlds. Jump through a portal into each new one with a dive, a leap, or a cartwheel.\n\nThe girl and scenes are all 3DGS, each generated from a single image. \n\nBreakdown & playable link 🧵 pic.twitter.com/9NZywXWHna",
+      "published_at": "2026-11-10T17:51:17.437+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://windblown.vercel.app/"
+    ],
+    "demo_urls": [
+      "https://windblown.vercel.app/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2119900775727902732",
+      "author_handle": "kplikethebird",
+      "text": "So excited that I can finally share my Roman Empire: this immersive 3D model of Jerusalem that Fable 5.2 built for me. I literally have not been able to stop thinking about it. \n\nPrompt: \"Build an immersive, historically accurate 3D model of Jerusalem during the week of Jesus's… https://t.co/GhyYPfb4rq pic.twitter.com/M0npBCgIVT",
+      "published_at": "2026-11-09T21:11:45.442+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://fable-jerusalem.vercel.app/"
+    ],
+    "demo_urls": [
+      "https://fable-jerusalem.vercel.app/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2121961933540917658",
+      "author_handle": "prasenx",
+      "text": "claude opus 5.5 and fable 5.2 made the coziest game i've ever played pic.twitter.com/peDu07f59C",
+      "published_at": "2026-11-15T13:42:03.759+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://github.com/starknightt/summer-festival",
+      "https://starknightt.github.io/summer-festival/"
+    ],
+    "demo_urls": [
+      "https://starknightt.github.io/summer-festival/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120227696261120225",
+      "author_handle": "tornikegomareli",
+      "text": "Follow the white rabbit 🐇\n\nI've tested Fable 5.2 and built city inspired by the Matrix atmosphere rain, lightning, clouds, colors and it was super fun to build! \n\nYou can fly there and feel the vibe https://t.co/CP1uWAsHnm https://t.co/8BItT0KyeV pic.twitter.com/cyVSqHGj1J",
+      "published_at": "2026-11-10T18:50:49.371+00:00",
+      "expanded_urls": {
+        "https://t.co/CP1uWAsHnm": "https://feelthematrix.com/"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://github.com/tornikegomareli/matrix",
+      "https://feelthematrix.com/"
+    ],
+    "demo_urls": [
+      "https://feelthematrix.com/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120432591606067359",
+      "author_handle": "loktar00",
+      "text": "I used Fable 5.2 and told it to make a ski hill in 3d based on this old Deepseek 2d version I did.\n\nAsked it to give it some character.\n\nIt did not disappoint!\n\nLive link below pic.twitter.com/4ECBX0yoXN",
+      "published_at": "2026-11-11T08:25:00.228+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://loktar00.github.io/pine-hollow/"
+    ],
+    "demo_urls": [
+      "https://loktar00.github.io/pine-hollow/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120933859999059970",
+      "author_handle": "dfeinition",
+      "text": "Fable 5.2 coded this pixel art as an interactive 3D world.\n\nA look at how it was made, with the whale doing the showing 🐋 pic.twitter.com/CE21RxuOJo",
+      "published_at": "2026-11-12T17:36:51.926+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://claude.ai/artifact/HGk1WNqTgrGEE8ndBkEipB"
+    ],
+    "demo_urls": [
+      "https://claude.ai/artifact/HGk1WNqTgrGEE8ndBkEipB"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2119910478025789655",
+      "author_handle": "handsher_NGU",
+      "text": "God took 6 days, Fable 5.2 took 20 min🌌\n\nfly into it yourself -> https://t.co/GTw1eCZpK9 pic.twitter.com/WwC4wHvzp0",
+      "published_at": "2026-11-09T21:50:18.650+00:00",
+      "expanded_urls": {
+        "https://t.co/GTw1eCZpK9": "https://galaxy-dive.vercel.app/"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://galaxy-dive.vercel.app/"
+    ],
+    "demo_urls": [
+      "https://galaxy-dive.vercel.app/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2119918363799376270",
+      "author_handle": "aGim_asf",
+      "text": "Fable 5.2 vs. Opus 5.5\n\nAsked both to build a voxel Colosseum. Same idea, but the two came out really different.\n\nFable 5.2 goes up close. You can see the ruined inner ring, the seating and the arena floor.\n\nOpus 5.5 builds the whole thing as a diorama on a base, with the full… https://t.co/5alUKEFfLa pic.twitter.com/TyVN3SwmMx",
+      "published_at": "2026-11-09T22:21:38.765+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://claude.ai/artifact/7nmzhxeamcunJbKVK32ptz"
+    ],
+    "demo_urls": [
+      "https://claude.ai/artifact/7nmzhxeamcunJbKVK32ptz"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2121259736217911357",
+      "author_handle": "titepommee",
+      "text": "Spent the last 2 days building a private jet with Claude Fable 5.2\n\nYou can walk around it, click the door, the stairs come down and you just walk in. Lounge, bedroom, even the bathroom\n\nStill a bit rough but I had way too much fun with this one pic.twitter.com/ez2wcK7nmS",
+      "published_at": "2026-11-13T15:11:46.871+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://madebysourasith-sudo.github.io/red-wing-jet/"
+    ],
+    "demo_urls": [
+      "https://madebysourasith-sudo.github.io/red-wing-jet/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2121286814103421012",
+      "author_handle": "CoderRw11326",
+      "text": "Everything in this video is running live in a browser—with zero 3D models (.glb), zero textures, and zero MP3s.\n\nI used Fable 5.2 to turn Leonardo da Vinci’s 15th-century notebooks into an interactive 3D book:\n📖 Opens like a leather-bound Renaissance book\n🪶 A quill pen sketches… pic.twitter.com/hg1BSe7lDo",
+      "published_at": "2026-11-13T16:59:22.742+00:00",
+      "expanded_urls": {},
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://github.com/coding-nanami/davinci-mechanics",
+      "https://davinci-mechanics.vercel.app/"
+    ],
+    "demo_urls": [
+      "https://davinci-mechanics.vercel.app/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120030246108066195",
+      "author_handle": "L34342Lin",
+      "text": "One prompt to Claude Fable 5.2: \"bring a 3D castle to life in an HTML file.\"\n\nWhat came back: a hamlet riding a giant snail through a valley. Hand-written WebGL2, no libraries, no assets, full day/night cycle, ~5,500 trees, real-time shadows.\n\nTry it: https://t.co/DB3bp1K3K8 pic.twitter.com/RqACDTUJXi",
+      "published_at": "2026-11-10T05:46:13.586+00:00",
+      "expanded_urls": {
+        "https://t.co/DB3bp1K3K8": "https://claude.ai/artifact/BCDCNHRTq3y9W4Px3xc4DN"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://claude.ai/artifact/BCDCNHRTq3y9W4Px3xc4DN"
+    ],
+    "demo_urls": [
+      "https://claude.ai/artifact/BCDCNHRTq3y9W4Px3xc4DN"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2120119243043995748",
+      "author_handle": "acupofai",
+      "text": "卧槽，Claude Fable 5.2 也太离谱了吧？！ \n一座五层木塔，3357 个构件一块块盖起来，然后当场变身成斗笠女侠。  \n没有模型文件，没有一张图片，连配乐都是代码现算的。全是 three.js，浏览器里实时跑。  \n网页能自己拖着转、点一下变身：https://t.co/HPBmSrRyKu pic.twitter.com/MOrbhq5Pec",
+      "published_at": "2026-11-10T11:39:52.109+00:00",
+      "expanded_urls": {
+        "https://t.co/HPBmSrRyKu": "https://claude.ai/artifact/UqU4w7jSr6pzF2McsbyQjJ"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://claude.ai/artifact/UqU4w7jSr6pzF2McsbyQjJ"
+    ],
+    "demo_urls": [
+      "https://claude.ai/artifact/UqU4w7jSr6pzF2McsbyQjJ"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2122048423528485116",
+      "author_handle": "cyril_remacle",
+      "text": "How does moving water become electricity?\n\nI built an interactive 3D Francis turbine you can cut open, pull apart and run yourself. Guided tour, exploded view, live power calculator. English and French.\n\nMade with Claude Fable 5.2https://t.co/i8pShyF3vu",
+      "published_at": "2026-11-15T19:25:44.579+00:00",
+      "expanded_urls": {
+        "https://t.co/i8pShyF3vu": "https://cyrilremacle-byte.github.io/francis-turbine-explorer/"
+      },
+      "media_keys": []
+    },
+    "thread_status": "embed_main_post_only",
+    "external_urls": [
+      "https://cyrilremacle-byte.github.io/francis-turbine-explorer/"
+    ],
+    "demo_urls": [
+      "https://cyrilremacle-byte.github.io/francis-turbine-explorer/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2088809522001584214",
+      "author_handle": "NifftySwiggle",
+      "text": "Gemini 3.7 Flash knows what to do!\nbuilt this open world three.js game 👀 https://t.co/vFLDECW19S pic.twitter.com/7bNSKvbRwJ",
+      "published_at": "2026-08-16T02:06:12.906+00:00"
+    },
+    "thread_status": "embed_main_post_only",
+    "demo_urls": [],
+    "external_urls": [
+      "https://github.com/nifftyswiggle/leageofanimals-game"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2089689560242680242",
+      "author_handle": "pwappy_com",
+      "text": "Gemini 3.7 Flash だけでオンライン対戦ができる3D雪合戦ゲームを作ってみました\n\n作りが甘い所はあるけど、結構遊べる物になっています\n\nPCとAndroidで対戦できることは確認していますが、PCが超有利ですhttps://t.co/04BEHYOwyN",
+      "published_at": "2026-08-18T12:23:10.373+00:00"
+    },
+    "thread_status": "embed_main_post_only",
+    "demo_urls": [
+      "https://pwappy-com.github.io/example-apps/funya-yuki/"
+    ],
+    "external_urls": [
+      "https://pwappy-com.github.io/example-apps/funya-yuki/"
+    ]
+  },
+  {
+    "post": {
+      "tweet_id": "2095969249055375491",
+      "author_handle": "Dimillian",
+      "text": "Welcome to Astra! Astra is so good at translating intent into good gameplay and getting the art style right! Here is Void Explorer! You can explore a beautiful universe full of Earth-sized planets and star systems! Everything you see exist, and you can fly directly to it. 🧵 pic.twitter.com/IE6G0YsSn4",
+      "published_at": "2026-09-04T20:16:24.857+00:00"
+    },
+    "thread_status": "embed_main_post_only",
+    "demo_urls": [
+      "https://void-explorer.openai.chatgpt.site/"
+    ],
+    "external_urls": [
+      "https://void-explorer.openai.chatgpt.site/",
+      "https://developers.openai.com/showcase/void-explorer",
+      "https://developers.openai.com/blog/how-to-build-games-with-astra"
+    ]
+  }
+]
