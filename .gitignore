@@ -25,3 +25,5 @@ data/processed/*
 !data/state/x_covers.json
 !data/state/primary_covers.json
 !data/state/sync_spend.json
+!data/state/embed_probe.json
+!data/state/mirrors.json

@@ -1,0 +1,19 @@
+{
+  "world-3bc9b04773e624981797759d": {
+    "repo": "https://github.com/tanuu5/nova-lancer",
+    "commit": "63b63953299994baa05ac27c15c6b836fff0179b",
+    "license": "MIT",
+    "license_url": "https://github.com/tanuu5/nova-lancer/blob/63b63953299994baa05ac27c15c6b836fff0179b/LICENSE",
+    "cover": "world-3bc9b04773e624981797759d-project.webp",
+    "license_sha256": "07f4f160db3b244e123266196ee1837295e98e0f60d35e7fc121d1ae32ebd9a2",
+    "entry": "/mirrors/world-3bc9b04773e624981797759d/index.html"
+  },
+  "world-e07e0f1ce05465493d07f21b": {
+    "repo": "https://github.com/MichaelCao1/after-the-tide",
+    "commit": "c4d4188f0bc4673f63cc34cd2bcbd49338eeba3b",
+    "license": "MIT",
+    "license_url": "https://github.com/MichaelCao1/after-the-tide/blob/c4d4188f0bc4673f63cc34cd2bcbd49338eeba3b/LICENSE",
+    "license_sha256": "1ad085cb09282bd3b6b3693582025097c244402235fdf01d94e8509c990e73ec",
+    "entry": "/mirrors/world-e07e0f1ce05465493d07f21b/index.html"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/((?!mirrors/|thumbnails/|data/|assets/|icon\\.svg$).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

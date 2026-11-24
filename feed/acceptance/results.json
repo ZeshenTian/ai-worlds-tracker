@@ -1,0 +1,42 @@
+{
+  "tested_at": "2026-11-24T15:15:43.718Z",
+  "chrome": "158.0.8127.37",
+  "desktop": {
+    "width": 1440,
+    "height": 900,
+    "scroll": 1440,
+    "client": 1440
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "scroll": 390,
+    "client": 390
+  },
+  "worlds": 898,
+  "recommended": 872,
+  "tiers": {
+    "mirror": 2,
+    "embed": 470,
+    "external": 426
+  },
+  "tested_world_ids": {
+    "mirrors": [
+      "world-3bc9b04773e624981797759d",
+      "world-e07e0f1ce05465493d07f21b"
+    ],
+    "embed": "world-021847447308bb5234c3beae",
+    "external": "world-52b83e123fba8d7bc954b56a"
+  },
+  "checks": [
+    "Wheel inertia advances one world; J/K and arrow navigation",
+    "All pinned mirrors render same-origin canvases; a single iframe unmounts on exit and next",
+    "Actual cross-origin embed renders a canvas; delayed load reveals recovery and frame-external next works",
+    "External preview opens its original demo in a new tab",
+    "English UI and drawer, all localized fields, language persistence, channels, favorites, shared and text-only deep links",
+    "Desktop and mobile fit the viewport; actual touch gesture, bottom drawer and deep-link refresh",
+    "Zero console and page errors or HTTP 4xx/5xx in the tested views and frames"
+  ],
+  "errors": [],
+  "httpFailures": []
+}

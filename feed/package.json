@@ -1,0 +1,31 @@
+{
+  "name": "world-feed",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "npm run mirrors && npm run data && vite --host 127.0.0.1",
+    "probe": "node scripts/probe-embeds.mjs",
+    "mirrors": "node scripts/build-mirrors.mjs",
+    "data": "node scripts/build-feed-data.mjs",
+    "build": "npm run mirrors && npm run data && tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "verify": "node scripts/verify-feed.mjs"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "lucide-react": "1.31.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.3",
+    "vite": "8.0.13",
+    "@vitejs/plugin-react": "6.0.2",
+    "playwright-core": "1.65.1"
+  }
+}

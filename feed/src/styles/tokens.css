@@ -1,0 +1,75 @@
+:root {
+  color-scheme: light;
+  --canvas: #f7f8fa;
+  --paper: #fff;
+  --ink: #111315;
+  --secondary: #4b5563;
+  --muted: #6b7280;
+  --line: #e6eaf0;
+  --blue: #1d4ed8;
+  --ice: #eff6ff;
+  --green: #047857;
+  --mint: #ecfdf5;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "PingFang SC",
+    sans-serif;
+  color: var(--ink);
+  background: var(--canvas);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 0;
+}
+button,
+a,
+input {
+  font: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button:disabled {
+  cursor: default;
+}
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+::selection {
+  background: #cde1ff;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c6cdd7 transparent;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

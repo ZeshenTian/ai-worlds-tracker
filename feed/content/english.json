@@ -1,0 +1,359 @@
+{
+  "world-01e460df7f5cf9ce2b53e9ff": {
+    "title": "Walk Through an Azuchi–Momoyama Castle Town"
+  },
+  "world-02ab79ff31c8becddad6c291": {
+    "title": "A Walkable 3D Townscape from One Illustration"
+  },
+  "world-0906690a574865c603d7d2ba": {
+    "title": "THE ROAD DREAMS"
+  },
+  "world-0c83bd013496e2974e6242e0": {
+    "title": "Gan-Zai’s Sunset Air Mail",
+    "workflow": [
+      "Build the game using the same five images throughout."
+    ]
+  },
+  "world-0e3f08edffa46d8a25fb5fcd": {
+    "title": "ICE Bike Combat"
+  },
+  "world-0e689bb4fdf48b0966c6cd79": {
+    "title": "Guangzhou Drift"
+  },
+  "world-1986c5c63ce0fcdffa4a9b1a": {
+    "title": "Forest Battle: Sword and Shield"
+  },
+  "world-19fd7fb9ff7c5e0c19e2361d": {
+    "title": "Dreamlike Rowing with Claude Fable 5.2"
+  },
+  "world-22554ba34c1574b7337e5807": {
+    "title": "Saltline"
+  },
+  "world-3207729bb2ac5cd6eef92ce2": {
+    "title": "A Soukyugurentai-Inspired Shooter",
+    "summary": "A playable shooter inspired by Soukyugurentai, created over several rounds of prompting with GPT-6 Astra."
+  },
+  "world-3ca596db4570ada802849de6": {
+    "title": "Infinite Garden"
+  },
+  "world-42dd6d3cf8566d180a3a5826": {
+    "title": "Little Animal World"
+  },
+  "world-59f9c4a3b06c6b4406e21a3a": {
+    "title": "Basketball Free Throws"
+  },
+  "world-5da87ba04ee0fd00fbe81635": {
+    "title": "Skydiving Game"
+  },
+  "world-647bb31a46a99ddae870bb25": {
+    "title": "SINGULARITY Observatory",
+    "skills": [
+      "Code generation with Codex"
+    ]
+  },
+  "world-7504094e04cbb6c65b29446c": {
+    "title": "Operation Fracture: Silent Garden"
+  },
+  "world-82d69ac43443123c0c108273": {
+    "title": "Exploring Shadows with a Lantern"
+  },
+  "world-8632451b39f8a901549cbcc0": {
+    "title": "CYBER SUV Interactive Design Showroom"
+  },
+  "world-889bf24497a552a3fd20fd6b": {
+    "title": "Paramita World"
+  },
+  "world-a5760663563b06e83786de1f": {
+    "title": "Subway Runner"
+  },
+  "world-b00b470a35afbe75154296d9": {
+    "title": "Star Ember Fields"
+  },
+  "world-b20dddbcf6887035b6d70986": {
+    "title": "A Panzer Dragoon-Inspired Game"
+  },
+  "world-b53294ac1247526ffa60a21a": {
+    "title": "Skybound Sprint"
+  },
+  "world-b804c57bcee1770a69843da8": {
+    "title": "Survivor.io in 3D"
+  },
+  "world-bd58878fe3a3be3c51089e30": {
+    "title": "A PUBG-Inspired Game"
+  },
+  "world-d2294f50dad46cdcb3a1592a": {
+    "title": "A Town to City-Inspired Town Builder"
+  },
+  "world-d424fd674760d3d288a1ee9f": {
+    "title": "City Traffic and Signal Simulator"
+  },
+  "world-e5d81e81989d51fd5f063ba8": {
+    "title": "Pixel Art Basketball Court"
+  },
+  "world-e6a517103fe1086a7e261533": {
+    "title": "A Super Mario-Inspired Game"
+  },
+  "world-e6b07f1858629e909833de52": {
+    "title": "Australian Dorm Room in 3D"
+  },
+  "world-ed152e590b5afa3d48f7e2f4": {
+    "title": "A 3D Pac-Man-Inspired Game"
+  },
+  "world-f0d978184396528c408b745d": {
+    "title": "One Sheep: A Day with Koro the Sheepdog"
+  },
+  "world-f859c835042ef32aee8889fa": {
+    "title": "Ziyao Palace",
+    "summary": "Explore a Taoist temple set among mountains."
+  },
+  "world-f9f26a90e010ebb96978e0d7": {
+    "title": "A Story in a Pseudo-3D Sandbox"
+  },
+  "world-fcbf1c5e48ce8e68525ab8a6": {
+    "title": "Nightborn Clash"
+  },
+  "world-021847447308bb5234c3beae": {
+    "summary": "Cut away the casing, take the turbine apart and run it in this interactive 3D exhibit."
+  },
+  "world-093a9823a1e6c4452a25aa6b": {
+    "summary": "Walk through a 3D science museum, inspect exhibits up close and start five demonstrations of cloth, wind and physical contact."
+  },
+  "world-0c84a96e7cf57fb120a9ef86": {
+    "summary": "Explore a valley rendered in a hand-painted style."
+  },
+  "world-0dd24156697dc6c33188f7f7": {
+    "summary": "Walk or drive through Paris, past the Arc de Triomphe, the Panthéon and the shops on Avenue de l’Opéra."
+  },
+  "world-1048a9d46431750b3ab37c3b": {
+    "summary": "A three-dimensional sailing ship built with code."
+  },
+  "world-16298eb4e8e68cde53adf1fb": {
+    "summary": "Move the camera around a mechanical observatory as stone steps, bridges and brass gears transform its architecture."
+  },
+  "world-172b196ac6439bae5ce2e2ec": {
+    "summary": "Watch a marble roll down sloping tracks, setting off dominoes, a moving platform and a catapult in a tabletop machine."
+  },
+  "world-1d3911e58760fb5fd1394265": {
+    "summary": "Walk into the scene and take a seat at a computer to try Claude."
+  },
+  "world-1f58d27ea650a37ef8fdc2b6": {
+    "summary": "Drive a Mars rover over rolling terrain with its rocker-bogie suspension."
+  },
+  "world-1f6d9940ae987dd0f4c05372": {
+    "summary": "Explore three pixel-art island chains and collect 24 star fragments by solving mirror puzzles and ice mazes."
+  },
+  "world-233c4b197c5bc0a5249f64ca": {
+    "summary": "A multiplayer 3D snowball fight for PC and Android players."
+  },
+  "world-29474e5d16946b3a28edde32": {
+    "summary": "Walk through an anime-style nighttime festival by the sea."
+  },
+  "world-2b15cb8c3b6b2752c935d30d": {
+    "summary": "Watch waves break on a tropical beach, palms sway and coral lie just offshore in real time."
+  },
+  "world-2c5fc764d1443fb0b8c263b1": {
+    "summary": "Follow a glasswing butterfly through layers of scenery inside a greenhouse."
+  },
+  "world-2c81c28fc14fffb069e84d68": {
+    "summary": "Launch a fictional jet from an aircraft carrier and fly over a 3D archipelago."
+  },
+  "world-2cdc6f469b17a5af803c040e": {
+    "summary": "Compare two AI models’ voxel Colosseums side by side at different scales."
+  },
+  "world-31c473cd4707b987c36edc02": {
+    "summary": "Search for keys in shader-rendered catacombs and follow torchlit corridors deeper underground."
+  },
+  "world-42e418e54a0bf38a58de405c": {
+    "summary": "Ride Mo over lagoons and stone pillars, follow flight paths and meet characters along the way."
+  },
+  "world-473201f027ca2508ab7688ef": {
+    "summary": "A miniature voxel world contained in a glass bottle."
+  },
+  "world-48aa5afb3651d9cd35786d63": {
+    "summary": "Fly between stars, land on planets and explore their procedurally generated surfaces on foot."
+  },
+  "world-4d8440cb7652ab87047733a7": {
+    "summary": "Fly through a futuristic city on a rainy night."
+  },
+  "world-4e64700d12c345666b08d3df": {
+    "summary": "A code-drawn pixel village that runs in the browser."
+  },
+  "world-50be090ced8df88f80e31e5c": {
+    "summary": "Race toy cars around a timed course in a miniature workshop. Try different cars and beat your best time."
+  },
+  "world-543b5c1bc7be769c559766f8": {
+    "summary": "A three-dimensional garden rendered with WebGPU."
+  },
+  "world-558a3ee85cefb29336a09995": {
+    "summary": "Sail toward a lighthouse over rolling swells and watch the boat respond to the waves."
+  },
+  "world-61dcd739fa7ecc35b28074a6": {
+    "summary": "Guide Street View’s yellow figure across Shibuya Crossing, changing lanes and jumping on the way to Google’s Tokyo office."
+  },
+  "world-670b2a8f4587f5fd6ec597b0": {
+    "summary": "Tour a museum of light and materials in first person, observing sculptures, lighting and visual effects."
+  },
+  "world-713939da64ff0969be40e4ea": {
+    "summary": "Turn the pages of a three-dimensional book that brings Leonardo da Vinci’s notebooks and machines to life."
+  },
+  "world-7b1f8075794a139f08240043": {
+    "summary": "Steer, brake and flap your wings as a pelican cycles along the coast at sunset, or switch to a roaming camera."
+  },
+  "world-7f40bd9196574fb1b76d20fa": {
+    "summary": "Pixel art transformed into an interactive three-dimensional world."
+  },
+  "world-7f7a55c999212a5e14ce8c43": {
+    "summary": "A lifelike bedroom at dawn, with geometry and materials generated in code."
+  },
+  "world-82a15fe3271de94eec4cfb8a": {
+    "summary": "An aerial view of Vancouver in three dimensions."
+  },
+  "world-894b60a1a4b26792148885da": {
+    "summary": "A three-dimensional ray swims over the seafloor in the browser."
+  },
+  "world-8ca86ee658c31484c96dfed1": {
+    "summary": "Walk through the Gothic nave and side aisles of a digital Notre-Dame de Paris. Change the sunlight to see the light from its rose windows shift."
+  },
+  "world-96c3c640630bc03045c3203a": {
+    "summary": "Guide Pip the kitten across three floating islands and recover 12 seeds before the storm."
+  },
+  "world-9cb9c0f835cc927a2ecc441a": {
+    "summary": "A 3D experience built around impossible spaces."
+  },
+  "world-9f59431613d5b227b2bfbeea": {
+    "summary": "A Bangalore neighborhood reconstructed in three dimensions from map data."
+  },
+  "world-a54da8fba0617676275be971": {
+    "summary": "Pilot the view into a galaxy."
+  },
+  "world-a7694e1dae6a2e9ef99103ef": {
+    "summary": "A nighttime city rendered in a three-dimensional Art Deco style."
+  },
+  "world-aff809e462993efafb1bb82d": {
+    "summary": "Drag to rotate a five-story wooden pagoda and trigger its transformation."
+  },
+  "world-c3f4557bbdd1024d49be1c32": {
+    "summary": "Explore an interactive scene set in Rome in AD 320."
+  },
+  "world-c7bdbcd262c3559b69637206": {
+    "summary": "Guide a character through portals to explore eight scenes, each generated from a single image."
+  },
+  "world-c97c4196cde7f344a85b7794": {
+    "summary": "A three-dimensional pirate ship sailing at sea."
+  },
+  "world-ce87d2ea45a7758e22d4251d": {
+    "summary": "Search a 3D observatory for clues and solve puzzles to unlock a chamber before midnight."
+  },
+  "world-cfbcb73827fc3eddc44047ac": {
+    "summary": "Visit 16 bars in Tokyo’s Shinjuku Golden Gai. Question characters, examine objects and piece together the evidence in first person."
+  },
+  "world-d5125352731996d5b44ada20": {
+    "summary": "Drag to rotate a miniature noodle stall in the rain and inspect it from different angles."
+  },
+  "world-d8b5424c196448a3976185e7": {
+    "summary": "A 3D ski mountain expanded from an earlier 2D prototype."
+  },
+  "world-da4ddd6bdbf0b1c9985e88ab": {
+    "summary": "Follow the sound of a campfire through a forest at dusk. Keep the same viewpoint while switching between realistic, storybook and glass-like scenery."
+  },
+  "world-df240d795f19e383bcc5ee90": {
+    "summary": "Browse a historical simulation of San Francisco Bay Area neighborhoods by year."
+  },
+  "world-e73be2d8bfd6d2b18a590dad": {
+    "summary": "Choose a plot on a shared voxel island, describe the building you want, then switch to first person to explore."
+  },
+  "world-e903a899047e037d94778711": {
+    "summary": "Set out from a café on a small planet, find your neighbors and deliver each cup of coffee."
+  },
+  "world-e9389e42ee718bdf9b16eac2": {
+    "summary": "Adjust the environment of a deep-sea scene populated by procedurally generated glowing fish, jellyfish and coral."
+  },
+  "world-f01df3cce30208f69c7e6454": {
+    "summary": "Explore a paper-sculpture world where the landscape and buildings rise from the ground like a pop-up book."
+  },
+  "world-f06001af6a81bb7838f75b85": {
+    "summary": "Click the cabin door, board a three-dimensional private plane and explore its interior."
+  },
+  "world-f3c3e4e8c331ee2c5e5e4d7b": {
+    "summary": "A giant snail carries a village through a valley, with real-time lighting and a day-night cycle."
+  },
+  "world-f64e28bbd3bbdc6081c37e3a": {
+    "summary": "An open-world Three.js game generated with Gemini."
+  },
+  "world-faccba74bbd9542576a42daf": {
+    "summary": "Ancient Babylon reconstructed from historical documents and architectural drawings."
+  },
+  "world-fd2230fd772735ddcba33862": {
+    "summary": "Explore a historical reconstruction of Jerusalem at Passover."
+  },
+  "world-000638ca074fd084d671483a": {
+    "skills": [
+      "Describing a game in one prompt"
+    ]
+  },
+  "world-0017f20bbfbe3a39e7043ea2": {
+    "skills": [
+      "Three.js graphics",
+      "Custom GLSL shaders",
+      "Real-time Web Audio synthesis",
+      "Multipass WebGL2 rendering",
+      "Geometry instancing and procedural generation",
+      "Interactive camera controls"
+    ]
+  },
+  "world-01f2148992b64e0b2200232e": {
+    "skills": [
+      "Voxel world prompts"
+    ]
+  },
+  "world-0a03bce1d01c8dd16a0fd89b": {
+    "skills": [
+      "Codex-assisted development"
+    ]
+  },
+  "world-1b518699a2540cdbe0235401": {
+    "skills": [
+      "A simple game-generation prompt"
+    ]
+  },
+  "world-491f64524e5a29187c5d5cde": {
+    "skills": [
+      "Descriptive prompt design",
+      "3D model generation"
+    ]
+  },
+  "world-9c3dd98185116dd2256f65e1": {
+    "skills": [
+      "Using uploaded photos as scene references",
+      "Generating 3D models and game code with Codex"
+    ]
+  },
+  "world-c4f70ec846954ad221ef4685": {
+    "skills": [
+      "Voxel world generation prompts"
+    ]
+  },
+  "world-db2572e6a09d8d7fc695c8cd": {
+    "skills": [
+      "A single plain-language prompt"
+    ]
+  },
+  "world-e180a62c8cf28fd570d77259": {
+    "skills": [
+      "Generating a multiplayer 3D game with Claude Fable 5",
+      "Automated builds and hosting through a CLI",
+      "Automated browser testing"
+    ]
+  },
+  "world-f091704e3ef9eb23c2873d45": {
+    "skills": [
+      "A single prompt"
+    ]
+  },
+  "world-5e110a75a62930c729c5e53c": {
+    "tech_stack": [
+      "HTML",
+      "Inverse kinematics (IK)"
+    ]
+  }
+}

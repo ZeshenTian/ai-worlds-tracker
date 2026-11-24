@@ -1,0 +1,52 @@
+[
+  {
+    "world_id": "world-3bc9b04773e624981797759d",
+    "repo": "tanuu5/nova-lancer",
+    "commit": "63b63953299994baa05ac27c15c6b836fff0179b",
+    "license": "MIT",
+    "files": [
+      {
+        "path": "LICENSE",
+        "output": "LICENSE",
+        "sha256": "07f4f160db3b244e123266196ee1837295e98e0f60d35e7fc121d1ae32ebd9a2"
+      },
+      {
+        "path": "index.html",
+        "output": "index.html",
+        "sha256": "18550d0ac2a04e0854a3c148c5ca5053d8d1ce6d9de733222bb30493a6766dfb"
+      },
+      {
+        "path": "LICENSE",
+        "output": "THREE-LICENSE.txt",
+        "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+        "repo": "mrdoob/three.js",
+        "commit": "beab9e845f9e5ae11d648f55b24a0e910b56a85a"
+      }
+    ],
+    "removeGoogleFonts": true,
+    "cover": "world-3bc9b04773e624981797759d-project.webp"
+  },
+  {
+    "world_id": "world-e07e0f1ce05465493d07f21b",
+    "repo": "MichaelCao1/after-the-tide",
+    "commit": "c4d4188f0bc4673f63cc34cd2bcbd49338eeba3b",
+    "license": "MIT",
+    "files": [
+      {
+        "path": "LICENSE",
+        "output": "LICENSE",
+        "sha256": "1ad085cb09282bd3b6b3693582025097c244402235fdf01d94e8509c990e73ec"
+      },
+      {
+        "path": "Play_After_The_Tide.html",
+        "output": "index.html",
+        "sha256": "8d1266093cbf1463394e932125cfa34359e5cdcdffce852978dd76ed9da350a6"
+      },
+      {
+        "path": "THIRD_PARTY_LICENSES.txt",
+        "output": "THIRD_PARTY_LICENSES.txt",
+        "sha256": "af3e1c4655b6bf7e215ba98f69a746fa43babd0f422471c21f8605b3a93c7952"
+      }
+    ]
+  }
+]

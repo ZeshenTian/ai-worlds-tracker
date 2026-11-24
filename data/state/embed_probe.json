@@ -1,0 +1,5418 @@
+{
+  "http://3d-artifact.com/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://3d-artifact.com/",
+    "checked_at": "2026-11-24T15:04:57.758Z",
+    "origin": null,
+    "login_required": false
+  },
+  "http://drift.harma.cc/en": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://drift.harma.cc/en/",
+    "checked_at": "2026-11-24T15:05:00.309Z",
+    "origin": null,
+    "login_required": false
+  },
+  "http://hack.lovebird.show": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://hack.lovebird.show/",
+    "checked_at": "2026-11-24T15:04:57.553Z",
+    "origin": null,
+    "login_required": false
+  },
+  "http://poke-jam.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://poke-jam.vercel.app/",
+    "checked_at": "2026-11-24T15:04:57.631Z",
+    "origin": null,
+    "login_required": false
+  },
+  "http://tinyrj.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://tinyrj.com/",
+    "checked_at": "2026-11-24T15:04:57.646Z",
+    "origin": null,
+    "login_required": false
+  },
+  "http://tinyurl.com/wobble-city": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://wobble-city.mohantyabhijit.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:01.923Z",
+    "origin": null,
+    "login_required": false
+  },
+  "http://www.jeffxr.com/worlds": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://dgxspark.tail8341fc.ts.net/worlds",
+    "checked_at": "2026-11-24T15:05:03.640Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://01a1b677-97ba-7006-a384-e83b3e5793db.arena.site/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://01a1b677-97ba-7006-a384-e83b3e5793db.arena.site/",
+    "checked_at": "2026-11-24T15:04:57.644Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://2861-california-unit-4.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://2861-california-unit-4.vercel.app/",
+    "checked_at": "2026-11-24T15:04:58.812Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://aashishgtbit.github.io/PaletteRider/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://aashishgtbit.github.io/PaletteRider/",
+    "checked_at": "2026-11-24T15:04:59.958Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://abyssal-ecosystem-astra-20260901.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://abyssal-ecosystem-astra.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:01.746Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://abyssal-living-deep.netlify.app/?site=reef&seed=713&light=day&surface=1": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://abyssal-living-deep.netlify.app/?site=reef&seed=713&light=day&surface=1",
+    "checked_at": "2026-11-24T15:04:59.342Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://afterlight.a-9724.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://afterlight.a-9724.chatgpt.site/",
+    "checked_at": "2026-11-24T15:04:59.397Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://agentgames.itch.io/inkbound": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://inkspiritgames.itch.io/inkbound",
+    "checked_at": "2026-11-24T15:05:02.710Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://agiofempires.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://agiofempires.com/",
+    "checked_at": "2026-11-24T15:04:58.223Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://ai-mini-racer.code-crunche-2353.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://ai-mini-racer.code-crunche-2353.chatgpt.site/",
+    "checked_at": "2026-11-24T15:04:59.941Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://aiarcade.games/play/graveyard-shift": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://aiarcade.games/play/graveyard-shift",
+    "checked_at": "2026-11-24T15:04:58.409Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://aibengineering.github.io/sprout-quest/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://aibengineering.github.io/sprout-quest/",
+    "checked_at": "2026-11-24T15:04:58.142Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://airsup.ai/lab/sr-71?mach=3.2": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.airsup.ai/lab/sr-71?mach=3.2",
+    "checked_at": "2026-11-24T15:05:04.295Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://aistudio.google.com/apps/bundled/geminisland?showPreview=true&showAssistant=true&fullscreenApplet=true": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:04:57.631Z",
+    "origin": null,
+    "login_required": true
+  },
+  "https://alder-valley-rail-atelier.nickfromlater.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://alder-valley-rail-atelier.nickfromlater.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:01.686Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://alesha-pro.github.io/bench-portal/games/overrun-claude-opus-5.5/index.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://alesha-pro.github.io/bench-portal/games/overrun-claude-opus-5.5/index.html",
+    "checked_at": "2026-11-24T15:05:01.015Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://alesha-pro.github.io/bench-portal/games/voidbound-choir-of-ash/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://alesha-pro.github.io/bench-portal/games/voidbound-choir-of-ash/",
+    "checked_at": "2026-11-24T15:05:01.055Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://alibi-blackthorn-manor.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://alibi-blackthorn-manor.vercel.app/",
+    "checked_at": "2026-11-24T15:05:02.262Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://allaiinc.org/Starship-Foundry-Isometric-Flight-Lab.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://allaiinc.org/Starship-Foundry-Isometric-Flight-Lab.html",
+    "checked_at": "2026-11-24T15:05:01.512Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://anime-rift-cade.theyounganimation.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://anime-rift-cade.theyounganimation.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:01.960Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://anna-leo-starstone.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://anna-leo-starstone.vercel.app/",
+    "checked_at": "2026-11-24T15:05:03.063Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://antrunner.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://antrunner.vercel.app/",
+    "checked_at": "2026-11-24T15:05:02.831Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://apex-city.mindblown.ai/": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://apex-city.mindblown.ai/",
+    "checked_at": "2026-11-24T15:05:03.103Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.aiyu.chat/pelican.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://app.aiyu.chat/pelican.html",
+    "checked_at": "2026-11-24T15:05:04.725Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.thinklet.io/t/baseboard-393600": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.thinklet.io/t/baseboard-393600",
+    "checked_at": "2026-11-24T15:05:04.813Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/362ae1e7-29bd-4fbc-9103-00649265d942": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/362ae1e7-29bd-4fbc-9103-00649265d942",
+    "checked_at": "2026-11-24T15:05:03.869Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/47df78e2-1410-45d1-833c-196e1161c0b8": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/47df78e2-1410-45d1-833c-196e1161c0b8",
+    "checked_at": "2026-11-24T15:05:03.513Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/63d2fb01-822b-4f34-88dc-f21444efda59": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/63d2fb01-822b-4f34-88dc-f21444efda59",
+    "checked_at": "2026-11-24T15:05:05.492Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/6f37d763-d3f5-4a33-92d1-7731e8ac2a56": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/6f37d763-d3f5-4a33-92d1-7731e8ac2a56",
+    "checked_at": "2026-11-24T15:05:05.022Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8",
+    "checked_at": "2026-11-24T15:05:04.518Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8?v=mwsx25rs": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8?v=mwsx25rs",
+    "checked_at": "2026-11-24T15:05:06.596Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/8824247d-5a30-4981-b6fb-e215fb4717e6": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/8824247d-5a30-4981-b6fb-e215fb4717e6",
+    "checked_at": "2026-11-24T15:05:05.721Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/951dfd15-82b3-4af4-be4d-96ac83d23227": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/951dfd15-82b3-4af4-be4d-96ac83d23227",
+    "checked_at": "2026-11-24T15:05:04.960Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/992c2130-43da-416b-a577-aed9514d3057": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/992c2130-43da-416b-a577-aed9514d3057",
+    "checked_at": "2026-11-24T15:05:05.988Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/a9a3c165-74b3-4ff6-9588-ad97f829ddb5": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/a9a3c165-74b3-4ff6-9588-ad97f829ddb5",
+    "checked_at": "2026-11-24T15:05:05.533Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/bda1b910-b840-48cb-bb4c-28d0cde29107": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/bda1b910-b840-48cb-bb4c-28d0cde29107",
+    "checked_at": "2026-11-24T15:05:05.719Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/d09bb865-2259-42e2-86cc-fb609a9d6f28": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/d09bb865-2259-42e2-86cc-fb609a9d6f28",
+    "checked_at": "2026-11-24T15:05:05.968Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/e049e3e4-677f-42d5-8c34-3aa4af454068": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/e049e3e4-677f-42d5-8c34-3aa4af454068",
+    "checked_at": "2026-11-24T15:05:06.206Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://arkenfall.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.arkenfall.site/",
+    "checked_at": "2026-11-24T15:05:09.189Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://arrival.space/phoenixla": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://arrival.space/phoenixla",
+    "checked_at": "2026-11-24T15:05:08.228Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://ascii-district.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://ascii-district.vercel.app/",
+    "checked_at": "2026-11-24T15:05:06.864Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://asteria.wengsiong22.workers.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://asteria.wengsiong22.workers.dev/",
+    "checked_at": "2026-11-24T15:05:07.169Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://asteroids-deepfield-cockpit.dan200200.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://asteroids-deepfield-cockpit.dan200200.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:07.936Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://astra-museum-of-motion.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://astra-museum-of-motion.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:07.472Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://astralwar.io/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://opengame.io/g/pk834f42bw",
+    "checked_at": "2026-11-24T15:05:13.094Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://attack-on-titan-jet.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://attack-on-titan-jet.vercel.app/",
+    "checked_at": "2026-11-24T15:05:07.706Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://backrooms-tau.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://backrooms-tau.vercel.app/",
+    "checked_at": "2026-11-24T15:05:08.126Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://backyard-rascals.vercel.app/": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://backyard-rascals.vercel.app/",
+    "checked_at": "2026-11-24T15:05:08.147Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://ballance.fayaz.workers.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://ballance.fayaz.workers.dev/",
+    "checked_at": "2026-11-24T15:05:09.263Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://ballpoint-dominion.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://ballpoint-dominion.vercel.app/",
+    "checked_at": "2026-11-24T15:05:09.320Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://bannerfall.itch.io/siege-wing": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://bannerfall.itch.io/siege-wing",
+    "checked_at": "2026-11-24T15:05:09.344Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://barbiediary.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://barbiediary.netlify.app/",
+    "checked_at": "2026-11-24T15:05:09.714Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://barrelbound.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://barrelbound.vercel.app/",
+    "checked_at": "2026-11-24T15:05:10.941Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://basemazab.github.io/tuktuk/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://basemazab.github.io/tuktuk/",
+    "checked_at": "2026-11-24T15:05:09.710Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://bay.theojaffee.net/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://bay.theojaffee.net/",
+    "checked_at": "2026-11-24T15:05:09.573Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://below-the-hollow.thebuggeddev.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://below-the-hollow.thebuggeddev.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:10.994Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://bench-portal.pages.dev/games/breach-blacksite-astra/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://bench-portal.pages.dev/games/breach-blacksite-astra/",
+    "checked_at": "2026-11-24T15:05:11.132Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://bench-portal.pages.dev/games/gpt-6-astra-2026-09-11/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://bench-portal.pages.dev/games/gpt-6-astra-2026-09-11/",
+    "checked_at": "2026-11-24T15:05:11.131Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://bench-portal.pages.dev/games/kart-astra-deepseek/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://bench-portal.pages.dev/games/kart-astra-deepseek/",
+    "checked_at": "2026-11-24T15:05:10.694Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://bench-portal.pages.dev/games/voidrunner-astra/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://bench-portal.pages.dev/games/voidrunner-astra/",
+    "checked_at": "2026-11-24T15:05:10.755Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://bennoske.itch.io/denkotei": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://bennoske.itch.io/denkotei",
+    "checked_at": "2026-11-24T15:05:10.895Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://bird-siege.tonyheller.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://bird-siege.tonyheller.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:13.180Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://biswaz.me/westward/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://biswaz.me/westward/",
+    "checked_at": "2026-11-24T15:05:11.566Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://blackburn-flight.pages.dev/?fly=1": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://blackburn-flight.pages.dev/?fly=1",
+    "checked_at": "2026-11-24T15:05:11.216Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://blameless.petruha.ge/": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:05:14.212Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://blankappproject.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://blankappproject.netlify.app/",
+    "checked_at": "2026-11-24T15:05:12.624Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://blog.silencestar.com/posts/tilt-labyrinth/play/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://blog.silencestar.com/posts/tilt-labyrinth/play/",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://brontide.live/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://brontide.live/",
+    "checked_at": "2026-11-24T15:05:12.475Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://bubucn.com/ai-model-evals/flop-club/game/index.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://bubucn.com/ai-model-evals/flop-club/game",
+    "checked_at": "2026-11-24T15:05:14.808Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://bubucn.com/en/ai-model-evals/voxel-musou": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://bubucn.com/en/ai-model-evals/voxel-musou",
+    "checked_at": "2026-11-24T15:05:13.936Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://buildtounderstand.itch.io/far-space": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://buildtounderstand.itch.io/far-space",
+    "checked_at": "2026-11-24T15:05:12.893Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://butterball-run.jeraldine-t.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://butterball-run.jeraldine-t.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:14.531Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://butterfly.kyzo.io/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://butterfly.kyzo.io/",
+    "checked_at": "2026-11-24T15:05:15.711Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://cahlik.net/palmera-bay/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://cahlik.net/palmera-bay/",
+    "checked_at": "2026-11-24T15:05:14.764Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://canyonoverdrive.ai-created.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://canyonoverdrive.ai-created.com/",
+    "checked_at": "2026-11-24T15:05:14.978Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://cargo-lab.nanggo.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://cargo-lab.nanggo.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:14.804Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://cathedral-walk.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://cathedral-walk.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:14.938Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://central-drive.suhcami36.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://central-drive.suhcami36.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:16.422Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://chan-yuu.github.io/forest-warrior-3d-gemini-4-carbon-high/forest_warrior_demo/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://chan-yuu.github.io/forest-warrior-3d-gemini-4-carbon-high/forest_warrior_demo/",
+    "checked_at": "2026-11-24T15:05:14.135Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://citywalk-ashy.vercel.app": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:05:16.587Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude-opus-5-5.riba2534.cn/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://claude-opus-5-5.riba2534.cn/",
+    "checked_at": "2026-11-24T15:05:17.334Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/1QGGhB68jMCjjjeeKtKNUo": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/3aed2d93d4aNHbWMPfU3bN": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/3bhygX763cPdpcHQYmfrPk": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/3o9NKKmpezAFEan5SeVaxn": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/4nPXUKJjQWNsZEHVNmXXCt": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/7ge282etTXSS4edGFTFa85": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/7nmzhxeamcunJbKVK32ptz": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/9EgZpErM17kH2a9Q3WXW6f": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/9bekwKPUpCNDqEfgR8zwQa": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/BCDCNHRTq3y9W4Px3xc4DN": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/BGY1SztrAYcJQHSsnHHGmp": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/C4VEzERV7VNGNWDyUk8Qbz": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/CTjrZXVdUgKJ6qJXrvvr28": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/DLnFodkTwvawCNwurDmSZK?sk=5N6PtC07f1niB7h3I6clZQ": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/EnXF5Lr8hj6mXrVcVAefq9": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/FTUS2WmKKUFaqTKVHE7k4f": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/FpdQ81sJs1KiV1a6JCY4jj": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/HCzUsvWqERjQcgJjRuUUFo": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/HGk1WNqTgrGEE8ndBkEipB": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/KyHY2X7VYuaaykiLTBZSzA": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/Mfr5KgNoj66wYZF1DL7bwU": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/NwkkBKo523iBanmUyYGLk1": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/PvU6B3GmkXCex7qjs57cfB": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/QvSjL7Hexf3nKdUP9Zerr7": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/R6YBDkAm2GjAC5A65D9djx": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/RbtCujA2J6CpzJnxSEsYJ6": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/U2aPJpwKLNWVgAttFf1vzJ": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/UD9pGEN4QFA8F5EadRw8eL": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/UqU4w7jSr6pzF2McsbyQjJ": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/Vos8wdB8Jenz9FopZWeRMb": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/X7xKcMxVJjjoCZ9ZSYyFUa": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.ai/artifact/Xf7ox3VmmmqTsiC7Fw7M6T": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:12.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.site/artifacts/803f115e-9a9c-477f-93d0-8ff7d021dc97": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "status": 200,
+    "final_url": "https://claude.ai/public/artifacts/803f115e-9a9c-477f-93d0-8ff7d021dc97",
+    "checked_at": "2026-11-24T15:05:18.478Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.site/artifacts/a2643a0d-0289-4325-92b8-6908869108e9": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "status": 200,
+    "final_url": "https://claude.ai/public/artifacts/a2643a0d-0289-4325-92b8-6908869108e9",
+    "checked_at": "2026-11-24T15:05:21.525Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.site/artifacts/a9a625da-f9fc-4e3c-9193-b73caeef8a8b": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "status": 200,
+    "final_url": "https://claude.ai/public/artifacts/a9a625da-f9fc-4e3c-9193-b73caeef8a8b",
+    "checked_at": "2026-11-24T15:05:22.076Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.site/artifacts/b0f564e8-dfb2-4d49-b8a5-f0f103f54e55": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "status": 200,
+    "final_url": "https://claude.ai/public/artifacts/b0f564e8-dfb2-4d49-b8a5-f0f103f54e55",
+    "checked_at": "2026-11-24T15:05:20.304Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.site/artifacts/b1088d9b-ec4b-4e5d-bca2-9e6932a948d5": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "status": 200,
+    "final_url": "https://claude.ai/public/artifacts/b1088d9b-ec4b-4e5d-bca2-9e6932a948d5",
+    "checked_at": "2026-11-24T15:05:22.531Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://claude.site/artifacts/d13dbdee-f40c-439c-947d-72e67435625b": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "status": 200,
+    "final_url": "https://claude.ai/public/artifacts/d13dbdee-f40c-439c-947d-72e67435625b",
+    "checked_at": "2026-11-24T15:05:21.089Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://clockendbader.github.io/fable-builds/go-for-launch/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://clockendbader.github.io/fable-builds/go-for-launch/",
+    "checked_at": "2026-11-24T15:05:17.788Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://cnvs.dev/opusmo/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://cnvs.dev/opusmo/",
+    "checked_at": "2026-11-24T15:05:18.617Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://coco3271.github.io/nova-football-26/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://coco3271.github.io/nova-football-26/",
+    "checked_at": "2026-11-24T15:05:17.690Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://combos.game/play/c7eea0b6846f90a102537819c9147bd4": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://combos.game/play/c7eea0b6846f90a102537819c9147bd4",
+    "checked_at": "2026-11-24T15:05:19.799Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://community.arc.io/home/clubs/arc-studio-dofua/forum/boards/arc-studio-72a/posts/mars-roadster-a-browser-3d-game-built-with-claude-code-and-arc-studio-and-what-broke-when-the-pieces-met-4lg8ngzw9r": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://community.arc.io/public/clubs/arc-studio-dofua/forum/boards/arc-studio-72a/posts/mars-roadster-a-browser-3d-game-built-with-claude-code-and-arc-studio-and-what-broke-when-the-pieces-met-4lg8ngzw9r",
+    "checked_at": "2026-11-24T15:05:19.287Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://coralback-ray.wasmer.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://coralback-ray.wasmer.app/",
+    "checked_at": "2026-11-24T15:05:18.718Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://cordon9.pplx.app/": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 56,
+    "checked_at": "2026-11-24T15:05:24.391Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://cosmos-atlas-by-ogasege.deep-seed-4484.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://cosmos-atlas-by-ogasege.deep-seed-4484.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:18.626Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://cozybakery.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://cozybakery.vercel.app/",
+    "checked_at": "2026-11-24T15:05:19.382Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://cozylisbon.vercel.app/": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:05:21.446Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://crumb-run.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://crumb-run.vercel.app/",
+    "checked_at": "2026-11-24T15:05:19.399Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://cyber-suv-studio.banny911.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://cyber-suv-studio.banny911.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:20.917Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://cyrilremacle-byte.github.io/francis-turbine-explorer/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://cyrilremacle-byte.github.io/francis-turbine-explorer/",
+    "checked_at": "2026-11-24T15:05:21.729Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://czech-game.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://czech-game.vercel.app/",
+    "checked_at": "2026-11-24T15:05:20.940Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://dapp.alandys.com/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://dapp.alandys.com/",
+    "checked_at": "2026-11-24T15:05:22.371Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://davinci-mechanics.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://davinci-mechanics.vercel.app/",
+    "checked_at": "2026-11-24T15:05:21.705Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://dead-end.replit.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://dead-end.replit.app/",
+    "checked_at": "2026-11-24T15:05:24.772Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://deathsend.xyz/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://deathsend.xyz/",
+    "checked_at": "2026-11-24T15:05:22.366Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://dgreenheck.github.io/tidewater/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://dgreenheck.github.io/tidewater/",
+    "checked_at": "2026-11-24T15:05:23.952Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://dquanbui.github.io/shutterpine/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://dquanbui.github.io/shutterpine/",
+    "checked_at": "2026-11-24T15:05:23.538Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://dread-and-district.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://dread-and-district.netlify.app/",
+    "checked_at": "2026-11-24T15:05:22.599Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://dreamscapexr.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://dreamscapexr.netlify.app/",
+    "checked_at": "2026-11-24T15:05:23.716Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://drone-io.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://drone-io.vercel.app/",
+    "checked_at": "2026-11-24T15:05:24.267Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://duckoff.fun/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://duckoff.fun/",
+    "checked_at": "2026-11-24T15:05:25.295Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://duskline-canyon-run.abdulhadi-ai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://duskline-canyon-run.abdulhadi-ai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:24.561Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://dust-front.mustafaakin.dev/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://dust-front.mustafaakin.dev/",
+    "checked_at": "2026-11-24T15:05:24.744Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://dustfalls.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://dustfalls.netlify.app/",
+    "checked_at": "2026-11-24T15:05:26.055Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://ebb.tesana.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://ebb.tesana.com/",
+    "checked_at": "2026-11-24T15:05:24.672Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://edge-city-skyward-quests.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://edge-city-skyward-quests.vercel.app/",
+    "checked_at": "2026-11-24T15:05:26.880Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://ember-tech.itch.io/pub-brawl": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://ember-tech.itch.io/pub-brawl",
+    "checked_at": "2026-11-24T15:05:24.722Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://environment-design-1.julius.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://environment-design-1.julius.site/",
+    "checked_at": "2026-11-24T15:05:26.073Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://escapement.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://escapement.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:27.422Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://evensong-phi.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://evensong-phi.vercel.app/",
+    "checked_at": "2026-11-24T15:05:26.258Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://f1malaysia.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://f1malaysia.app/",
+    "checked_at": "2026-11-24T15:05:25.708Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fable-jerusalem.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://fable-jerusalem.vercel.app/",
+    "checked_at": "2026-11-24T15:05:25.717Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fable-rome.surge.sh/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://fable-rome.surge.sh/",
+    "checked_at": "2026-11-24T15:05:27.193Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fable-rover.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://fable-rover.vercel.app/",
+    "checked_at": "2026-11-24T15:05:27.875Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fablestar.games/watch.html": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 35,
+    "checked_at": "2026-11-24T15:05:26.892Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fallline-9zo.pages.dev/": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:05:29.287Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fang-starlight-run.yosshy666.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://fang-starlight-run.yosshy666.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:29.000Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://feed-backrooms.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://feed-backrooms.vercel.app/",
+    "checked_at": "2026-11-24T15:05:28.857Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://feelthematrix.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://feelthematrix.com/",
+    "checked_at": "2026-11-24T15:05:27.684Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fish.kennyatx.com/": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:05:29.739Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://flight-sim-astra.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://flight-sim-astra.vercel.app/",
+    "checked_at": "2026-11-24T15:05:29.255Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://flight1073.pages.dev/play/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://flight1073.pages.dev/play/",
+    "checked_at": "2026-11-24T15:05:27.751Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fluffy-biscotti-dad318.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://fluffy-biscotti-dad318.netlify.app/",
+    "checked_at": "2026-11-24T15:05:30.658Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fmk-demo.vercel.app": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://fmk-demo.vercel.app/",
+    "checked_at": "2026-11-24T15:05:29.629Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://foe-to-fleet.miya333.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://foe-to-fleet.miya333.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:31.615Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://forest-walks-at-dusk.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://forest-walks-at-dusk.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:30.183Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fowllabs.com/fable-5-2/chairmageddon/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://fowllabs.com/fable-5-2/chairmageddon/",
+    "checked_at": "2026-11-24T15:05:29.385Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://fowllabs.com/fable-5-2/knock-it-off/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://fowllabs.com/fable-5-2/knock-it-off/",
+    "checked_at": "2026-11-24T15:05:29.927Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://frontier.every.to/experiments/first-crush": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://frontier.every.to/experiments/first-crush",
+    "checked_at": "2026-11-24T15:05:30.711Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://galaxy-dive.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://galaxy-dive.vercel.app/",
+    "checked_at": "2026-11-24T15:05:30.524Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://galewatch-atlantico.tokengremlin.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://galewatch-atlantico.tokengremlin.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:30.871Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://gavilanbe.github.io/makinamon-pulso/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://gavilanbe.github.io/makinamon-pulso/",
+    "checked_at": "2026-11-24T15:05:31.115Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://genaiexperiments.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://genaiexperiments.vercel.app/",
+    "checked_at": "2026-11-24T15:05:32.080Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://geometry-dash-fan-nako.deif79.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://geometry-dash-fan-nako.deif79.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:31.191Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://giant-leap.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://giant-leap.vercel.app/",
+    "checked_at": "2026-11-24T15:05:31.718Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://gilt-and-gutter.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://gilt-and-gutter.vercel.app/",
+    "checked_at": "2026-11-24T15:05:32.475Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://givros.github.io/openworld-plane/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://givros.github.io/openworld-plane/",
+    "checked_at": "2026-11-24T15:05:32.117Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://glittery-stardust-885b97.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://glittery-stardust-885b97.netlify.app/",
+    "checked_at": "2026-11-24T15:05:32.700Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://gogh-strike.surge.sh/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://gogh-strike.surge.sh/",
+    "checked_at": "2026-11-24T15:05:33.149Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://goo.gle/496Vk4f": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:29.385Z",
+    "origin": null,
+    "login_required": true
+  },
+  "https://gordensun.github.io/last-firewall/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://gordensun.github.io/last-firewall/",
+    "checked_at": "2026-11-24T15:05:32.558Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://gpt6astra-game.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://gpt6astra-game.vercel.app/",
+    "checked_at": "2026-11-24T15:05:33.495Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://gtashenzhen.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://gtashenzhen.com/",
+    "checked_at": "2026-11-24T15:05:33.744Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://happy-ruler-pizza-rhythm.maedai8282.chatgpt.site/rhythm-game/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://happy-ruler-pizza-rhythm.maedai8282.chatgpt.site/rhythm-game/",
+    "checked_at": "2026-11-24T15:05:34.451Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://happycapy.ai/share/files/d67d046e-9957-4503-b69c-d7de60569ec1": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://happycapy.ai/share/files/d67d046e-9957-4503-b69c-d7de60569ec1",
+    "checked_at": "2026-11-24T15:05:33.889Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://haruka-apps-games.itch.io/lastfall-3d-battle-royale-zombie-survival": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://haruka-apps-games.itch.io/lastfall-3d-battle-royale-zombie-survival",
+    "checked_at": "2026-11-24T15:05:35.671Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://haruka-apps-games.itch.io/neon-arcade-pinball-game-center-nova": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://haruka-apps-games.itch.io/neon-arcade-pinball-game-center-nova",
+    "checked_at": "2026-11-24T15:05:34.608Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://hashmatullahzaher.github.io/mazar-rawza-race/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://hashmatullahzaher.github.io/mazar-rawza-race/",
+    "checked_at": "2026-11-24T15:05:34.676Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://heat.pplx.app/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://heat.pplx.app/",
+    "checked_at": "2026-11-24T15:05:40.574Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://henrik-thevibe.github.io/SORA-MAN/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://henrik-thevibe.github.io/SORA-MAN/",
+    "checked_at": "2026-11-24T15:05:35.001Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://higgsfield.ai/@higgsfield.studio/blogs/fable-5-2-built-this-rpg-from-pure-code-here-s-every-step": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://higgsfield.ai/@higgsfield.studio/blogs/fable-5-2-built-this-rpg-from-pure-code-here-s-every-step",
+    "checked_at": "2026-11-24T15:05:41.171Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://hollow-resonance.shinada.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://hollow-resonance.shinada.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:35.270Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://hollowmark.mindblown.ai/": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://hollowmark.mindblown.ai/",
+    "checked_at": "2026-11-24T15:05:36.036Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://hot-wheeler.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://hot-wheeler.vercel.app/",
+    "checked_at": "2026-11-24T15:05:35.108Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://human-eye.wasmer.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://human-eye.wasmer.app/",
+    "checked_at": "2026-11-24T15:05:35.919Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://i-would-have-gotten-away-with-it.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://i-would-have-gotten-away-with-it.netlify.app/",
+    "checked_at": "2026-11-24T15:05:35.756Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://iamsonic.net/2026/mini-games/shells-3d/play.html": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:05:37.579Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://iamsonic.net/2026/mini-games/underground-boxing.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://iamsonic.net/2026/mini-games/underground-boxing.html",
+    "checked_at": "2026-11-24T15:05:35.943Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://iamsonic.net/2026/mini-games/urban-champion.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://iamsonic.net/2026/mini-games/urban-champion.html",
+    "checked_at": "2026-11-24T15:05:36.716Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://icy-tower-frostbound.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://icy-tower-frostbound.netlify.app/",
+    "checked_at": "2026-11-24T15:05:38.857Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://indiranagar-live.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://indiranagar-live.vercel.app/",
+    "checked_at": "2026-11-24T15:05:36.823Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://infall-game.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://infall-game.vercel.app/",
+    "checked_at": "2026-11-24T15:05:37.748Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://infinite-garden.yelin8130.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://infinite-garden.yelin8130.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:39.802Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://infinitum-game.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://infinitum-game.vercel.app/",
+    "checked_at": "2026-11-24T15:05:38.527Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://ink-rush-showdown.vercel.app/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://ink-rush-showdown.vercel.app/",
+    "checked_at": "2026-11-24T15:05:39.238Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://ironwood.sparkles.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://ironwood.sparkles.dev/",
+    "checked_at": "2026-11-24T15:05:38.594Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://jakozaur.github.io/sf_bay_area_transit_fable_5_2_game/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://jakozaur.github.io/sf_bay_area_transit_fable_5_2_game/",
+    "checked_at": "2026-11-24T15:05:38.615Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://jambocoder159.github.io/ai-game-duel/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://jambocoder159.github.io/ai-game-duel/",
+    "checked_at": "2026-11-24T15:05:38.351Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://jello.sixfingerpunch.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://jello.sixfingerpunch.com/",
+    "checked_at": "2026-11-24T15:05:39.563Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://jelly.scottsun.io/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://jelly.scottsun.io/",
+    "checked_at": "2026-11-24T15:05:40.377Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://juliusbrussee.github.io/jazz-jackrabbit-remastered/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://juliusbrussee.github.io/jazz-jackrabbit-remastered/",
+    "checked_at": "2026-11-24T15:05:40.140Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://junk-run.pages.dev/": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://junk-run.pages.dev/",
+    "checked_at": "2026-11-24T15:05:39.984Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://kafana-studio.itch.io/glimmerpine": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://kafana-studio.itch.io/glimmerpine",
+    "checked_at": "2026-11-24T15:05:39.719Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://kengoworks.itch.io/dawnlings": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://kengoworks.itch.io/dawnlings",
+    "checked_at": "2026-11-24T15:05:40.513Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://kevintngo.github.io/cinderwatch/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://kevintngo.github.io/cinderwatch/",
+    "checked_at": "2026-11-24T15:05:40.527Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://kevintngo.github.io/dungeon-game/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://kevintngo.github.io/dungeon-game/",
+    "checked_at": "2026-11-24T15:05:41.403Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://kinetic-architecture-astra-20260901.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://kinetic-architecture-astra.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:45.666Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://kjlkurt.github.io/waterslide-game-astra/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://kjlkurt.github.io/waterslide-game-astra/",
+    "checked_at": "2026-11-24T15:05:41.779Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://kjlkurt.github.io/waterslide-game-opus-5.5/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://kjlkurt.github.io/waterslide-game-opus-5.5/",
+    "checked_at": "2026-11-24T15:05:42.107Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://klipzi-city.deadcoolapps.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://play.city.klipzi.com/",
+    "checked_at": "2026-11-24T15:05:46.343Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://knightmare-medusa-3d.robin-hwang.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://knightmare-medusa-3d.robin-hwang.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:44.266Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://komorebi-kinomi-0916.inu03550.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://komorebi-kinomi-0916.inu03550.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:42.945Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://kostikoneuro.github.io/astra-6-2-solo/4-minigolf/?lang=ru": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:05:44.250Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://krit22.github.io/browser-minecraft/": {
+    "embeddable": false,
+    "reason": "mixed_content",
+    "status": 200,
+    "final_url": "http://surgeai.me/browser-minecraft/",
+    "checked_at": "2026-11-24T15:05:46.882Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://la-notte-dipinta.dario-pumi.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://la-notte-dipinta.dario-pumi.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:43.101Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://lab.edizegemercan.com/posts/nightshift-gemini-4-carbon-vs-claude-fable-5-2/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://lab.edizegemercan.com/posts/nightshift-gemini-4-carbon-vs-claude-fable-5-2/",
+    "checked_at": "2026-11-24T15:05:42.912Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://lab.finiyang.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://lab.finiyang.com/",
+    "checked_at": "2026-11-24T15:05:44.067Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://lagoon-tree-village.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://lagoon-tree-village.netlify.app/",
+    "checked_at": "2026-11-24T15:05:43.228Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://lantern-cove.akartit.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://lantern-cove.akartit.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:45.646Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://last-light-northline.pages.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://last-light-northline.pages.dev/",
+    "checked_at": "2026-11-24T15:05:43.422Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://lauramionel.github.io/cayley-flight-simulator/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://lauramionel.github.io/cayley-flight-simulator/",
+    "checked_at": "2026-11-24T15:05:44.103Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://le-bon-rayon.alexxondre.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://le-bon-rayon.alexxondre.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:47.930Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://light-and-matter.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://light-and-matter.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:45.563Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://little-ritual.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://little-ritual.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:46.201Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://littleprince.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://littleprince.dev/",
+    "checked_at": "2026-11-24T15:05:47.154Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://loktar00.github.io/lanternfall/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://loktar00.github.io/lanternfall/",
+    "checked_at": "2026-11-24T15:05:46.095Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://loktar00.github.io/llm-test-pages/fable52-dino-chase/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://loktar00.github.io/llm-test-pages/fable52-dino-chase/",
+    "checked_at": "2026-11-24T15:05:46.665Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://loktar00.github.io/llm-test-pages/fable52-hang-glider/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://loktar00.github.io/llm-test-pages/fable52-hang-glider/",
+    "checked_at": "2026-11-24T15:05:48.245Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://loktar00.github.io/pine-hollow/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://loktar00.github.io/pine-hollow/",
+    "checked_at": "2026-11-24T15:05:47.137Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://loulous-apartment.vercel.app/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://loulous-apartment.vercel.app/",
+    "checked_at": "2026-11-24T15:05:46.404Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://lucys-house-3d.princess42.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://lucys-house-3d.princess42.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:48.160Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://luminabench.com/games/lumina-fighter-jets/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://luminabench.com/games/lumina-fighter-jets/",
+    "checked_at": "2026-11-24T15:05:47.152Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://luminazombies.com/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://luminabench.com/games/lumina-zombies/",
+    "checked_at": "2026-11-24T15:05:52.002Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://luna-crimson-requiem.ponsuke.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://luna-crimson-requiem.ponsuke.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:48.633Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://maad-maxxing.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://maad-maxxing.vercel.app/",
+    "checked_at": "2026-11-24T15:05:47.878Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://madebysourasith-sudo.github.io/red-wing-jet/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://madebysourasith-sudo.github.io/red-wing-jet/",
+    "checked_at": "2026-11-24T15:05:49.181Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://maple-run-fable.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://maple-run-fable.vercel.app/",
+    "checked_at": "2026-11-24T15:05:49.572Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://mariana.pplx.app/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://mariana.pplx.app/",
+    "checked_at": "2026-11-24T15:05:55.333Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://market-order-city.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://market-order-city.netlify.app/",
+    "checked_at": "2026-11-24T15:05:50.024Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://mdhasibul35.github.io/skyshard/": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:05:51.214Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://mikenevermiss.github.io/midnight-grid/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://mikenevermiss.github.io/midnight-grid/",
+    "checked_at": "2026-11-24T15:05:50.721Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://mini-moto-park.chipchaunceytheonlyone.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://mini-moto-park.chipchaunceytheonlyone.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:50.013Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://minimum-rage.fastandlucid.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://minimum-rage.fastandlucid.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:50.752Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://missioncontrol.dractec.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://missioncontrol.dractec.com/",
+    "checked_at": "2026-11-24T15:05:51.210Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://moh4696.github.io/greyhaven-harbour/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://moh4696.github.io/greyhaven-harbour/",
+    "checked_at": "2026-11-24T15:05:50.882Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://monolithwilds.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://monolithwilds.vercel.app/",
+    "checked_at": "2026-11-24T15:05:50.552Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://monopoly-city.eekosystems.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://monopoly-city.eekosystems.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:51.168Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://monstercameron.github.io/Neural-Sight/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://monstercameron.github.io/Neural-Sight/",
+    "checked_at": "2026-11-24T15:05:51.532Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://mosswing-quiet-flight.jack-514.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://mosswing-quiet-flight.jack-514.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:51.251Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://nacar-microcosmo.preda2005.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://nacar-microcosmo.preda2005.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:52.214Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://napolehim.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.napolehim.com/",
+    "checked_at": "2026-11-24T15:05:55.481Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://navier-stokes-cesium.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://navier-stokes-cesium.netlify.app/",
+    "checked_at": "2026-11-24T15:05:52.165Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://neon-scramble.ai.studio/": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:49.181Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://neon-swarm-last-signal.sakugetu.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://neon-swarm-last-signal.sakugetu.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:53.410Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://neonwake.ethraship.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://neonwake.ethraship.com/",
+    "checked_at": "2026-11-24T15:05:55.795Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://nightborn-clash.dixonefg5.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://nightborn-clash.dixonefg5.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:53.888Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://nikhilsatishdesai.github.io/the-fourth-knock/play/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://nikhilsatishdesai.github.io/the-fourth-knock/play/",
+    "checked_at": "2026-11-24T15:05:54.242Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://nipale-ai.github.io/opus-5-5-overnight-builds/fall-line/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://nipale-ai.github.io/opus-5-5-overnight-builds/fall-line/",
+    "checked_at": "2026-11-24T15:05:53.635Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://noclipepe.pages.dev/pattinson-verse/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://noclipepe.pages.dev/pattinson-verse/",
+    "checked_at": "2026-11-24T15:05:54.492Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://noir-detective-psx.matthia-ai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://noir-detective-psx.matthia-ai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:55.682Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://nolla-venue.don-dao97.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://nolla-venue.don-dao97.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:54.449Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://nova-defender.expo.app/game/index.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://nova-defender.expo.app/game/index.html",
+    "checked_at": "2026-11-24T15:05:55.025Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://nyc.somethingbig.ai/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://nyc.somethingbig.ai/",
+    "checked_at": "2026-11-24T15:05:55.074Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://ololo-dev.github.io/apex-lap-fable-5-2/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://ololo-dev.github.io/apex-lap-fable-5-2/",
+    "checked_at": "2026-11-24T15:05:55.695Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://omaha-front.vraserx.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://omaha-front.vraserx.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:56.106Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://omw-game.kimaki.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://omw-game.kimaki.dev/",
+    "checked_at": "2026-11-24T15:05:55.850Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://onehundredapps.github.io/amar.io/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://onehundredapps.github.io/amar.io/",
+    "checked_at": "2026-11-24T15:05:56.204Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://onemorevine.bennash.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://onemorevine.bennash.dev/",
+    "checked_at": "2026-11-24T15:05:58.499Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://op7418.github.io/guizang-game-skill/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://op7418.github.io/guizang-game-skill/",
+    "checked_at": "2026-11-24T15:05:55.838Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://orr-rush-bengaluru.ravitheja.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://orr-rush-bengaluru.ravitheja.chatgpt.site/",
+    "checked_at": "2026-11-24T15:05:57.541Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://p.migdal.pl/invisible-cities-astra/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://p.migdal.pl/invisible-cities-astra/",
+    "checked_at": "2026-11-24T15:05:57.561Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://pacman.demyx.workers.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://pacman.demyx.workers.dev/",
+    "checked_at": "2026-11-24T15:06:02.061Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://page.thweki.com:8443/fracture/": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 35,
+    "checked_at": "2026-11-24T15:05:57.541Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://pappkin.com/apps/snow-day": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://pappkin.com/apps/snow-day",
+    "checked_at": "2026-11-24T15:05:58.503Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://paris-atlas-street-explorer.openai.chatgpt.site/": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:05:59.500Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://patch.gg/blendi/coloured-pencil": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://patch.gg/blendi/coloured-pencil",
+    "checked_at": "2026-11-24T15:05:58.392Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://patch.gg/blendi/impossible-spaces": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://patch.gg/blendi/impossible-spaces",
+    "checked_at": "2026-11-24T15:05:58.549Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://patch.gg/blendi/painted-valley": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://patch.gg/blendi/painted-valley",
+    "checked_at": "2026-11-24T15:06:00.276Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://patch.gg/blendi/patchwork-quilt": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://patch.gg/blendi/patchwork-quilt",
+    "checked_at": "2026-11-24T15:06:00.802Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://patch.gg/blendi/pixel-village": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://patch.gg/blendi/pixel-village",
+    "checked_at": "2026-11-24T15:06:00.056Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://patch.gg/games/rehan/ringfall": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://patch.gg/games/rehan/ringfall",
+    "checked_at": "2026-11-24T15:05:59.777Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://patch.gg/play/blendi/small-magic": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:55.795Z",
+    "origin": null,
+    "login_required": true
+  },
+  "https://patch.gg/play/blendi/solar": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:55.795Z",
+    "origin": null,
+    "login_required": true
+  },
+  "https://patch.gg/play/blendi/the-blue-hour": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-24T15:05:55.795Z",
+    "origin": null,
+    "login_required": true
+  },
+  "https://persepolis-explorer.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://persepolis-explorer.vercel.app/",
+    "checked_at": "2026-11-24T15:05:58.889Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://petalwake.non.io/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://petalwake.non.io/",
+    "checked_at": "2026-11-24T15:05:59.281Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://pixelfork.ai/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://pixelfork.ai/",
+    "checked_at": "2026-11-24T15:06:00.038Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://plamen0606.itch.io/bitbound-isles": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://plamen0606.itch.io/bitbound-isles",
+    "checked_at": "2026-11-24T15:06:00.352Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://play-de-claude.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://play-de-claude.vercel.app/world/",
+    "checked_at": "2026-11-24T15:06:00.613Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://play.justmovetoeurope.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://play.justmovetoeurope.com/",
+    "checked_at": "2026-11-24T15:06:02.177Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://play.nguyenquockhanh.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://play.nguyenquockhanh.com/",
+    "checked_at": "2026-11-24T15:06:01.365Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://pokemon-battle-arena.greta0086.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://pokemon-battle-arena.greta0086.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:02.195Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://poseidia.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://poseidia.vercel.app/",
+    "checked_at": "2026-11-24T15:06:01.277Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://primitive-park-walkthrough.miya333.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://primitive-park-walkthrough.miya333.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:02.826Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://profactor.itch.io/nightshoal": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://profactor.itch.io/nightshoal",
+    "checked_at": "2026-11-24T15:06:01.754Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://promptengineer48.github.io/claude-opus-5.5-games/neon-siege/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://promptengineer48.github.io/claude-opus-5.5-games/neon-siege/",
+    "checked_at": "2026-11-24T15:06:01.588Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://pwappy-com.github.io/example-apps/funya-yuki/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://pwappy-com.github.io/example-apps/funya-yuki/",
+    "checked_at": "2026-11-24T15:06:02.283Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://qingming-riverside.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://qingming-riverside.vercel.app/",
+    "checked_at": "2026-11-24T15:06:02.913Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://rain-court-js.umodeler-inc-4323.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://rain-court-js.umodeler-inc-4323.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:03.493Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://remix.gg/g/banana-mine-rush": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://remix.gg/g/banana-mine-rush",
+    "checked_at": "2026-11-24T15:06:02.734Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://remix.gg/g/hoppy-meadow": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://remix.gg/g/hoppy-meadow",
+    "checked_at": "2026-11-24T15:06:05.272Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://remix.gg/g/survivors": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://remix.gg/g/survivors",
+    "checked_at": "2026-11-24T15:06:03.147Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://reskin-surface-studio.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://reskin-surface-studio.vercel.app/",
+    "checked_at": "2026-11-24T15:06:04.523Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://ringhyacinth.github.io/hyacinth.im-site/pixel-shanghai/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://ringhyacinth.github.io/hyacinth.im-site/pixel-shanghai/",
+    "checked_at": "2026-11-24T15:06:04.618Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://rivergame-kappa.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://rivergame-kappa.vercel.app/",
+    "checked_at": "2026-11-24T15:06:04.961Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://rokengames.com/roadster-flight": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://rokengames.com/roadster-flight",
+    "checked_at": "2026-11-24T15:06:03.702Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://runner-stage1.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://runner-stage1.vercel.app/",
+    "checked_at": "2026-11-24T15:06:04.739Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://rust4x4.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://rust4x4.com/",
+    "checked_at": "2026-11-24T15:06:04.447Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://s.baoyu.io/files/taohuayuan/index.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://s.baoyu.io/files/taohuayuan/index.html",
+    "checked_at": "2026-11-24T15:06:05.941Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sael.net/final-boss": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sael.net/final-boss/",
+    "checked_at": "2026-11-24T15:06:05.856Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://saltfire.higgsfield.app/": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://saltfire.higgsfield.app/",
+    "checked_at": "2026-11-24T15:06:05.902Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sam1983aing.github.io/domino-show/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sam1983aing.github.io/domino-show/",
+    "checked_at": "2026-11-24T15:06:05.485Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://samg-coder.github.io/solstice-garden/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://samg-coder.github.io/solstice-garden/",
+    "checked_at": "2026-11-24T15:06:05.986Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://samg-coder.github.io/solstice-racing/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://samg-coder.github.io/solstice-racing/",
+    "checked_at": "2026-11-24T15:06:05.791Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sanwan.ai/games/xingyun-moba/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sanwan.ai/games/xingyun-moba/",
+    "checked_at": "2026-11-24T15:06:08.108Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sashatchersunov6-rgb.github.io/lisenok-game/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sashatchersunov6-rgb.github.io/lisenok-game/",
+    "checked_at": "2026-11-24T15:06:06.315Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://satriodewantono.com/breakdance/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://satriodewantono.com/breakdance/",
+    "checked_at": "2026-11-24T15:06:05.889Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://satyam-fp.github.io/race/v1/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://satyam-fp.github.io/race/v1/",
+    "checked_at": "2026-11-24T15:06:06.322Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://save-the-world-fable.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://save-the-world-fable.vercel.app/",
+    "checked_at": "2026-11-24T15:06:07.425Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://scarlet-vector-0905.sssscryptoman.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://scarlet-vector-0905.sssscryptoman.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:07.234Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://schiffy-gold-run.schankara.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://schiffy-gold-run.schankara.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:09.383Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://scutterfluff.netlify.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://scutterfluff.netlify.app/",
+    "checked_at": "2026-11-24T15:06:08.232Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://seimusic.info/file/red_flag_game.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://seimusic.info/file/red_flag_game.html",
+    "checked_at": "2026-11-24T15:06:09.122Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://seiryu.miraicode.one/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://seiryu.miraicode.one/",
+    "checked_at": "2026-11-24T15:06:09.282Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sentinel-blacksite-game.alphastudio2121999.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sentinel-blacksite-game.alphastudio2121999.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:08.650Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://seoul-3d-atlas.synabreu.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://seoul-3d-atlas.synabreu.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:09.825Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://settlecoast.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://settlecoast.com/",
+    "checked_at": "2026-11-24T15:06:09.177Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sf11.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sf11.vercel.app/",
+    "checked_at": "2026-11-24T15:06:10.952Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sgyno09-source.github.io/dual-realms/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sgyno09-source.github.io/dual-realms/",
+    "checked_at": "2026-11-24T15:06:09.535Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sharpwizard.github.io/ironvale/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sharpwizard.github.io/ironvale/",
+    "checked_at": "2026-11-24T15:06:10.011Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://shaunprice.github.io/soccer-3d/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://shaunprice.github.io/soccer-3d/",
+    "checked_at": "2026-11-24T15:06:09.848Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://shioa2006-game.github.io/ONE_PROMPT_WORLDS/game8/index.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://shioa2006-game.github.io/ONE_PROMPT_WORLDS/game8/index.html",
+    "checked_at": "2026-11-24T15:06:11.953Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://shubhu121.github.io/hitdude/play/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://shubhu121.github.io/hitdude/play/",
+    "checked_at": "2026-11-24T15:06:09.227Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sidianjin-chaoshan.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sidianjin-chaoshan.vercel.app/",
+    "checked_at": "2026-11-24T15:06:09.467Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://silicon-seduction.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://silicon-seduction.vercel.app/",
+    "checked_at": "2026-11-24T15:06:09.818Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://simplystream.dev/HyZObyKI": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://simplystream.dev/HyZObyKI",
+    "checked_at": "2026-11-24T15:06:11.171Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://singularity-nomi.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://singularity-nomi.vercel.app/",
+    "checked_at": "2026-11-24T15:06:10.990Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://skyflare-game.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://skyflare-game.vercel.app/",
+    "checked_at": "2026-11-24T15:06:11.544Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sleepwalker-gray.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sleepwalker-gray.vercel.app/",
+    "checked_at": "2026-11-24T15:06:11.250Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://smashi.app/arcade/crash-quota-fable/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://smashi.app/arcade/crash-quota-fable/",
+    "checked_at": "2026-11-24T15:06:12.960Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://somethingbig.ai/world/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://world.somethingbig.ai/world/",
+    "checked_at": "2026-11-24T15:06:17.261Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://souranyp-stack.github.io/solar-drift/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://souranyp-stack.github.io/solar-drift/",
+    "checked_at": "2026-11-24T15:06:12.042Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://spacesim.pplx.app/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://spacesim.pplx.app/",
+    "checked_at": "2026-11-24T15:06:16.577Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://spawn.co/@j/portal-heist/play": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@j/portal-heist/play",
+    "checked_at": "2026-11-24T15:06:16.808Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://spawn.co/@robot/frontline-warfare-deathmatch": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@robot/frontline-warfare-deathmatch",
+    "checked_at": "2026-11-24T15:06:18.332Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://spectacular-jargon-xtw.julius.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://spectacular-jargon-xtw.julius.site/",
+    "checked_at": "2026-11-24T15:06:12.587Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://spz-drive.martinmachava.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://spz-drive.martinmachava.com/",
+    "checked_at": "2026-11-24T15:06:12.757Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://stadium-elite.mindblown.ai/": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://stadium-elite.mindblown.ai/",
+    "checked_at": "2026-11-24T15:06:13.847Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://starknightt.github.io/summer-festival/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://starknightt.github.io/summer-festival/",
+    "checked_at": "2026-11-24T15:06:13.536Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://starknightt.github.io/valley-ride/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://starknightt.github.io/valley-ride/",
+    "checked_at": "2026-11-24T15:06:13.618Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://starrynightrider.com/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://starrynightrider.com/",
+    "checked_at": "2026-11-24T15:06:13.990Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://stick-fighter-production.up.railway.app/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://stick-fighter-production.up.railway.app/",
+    "checked_at": "2026-11-24T15:06:14.590Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://stickman-opus-5-5-game.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://stickman-opus-5-5-game.vercel.app/",
+    "checked_at": "2026-11-24T15:06:15.048Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://storm-race.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://storm-race.vercel.app/",
+    "checked_at": "2026-11-24T15:06:14.907Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://studio-in-bricks.rpn24.chatgpt.site/interior": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://studio.rpn24.chatgpt.site/interior",
+    "checked_at": "2026-11-24T15:06:18.732Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://studio.sandbox.game/play/7ad4801c-4294-46ee-a7e9-215852bb28fb": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://studio.sandbox.game/play/7ad4801c-4294-46ee-a7e9-215852bb28fb",
+    "checked_at": "2026-11-24T15:06:14.912Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sulli-game.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sulli-game.vercel.app/",
+    "checked_at": "2026-11-24T15:06:17.321Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sumi-gai.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sumi-gai.vercel.app/",
+    "checked_at": "2026-11-24T15:06:17.569Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://sunwake-the-last-light.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sunwake-the-last-light.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:16.919Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://suzune-aoi-fighters.szou2003.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://suzune-aoi-fighters.szou2003.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:17.703Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://t1seo.github.io/maeul-in-the-sky/tour/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://t1seo.github.io/maeul-in-the-sky/tour/",
+    "checked_at": "2026-11-24T15:06:16.215Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://tanuu5.github.io/nova-lancer/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://tanuu5.github.io/nova-lancer/",
+    "checked_at": "2026-11-24T15:06:16.591Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://tennis.sixfingerpunch.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://tennis.sixfingerpunch.com/",
+    "checked_at": "2026-11-24T15:06:18.809Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://tests.jazii.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://tests.jazii.dev/",
+    "checked_at": "2026-11-24T15:06:18.621Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://thaxnay.com/ramayana/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://thaxnay.com/ramayana/",
+    "checked_at": "2026-11-24T15:06:18.057Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://the-road-dreams.x2026283037.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://the-road-dreams.x2026283037.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:18.033Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://the-vast-horizon.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://the-vast-horizon.vercel.app/",
+    "checked_at": "2026-11-24T15:06:18.508Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://the-way-of-the-samurai-bay.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://the-way-of-the-samurai-bay.vercel.app/",
+    "checked_at": "2026-11-24T15:06:18.884Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://theme-park-hd.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://theme-park-hd.vercel.app/",
+    "checked_at": "2026-11-24T15:06:19.042Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://themizeguy.github.io/fable-5.2-potatobench/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://themizeguy.github.io/fable-5.2-potatobench/",
+    "checked_at": "2026-11-24T15:06:21.362Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://thestringtheories.github.io/Santa-Game/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://thestringtheories.github.io/Santa-Game/",
+    "checked_at": "2026-11-24T15:06:20.440Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://tidegarden.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://tidegarden.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:20.238Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://tideglass-hunt.timothee-leborgne.ohmyunicorn.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://tideglass-hunt.timothee-leborgne.ohmyunicorn.com/builds/tideglass-20260916-163002/",
+    "checked_at": "2026-11-24T15:06:22.100Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://tidehook-mallow.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://tidehook-mallow.vercel.app/",
+    "checked_at": "2026-11-24T15:06:21.730Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://timber-atlas.xiaodan.io/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://timber-atlas.xiaodan.io/",
+    "checked_at": "2026-11-24T15:06:23.242Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://turbo-stack-nine.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://turbo-stack-nine.vercel.app/",
+    "checked_at": "2026-11-24T15:06:20.206Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://turbo-tails.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://turbo-tails.vercel.app/",
+    "checked_at": "2026-11-24T15:06:21.684Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://universe-duel.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://universe-duel.vercel.app/",
+    "checked_at": "2026-11-24T15:06:20.847Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://unsung-vale.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://unsung-vale.vercel.app/",
+    "checked_at": "2026-11-24T15:06:22.106Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://v3rt0x.itch.io/frogxsteps": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://v3rt0x.itch.io/frogxsteps",
+    "checked_at": "2026-11-24T15:06:22.923Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://vale-dos-vinhedos.lucas579686.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://vale-dos-vinhedos.lucas579686.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:21.758Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://valle-morta.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://valle-morta.vercel.app/",
+    "checked_at": "2026-11-24T15:06:23.252Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://valsera-game.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://valsera-game.vercel.app/",
+    "checked_at": "2026-11-24T15:06:21.777Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://van-goghs-town.surge.sh/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://van-goghs-town.surge.sh/",
+    "checked_at": "2026-11-24T15:06:23.688Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://vancouver.webly.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://vancouver.webly.site/",
+    "checked_at": "2026-11-24T15:06:23.403Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://vasu-devs.github.io/FishSlop_Opus5.5/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://vasu-devs.github.io/FishSlop_Opus5.5/",
+    "checked_at": "2026-11-24T15:06:22.795Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://velocity-loop.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://velocity-loop.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:22.849Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://verdant-forest.lexn8.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://verdant-forest.lexn8.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:23.864Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://vesper.mansgullberg.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://vesper.mansgullberg.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:24.309Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://vheissu.github.io/hit-and-run-web/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://vheissu.github.io/hit-and-run-web/",
+    "checked_at": "2026-11-24T15:06:24.639Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://vheissu.github.io/saber-battle/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://vheissu.github.io/saber-battle/",
+    "checked_at": "2026-11-24T15:06:24.049Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://viktorkav.com.br/apoio/uno-com-escada/fable/": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:06:26.375Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://vippi.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://vippi.vercel.app/",
+    "checked_at": "2026-11-24T15:06:25.380Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://void-explorer.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://void-explorer.openai.chatgpt.site/",
+    "checked_at": "2026-11-24T15:06:25.509Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://voltaris-nyyo.onrender.com/?webgl=1": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:06:35.771Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://vyrld.com/w/rink-life": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://vyrld.com/w/rink-life",
+    "checked_at": "2026-11-24T15:06:25.381Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://wavedash.com/games/canteen-crashers": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://wavedash.com/games/canteen-crashers",
+    "checked_at": "2026-11-24T15:06:26.967Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://wavedash.com/games/dungeon-of-astra": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://wavedash.com/games/dungeon-of-astra",
+    "checked_at": "2026-11-24T15:06:26.423Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://wavedash.com/games/ink-flight": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://wavedash.com/games/ink-flight",
+    "checked_at": "2026-11-24T15:06:26.865Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://wavedash.com/games/reef-dive": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://wavedash.com/games/reef-dive",
+    "checked_at": "2026-11-24T15:06:28.767Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://wavedash.com/games/rooftop-rally": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://wavedash.com/games/rooftop-rally",
+    "checked_at": "2026-11-24T15:06:27.918Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://web-jjuuxm.tulingai.com/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://web-jjuuxm.tulingai.com/",
+    "checked_at": "2026-11-24T15:06:29.753Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://weeping-angels.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://weeping-angels.vercel.app/",
+    "checked_at": "2026-11-24T15:06:26.296Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://wesche.com/lab/astra/boat-explorer/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://wesche.com/lab/astra/boat-explorer/",
+    "checked_at": "2026-11-24T15:06:26.428Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://wildwake-rally.vercel.app/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://wildwake-rally.vercel.app/",
+    "checked_at": "2026-11-24T15:06:28.694Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://windblown.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://windblown.vercel.app/",
+    "checked_at": "2026-11-24T15:06:27.533Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://wquguru.github.io/fable52-fps-repro/demos/04-fps/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://wquguru.github.io/fable52-fps-repro/demos/04-fps/",
+    "checked_at": "2026-11-24T15:06:27.030Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/8-ball-pool": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/8-ball-pool",
+    "checked_at": "2026-11-24T15:06:29.029Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/abyssal-depth-charge": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/abyssal-depth-charge",
+    "checked_at": "2026-11-24T15:06:27.811Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/aetherfall-shrine": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/aetherfall-shrine",
+    "checked_at": "2026-11-24T15:06:29.674Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/airport-black-hole-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/airport-black-hole-3d",
+    "checked_at": "2026-11-24T15:06:30.490Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/alkahest": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/alkahest",
+    "checked_at": "2026-11-24T15:06:30.078Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/arrowstorm-dragonbound-3d-archery-roguelite": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/arrowstorm-dragonbound-3d-archery-roguelite",
+    "checked_at": "2026-11-24T15:06:31.147Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/artillery-moles": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/artillery-moles",
+    "checked_at": "2026-11-24T15:06:29.847Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/astral-frontier-space-explorer": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/astral-frontier-space-explorer",
+    "checked_at": "2026-11-24T15:06:30.799Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/avalanche": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/avalanche",
+    "checked_at": "2026-11-24T15:06:30.324Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/baize-monster-bonk": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/baize-monster-bonk",
+    "checked_at": "2026-11-24T15:06:30.982Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/bay-loop-highway-driving": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/bay-loop-highway-driving",
+    "checked_at": "2026-11-24T15:06:30.449Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/bellforge-3d-ricochet-defense": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/bellforge-3d-ricochet-defense",
+    "checked_at": "2026-11-24T15:06:31.277Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/bellwether": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/bellwether",
+    "checked_at": "2026-11-24T15:06:31.569Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/black-hole-city-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/black-hole-city-3d",
+    "checked_at": "2026-11-24T15:06:33.653Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/blackline-strike": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/blackline-strike",
+    "checked_at": "2026-11-24T15:06:31.130Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/blast": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/blast",
+    "checked_at": "2026-11-24T15:06:33.499Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/boat-roguelite-driftwake": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/boat-roguelite-driftwake",
+    "checked_at": "2026-11-24T15:06:31.921Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/boxel": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/boxel",
+    "checked_at": "2026-11-24T15:06:32.589Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/breakwater-3v3-moba": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/breakwater-3v3-moba",
+    "checked_at": "2026-11-24T15:06:32.790Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/bridgehead": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/bridgehead",
+    "checked_at": "2026-11-24T15:06:34.378Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/brutal-fc": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/brutal-fc",
+    "checked_at": "2026-11-24T15:06:33.744Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/bullet-hell-sunspindle": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/bullet-hell-sunspindle",
+    "checked_at": "2026-11-24T15:06:34.329Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/bus-out-puzzle": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/bus-out-puzzle",
+    "checked_at": "2026-11-24T15:06:33.856Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/car-wash-tycoon-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/car-wash-tycoon-3d",
+    "checked_at": "2026-11-24T15:06:34.276Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/cartograph": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/cartograph",
+    "checked_at": "2026-11-24T15:06:34.433Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/clay-bombers": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/clay-bombers",
+    "checked_at": "2026-11-24T15:06:34.964Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/cloudwalk-3d-balance-ball": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/cloudwalk-3d-balance-ball",
+    "checked_at": "2026-11-24T15:06:35.236Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/coin-pusher-3d-copper-cascade": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/coin-pusher-3d-copper-cascade",
+    "checked_at": "2026-11-24T15:06:35.950Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/construction-black-hole-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/construction-black-hole-3d",
+    "checked_at": "2026-11-24T15:06:35.041Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/dawnwake-ocean-voyage": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/dawnwake-ocean-voyage",
+    "checked_at": "2026-11-24T15:06:34.531Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/deeper": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/deeper",
+    "checked_at": "2026-11-24T15:06:35.485Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/dream-cartographer": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/dream-cartographer",
+    "checked_at": "2026-11-24T15:06:35.653Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/duskbell": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/duskbell",
+    "checked_at": "2026-11-24T15:06:36.502Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/echo-abyss": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/echo-abyss",
+    "checked_at": "2026-11-24T15:06:36.168Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/elemental-sandbox": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/elemental-sandbox",
+    "checked_at": "2026-11-24T15:06:37.190Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/endzone-rush-first-person-football": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/endzone-rush-first-person-football",
+    "checked_at": "2026-11-24T15:06:38.345Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/epicycle": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/epicycle",
+    "checked_at": "2026-11-24T15:06:37.523Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/extreme-drift-parkour": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/extreme-drift-parkour",
+    "checked_at": "2026-11-24T15:06:37.179Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/falling-sand-roguelike": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/falling-sand-roguelike",
+    "checked_at": "2026-11-24T15:06:39.835Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/farm-black-hole-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/farm-black-hole-3d",
+    "checked_at": "2026-11-24T15:06:38.293Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/firefighting-plane-3d-pelican-reach": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/firefighting-plane-3d-pelican-reach",
+    "checked_at": "2026-11-24T15:06:38.675Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/flash-slash": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/flash-slash",
+    "checked_at": "2026-11-24T15:06:40.374Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/flux-air-hockey": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/flux-air-hockey",
+    "checked_at": "2026-11-24T15:06:38.644Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/frostline": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/frostline",
+    "checked_at": "2026-11-24T15:06:38.385Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/furrow": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/furrow",
+    "checked_at": "2026-11-24T15:06:37.980Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/glow-squad": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/glow-squad",
+    "checked_at": "2026-11-24T15:06:38.689Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/grapple-knight-storm-siege": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/grapple-knight-storm-siege",
+    "checked_at": "2026-11-24T15:06:39.486Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/gravity-heist": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/gravity-heist",
+    "checked_at": "2026-11-24T15:06:40.050Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/great-wave-off-kanagawa?play=1&mode=fullscreen": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/great-wave-off-kanagawa?play=1&mode=fullscreen",
+    "checked_at": "2026-11-24T15:06:39.680Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/greenhouse-escape-room": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/greenhouse-escape-room",
+    "checked_at": "2026-11-24T15:06:38.961Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/hanabi-3d-pinball": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/hanabi-3d-pinball",
+    "checked_at": "2026-11-24T15:06:40.117Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/headway-subway-map": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/headway-subway-map",
+    "checked_at": "2026-11-24T15:06:40.508Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/hill-bomb-skateboard-game": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/hill-bomb-skateboard-game",
+    "checked_at": "2026-11-24T15:06:41.018Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/holdfast": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/holdfast",
+    "checked_at": "2026-11-24T15:06:42.793Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/icebite-ice-racing": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/icebite-ice-racing",
+    "checked_at": "2026-11-24T15:06:41.478Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/ink-warden": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/ink-warden",
+    "checked_at": "2026-11-24T15:06:42.617Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/inkwash": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/inkwash",
+    "checked_at": "2026-11-24T15:06:41.609Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/internet-cafe-tycoon": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/internet-cafe-tycoon",
+    "checked_at": "2026-11-24T15:06:41.566Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/island-god-game?play=1&mode=fullscreen": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/island-god-game?play=1&mode=fullscreen",
+    "checked_at": "2026-11-24T15:06:42.494Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/jaywalk-cross-the-road": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/jaywalk-cross-the-road",
+    "checked_at": "2026-11-24T15:06:42.220Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/kelir": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/kelir",
+    "checked_at": "2026-11-24T15:06:43.571Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/kestrel": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/kestrel",
+    "checked_at": "2026-11-24T15:06:42.190Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/kinbound": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/kinbound",
+    "checked_at": "2026-11-24T15:06:42.539Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/kung-fu-brawlers": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/kung-fu-brawlers",
+    "checked_at": "2026-11-24T15:06:42.498Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/lamplighter-pixel-platformer": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/lamplighter-pixel-platformer",
+    "checked_at": "2026-11-24T15:06:44.802Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/lancet": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/lancet",
+    "checked_at": "2026-11-24T15:06:43.806Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/last-train-escape-room": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/last-train-escape-room",
+    "checked_at": "2026-11-24T15:06:43.110Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/littlebury-3d-mini-golf": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/littlebury-3d-mini-golf",
+    "checked_at": "2026-11-24T15:06:43.528Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/lumen-loop": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/lumen-loop",
+    "checked_at": "2026-11-24T15:06:44.291Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/lumenfall-the-drowned-sanctum": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/lumenfall-the-drowned-sanctum",
+    "checked_at": "2026-11-24T15:06:43.791Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/magnet-mech-salvage-rush": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/magnet-mech-salvage-rush",
+    "checked_at": "2026-11-24T15:06:44.502Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/marble-machine-clockwork-puzzle": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/marble-machine-clockwork-puzzle",
+    "checked_at": "2026-11-24T15:06:44.734Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/meridian": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/meridian",
+    "checked_at": "2026-11-24T15:06:44.888Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/minitown": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/minitown",
+    "checked_at": "2026-11-24T15:06:46.318Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/mona-lisa": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/mona-lisa",
+    "checked_at": "2026-11-24T15:06:47.004Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/morningstar": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/morningstar",
+    "checked_at": "2026-11-24T15:06:45.864Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/mound-ace-baseball-pitching-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/mound-ace-baseball-pitching-3d",
+    "checked_at": "2026-11-24T15:06:46.543Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/multi-ball-maze-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/multi-ball-maze-3d",
+    "checked_at": "2026-11-24T15:06:45.550Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/mycelia": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/mycelia",
+    "checked_at": "2026-11-24T15:06:45.767Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/neon-descent": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/neon-descent",
+    "checked_at": "2026-11-24T15:06:46.462Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/neon-fluid-sandbox": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/neon-fluid-sandbox",
+    "checked_at": "2026-11-24T15:06:47.061Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/neon-giant-run": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/neon-giant-run",
+    "checked_at": "2026-11-24T15:06:47.086Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/neon-orbit": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/neon-orbit",
+    "checked_at": "2026-11-24T15:06:47.346Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/neon-orbit-dodger": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/neon-orbit-dodger",
+    "checked_at": "2026-11-24T15:06:46.832Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/neon-recoil": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/neon-recoil",
+    "checked_at": "2026-11-24T15:06:47.337Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/neon-rift-overdrive": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/neon-rift-overdrive",
+    "checked_at": "2026-11-24T15:06:47.607Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/neon-snake": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/neon-snake",
+    "checked_at": "2026-11-24T15:06:48.358Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/neon-stack": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/neon-stack",
+    "checked_at": "2026-11-24T15:06:49.430Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/nordwand-3d-wingsuit-flying": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/nordwand-3d-wingsuit-flying",
+    "checked_at": "2026-11-24T15:06:47.957Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/null-aisle": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/null-aisle",
+    "checked_at": "2026-11-24T15:06:48.391Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/obliterate-earth-aftershock": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/obliterate-earth-aftershock",
+    "checked_at": "2026-11-24T15:06:49.091Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/ocean-flocks": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/ocean-flocks",
+    "checked_at": "2026-11-24T15:06:50.981Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/poop-plumber": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/poop-plumber",
+    "checked_at": "2026-11-24T15:06:50.215Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/porcelain-rain": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/porcelain-rain",
+    "checked_at": "2026-11-24T15:06:49.726Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/pottery-studio-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/pottery-studio-3d",
+    "checked_at": "2026-11-24T15:06:50.985Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/pulsar-drift": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/pulsar-drift",
+    "checked_at": "2026-11-24T15:06:49.805Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/pulse-dive": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/pulse-dive",
+    "checked_at": "2026-11-24T15:06:49.813Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/ragdoll-punch-smash-arena": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/ragdoll-punch-smash-arena",
+    "checked_at": "2026-11-24T15:06:51.631Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/ragdoll-rage-room": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/ragdoll-rage-room",
+    "checked_at": "2026-11-24T15:06:51.277Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/rally-rush-tennis": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/rally-rush-tennis",
+    "checked_at": "2026-11-24T15:06:51.852Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/rattletrap-hill-climb": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/rattletrap-hill-climb",
+    "checked_at": "2026-11-24T15:06:50.180Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/repaint": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/repaint",
+    "checked_at": "2026-11-24T15:06:51.691Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/retro-tank-battle": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/retro-tank-battle",
+    "checked_at": "2026-11-24T15:06:51.298Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/ricochet-rogue": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/ricochet-rogue",
+    "checked_at": "2026-11-24T15:06:51.146Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/ripcord": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/ripcord",
+    "checked_at": "2026-11-24T15:06:51.701Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/road-rage-iron-dust": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/road-rage-iron-dust",
+    "checked_at": "2026-11-24T15:06:51.663Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/rollaway": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/rollaway",
+    "checked_at": "2026-11-24T15:06:51.898Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/roly-poly-garden": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/roly-poly-garden",
+    "checked_at": "2026-11-24T15:06:52.829Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/rune-hollow": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/rune-hollow",
+    "checked_at": "2026-11-24T15:06:53.644Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/saltwind": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/saltwind",
+    "checked_at": "2026-11-24T15:06:53.180Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/sandboarding-sunscar": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/sandboarding-sunscar",
+    "checked_at": "2026-11-24T15:06:53.390Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/screensaver-maze": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/screensaver-maze",
+    "checked_at": "2026-11-24T15:06:53.932Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/scribble-jump": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/scribble-jump",
+    "checked_at": "2026-11-24T15:06:55.225Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/shadow-opera": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/shadow-opera",
+    "checked_at": "2026-11-24T15:06:53.409Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/shipwreck-escape-room": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/shipwreck-escape-room",
+    "checked_at": "2026-11-24T15:06:54.262Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/shuttle-masters-badminton-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/shuttle-masters-badminton-3d",
+    "checked_at": "2026-11-24T15:06:54.777Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/sidekick": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/sidekick",
+    "checked_at": "2026-11-24T15:06:55.413Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/silkblade-starfall": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:06:56.303Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/skewer": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/skewer",
+    "checked_at": "2026-11-24T15:06:55.485Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/skybound-sprint": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/skybound-sprint",
+    "checked_at": "2026-11-24T15:06:55.796Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/skyhop-3d-flying-car": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/skyhop-3d-flying-car",
+    "checked_at": "2026-11-24T15:06:54.794Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/sneaky-stealth-game": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/sneaky-stealth-game",
+    "checked_at": "2026-11-24T15:06:58.741Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/snowblocks": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/snowblocks",
+    "checked_at": "2026-11-24T15:06:54.983Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/solmere-souls-pixel-arpg": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/solmere-souls-pixel-arpg",
+    "checked_at": "2026-11-24T15:06:55.117Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/spcx-to-the-moon": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/spcx-to-the-moon",
+    "checked_at": "2026-11-24T15:06:55.267Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/speed-car-racing-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/speed-car-racing-3d",
+    "checked_at": "2026-11-24T15:06:56.454Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/spinpong": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/spinpong",
+    "checked_at": "2026-11-24T15:06:56.913Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/spotless": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/spotless",
+    "checked_at": "2026-11-24T15:06:57.107Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/stitchblade": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/stitchblade",
+    "checked_at": "2026-11-24T15:06:57.418Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/striker-saga": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/striker-saga",
+    "checked_at": "2026-11-24T15:06:57.804Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/subway-runner-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/subway-runner-3d",
+    "checked_at": "2026-11-24T15:06:58.380Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/sunwyrm": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/sunwyrm",
+    "checked_at": "2026-11-24T15:06:58.184Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/sushi-conveyor-tycoon-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/sushi-conveyor-tycoon-3d",
+    "checked_at": "2026-11-24T15:06:58.148Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/swarmlight": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/swarmlight",
+    "checked_at": "2026-11-24T15:06:57.908Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/tabletop-empires": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/tabletop-empires",
+    "checked_at": "2026-11-24T15:06:58.549Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/theme-park-black-hole-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/theme-park-black-hole-3d",
+    "checked_at": "2026-11-24T15:06:58.835Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/tidewell": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/tidewell",
+    "checked_at": "2026-11-24T15:07:00.416Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/tidewright": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/tidewright",
+    "checked_at": "2026-11-24T15:06:58.744Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/tight-lines": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/tight-lines",
+    "checked_at": "2026-11-24T15:06:59.545Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/tincture": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/tincture",
+    "checked_at": "2026-11-24T15:06:58.891Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/tinplate-3d-kart-racing": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/tinplate-3d-kart-racing",
+    "checked_at": "2026-11-24T15:07:00.401Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/titan-climb-bellkeeper": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/titan-climb-bellkeeper",
+    "checked_at": "2026-11-24T15:06:59.504Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/topple": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/topple",
+    "checked_at": "2026-11-24T15:06:59.471Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/tornado-chase-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/tornado-chase-3d",
+    "checked_at": "2026-11-24T15:06:59.934Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/total-fc": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/total-fc",
+    "checked_at": "2026-11-24T15:07:01.300Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/tower-kick-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/tower-kick-3d",
+    "checked_at": "2026-11-24T15:07:01.751Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/toy-car-adventure-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/toy-car-adventure-3d",
+    "checked_at": "2026-11-24T15:07:02.594Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/toybox-td": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/toybox-td",
+    "checked_at": "2026-11-24T15:07:02.884Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/umbravore": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/umbravore",
+    "checked_at": "2026-11-24T15:07:01.701Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/upfall": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/upfall",
+    "checked_at": "2026-11-24T15:07:01.676Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/velvet-strike-foosball-3d": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/velvet-strike-foosball-3d",
+    "checked_at": "2026-11-24T15:07:01.474Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/void-pulse": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/void-pulse",
+    "checked_at": "2026-11-24T15:07:02.562Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/volley-vanguard": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/volley-vanguard",
+    "checked_at": "2026-11-24T15:07:02.589Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/wanjian": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/wanjian",
+    "checked_at": "2026-11-24T15:07:01.911Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/whalefall-metroidvania": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/whalefall-metroidvania",
+    "checked_at": "2026-11-24T15:07:02.962Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/wildbound": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/wildbound",
+    "checked_at": "2026-11-24T15:07:02.881Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.aigameshare.com/games/wok-for-two": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/wok-for-two",
+    "checked_at": "2026-11-24T15:07:02.572Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.jaclynkonzelmann.com/side-projects/astrolabe-chamber/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.jaclynkonzelmann.com/side-projects/astrolabe-chamber/",
+    "checked_at": "2026-11-24T15:07:02.549Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.nightclub-driftspeed.xyz/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.nightclub-driftspeed.xyz/",
+    "checked_at": "2026-11-24T15:07:02.662Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.paperroute.lol/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.paperroute.lol/",
+    "checked_at": "2026-11-24T15:07:03.848Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.railisland.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.railisland.com/",
+    "checked_at": "2026-11-24T15:07:04.371Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.reddit.com/r/ClaudeAI/comments/1xwuj21/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://www.reddit.com/r/ClaudeAI/comments/1xwuj21/",
+    "checked_at": "2026-11-24T15:07:03.244Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.soonlab.ai/game/10023/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.soonlab.ai/game/10023/",
+    "checked_at": "2026-11-24T15:07:05.606Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.soonlab.ai/game/10024/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.soonlab.ai/game/10024/",
+    "checked_at": "2026-11-24T15:07:05.533Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.soonlab.ai/game/9271/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.soonlab.ai/game/9271/",
+    "checked_at": "2026-11-24T15:07:06.397Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.soonlab.ai/game/9415/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.soonlab.ai/game/9415/",
+    "checked_at": "2026-11-24T15:07:05.507Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.spawn.co/@abbidabbi/pogo-riot": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@abbidabbi/pogo-riot",
+    "checked_at": "2026-11-24T15:07:04.762Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.spawn.co/@abbidabbi/rifts": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@abbidabbi/rifts",
+    "checked_at": "2026-11-24T15:07:05.076Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.spawn.co/@abbidabbi/shark-riders": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@abbidabbi/shark-riders",
+    "checked_at": "2026-11-24T15:07:06.198Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.spawn.co/@branthebroke/until-the-crown-falls/play": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@branthebroke/until-the-crown-falls/play",
+    "checked_at": "2026-11-24T15:07:05.923Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.spawn.co/@chocopuff/one-hit-kill": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@chocopuff/one-hit-kill",
+    "checked_at": "2026-11-24T15:07:05.721Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.spawn.co/@izkimar/dalaran/play": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@izkimar/dalaran/play",
+    "checked_at": "2026-11-24T15:07:05.810Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.spawn.co/@izkimar/the-crownless/play": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@izkimar/the-crownless/play",
+    "checked_at": "2026-11-24T15:07:05.694Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.spawn.co/@izkimar/the-world-of-hoodcraft": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@izkimar/the-world-of-hoodcraft",
+    "checked_at": "2026-11-24T15:07:06.497Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.spawn.co/@mattshumer/earth?room=local": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 28,
+    "checked_at": "2026-11-24T15:07:07.902Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.spawn.co/@mattshumer/hogwarts-royale": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@mattshumer/hogwarts-royale",
+    "checked_at": "2026-11-24T15:07:06.502Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.taoistvibe.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.taoistvibe.com/",
+    "checked_at": "2026-11-24T15:07:06.596Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://xikhar.github.io/papertrails/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://xikhar.github.io/papertrails/",
+    "checked_at": "2026-11-24T15:07:06.708Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://xikhar.github.io/sumiro/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://xikhar.github.io/sumiro/",
+    "checked_at": "2026-11-24T15:07:06.930Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://yabai-ultimo-trem.preda2005.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://yabai-ultimo-trem.preda2005.chatgpt.site/",
+    "checked_at": "2026-11-24T15:07:07.855Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://yesterdayarcade.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://yesterdayarcade.com/",
+    "checked_at": "2026-11-24T15:07:08.761Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://yesterdayarcade.com/games/mog-mode/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://yesterdayarcade.com/games/mog-mode/",
+    "checked_at": "2026-11-24T15:07:08.790Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://zhgarylu.github.io/everyday-game/gz/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://zhgarylu.github.io/everyday-game/gz/",
+    "checked_at": "2026-11-24T15:07:09.693Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://zkevinbai.com/apps/tesla-fsd": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://zkevinbai.com/apps/tesla-fsd",
+    "checked_at": "2026-11-24T15:07:09.515Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://zombiedriver.z.madsoftware.co/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://zombiedriver.z.madsoftware.co/",
+    "checked_at": "2026-11-24T15:07:09.662Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://zondark.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://zondark.com/",
+    "checked_at": "2026-11-24T15:07:09.557Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://zork-underground-empire.netlify.app/": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://zork-underground-empire.netlify.app/",
+    "checked_at": "2026-11-24T15:07:08.782Z",
+    "origin": null,
+    "login_required": false
+  }
+}

@@ -1,0 +1,30 @@
+name: Deploy WorldFeed to Cloudflare Pages
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: deploy-worldfeed-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      FEED_PROJECT: ${{ vars.CLOUDFLARE_FEED_PAGES_PROJECT }}
+      ATLAS_PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: feed/package-lock.json
+      - name: Check independent Pages destination
+        run: test -n "$FEED_PROJECT" && test "$FEED_PROJECT" != "$ATLAS_PROJECT"
+      - run: npm ci --include=dev && npm run build
+        working-directory: feed
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy feed/dist --project-name=${{ vars.CLOUDFLARE_FEED_PAGES_PROJECT }} --branch=main
