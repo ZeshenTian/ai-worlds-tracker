@@ -29,6 +29,8 @@ AUTO_APPROVE_TRUSTED=true 时，有原文证据、明确模型、未标记重复
 
 完整流程从 Sync worlds 启动。单步重放可依次运行 `python -m src.catalog_discovery`、`python -m src.apify_x --mode incremental --page-size 20 --budget-usd 0.30` 和 `X_ADAPTER=apify python -m src.sync_catalog`。本机可通过 ~/.local/bin/with-ai-keys 加载凭据。静态构建成功后将快照推送至 static-site 分支，生产站点从该分支读取图鉴。仓库审核决定与首次收录时间单独保存在 data/processed/cases.jsonl。
 
+需要批量复查存量试玩链接时，可手动运行 GitHub Actions 的 Check outstanding demo links。下载六个分片后，运行 `uv run python -m src.import_demo_checks --auto <分片目录...>` 合并较新的同网址记录和截图。原域名通过站内表单接收投稿，独立静态副本使用仓库的 Issues 投稿表单。
+
 仅复现二期取证与快照可用以下命令。首次收录时间按本库的登记时间排序，种子使用首次站点建档时间。
 
 ```sh

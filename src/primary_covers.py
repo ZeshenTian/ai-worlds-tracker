@@ -166,6 +166,12 @@ class ProjectGallery(HTMLParser):
         if self.host == "github.com" and tag == "a":
             ref = urljoin(self.source, attrs.get("href", ""))
             prefix = self.source.rstrip("/") + "/tree/"
+            blob = self.source.rstrip("/") + "/blob/"
+            in_readme = any(t == "article" and "markdown-body" in a.get("class", "") for t, a in self.stack)
+            filename = unquote(urlsplit(ref).path).rsplit("/", 1)[-1]
+            if (ref.startswith(blob) and re.search(r"\.(?:png|jpe?g|webp|gif)$", filename, re.I)
+                    and RENDER.search(ref.rsplit("/blob/", 1)[-1]) and in_readme):
+                self.include(ref.replace("/blob/", "/raw/", 1), attrs.get("title") or filename, "repository_linked_screenshot", 3)
             if ref.startswith(prefix) and re.search(r"/(?:screenshots?|screen-captures?|gameplay-shots)/?$", urlsplit(ref).path, re.I):
                 if ref not in self.folders:
                     self.folders.append(ref)
@@ -186,7 +192,7 @@ class ProjectGallery(HTMLParser):
                 title = re.sub(r"[^\w]", "", self.title).casefold()
                 label = re.sub(r"[^\w]", "", alt).casefold()
                 same_title = len(label) >= 3 and (label in title or (title and title in label))
-                art = actual and re.search(r"(?:/|[-_])(?:cover|poster|keyart|key-art)[.\-_]", actual, re.I)
+                art = actual and re.search(r"(?:/|[-_])(?:cover|poster|keyart|key-art|banner)[./\-_]", actual, re.I)
                 if actual and (section or RENDER.search(f"{alt} {actual}") or len(alt.split()) > 3):
                     self.include(actual, alt, "repository_readme", 5 + int(bool(RENDER.search(alt))))
                 elif actual and same_title and art:
@@ -215,7 +221,7 @@ class ProjectGallery(HTMLParser):
 
     def include_vimeo(self, client):
         for clip in self.vimeo[:2]:
-            response = client.get("https://vimeo.com/api/oembed.json", params={"url": f"https://vimeo.com/{clip}"}, follow_redirects=False)
+            response = client.get("https://vimeo.com/api/oembed.json", params={"url": f"https://vimeo.com/{clip}", "width": 1280}, follow_redirects=False)
             if response.status_code == 200 and len(response.content) < 100000:
                 info = response.json()
                 if str(info.get("video_id")) == clip:
@@ -249,7 +255,10 @@ def cover_metadata(entry):
     if entry.get("discovered_via") in {"author_game_player", "project_gallery_video_preview", "repository_project_poster"}:
         return {"cover_source": "project_poster", "caption": "作品页面海报",
                 "author_caption": entry.get("author_caption") or entry.get("caption")}
-    return {"cover_source": "project_media", "caption": entry.get("caption")}
+    caption = entry.get("caption")
+    if not caption and entry.get("discovered_via") == "project_gallery_video_still":
+        caption = "作者演示视频画面"
+    return {"cover_source": "project_media", "caption": caption}
 
 
 def build(rows, root, thumbnails, *, jobs=5, refresh=False):
@@ -269,7 +278,9 @@ def build(rows, root, thumbnails, *, jobs=5, refresh=False):
             old = state.get(key, {})
             same = old.get("source_url") == source
             if same and not refresh and old.get("thumbnail_url") == "/thumbnails/" + target.name and target.is_file():
-                if old.get("discovered_via") == "author_game_player" and old.get("cover_source") != "project_poster":
+                needs_poster_label = old.get("discovered_via") == "author_game_player" and old.get("cover_source") != "project_poster"
+                needs_video_caption = old.get("discovered_via") == "project_gallery_video_still" and not old.get("caption")
+                if needs_poster_label or needs_video_caption:
                     return key, {**old, **cover_metadata(old)}
                 if old.get("discovered_via") != "devpost_gallery" or "source_format" in old:
                     return key, None
@@ -308,7 +319,7 @@ def build(rows, root, thumbnails, *, jobs=5, refresh=False):
                             if min(w, h) < 170 or max(w, h) < 440 or max(w, h) > min(w, h) * 4.5:
                                 continue
                         w, h = render(data, target, frame_index=frame_index)
-                    except (OSError, ValueError, httpx.HTTPError, Image.DecompressionBombError):
+                    except (OSError, EOFError, ValueError, httpx.HTTPError, Image.DecompressionBombError):
                         continue
                     metadata = cover_metadata(item)
                     checksum = sha256(data).hexdigest()

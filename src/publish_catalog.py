@@ -3,6 +3,7 @@ import argparse
 from collections import Counter
 from datetime import UTC, datetime
 import os
+import re
 from pathlib import Path
 from urllib.parse import urlsplit
 
@@ -40,10 +41,53 @@ def trusted(case, config, cache, likes=0):
 
 
 def family(model):
-    for name in ("Claude", "Gemini", "GPT"):
-        if model.lower().startswith(name.lower()):
-            return name
-    return "GPT" if model.lower().startswith("codex") else model
+    for prefix, label in ((r"^(?:openai )?(?:gpt|chatgpt|codex|astra|sol)","GPT"),
+                          (r"^(?:claude|opus|fable|haiku|sonnet)","Claude"),
+                          (r"^(?:gemini|neon|argon|hydrogen)","Gemini"),
+                          (r"^(?:world ?labs? )?marble","Marble"), (r"^kimi","Kimi")):
+        if re.search(prefix, model, re.I):
+            return label
+    return model
+
+
+def cover_matches(case, source_url, kind):
+    if not source_url:
+        return False
+    if kind == "project_media":
+        return identity_url(source_url) == identity_url(case.original_post_url)
+    try:
+        identifier = post_id(source_url)
+    except ValueError:
+        return False
+    for url in [case.original_post_url, *case.related_post_urls]:
+        try:
+            if post_id(url) == identifier:
+                return True
+        except ValueError:
+            continue
+    return False
+
+
+def merge_duplicate_demos(cases, legacy):
+    # A later post can reveal a demo URL which was unknown when the first post was grouped.
+    kept = {}
+    order = sorted(cases.values(), key=lambda c: (c.world_id not in legacy, c.first_seen_at or "", c.world_id))
+    for case in order:
+        if not case.live_demo_url or case.review_status == ReviewStatus.REJECTED:
+            continue
+        if case.review_status != ReviewStatus.APPROVED and case.world_id not in legacy:
+            continue
+        url = identity_url(case.live_demo_url)
+        first = kept.setdefault(url, case)
+        if first is case:
+            continue
+        for source in [case.original_post_url, *case.evidence_source_urls]:
+            if source not in first.evidence_source_urls:
+                first.evidence_source_urls.append(source)
+        if case.source_kind == "x_post" and case.original_post_url != first.original_post_url:
+            first.related_post_urls = list(dict.fromkeys([*first.related_post_urls, case.original_post_url]))
+        case.review_status = ReviewStatus.REJECTED
+        case.possible_duplicate_urls = list(dict.fromkeys([*case.possible_duplicate_urls, first.original_post_url]))
 
 
 def import_catalog_batch(cases, path):
@@ -124,6 +168,8 @@ def publish(root, platform, *, curate=False, auto=False, timestamp=None, editori
         if check and check.get("live_demo_url") == case.live_demo_url:
             case.demo_health_status = DemoHealth(check["demo_health_status"])
             case.thumbnail_url = check.get("thumbnail_url")
+        if not case.live_demo_url:
+            case.demo_health_status = DemoHealth.NO_DEMO
         if case.thumbnail_url == f"/thumbnails/{case.world_id}.webp" and (platform / "public" / case.thumbnail_url.lstrip("/")).is_file():
             case.cover_source = "demo"
             case.cover_source_url = case.live_demo_url
@@ -132,22 +178,28 @@ def publish(root, platform, *, curate=False, auto=False, timestamp=None, editori
             for store, kind in ((covers,"x_media"), (project_covers,"project_media")):
                 cover = store.get(case.world_id, {})
                 media = cover.get("thumbnail_url")
-                if media and (platform / "public" / media.lstrip("/")).is_file():
+                if media and cover_matches(case, cover.get("source_url"), kind) and (platform / "public" / media.lstrip("/")).is_file():
                     case.thumbnail_url = media
                     case.cover_source = "project_poster" if kind == "project_media" and cover.get("cover_source") == "project_poster" else kind
                     case.cover_source_url = cover["source_url"]
                     break
         info = root / "raw/x/signals" / (case.original_post_url.rsplit("/", 1)[-1] + ".json")
-        likes = read_json(info).get("likes", 0) if info.exists() else 0
+        likes = int(read_json(info).get("likes") or 0) if info.exists() else 0
         case = AIWorldCase.model_validate(case.model_dump())
         if auto and case.review_status == ReviewStatus.PENDING and trusted(case, config, cache, likes):
             case.review_status = ReviewStatus.APPROVED
         cases[case.world_id] = case
+    merge_duplicate_demos(cases, legacy)
     ordered = sorted(cases.values(), key=lambda c: c.world_id)
     public = [c for c in ordered if c.review_status == ReviewStatus.APPROVED or
               (c.world_id in legacy and c.review_status == ReviewStatus.PENDING)]
     data = [c.model_dump(mode="json") for c in public]
     queue = [c.model_dump(mode="json") for c in ordered if c.review_status == ReviewStatus.PENDING]
+    watched = {a.lower() for a in config.get("watch_accounts", [])}
+    author_counts = Counter(c.author_handle.lower() for c in public if c.author_handle)
+    write_json(root / "state/watch_suggestions.json", {
+        author:n for author,n in sorted(author_counts.items()) if n >= 2 and author not in watched
+    })
     write_rows(processed, ordered)
     exports = root / "exports"
     write_csv(exports / "review_queue.csv", queue, REVIEW_FIELDS)

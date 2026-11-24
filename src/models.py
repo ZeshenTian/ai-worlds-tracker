@@ -172,6 +172,19 @@ class AIWorldCase(Record):
     related_post_urls: list[WebURL] = Field(default_factory=list)
     possible_duplicate_urls: list[WebURL] = Field(default_factory=list)
 
+    @model_validator(mode="before")
+    @classmethod
+    def separate_build_tools(cls, value):
+        if not isinstance(value, dict) or not isinstance(value.get("models_used"), list):
+            return value
+        known_tools = {"three.js", "threejs", "blender", "web audio api", "webgpu", "webgl", "unity", "playcanvas", "babylon.js"}
+        supplied = value["models_used"]
+        tools = [name for name in supplied if isinstance(name, str) and name.casefold() in known_tools]
+        if not tools:
+            return value
+        return {**value, "models_used": [name for name in supplied if name not in tools],
+                "tech_stack": list(dict.fromkeys([*value.get("tech_stack", []), *tools]))}
+
     @field_validator("published_at", "first_seen_at")
     @classmethod
     def iso_timestamp(cls, value: str | None) -> str | None:

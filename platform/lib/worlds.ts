@@ -99,9 +99,6 @@ export function healthLabel(key: string, lang: Lang) {
   return (lang === "en" ? healthLabelsEn[key] : healthLabels[key]) || key;
 }
 
-export const submissionUrl =
-  "https://github.com/ZeshenTian/ai-worlds-tracker/issues/new?template=new-world.yml";
-
 export interface World {
   world_id: string;
   title: string;
@@ -154,10 +151,10 @@ export const featured = [
   "Painted Valley",
 ];
 export function family(name: string) {
-  if (/^(codex|gpt|openai gpt)/i.test(name)) return "GPT";
+  if (/^(codex|gpt|openai gpt|chatgpt|astra|sol)/i.test(name)) return "GPT";
   if (/^(claude|fable|opus|sonnet)/i.test(name)) return "Claude";
-  if (/^gemini/i.test(name)) return "Gemini";
-  if (/^(world labs )?marble/i.test(name)) return "Marble";
+  if (/^(gemini|neon|argon|hydrogen)/.test(name)) return "Gemini";
+  if (/^(world ?labs? )?marble/i.test(name)) return "Marble";
   if (/^kimi/i.test(name)) return "Kimi";
   return name;
 }

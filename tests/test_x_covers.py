@@ -129,3 +129,50 @@ def test_missing_attachments_report_link_cards_profile_images_and_gates_separate
     assert x_covers.missing_reason({}, "123") == "public_metadata_unavailable"
     assert x_covers.missing_reason({"og:url": POST, "og:image": "https://pbs.twimg.com/card_img/7/card"}, "123") == "link_card_only"
     assert x_covers.missing_reason({"og:url": POST, "og:image": "https://pbs.twimg.com/profile_images/7/me"}, "123") == "profile_image_only"
+
+
+def test_handle_or_platform_alias_for_same_post_does_not_fetch_cached_cover(tmp_path, monkeypatch):
+    root, thumbs = tmp_path / "data", tmp_path / "covers"
+    thumbs.mkdir()
+    (thumbs / "item-x.webp").touch()
+    write_json(root / "state/x_covers.json", {"item": {"source_url": POST, "thumbnail_url": "/thumbnails/item-x.webp"}})
+    monkeypatch.setattr(x_covers, "fetch", lambda *args: pytest.fail("unexpected fetch of the same post"))
+    new_url = "https://twitter.com/Creator/status/123?lang=en"
+    result = x_covers.build([{"world_id": "item", "original_post_url": new_url}], root, thumbs)
+    assert result["item"]["source_url"] == new_url
+
+
+def test_cli_accepts_multiple_incremental_batches(monkeypatch, tmp_path):
+    import sys
+    a, b = tmp_path / "first.json", tmp_path / "second.json"
+    write_json(a, [{"world_id": "one", "original_post_url": "https://example.org/one"}])
+    write_json(b, [{"world_id": "two", "original_post_url": "https://example.org/two"}])
+    received = []
+    def capture(rows, root, thumbnails, **options):
+        received.extend(row["world_id"] for row in rows)
+        return {}
+    monkeypatch.setattr(x_covers, "build", capture)
+    monkeypatch.setattr(sys, "argv", ["x_covers", "--input", str(a), "--input", str(b)])
+    x_covers.main()
+    assert received == ["one", "two"]
+
+
+def test_another_posts_picture_in_social_metadata_is_recorded_as_a_gap():
+    html = page(owner="234")
+    entities = x_covers.attached_media(html)
+    meta = x_covers.page_metadata(html)
+    assert not x_covers.post_media(html, "123", meta, entities)
+    assert x_covers.missing_reason(meta, "123", entities) == "other_post_media_only"
+    focal = html.replace("creator/status/234/photo/1", "i/web/status/123/photo/1")
+    assert x_covers.post_media(focal, "123")["media_url"] == PHOTO
+
+
+def test_article_cover_under_the_focal_author_media_link_must_match_the_displayed_image():
+    head = f'<meta property="og:url" content="{POST}"><meta property="og:image" content="{PHOTO}">'
+    anchor = '<a data-article-part="cover" href="/creator/article/123/media/456">'
+    img = f'<img alt="Article cover image" src="{PHOTO}">'
+    assert x_covers.post_media(head + anchor + img + '</a>', '123') == {
+        'media_url': PHOTO, 'media_kind': 'photo', 'attachment_url': 'https://x.com/creator/article/123/media/456'}
+    assert not x_covers.post_media(head + anchor.replace('/123/', '/125/') + img + '</a>', '123')
+    assert not x_covers.post_media(head + anchor + '</a>' + img, '123')
+    assert not x_covers.post_media(head + anchor + img.replace('actual', 'other') + '</a>', '123')

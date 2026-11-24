@@ -50,6 +50,9 @@ jobs:
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY || secrets.FIRECRAWL_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AUTO_APPROVE_TRUSTED: ${{ vars.AUTO_APPROVE_TRUSTED || 'false' }}
+      - name: Record confirmed daily Apify charges
+        if: always()
+        run: uv run python -m src.sync_receipt
       - uses: actions/cache/save@v4
         if: always()
         with:

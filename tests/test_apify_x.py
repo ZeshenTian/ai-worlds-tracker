@@ -29,6 +29,74 @@ def tweet(identifier, *, root=None, author="maker", text="I built a world"):
     }
 
 
+def test_public_research_audit_counts_sources_and_omits_private_payloads(tmp_path):
+    client = httpx.Client(
+        transport=httpx.MockTransport(
+            lambda _: httpx.Response(
+                200, json={"data": {"status": "SUCCEEDED", "usageTotalUsd": 0.00015}}
+            )
+        )
+    )
+    ledger = x.RunLedger(tmp_path, client)
+    rows = [tweet(17, text="private fixture body")]
+    book = {}
+    for label, run_id, period in [
+        ("authors-maker", "runOne", None),
+        ("self-roots-17", "runTwo", None),
+        ("sync-broad-now", "dailyRun", "2026-11-24"),
+    ]:
+        book[label] = {
+            "label": label,
+            "id": run_id,
+            "status": "SUCCEEDED",
+            "input": {"query": "from:Maker"},
+            "period": period,
+        }
+        x.write_json(tmp_path / f"raw/apify/{run_id}.json", rows)
+    x.write_json(ledger.path, book)
+    path = tmp_path / "audit.json"
+    with client:
+        x.coverage_report(
+            ledger, audit_output=path, config={"watch_accounts": ["Silent"]}
+        )
+    audit = read_json(path)
+    assert audit["deduplicated_post_ids"] == ["17"]
+    assert audit["reported_usage_usd"] == "0.000300"
+    assert audit["channels"]["linked_originals"]["distinct_returned"] == 1
+    assert audit["author_coverage"]["Maker"]["author_query_distinct_posts"] == 1
+    assert audit["author_coverage"]["Silent"]["all_channels_distinct_posts"] == 0
+    assert audit["earliest_utc"] == "2026-11-24T08:30:00+00:00"
+    assert len(audit["runs"]) == 2
+    assert "private fixture body" not in path.read_text()
+
+
+def test_parallel_report_can_save_dataset_before_collector_reads_status(tmp_path):
+    payload = {"mode": "Advanced Search", "query": "3d", "max_results": 1}
+    key = x.digest(x.json.dumps([x.ACTOR, "race", payload], sort_keys=True))
+
+    def handler(request):
+        assert request.method == "GET"
+        if "/actor-runs/" in request.url.path:
+            return httpx.Response(200, json={"data": {"status": "SUCCEEDED"}})
+        return httpx.Response(200, json=[tweet(12)])
+
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        ledger = x.RunLedger(tmp_path, client)
+        x.write_json(
+            ledger.path,
+            {
+                key: {
+                    "label": "race",
+                    "id": "existing",
+                    "dataset": "dataset1",
+                    "status": "RUNNING",
+                }
+            },
+        )
+        x.write_json(tmp_path / "raw/apify/existing.json", [tweet(12)])
+        assert ledger.fetch("race", payload) == [tweet(12)]
+
+
 def test_persist_author_replies_and_signals(tmp_path):
     posts = [tweet(10), tweet(11, root=10), tweet(12, root=10, author="visitor")]
     for _ in range(2):
@@ -157,8 +225,9 @@ def test_failed_incremental_page_preserves_cursor_until_replay(tmp_path, monkeyp
 
 def test_standard_cli_selects_apify(tmp_path, monkeypatch):
     from typer.testing import CliRunner
+
+    from src import cli
     from src.cli import app
-    import src.cli as cli
 
     calls = []
 

@@ -58,8 +58,13 @@ def discover(config: dict, data_dir: Path, scraper: Firecrawl, max_age_hours: fl
                     sources.append({**last, "added_count": 0})
                     continue
                 if not snapshot or datetime.fromisoformat(snapshot["checked_at"]) <= stale_before:
-                    result = scraper.scrape(url)
-                    if result.fetch_method != "firecrawl" or not result.markdown:
+                    try:
+                        result = scraper.scrape(url)
+                    except httpx.HTTPStatusError as error:
+                        if error.response.status_code < 500 or not url.startswith("https://raw.githubusercontent.com/"):
+                            raise
+                        result = scraper.public_document(url, error.response.status_code)
+                    if result.fetch_method not in {"firecrawl", "github_raw"} or not result.markdown:
                         raise ValueError(f"Firecrawl returned {result.status}")
                     urls = catalog_posts(result.markdown)
                     project_pattern = entry.get("primary_url_pattern")

@@ -21,7 +21,8 @@ Distinguish a prompt written for the world from an unrelated template, and gener
 from playtime or asset render time. Report cost in USD, time in minutes. Use null for undisclosed
 numbers. Use usd evidence, never infer an exchange rate, estimate amounts or convert ranges
 to points. Copy exact, unmodified evidence quotes, especially for models, license, cost and time.
-Use unknown or empty lists where the source provides no evidence.
+For each named model, include a short verbatim quote from the author that identifies the model and ties it to this build.
+Also quote a specific action a visitor can take when the source describes one. Use unknown or empty lists where the source provides no evidence.
 If it is a repost without a traced original, or the source does not substantiate a model-generated
 interactive world, set review_status to rejected. Otherwise use pending. Use the best supported
 reproducibility level. Include no external context. Use the supplied identity fields verbatim.

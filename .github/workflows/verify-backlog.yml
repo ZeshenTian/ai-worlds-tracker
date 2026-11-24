@@ -1,0 +1,65 @@
+name: Check outstanding demo links
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  receipts:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache/restore@v4
+        with:
+          path: |
+            data/raw
+            data/processed/extraction
+            data/state/apify_x
+          key: inspect-spend-${{ github.run_id }}
+          restore-keys: worlds-sources-
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen --python 3.11
+      - run: uv run python -m src.sync_receipt --out check/sync_spend.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sync-receipt
+          path: check/sync_spend.json
+  verify:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen --python 3.11
+      - run: uv run playwright install --with-deps chromium
+      - name: Select outstanding works from this revision
+        env:
+          SHARD: ${{ matrix.shard }}
+        run: |
+          mkdir -p check/thumbnails
+          uv run python - <<'PY'
+          import json, os
+          from pathlib import Path
+          rows = json.loads(Path('platform/data/worlds.json').read_text())
+          health = json.loads(Path('data/state/demo_health.json').read_text())
+          pending = [row for row in rows if row.get('live_demo_url') and
+                     (health.get(row['world_id'], {}).get('live_demo_url') != row['live_demo_url']
+                      or 'has been closed' in health.get(row['world_id'], {}).get('evidence', ''))]
+          pending.sort(key=lambda row: row['world_id'])
+          chunk = pending[int(os.environ['SHARD'])::6]
+          Path('check/rows.json').write_text(json.dumps(chunk))
+          Path('check/health.json').write_text('{}')
+          print(f'{len(chunk)} links in this shard; {len(pending)} outstanding in the snapshot')
+          PY
+      - run: uv run python -m src.verify_demos --input check/rows.json --state check/health.json --thumbnails check/thumbnails --jobs 3 --channel chrome
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: demo-check-${{ matrix.shard }}
+          path: |
+            check/health.json
+            check/thumbnails
+          retention-days: 14

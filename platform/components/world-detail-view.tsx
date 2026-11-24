@@ -86,7 +86,7 @@ export function WorldDetailView({
               <span className="pill-neutral">{healthLabel(world.demo_health_status, lang)}</span>
             )}
             <span className="pill-neutral">{themeLabel(world.theme_category, lang)}</span>
-            {(world.is_open_source === true || repo) && (
+            {(world.is_open_source === true) && (
               <span className="pill-blue">{t.openSource}</span>
             )}
           </div>

@@ -4,7 +4,6 @@
 import { Aperture, Plus } from "lucide-react";
 import type { ReactNode } from "react";
 import { copy, useLang } from "@/lib/i18n";
-import { submissionUrl } from "@/lib/worlds";
 import { CommandSearch } from "./command-search";
 
 export function Header({
@@ -53,9 +52,7 @@ export function Header({
 
           <a
             className="button button-primary nav-submit"
-            href={submissionUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/submit"
             aria-current={active === "submit" ? "page" : undefined}
           >
             <Plus size={15} strokeWidth={2.2} />

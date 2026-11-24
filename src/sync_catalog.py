@@ -1,6 +1,5 @@
 """Discover once per query, then process works missing from the durable ledger."""
 import asyncio
-from collections import Counter
 from datetime import UTC, datetime
 import os
 from pathlib import Path
@@ -77,9 +76,16 @@ def sync(pipeline, platform: Path):
                     OpenAIExtractor(pipeline.required_env("OPENAI_API_KEY"), model, root))
 
         for group in groups:
+            cache = EnrichmentCache(root)
             try:
-                EnrichmentCache(root).enrich([group], scraper)
-                rows = extract_cases([group], root, "mock" if mock else f"openai:{model}", extractor, rows)
+                cache.enrich([group], scraper)
+            except ValueError:
+                if mock:
+                    raise
+                print(f"Using the available sources for {group.original.original_url}; some external pages failed")
+            try:
+                pages = cache.evidence(group, available_only=not mock)
+                rows = extract_cases([group], root, "mock" if mock else f"openai:{model}", extractor, rows, pages)
             except ValueError as error:
                 if mock:
                     raise
@@ -98,11 +104,6 @@ def sync(pipeline, platform: Path):
         build_covers(candidates, root, platform / "public/thumbnails")
         build_project_covers(candidates, root, platform / "public/thumbnails")
     publish(root, platform, auto=os.getenv("AUTO_APPROVE_TRUSTED", "").lower() == "true")
-    public = read_json(platform / "data/worlds.json")
-    authors = Counter(c["author_handle"].lower() for c in public if c.get("author_handle"))
-    watched = {a.lower() for a in config.get("watch_accounts", [])}
-    write_json(root / "state/watch_suggestions.json",
-               {a:n for a,n in sorted(authors.items()) if n >= 2 and a not in watched})
 
 
 if __name__ == "__main__":

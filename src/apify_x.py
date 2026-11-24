@@ -2,22 +2,22 @@
 
 import argparse
 import calendar
+import json
+import os
+import re
+import time
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import UTC, date, datetime, timedelta
 from decimal import Decimal
 from email.utils import parsedate_to_datetime
-import json
-import os
-from pathlib import Path
-import re
-import time
 from itertools import zip_longest
+from pathlib import Path
 from urllib.parse import urlsplit
 
-from dotenv import dotenv_values
 import httpx
 import yaml
+from dotenv import dotenv_values
 
 from .ingest_x import BaseXAdapter, collect_links
 from .links import external_url
@@ -224,7 +224,9 @@ class RunLedger:
                 )
             run_id, dataset = entry["id"], entry["dataset"]
         output = self.root / "raw/apify" / f"{run_id}.json"
-        if output.exists():
+        # A parallel receipt reconciliation can save the dataset between our
+        # ledger read and this check. Poll the existing run if its status is stale.
+        if output.exists() and entry["status"] in TERMINAL:
             if entry["status"] != "SUCCEEDED" or entry.get("incomplete"):
                 raise ValueError(f"Partial Apify run {run_id}; cached rows retained")
             return [i for i in read_json(output) if i.get("status") != "empty"]
@@ -611,11 +613,15 @@ def daily_threads(ledger, since, until, maximum=8):
     ]
 
 
-def history(ledger, config, anchor):
-    final = anchor + timedelta(days=1)
+def six_month_start(anchor):
     year = anchor.year if anchor.month > 6 else anchor.year - 1
     month = (anchor.month - 7) % 12 + 1
-    start = date(year, month, min(anchor.day, calendar.monthrange(year, month)[1]))
+    return date(year, month, min(anchor.day, calendar.monthrange(year, month)[1]))
+
+
+def history(ledger, config, anchor):
+    final = anchor + timedelta(days=1)
+    start = six_month_start(anchor)
     qs = discover_queries(config)
     cursor = start
     jobs = []
@@ -662,15 +668,48 @@ def history(ledger, config, anchor):
         )
 
 
+def missing_authors(ledger, config, anchor):
+    """Check watchlist authors who were absent from a capped group search."""
+    book = read_json(ledger.path) if ledger.path.exists() else {}
+    found = set()
+    for entry in book.values():
+        if not entry.get("id") or not entry["label"].startswith(
+            ("authors-", "targeted-author")
+        ):
+            continue
+        path = ledger.root / "raw/apify" / f"{entry['id']}.json"
+        if path.exists():
+            for item in read_json(path):
+                if item.get("username"):
+                    found.add(item["username"].casefold())
+    start = six_month_start(anchor)
+    end = anchor + timedelta(days=1)
+    missing = [
+        h
+        for h in config.get("watch_accounts", [])
+        if h.casefold() not in found and re.fullmatch(r"[A-Za-z0-9_]{1,15}", h)
+    ]
+    with ThreadPoolExecutor(max_workers=3) as pool:
+        jobs = {
+            pool.submit(
+                search,
+                ledger,
+                f"from:{handle} (3D OR game OR world OR playable OR threejs OR 游戏) since:{start} until:{end} -filter:retweets",
+                f"authors-gap-{handle}-{start}-{end}",
+                25,
+            ): handle
+            for handle in missing
+        }
+        for job in as_completed(jobs):
+            try:
+                job.result()
+            except (ValueError, httpx.HTTPError, TimeoutError) as exc:
+                print(f"Author search for {jobs[job]} incomplete: {exc}", flush=True)
+
+
 def targeted(ledger, anchor):
     """Look for public play links and gaps in the broad six-month sample."""
-    prior_month = (anchor.month - 7) % 12 + 1
-    prior_year = anchor.year if anchor.month > 6 else anchor.year - 1
-    start = date(
-        prior_year,
-        prior_month,
-        min(anchor.day, calendar.monthrange(prior_year, prior_month)[1]),
-    )
+    start = six_month_start(anchor)
     end = anchor + timedelta(days=1)
     domain = (
         "(url:patch.gg OR url:chatgpt.site OR url:claude.ai/artifact OR url:ai.studio)"
@@ -823,9 +862,11 @@ def incremental(ledger, config, anchor, page_size):
             write_json(path, state)
 
 
-def coverage_report(ledger):
+def coverage_report(ledger, *, audit_output=None, config=None):
     """Reconcile existing runs and receipts with read-only API calls."""
     book = read_json(ledger.path) if ledger.path.exists() else {}
+    if audit_output:
+        book = {k: v for k, v in book.items() if v.get("period") is None}
     directory = ledger.root / "raw/apify"
     channels = defaultdict(
         lambda: {
@@ -840,6 +881,13 @@ def coverage_report(ledger):
     dates_by_id, all_ids = {}, set()
     total = Decimal(0)
     notes, updates, rows_by_month = {}, {}, Counter()
+    public_runs, public_gaps = [], []
+    author_runs, author_hits, all_author_hits = (
+        defaultdict(set),
+        defaultdict(set),
+        defaultdict(set),
+    )
+    author_plans = {}
 
     def inspect(pair):
         key, entry = pair
@@ -852,6 +900,7 @@ def coverage_report(ledger):
         entry = {
             **entry,
             "status": run["status"],
+            "actor_id": run.get("actId"),
             "usage_usd": run.get("usageTotalUsd"),
             "charged_events": run.get("chargedEventCounts"),
             "status_message": run.get("statusMessage"),
@@ -904,7 +953,19 @@ def coverage_report(ledger):
                 else:
                     channel = "official_mentions"
             if channel == "self":
-                channel = "self_replies"
+                channel = (
+                    "linked_originals"
+                    if label.startswith("self-roots-")
+                    else "self_replies"
+                )
+            if channel == "authors":
+                for handle in re.findall(
+                    r"\bfrom:([A-Za-z0-9_]+)", query, re.IGNORECASE
+                ):
+                    name = handle.casefold()
+                    author_plans[name] = handle
+                    if entry.get("id"):
+                        author_runs[name].add(entry["id"])
             bucket = channels[channel]
             bucket["runs"] += 1
             bucket["returned_rows"] += len(actual)
@@ -916,15 +977,62 @@ def coverage_report(ledger):
                     "posts": len(actual),
                     "reason": entry.get("reason") or entry.get("status_message"),
                 }
+            if entry.get("id"):
+                receipt = entry.get("usage_usd")
+                public_runs.append(
+                    {
+                        "run_id": entry["id"],
+                        "actor_id": entry.get("actor_id"),
+                        "channel": channel,
+                        "label": label,
+                        "status": entry["status"],
+                        "search_terms": [query]
+                        if query
+                        else entry.get("input", {}).get("searchTerms", []),
+                        "provider_mode": mode,
+                        "requested_limit": entry.get("input", {}).get("max_results")
+                        or entry.get("input", {}).get("maxItems"),
+                        "returned_rows": len(actual),
+                        "provider_rows": entry.get("items"),
+                        "usage_usd": f"{Decimal(str(receipt)):.6f}"
+                        if receipt is not None
+                        else None,
+                    }
+                )
+            if not actual or entry["status"] != "SUCCEEDED" or entry.get("incomplete"):
+                reason = (
+                    "not_admitted"
+                    if not entry.get("id")
+                    else "actor_partial"
+                    if entry.get("incomplete")
+                    else "terminal_error"
+                    if entry["status"] in TERMINAL - {"SUCCEEDED"}
+                    else "in_progress"
+                    if entry["status"] not in TERMINAL
+                    else "no_posts_returned"
+                )
+                public_gaps.append(
+                    {
+                        "channel": channel,
+                        "label": label,
+                        "status": entry["status"],
+                        "reason": reason,
+                        "returned_rows": len(actual),
+                    }
+                )
             unique = persist(actual, ledger.root) if actual else set()
             bucket["post_ids"].update(unique)
             all_ids.update(unique)
             for item in actual:
                 record, _ = tweet_record(item)
+                author = record.post.author_handle.casefold()
+                all_author_hits[author].add(record.post.tweet_id)
+                if channel == "authors":
+                    author_hits[author].add(record.post.tweet_id)
                 if record.post.published_at:
-                    stamp = record.post.published_at.date().isoformat()
+                    stamp = record.post.published_at.astimezone(UTC).isoformat()
                     dates_by_id[record.post.tweet_id] = stamp
-                    bucket["dates"].append(stamp)
+                    bucket["dates"].append(stamp[:10])
             total += Decimal(str(entry.get("usage_usd") or 0))
     with run_lock(ledger.path.parent):
         latest = read_json(ledger.path)
@@ -933,6 +1041,21 @@ def coverage_report(ledger):
             if latest[key].get("status") not in TERMINAL or item["status"] in TERMINAL:
                 latest[key].update(item)
         write_json(ledger.path, latest)
+        history_errors = ledger.path.parent / "history_errors.json"
+        if history_errors.exists():
+            errors = read_json(history_errors)
+            for entry in updates.values():
+                label = entry["label"]
+                if (
+                    entry["status"] == "SUCCEEDED"
+                    and entry.get("posts_returned")
+                    and not entry.get("incomplete")
+                    and errors.get(label, "").startswith(
+                        f"Partial Apify run {entry.get('id')}; cached rows retained"
+                    )
+                ):
+                    del errors[label]
+            write_json(history_errors, errors)
     for stamp in dates_by_id.values():
         rows_by_month[stamp[:7]] += 1
     summary = {
@@ -940,8 +1063,8 @@ def coverage_report(ledger):
         "unique_ids": len(all_ids),
         "dated_top_level_posts": len(dates_by_id),
         "published_months": dict(sorted(rows_by_month.items())),
-        "earliest": min(dates_by_id.values(), default=None),
-        "latest": max(dates_by_id.values(), default=None),
+        "earliest": min((d[:10] for d in dates_by_id.values()), default=None),
+        "latest": max((d[:10] for d in dates_by_id.values()), default=None),
         "reported_usage_usd": str(total.quantize(Decimal("0.000001"))),
         "hard_limit_usd": str(LIMIT),
         "channels": {},
@@ -957,6 +1080,37 @@ def coverage_report(ledger):
         ]
         summary["channels"][name] = bucket
     write_json(ledger.root / "state/apify_x/coverage.json", summary)
+    if audit_output:
+        for handle in (config or {}).get("watch_accounts", []):
+            author_plans.setdefault(handle.casefold(), handle)
+        audit = {k: v for k, v in summary.items() if k != "gaps"}
+        audit.update(
+            {
+                "earliest_utc": min(dates_by_id.values(), default=None),
+                "latest_utc": max(dates_by_id.values(), default=None),
+                "deduplicated_post_ids": sorted(all_ids, key=int),
+                "runs": sorted(public_runs, key=lambda run: run["label"]),
+                "remaining_gaps": sorted(public_gaps, key=lambda gap: gap["label"]),
+                "author_coverage": {
+                    handle: {
+                        "author_query_run_ids": sorted(author_runs[name]),
+                        "author_query_distinct_posts": len(author_hits[name]),
+                        "all_channels_distinct_posts": len(all_author_hits[name]),
+                    }
+                    for name, handle in sorted(author_plans.items())
+                },
+                "measurement": {
+                    "returned_rows": "Top-level post rows, before downstream content screening and deduplication.",
+                    "distinct_returned": "Unique top-level post IDs within this channel.",
+                    "unique_ids": "Distinct normalized IDs, including embedded original quoted posts. Overlapping channels are deduplicated for the overall total.",
+                    "dates": "Publication timestamps for dated top-level posts. Each month counts distinct top-level IDs.",
+                    "author_coverage": "Per public handle: admitted author-search runs, distinct observed author-search results and distinct results across all channels. A group query can return zero rows for an individual handle.",
+                    "coverage": "Six-month sample with per-run result caps. Empty searches and failed runs limit coverage.",
+                    "usage_usd": "Apify run-receipt usageTotalUsd, denominated in USD. Rejected admissions without run IDs did not create a chargeable run.",
+                },
+            }
+        )
+        write_json(audit_output, audit)
     print(
         f"Apify captured {len(all_ids)} unique posts. Run receipts total US${total:.6f}.",
         flush=True,
@@ -1053,6 +1207,7 @@ def main():
             "pilot",
             "history",
             "targeted",
+            "author-gaps",
             "incremental",
             "threads",
             "thread-roots",
@@ -1067,6 +1222,11 @@ def main():
     )
     parser.add_argument("--budget-usd", type=Decimal, default=LIMIT)
     parser.add_argument("--page-size", type=int, default=100)
+    parser.add_argument(
+        "--audit-output",
+        type=Path,
+        help="Write a redacted research capture audit in report mode",
+    )
     args = parser.parse_args()
     if args.page_size < 1 or args.page_size > 500:
         parser.error("--page-size must be 1–500")
@@ -1085,9 +1245,11 @@ def main():
             args.data_dir, client, args.budget_usd, daily=args.mode == "incremental"
         )
         if args.mode == "report":
-            coverage_report(ledger)
+            coverage_report(ledger, audit_output=args.audit_output, config=config)
         elif args.mode == "targeted":
             targeted(ledger, args.date)
+        elif args.mode == "author-gaps":
+            missing_authors(ledger, config, args.date)
         elif args.mode == "history":
             history(ledger, config, args.date)
         elif args.mode == "incremental":

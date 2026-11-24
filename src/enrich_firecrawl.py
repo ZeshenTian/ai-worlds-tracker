@@ -105,6 +105,8 @@ class Firecrawl:
                 method = "github_raw"
             else:
                 raise ValueError(f"Unsupported GitHub document URL: {url}")
+        elif parts.hostname == "raw.githubusercontent.com" and parts.scheme == "https":
+            target, method = url, "github_raw"
         elif parts.hostname == "developers.openai.com" and path.startswith(("showcase/", "blog/")):
             target = f"https://developers.openai.com/{path}"
             method = "publisher_html"
@@ -250,11 +252,13 @@ class EnrichmentCache:
         if failures:
             raise ValueError("Enrichment failures:\n" + "\n".join(failures))
 
-    def evidence(self, group: CaseGroup) -> list[EnrichedLinkContent]:
+    def evidence(self, group: CaseGroup, *, available_only: bool = False) -> list[EnrichedLinkContent]:
         pages = []
         for url, _ in self.urls_for(group):
             path = self.page_path(url)
             if not path.exists():
+                if available_only:
+                    continue
                 raise ValueError(f"No enrichment cache for {url}. Run enrich first.")
             pages.append(EnrichedLinkContent.model_validate(read_json(path)))
         return pages

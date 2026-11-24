@@ -21,7 +21,7 @@ from .storage import read_json, run_lock, write_json
 
 
 POST = re.compile(r"https://(?:www\.)?(?:x|twitter)\.com/(?:[A-Za-z0-9_]+|i/web)/status/(\d+)/?")
-ATTACHMENTS = re.compile(r'"expanded_url"\s*:\s*"(https://(?:www\.)?(?:x|twitter)\.com/[\w]+/status/(\d+)/(?:photo|video)/(\d+))"|"media_url_https"\s*:\s*"([^"\s]+)"')
+ATTACHMENTS = re.compile(r'"expanded_url"\s*:\s*"(https://(?:www\.)?(?:x|twitter)\.com/(?:[\w]+|i/web)/status/(\d+)/(?:photo|video)/(\d+))"|"media_url_https"\s*:\s*"([^"\s]+)"')
 IMAGE_PATH = re.compile(r"/(?:media/[\w.-]+|(?:amplify_video_thumb|ext_tw_video_thumb)/[\w/-]+(?:\.[\w]+)?|tweet_video_thumb/[\w.-]+)")
 
 
@@ -38,6 +38,12 @@ def public_post_url(source):
         return None
     path = parts.path.split("/status/", 1)[0]
     return f"https://x.com{path}/status/{identifier}"
+
+
+def same_post_url(first, second):
+    if not public_post_url(first) or not public_post_url(second):
+        return False
+    return post_id(first) == post_id(second)
 
 
 def media_kind(url):
@@ -71,7 +77,7 @@ def page_metadata(html):
     return parser.meta
 
 
-def missing_reason(meta, identifier):
+def missing_reason(meta, identifier, entities=()):
     canonical = POST.fullmatch(meta.get("og:url") or "")
     if not canonical or canonical[1] != identifier:
         return "public_metadata_unavailable"
@@ -81,15 +87,14 @@ def missing_reason(meta, identifier):
             return "link_card_only"
         if image.path.startswith("/profile_images/"):
             return "profile_image_only"
+    preview = meta.get("og:image")
+    if media_kind(preview) and any(owner != identifier and asset_path(url) == asset_path(preview)
+                                   for owner, _, url, _ in entities):
+        return "other_post_media_only"
     return "post_attachment_unconfirmed"
 
 
-def post_media(html, identifier, meta=None):
-    """Require an attachment belonging to this exact post, excluding avatars, cards and quoted posts."""
-    meta = page_metadata(html) if meta is None else meta
-    canonical = POST.fullmatch(meta.get("og:url") or "")
-    if not canonical or canonical[1] != identifier:
-        return None
+def attached_media(html):
     # Public X pages include attachment objects as JSON or as JSON escaped inside a hydration script.
     structured = re.sub(r'\\+"', '"', unescape(html)).replace(r"\/", "/")
     source = None
@@ -100,16 +105,59 @@ def post_media(html, identifier, meta=None):
         elif source:
             link, owner, order, offset = source
             candidate = match[4]
-            if owner == identifier and match.start() - offset < 2200 and media_kind(candidate):
-                attachments.append((order, candidate, link))
+            if match.start() - offset < 2200 and media_kind(candidate):
+                attachments.append((owner, order, candidate, link))
             source = None
+    return attachments
+
+
+def asset_path(value):
+    return urlsplit(value).path.rsplit(".", 1)[0]
+
+
+class ArticleCover(HTMLParser):
+    """Read the cover inside X's article attachment link, scoped to the original post."""
+
+    def __init__(self, identifier, preview):
+        super().__init__()
+        self.link_pattern = re.compile(rf"/[A-Za-z0-9_]+/article/{re.escape(identifier)}/media/[0-9]+")
+        self.preview = preview
+        self.link = None
+        self.media = None
+
+    def handle_starttag(self, tag, attrs):
+        fields = dict(attrs)
+        if tag == "a":
+            href = fields.get("href") or ""
+            self.link = (f"https://x.com{href}" if fields.get("data-article-part") == "cover"
+                         and self.link_pattern.fullmatch(href) else None)
+        if tag == "img" and self.link and fields.get("alt") == "Article cover image":
+            src = fields.get("src") or ""
+            if media_kind(src) == "photo" and asset_path(src) == asset_path(self.preview):
+                self.media = {"media_url": self.preview, "media_kind": "photo", "attachment_url": self.link}
+
+    def handle_endtag(self, tag):
+        if tag == "a":
+            self.link = None
+
+
+def post_media(html, identifier, meta=None, entities=None):
+    """Require an attachment belonging to this exact post, excluding avatars, cards and quoted posts."""
+    meta = page_metadata(html) if meta is None else meta
+    canonical = POST.fullmatch(meta.get("og:url") or "")
+    if not canonical or canonical[1] != identifier:
+        return None
+    entities = attached_media(html) if entities is None else entities
+    attachments = [(order, candidate, link) for owner, order, candidate, link in entities if owner == identifier]
+    preview = meta.get("og:image")
     if not attachments:
+        if media_kind(preview) == "photo" and 'data-article-part="cover"' in html:
+            article = ArticleCover(identifier, preview)
+            article.feed(html)
+            return article.media
         return None
     _, url, attachment = min(attachments, key=lambda item: item[0])
     # Prefer X's display variant only when it represents the same original attachment.
-    preview = meta.get("og:image")
-    def asset_path(value):
-        return urlsplit(value).path.rsplit(".", 1)[0]
     if media_kind(preview) and asset_path(preview) == asset_path(url):
         url = preview
     return {"media_url": url, "media_kind": media_kind(url), "attachment_url": attachment}
@@ -156,7 +204,7 @@ def discover(root, source, *, refresh=False):
                     "source_url": source}
     cached_file = root / "raw/x/cover_sources" / f"{identifier}.json"
     cache = read_json(cached_file) if cached_file.exists() else {}
-    if not refresh and cache.get("source_url") == source:
+    if not refresh and same_post_url(cache.get("source_url"), source):
         if media_kind(cache.get("media_url")) or cache_recent(cache, 1):
             return cache
     now = datetime.now(UTC).isoformat()
@@ -164,10 +212,12 @@ def discover(root, source, *, refresh=False):
         payload = fetch(public_post_url(source), 4_000_000)
         html = payload.decode("utf-8", errors="replace")
         meta = page_metadata(html)
-        media = post_media(html, identifier, meta)
-        info = media or {"reason": missing_reason(meta, identifier)}
+        entities = attached_media(html)
+        media = post_media(html, identifier, meta, entities)
+        info = media or {"reason": missing_reason(meta, identifier, entities)}
     except (OSError, ValueError, HTTPException) as error:
-        if cache.get("media_url") and cache.get("source_url") == source:
+        if (same_post_url(cache.get("source_url"), source) and (cache.get("media_url") or
+                cache.get("reason") in {"link_card_only", "profile_image_only", "post_attachment_unconfirmed", "other_post_media_only"})):
             return cache
         info = {"reason": "source_unavailable", "error_type": type(error).__name__}
     info.update(source_url=source, discovered_via="public_x_post", checked_at=now)
@@ -238,6 +288,10 @@ def build(rows, root, thumbnails, *, check_all=False, refresh=False, jobs=3):
         for key, row in unique.items():
             if key in state and re.fullmatch(r"[A-Za-z0-9_-]{1,128}", key):
                 target = thumbnails / f"{key}-x.webp"
+                previous_url = state[key].get("source_url")
+                if previous_url != row["original_post_url"] and same_post_url(previous_url, row["original_post_url"]):
+                    state[key]["source_url"] = row["original_post_url"]
+                    write_json(state_file, state)
                 if state[key].get("source_url") != row["original_post_url"] or not target.is_file():
                     del state[key]
                     write_json(state_file, state)
@@ -256,13 +310,13 @@ def build(rows, root, thumbnails, *, check_all=False, refresh=False, jobs=3):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data-dir", type=Path, default=Path("data"))
-    parser.add_argument("--input", type=Path)
+    parser.add_argument("--input", type=Path, action="append", help="Case JSON. Repeat to cover several batches.")
     parser.add_argument("--thumbnails", type=Path, default=Path("platform/public/thumbnails"))
     parser.add_argument("--check-all", action="store_true", help="Check post metadata even when a demo screenshot exists.")
     parser.add_argument("--refresh", action="store_true", help="Revalidate cached public sources.")
     parser.add_argument("--jobs", type=int, choices=range(1, 9), default=3)
     args = parser.parse_args()
-    rows = read_json(args.input or args.data_dir / "exports/ai_worlds.json")
+    rows = [row for path in args.input or [args.data_dir / "exports/ai_worlds.json"] for row in read_json(path)]
     state = build(rows, args.data_dir, args.thumbnails, check_all=args.check_all, refresh=args.refresh, jobs=args.jobs)
     print(f"{len(state)} X media covers cached")
 

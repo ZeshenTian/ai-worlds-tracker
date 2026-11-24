@@ -24,6 +24,18 @@ catalogs:
     url: https://raw.githubusercontent.com/apimodels/gemini-4-carbon-prompts/HEAD/data/cases.json
   - name: Gemini 4 Argon source videos
     url: https://raw.githubusercontent.com/yihui-dev/awesome-gemini4-argon-videos/HEAD/data/videos.json
+  - name: Astra playable demos
+    url: https://raw.githubusercontent.com/xianyu110/awesome-gpt-6-astra/HEAD/data/playable-demos.json
+  - name: Astra games and demos
+    url: https://raw.githubusercontent.com/MartinDelophy/awesome-gpt-6-astra/HEAD/README.md
+  - name: Astra Atlas
+    url: https://gist.githubusercontent.com/phuaky/3d0f52d6bb7534d5f60b5ef37871b187/raw
+  - name: Community Astra projects
+    url: https://raw.githubusercontent.com/magiccreator-ai/awesome-gpt-6-astra/HEAD/README.md
+  - name: Opus games
+    url: https://raw.githubusercontent.com/krillinai/awesome-opus-animation/HEAD/categories/games.md
+  - name: Claude Artifact Hall of Fame
+    url: https://artifacthof.com
 verified_candidates: research/expansion/catalog_worlds.json
 # X API v2 search operator reference: https://docs.x.com/x-api/posts/search/integrate/operators
 official_threads:

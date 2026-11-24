@@ -52,3 +52,48 @@ def test_batch_unknown_id_leaves_decisions_unchanged(tmp_path):
     with pytest.raises(ValueError):
         review_batch(tmp_path,tmp_path/"site",[case.world_id,"missing-id"],ReviewStatus.REJECTED)
     assert ledger.read_bytes() == before
+
+
+def test_identical_demo_keeps_first_world_and_adds_creator_credit():
+    from src.publish_catalog import merge_duplicate_demos
+    first = AIWorldCase.model_validate(source_row())
+    first.review_status = ReviewStatus.APPROVED
+    first.live_demo_url = "https://example.org/distinct-world/"
+    later = first.model_copy(deep=True)
+    later.world_id = first.world_id + "-later"
+    later.original_post_url = "https://x.com/Maker/status/777"
+    later.author_handle = "Maker"
+    later.live_demo_url = first.live_demo_url.rstrip("/")
+    merge_duplicate_demos({later.world_id:later, first.world_id:first}, {first.world_id})
+    assert later.review_status == ReviewStatus.REJECTED
+    assert later.original_post_url in first.related_post_urls
+    assert first.original_post_url in later.possible_duplicate_urls
+
+
+def test_cover_requires_the_credited_project_or_x_post():
+    from src.publish_catalog import cover_matches
+    case = AIWorldCase.model_validate(source_row())
+    assert cover_matches(case, case.original_post_url.replace("x.com","twitter.com"), "x_media")
+    assert not cover_matches(case, "https://x.com/A/status/123", "x_media")
+    assert not cover_matches(case, "https://example.org/other", "project_media")
+
+
+def test_imported_browser_check_must_match_demo_and_be_newer(tmp_path, monkeypatch):
+    from src.import_demo_checks import merge_checks
+    from src.storage import read_json
+    case = AIWorldCase.model_validate(source_row())
+    case.live_demo_url = "https://example.org/new-world"
+    first = {"checked_at":"2026-11-23T01:30:00+00:00","live_demo_url":case.live_demo_url,
+             "demo_health_status":"unverified","thumbnail_url":None}
+    ledger = tmp_path/"processed/cases.jsonl"
+    write_rows(ledger,[case])
+    state = tmp_path/"state/demo_health.json"
+    write_json(state,{case.world_id:first})
+    checks = tmp_path/"shard"
+    monkeypatch.setattr("src.import_demo_checks.publish",lambda *args,**kwargs: None)
+    for replace in ({"live_demo_url":"https://example.org/old-world"}, {"checked_at":"2026-11-20T01:30:00+00:00"}):
+        write_json(checks/"health.json",{case.world_id:{**first,**replace}})
+        assert merge_checks(tmp_path,tmp_path/"platform",[checks]) == 0
+        assert read_json(state)[case.world_id] == first
+    write_json(checks/"health.json",{case.world_id:{**first,"checked_at":"2026-11-24T02:30:00+00:00"}})
+    assert merge_checks(tmp_path,tmp_path/"platform",[checks]) == 1
