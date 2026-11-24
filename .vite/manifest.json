@@ -7,11 +7,11 @@
       "_framework-D_rUT4EX.js"
     ]
   },
-  "_circle-play-CKZrDPmv.js": {
-    "file": "_next/static/chunks/circle-play-CKZrDPmv.js",
+  "_circle-play-BjIitidT.js": {
+    "file": "_next/static/chunks/circle-play-BjIitidT.js",
     "name": "circle-play",
     "imports": [
-      "_worlds-DCUboNFH.js"
+      "_worlds-CK1wU1x4.js"
     ]
   },
   "_framework-D_rUT4EX.js": {
@@ -21,12 +21,12 @@
       "_rolldown-runtime-C60lm6uB.js"
     ]
   },
-  "_i18n-BWyLvoIe.js": {
-    "file": "_next/static/chunks/i18n-BWyLvoIe.js",
+  "_i18n-C4v1Yz0C.js": {
+    "file": "_next/static/chunks/i18n-C4v1Yz0C.js",
     "name": "i18n",
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_worlds-DCUboNFH.js",
+      "_worlds-CK1wU1x4.js",
       "_framework-D_rUT4EX.js"
     ]
   },
@@ -34,17 +34,17 @@
     "file": "_next/static/chunks/rolldown-runtime-C60lm6uB.js",
     "name": "rolldown-runtime"
   },
-  "_world-preview-aoSEh7QF.js": {
-    "file": "_next/static/chunks/world-preview-aoSEh7QF.js",
+  "_world-preview-DbR3KuTC.js": {
+    "file": "_next/static/chunks/world-preview-DbR3KuTC.js",
     "name": "world-preview",
     "imports": [
-      "_worlds-DCUboNFH.js",
-      "_i18n-BWyLvoIe.js",
+      "_worlds-CK1wU1x4.js",
+      "_i18n-C4v1Yz0C.js",
       "_framework-D_rUT4EX.js"
     ]
   },
-  "_worlds-DCUboNFH.js": {
-    "file": "_next/static/chunks/worlds-DCUboNFH.js",
+  "_worlds-CK1wU1x4.js": {
+    "file": "_next/static/chunks/worlds-CK1wU1x4.js",
     "name": "worlds",
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
@@ -52,92 +52,92 @@
       "_framework-D_rUT4EX.js"
     ]
   },
-  "_x-geQEhiTn.js": {
-    "file": "_next/static/chunks/x-geQEhiTn.js",
+  "_x-BPmd6Otb.js": {
+    "file": "_next/static/chunks/x-BPmd6Otb.js",
     "name": "x",
     "imports": [
-      "_worlds-DCUboNFH.js"
+      "_worlds-CK1wU1x4.js"
     ]
   },
   "app/not-found.tsx": {
-    "file": "_next/static/chunks/not-found-Cc2FEAkc.js",
+    "file": "_next/static/chunks/not-found-Cnn8_ckO.js",
     "name": "not-found",
     "src": "app/not-found.tsx",
     "isDynamicEntry": true,
     "imports": [
       "components/atlas-shell.tsx",
-      "_i18n-BWyLvoIe.js",
+      "_i18n-C4v1Yz0C.js",
       "_framework-D_rUT4EX.js"
     ]
   },
   "components/atlas-shell.tsx": {
-    "file": "_next/static/chunks/atlas-shell-DW0pEtsa.js",
+    "file": "_next/static/chunks/atlas-shell-Bt6JWryK.js",
     "name": "atlas-shell",
     "src": "components/atlas-shell.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_worlds-DCUboNFH.js",
-      "_i18n-BWyLvoIe.js",
-      "_circle-play-CKZrDPmv.js",
-      "_x-geQEhiTn.js",
+      "_worlds-CK1wU1x4.js",
+      "_i18n-C4v1Yz0C.js",
+      "_circle-play-BjIitidT.js",
+      "_x-BPmd6Otb.js",
       "_framework-D_rUT4EX.js"
     ]
   },
   "components/submission-form.tsx": {
-    "file": "_next/static/chunks/submission-form-B15Zemq-.js",
+    "file": "_next/static/chunks/submission-form-C9hxyXS8.js",
     "name": "submission-form",
     "src": "components/submission-form.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_worlds-DCUboNFH.js",
+      "_worlds-CK1wU1x4.js",
       "_framework-D_rUT4EX.js"
     ]
   },
   "components/trends-view.tsx": {
-    "file": "_next/static/chunks/trends-view-golLpVC3.js",
+    "file": "_next/static/chunks/trends-view-CnuWAnme.js",
     "name": "trends-view",
     "src": "components/trends-view.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_worlds-DCUboNFH.js",
-      "_i18n-BWyLvoIe.js",
+      "_worlds-CK1wU1x4.js",
+      "_i18n-C4v1Yz0C.js",
       "_framework-D_rUT4EX.js"
     ]
   },
   "components/world-catalog.tsx": {
-    "file": "_next/static/chunks/world-catalog-BOjc68UD.js",
+    "file": "_next/static/chunks/world-catalog-4ymSopc4.js",
     "name": "world-catalog",
     "src": "components/world-catalog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_world-preview-aoSEh7QF.js",
-      "_worlds-DCUboNFH.js",
-      "_i18n-BWyLvoIe.js",
-      "_circle-play-CKZrDPmv.js",
-      "_x-geQEhiTn.js",
+      "_world-preview-DbR3KuTC.js",
+      "_worlds-CK1wU1x4.js",
+      "_i18n-C4v1Yz0C.js",
+      "_circle-play-BjIitidT.js",
+      "_x-BPmd6Otb.js",
       "_framework-D_rUT4EX.js"
     ]
   },
   "components/world-detail-view.tsx": {
-    "file": "_next/static/chunks/world-detail-view-B5GebruO.js",
+    "file": "_next/static/chunks/world-detail-view-DAnLGe95.js",
     "name": "world-detail-view",
     "src": "components/world-detail-view.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_world-preview-aoSEh7QF.js",
-      "_worlds-DCUboNFH.js",
-      "_i18n-BWyLvoIe.js",
-      "_circle-play-CKZrDPmv.js",
+      "_world-preview-DbR3KuTC.js",
+      "_worlds-CK1wU1x4.js",
+      "_i18n-C4v1Yz0C.js",
+      "_circle-play-BjIitidT.js",
       "_framework-D_rUT4EX.js"
     ]
   },
   "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js": {
-    "file": "_next/static/chunks/app-route-prefetch-policy-BekyPxSx.js",
+    "file": "_next/static/chunks/app-route-prefetch-policy-Br7ytI23.js",
     "name": "app-route-prefetch-policy",
     "src": "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
     "isDynamicEntry": true,
@@ -146,7 +146,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-DQ_CLeKZ.js",
+    "file": "_next/static/chunks/layout-segment-context-DX_GiCmi.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -167,7 +167,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-k08nV8Wc.js",
+    "file": "_next/static/chunks/index-CQAytysY.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
