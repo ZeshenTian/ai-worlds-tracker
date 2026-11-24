@@ -8,6 +8,7 @@ import httpx
 import typer
 import yaml
 
+from .apify_x import ApifyXAdapter, RunLedger, api_token, incremental as apify_incremental
 from .dedup import deduplicate
 from .enrich_firecrawl import EnrichmentCache, Firecrawl, FixtureScraper
 from .export_and_analyze import export_cases
@@ -46,6 +47,25 @@ class Pipeline:
     def ingest(self, mode: Mode, limit: int, refresh: bool):
         if self.source == "manual":
             raise ValueError("Use import-x for manual JSON / JSONL. Seed URL lookup requires an X adapter.")
+        if self.source == "apify":
+            config = yaml.safe_load(self.seeds.read_text(encoding="utf-8"))
+            budget = os.getenv("APIFY_DAILY_BUDGET_USD", "0.30")
+            # Keep the Apify credential confined to API requests, never t.co or project URLs.
+            with httpx.Client(headers={"Authorization": "Bearer " + api_token()}, timeout=45) as http:
+                ledger = RunLedger(self.root, http, budget, daily=True)
+                if mode == Mode.INCREMENTAL:
+                    from datetime import UTC, datetime
+                    import time
+                    catalogs = self.seeds.parent / "catalogs.yaml"
+                    if catalogs.exists():
+                        config["official_threads"] = yaml.safe_load(catalogs.read_text()).get("official_threads", [])
+                    ledger.deadline = time.monotonic() + 360
+                    apify_incremental(ledger, config, datetime.now(UTC).date(), limit)
+                    typer.echo("Saved the Apify incremental search state.")
+                else:
+                    rows = ingest(ApifyXAdapter(ledger), config, self.root, mode, limit, self.client, refresh=refresh)
+                    typer.echo(f"Ingested {len(rows)} X records.")
+            return
         if self.source == "mock":
             adapter = MockXAdapter(FIXTURES / "tweets.json")
         elif self.source == "x_api_v2":
@@ -129,10 +149,10 @@ class Pipeline:
 
 def run(ctx, action):
     load_dotenv(PROJECT / ".env", override=False)
-    source = os.environ.get("X_ADAPTER", "mock")
-    if source not in {"mock", "x_api_v2", "third_party", "manual"}:
-        raise typer.BadParameter("X_ADAPTER must be mock, x_api_v2, third_party or manual")
-    directory, seed_file, report = ctx.obj
+    directory, seed_file, report, source_override = ctx.obj
+    source = source_override or os.environ.get("X_ADAPTER", "mock")
+    if source not in {"mock", "x_api_v2", "third_party", "manual", "apify"}:
+        raise typer.BadParameter("X_ADAPTER must be mock, x_api_v2, third_party, apify or manual")
     root = directory or (PROJECT / "data" / "mock" if source == "mock" else PROJECT / "data")
     report = report or (PROJECT / "reports" / "step1_summary.md" if source == "mock"
                         else PROJECT / "reports" / "live" / "step1_summary.md")
@@ -150,9 +170,10 @@ def configure(
     data_dir: Annotated[Path | None, typer.Option(help="Override the data root.")] = None,
     seed_file: Annotated[Path | None, typer.Option(help="Override the seed YAML.")] = None,
     report_path: Annotated[Path | None, typer.Option(help="Override the Markdown report path.")] = None,
+    source: Annotated[str | None, typer.Option(help="Override X_ADAPTER for this invocation.")] = None,
 ):
     """Collect and analyze documented AI-generated interactive worlds."""
-    ctx.obj = data_dir, seed_file, report_path
+    ctx.obj = data_dir, seed_file, report_path, source
 
 
 Limit = Annotated[int, typer.Option(min=1, max=100, help="Maximum results per search query.")]

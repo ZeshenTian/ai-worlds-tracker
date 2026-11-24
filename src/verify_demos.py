@@ -539,9 +539,10 @@ async def verify_locked(rows, state_path, thumbnails, channel, jobs, max_age_hou
             pending.append((identifier, url, output))
         else:
             await inspect(None, identifier, url, output)
-    if pending:
+    for offset in range(0, len(pending), jobs * 3):
+        batch = pending[offset:offset + jobs * 3]
         async with isolated_browser(channel) as browser:
-            await asyncio.gather(*(inspect(browser, identifier, url, output) for identifier, url, output in pending))
+            await asyncio.gather(*(inspect(browser, identifier, url, output) for identifier, url, output in batch))
     return state
 
 

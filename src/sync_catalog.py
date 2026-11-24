@@ -91,7 +91,8 @@ def sync(pipeline, platform: Path):
     candidates.sort(key=lambda c: health.get(c["world_id"], {}).get("checked_at",""))
     bounded = [r for r in candidates if r["live_demo_url"]][:int(os.getenv("ATLAS_VERIFY_LIMIT","12"))]
     bounded.extend(r for r in candidates if not r["live_demo_url"])
-    asyncio.run(verify(bounded, health_file, platform / "public/thumbnails"))
+    asyncio.run(verify(bounded, health_file, platform / "public/thumbnails",
+                       channel=os.getenv("ATLAS_BROWSER_CHANNEL") or None))
     if not mock:
         build_covers(candidates, root, platform / "public/thumbnails")
     publish(root, platform, auto=os.getenv("AUTO_APPROVE_TRUSTED", "").lower() == "true")

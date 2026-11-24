@@ -11,7 +11,7 @@ concurrency:
 jobs:
   sync:
     if: github.event_name == 'workflow_dispatch' || vars.ENABLE_SCHEDULED_SYNC == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     timeout-minutes: 100
     steps:
       - uses: actions/checkout@v4
@@ -44,6 +44,7 @@ jobs:
       - run: uv run python -m src.sync_catalog
         env:
           X_ADAPTER: apify
+          ATLAS_BROWSER_CHANNEL: chrome
           EXTRACTION_MODEL: gpt-4.1-mini
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY || secrets.FIRECRAWL_TOKEN }}
