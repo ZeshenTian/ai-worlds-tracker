@@ -20,7 +20,7 @@ runs:
         else
           git worktree add --detach "$target" HEAD
           git -C "$target" checkout --orphan generated-site
-          git -C "$target" rm -r --quiet .
+          git -C "$target" rm -rf --quiet .
         fi
         rsync -a --delete --exclude=.git --exclude=_next/static/ platform/out/ "$target/"
         mkdir -p "$target/_next/static"
