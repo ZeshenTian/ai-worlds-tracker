@@ -10,9 +10,9 @@ export function readLikes(): string[] {
 }
 export function readLang(): Language {
   try {
-    return localStorage.getItem("atlas-lang") === "en" ? "en" : "zh";
+    return localStorage.getItem("atlas-lang") === "zh" ? "zh" : "en";
   } catch {
-    return "zh";
+    return "en";
   }
 }
 export function store(key: string, value: string) {

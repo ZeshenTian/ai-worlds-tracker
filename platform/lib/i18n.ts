@@ -8,11 +8,11 @@ const STORAGE_KEY = "atlas-lang";
 const EVENT_NAME = "atlas:lang";
 
 function readClientLang(): Lang {
-  if (typeof window === "undefined") return "zh";
+  if (typeof window === "undefined") return "en";
   try {
-    return window.localStorage.getItem(STORAGE_KEY) === "en" ? "en" : "zh";
+    return window.localStorage.getItem(STORAGE_KEY) === "zh" ? "zh" : "en";
   } catch {
-    return "zh";
+    return "en";
   }
 }
 
@@ -41,7 +41,7 @@ export function setLang(next: Lang) {
 }
 
 export function useLang(): [Lang, () => void] {
-  const lang = useSyncExternalStore<Lang>(subscribe, readClientLang, () => "zh");
+  const lang = useSyncExternalStore<Lang>(subscribe, readClientLang, () => "en");
 
   useEffect(() => {
     document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
@@ -289,7 +289,7 @@ export const copy = {
     hoursAgo: (n: number) => `${n}h ago`,
     daysAgo: (n: number) => `${n}d ago`,
     chipKeyword: (v: string) => `“${v}”`,
-    langSwitchLabel: "ZH",
+    langSwitchLabel: "中文",
     langSwitchAria: "Switch to Chinese",
   },
 } as const;
