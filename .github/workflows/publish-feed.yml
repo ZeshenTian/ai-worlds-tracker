@@ -1,0 +1,23 @@
+name: Publish static WorldFeed
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'feed/**'
+      - '.github/actions/publish-feed/**'
+permissions:
+  contents: write
+concurrency:
+  group: worlds-feed-site
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: ./.github/actions/publish-feed
+        env:
+          VITE_ATLAS_URL: ${{ vars.VITE_ATLAS_URL }}

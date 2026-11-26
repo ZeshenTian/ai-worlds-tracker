@@ -90,6 +90,9 @@ jobs:
       - uses: ./.github/actions/publish-static
         env:
           NEXT_PUBLIC_WORLDFEED_URL: ${{ vars.NEXT_PUBLIC_WORLDFEED_URL }}
+      - uses: ./.github/actions/publish-feed
+        env:
+          VITE_ATLAS_URL: ${{ vars.VITE_ATLAS_URL }}
       - name: Record provider outcomes
         if: always()
         env:

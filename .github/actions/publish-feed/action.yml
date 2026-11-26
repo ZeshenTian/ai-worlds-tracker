@@ -1,0 +1,31 @@
+name: Publish static WorldFeed
+description: Build WorldFeed and publish its complete static snapshot to the feed-site branch
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    - shell: bash
+      working-directory: feed
+      run: npm ci --include=dev && npm run build
+    - shell: bash
+      run: |
+        set -eu
+        target=$(mktemp -d)
+        rmdir "$target"
+        if git ls-remote --exit-code --heads origin feed-site; then
+          git fetch origin feed-site
+          git worktree add --detach "$target" FETCH_HEAD
+        else
+          git worktree add --detach "$target" HEAD
+          git -C "$target" checkout --orphan generated-feed-site
+          git -C "$target" rm -rf --quiet .
+        fi
+        rsync -a --delete --exclude=.git feed/dist/ "$target/"
+        touch "$target/.nojekyll"
+        git -C "$target" add -A
+        if ! git -C "$target" diff --cached --quiet; then
+          git -C "$target" -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -qm 'Publish WorldFeed snapshot'
+          git -C "$target" push origin HEAD:refs/heads/feed-site
+        fi
