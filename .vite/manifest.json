@@ -1,19 +1,4 @@
 {
-  "_Icon-D0zGVybZ.js": {
-    "file": "_next/static/chunks/Icon-D0zGVybZ.js",
-    "name": "Icon",
-    "imports": [
-      "_rolldown-runtime-C60lm6uB.js",
-      "_framework-D_rUT4EX.js"
-    ]
-  },
-  "_arrow-up-right-CtE1TAi4.js": {
-    "file": "_next/static/chunks/arrow-up-right-CtE1TAi4.js",
-    "name": "arrow-up-right",
-    "imports": [
-      "_worlds-BH5vQdWl.js"
-    ]
-  },
   "_framework-D_rUT4EX.js": {
     "file": "_next/static/chunks/framework-D_rUT4EX.js",
     "name": "framework",
@@ -21,123 +6,43 @@
       "_rolldown-runtime-C60lm6uB.js"
     ]
   },
-  "_i18n-BqjezlKP.js": {
-    "file": "_next/static/chunks/i18n-BqjezlKP.js",
-    "name": "i18n",
-    "imports": [
-      "_rolldown-runtime-C60lm6uB.js",
-      "_worlds-BH5vQdWl.js",
-      "_framework-D_rUT4EX.js"
-    ]
-  },
   "_rolldown-runtime-C60lm6uB.js": {
     "file": "_next/static/chunks/rolldown-runtime-C60lm6uB.js",
     "name": "rolldown-runtime"
   },
-  "_world-preview-Ccfpv0-F.js": {
-    "file": "_next/static/chunks/world-preview-Ccfpv0-F.js",
-    "name": "world-preview",
-    "imports": [
-      "_worlds-BH5vQdWl.js",
-      "_i18n-BqjezlKP.js",
-      "_framework-D_rUT4EX.js"
-    ]
-  },
-  "_worlds-BH5vQdWl.js": {
-    "file": "_next/static/chunks/worlds-BH5vQdWl.js",
-    "name": "worlds",
-    "imports": [
-      "_rolldown-runtime-C60lm6uB.js",
-      "_Icon-D0zGVybZ.js",
-      "_framework-D_rUT4EX.js"
-    ]
-  },
-  "_x-CgyCDyBc.js": {
-    "file": "_next/static/chunks/x-CgyCDyBc.js",
-    "name": "x",
-    "imports": [
-      "_worlds-BH5vQdWl.js"
-    ]
-  },
   "app/not-found.tsx": {
-    "file": "_next/static/chunks/not-found-DgVKw0vU.js",
+    "file": "_next/static/chunks/not-found-CbsJ2PPI.js",
     "name": "not-found",
     "src": "app/not-found.tsx",
     "isDynamicEntry": true,
     "imports": [
       "components/atlas-shell.tsx",
-      "_i18n-BqjezlKP.js",
       "_framework-D_rUT4EX.js"
     ]
   },
   "components/atlas-shell.tsx": {
-    "file": "_next/static/chunks/atlas-shell-2TKXnUrS.js",
+    "file": "_next/static/chunks/atlas-shell-CgLVvn7u.js",
     "name": "atlas-shell",
     "src": "components/atlas-shell.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_worlds-BH5vQdWl.js",
-      "_i18n-BqjezlKP.js",
-      "_arrow-up-right-CtE1TAi4.js",
-      "_x-CgyCDyBc.js",
-      "_framework-D_rUT4EX.js"
-    ]
-  },
-  "components/submission-form.tsx": {
-    "file": "_next/static/chunks/submission-form-Dp0tzaBr.js",
-    "name": "submission-form",
-    "src": "components/submission-form.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "_rolldown-runtime-C60lm6uB.js",
-      "_worlds-BH5vQdWl.js",
-      "_framework-D_rUT4EX.js"
-    ]
-  },
-  "components/trends-view.tsx": {
-    "file": "_next/static/chunks/trends-view-bdswiMH9.js",
-    "name": "trends-view",
-    "src": "components/trends-view.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "_rolldown-runtime-C60lm6uB.js",
-      "_worlds-BH5vQdWl.js",
-      "_i18n-BqjezlKP.js",
       "_framework-D_rUT4EX.js"
     ]
   },
   "components/world-catalog.tsx": {
-    "file": "_next/static/chunks/world-catalog-BRf_wQsj.js",
+    "file": "_next/static/chunks/world-catalog-BiOQDKLA.js",
     "name": "world-catalog",
     "src": "components/world-catalog.tsx",
     "isDynamicEntry": true,
     "imports": [
       "_rolldown-runtime-C60lm6uB.js",
-      "_world-preview-Ccfpv0-F.js",
-      "_worlds-BH5vQdWl.js",
-      "_i18n-BqjezlKP.js",
-      "_arrow-up-right-CtE1TAi4.js",
-      "_x-CgyCDyBc.js",
-      "_framework-D_rUT4EX.js"
-    ]
-  },
-  "components/world-detail-view.tsx": {
-    "file": "_next/static/chunks/world-detail-view-DRxTSxnz.js",
-    "name": "world-detail-view",
-    "src": "components/world-detail-view.tsx",
-    "isDynamicEntry": true,
-    "imports": [
-      "_rolldown-runtime-C60lm6uB.js",
-      "_world-preview-Ccfpv0-F.js",
-      "_worlds-BH5vQdWl.js",
-      "_i18n-BqjezlKP.js",
-      "_arrow-up-right-CtE1TAi4.js",
+      "components/atlas-shell.tsx",
       "_framework-D_rUT4EX.js"
     ]
   },
   "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js": {
-    "file": "_next/static/chunks/app-route-prefetch-policy-Bq_iQMsS.js",
+    "file": "_next/static/chunks/app-route-prefetch-policy-C1I6HRGz.js",
     "name": "app-route-prefetch-policy",
     "src": "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
     "isDynamicEntry": true,
@@ -146,7 +51,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-LDbl9f3a.js",
+    "file": "_next/static/chunks/layout-segment-context-2IqWEeYK.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -157,7 +62,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/streamed-icons.js": {
-    "file": "_next/static/chunks/streamed-icons-UVeKuoEd.js",
+    "file": "_next/static/chunks/streamed-icons-Cs-m6aYg.js",
     "name": "streamed-icons",
     "src": "node_modules/vinext/dist/shims/streamed-icons.js",
     "isDynamicEntry": true,
@@ -167,7 +72,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-Dw7EQ-Ry.js",
+    "file": "_next/static/chunks/index-z23R4R7I.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -178,15 +83,11 @@
     "dynamicImports": [
       "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
       "virtual:vinext-app-browser-entry",
-      "components/trends-view.tsx",
       "node_modules/vinext/dist/shims/layout-segment-context.js",
-      "_Icon-D0zGVybZ.js",
       "components/atlas-shell.tsx",
       "components/world-catalog.tsx",
       "node_modules/vinext/dist/shims/streamed-icons.js",
-      "components/submission-form.tsx",
-      "app/not-found.tsx",
-      "components/world-detail-view.tsx"
+      "app/not-found.tsx"
     ]
   }
 }
