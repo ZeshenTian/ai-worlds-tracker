@@ -45,15 +45,15 @@ jobs:
         env:
           X_ADAPTER: apify
           ATLAS_BROWSER_CHANNEL: chrome
-          GATE_MODEL: ${{ vars.GATE_MODEL || 'MiniMax-M3' }}
-          EXTRACTION_MODEL: ${{ vars.EXTRACTION_MODEL || 'MiniMax-M3' }}
-          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
+          GATE_MODEL: ${{ vars.GATE_MODEL || 'auto' }}
+          EXTRACTION_MODEL: ${{ vars.EXTRACTION_MODEL || 'auto' }}
+          DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY || secrets.FIRECRAWL_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ATLAS_FRONTIER_ONLY: 'true'
           ATLAS_MIN_LIKES: '15'
-          ALIBABA_TOKEN_PLAN_API_KEY: ${{ secrets.ALIBABA_TOKEN_PLAN_API_KEY }}
           AUTO_APPROVE_TRUSTED: ${{ vars.AUTO_APPROVE_TRUSTED || 'true' }}
       - name: Record confirmed daily Apify charges
         if: always()

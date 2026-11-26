@@ -23,7 +23,7 @@ from .dedup import deduplicate
 from .reconcile_sources import apply_additions, candidate_groups, source_additions
 from .x_media import load_media_evidence
 from .enrich_firecrawl import EnrichmentCache, Firecrawl, FixtureScraper
-from .extract_structured import AnnotatedExtractor, ChatExtractor, OpenAIExtractor, extract_cases, merge_prepared_cases, prepare_case
+from .extract_structured import AnnotatedExtractor, AutoExtractor, ChatExtractor, OpenAIExtractor, extract_cases, merge_prepared_cases, prepare_case
 from .ingest_x import MockXAdapter, OfficialXApiAdapter, ThirdPartyXAdapter, cache_posts, ingest
 from .links import post_id
 from .models import RawTweetRecord, ReviewStatus
@@ -143,7 +143,7 @@ def sync(pipeline, platform: Path):
     for batch in range(batches):
         groups = remaining
         if not mock:
-            groups = qualify(groups, root, config=config, model=os.getenv("GATE_MODEL","gpt-4.1-mini"),
+            groups = qualify(groups, root, config=config, model=os.getenv("GATE_MODEL","auto"),
                              limit=int(os.getenv("ATLAS_GATE_LIMIT", "300")))
             groups = rank_groups(groups, attempts, frontier_only=frontier_only, signals=signals)
             if minimum and not mock and repair.exists():
@@ -155,17 +155,30 @@ def sync(pipeline, platform: Path):
             else:
                 scraper = Firecrawl(os.getenv("FIRECRAWL_API_KEY") or os.getenv("FIRECRAWL_TOKEN", ""),
                                     pipeline.client, os.getenv("GITHUB_TOKEN"))
-            model = os.getenv("EXTRACTION_MODEL", "gpt-5-mini")
+            model = os.getenv("EXTRACTION_MODEL", "auto")
 
             def extractor():
-                if not mock and model.startswith(("gemini-","MiniMax-")):
+                if mock:
+                    return AnnotatedExtractor(FIXTURES / "extractions.json")
+                if model == "auto" or model.startswith("auto:"):
+                    return AutoExtractor(root)
+                if model.startswith(("gemini-","MiniMax-")):
                     key = "MINIMAX_API_KEY" if model.startswith("MiniMax-") else "GEMINI_API_KEY"
                     return ChatExtractor(pipeline.required_env(key),model,root)
-                return (AnnotatedExtractor(FIXTURES / "extractions.json") if mock else
-                        OpenAIExtractor(pipeline.required_env("OPENAI_API_KEY"), model, root))
+                return OpenAIExtractor(pipeline.required_env("OPENAI_API_KEY"), model, root)
 
             cache = EnrichmentCache(root)
-            namespace = "mock" if mock else f"gemini:{model}" if model.startswith("gemini-") else f"minimax:{model}" if model.startswith("MiniMax-") else f"openai:{model}"
+            namespace = (
+                "mock"
+                if mock
+                else "auto:dashscope-opencode"
+                if model == "auto" or model.startswith("auto:")
+                else f"gemini:{model}"
+                if model.startswith("gemini-")
+                else f"minimax:{model}"
+                if model.startswith("MiniMax-")
+                else f"openai:{model}"
+            )
             if not mock:
                 # Enrich shared URLs once. Prepare independent proposals concurrently,
                 # then merge them in priority order with a single ledger writer.

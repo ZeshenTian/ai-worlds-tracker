@@ -136,35 +136,55 @@ def qualify(groups, root, *, model, limit, config=None):
         write_json(leads_path, leads)
     items_to_check = batch[:limit]
     batches = [items_to_check[i:i+12] for i in range(0, len(items_to_check), 12)]
-    if batches and model.startswith(("gemini-","MiniMax-")):
+    use_auto = model == "auto" or model.startswith("auto:")
+    if batches and use_auto:
+        from .llm_router import shared_router
+        router = shared_router(root)
+        client = None
+    elif batches and model.startswith(("gemini-","MiniMax-")):
         import os
         mini = model.startswith("MiniMax-")
+        router = None
         client = OpenAI(api_key=os.environ["MINIMAX_API_KEY" if mini else "GEMINI_API_KEY"],
                         base_url="https://api.minimax.cn/v1" if mini else "https://generativelanguage.googleapis.com/v1beta/openai/",timeout=100,max_retries=1)
     else:
+        router = None
         client = OpenAI(timeout=50, max_retries=1) if batches else None
     def classify(items):
         posts = [{"id": str(i), **json.loads(context)} for i, (_, _, context) in enumerate(items, 1)]
-        for attempt in range(3):
+        if use_auto:
             try:
-                options = ({"extra_body": {"thinking": {"type": "disabled"}}} if model.startswith("MiniMax-")
-                           else {"temperature": 0, "response_format": {"type": "json_object"}})
-                response = client.chat.completions.create(
-                    model=model, max_tokens=2200, **options,
-                    messages=[{"role": "system", "content": RULES},
-                              {"role": "user", "content": json.dumps(posts, ensure_ascii=False)}])
-                break
-            except (APIConnectionError, InternalServerError, RateLimitError) as error:
-                if attempt == 2:
-                    # An unavailable provider has not supplied a negative decision.
-                    print(f"Deferred {len(posts)} gate decisions ({type(error).__name__})", flush=True)
-                    return []
-                time.sleep(8 * (attempt + 1))
-        record_usage(root, model, "gate", response)
-        choice = response.choices[0]
+                content, finish_reason, _, _ = router.complete_json(
+                    stage="gate",
+                    system=RULES,
+                    user=json.dumps(posts, ensure_ascii=False),
+                    max_tokens=2200,
+                )
+            except ValueError as error:
+                print(f"Deferred {len(posts)} gate decisions ({error})", flush=True)
+                return []
+        else:
+            for attempt in range(3):
+                try:
+                    options = ({"extra_body": {"thinking": {"type": "disabled"}}} if model.startswith("MiniMax-")
+                               else {"temperature": 0, "response_format": {"type": "json_object"}})
+                    response = client.chat.completions.create(
+                        model=model, max_tokens=2200, **options,
+                        messages=[{"role": "system", "content": RULES},
+                                  {"role": "user", "content": json.dumps(posts, ensure_ascii=False)}])
+                    break
+                except (APIConnectionError, InternalServerError, RateLimitError) as error:
+                    if attempt == 2:
+                        # An unavailable provider has not supplied a negative decision.
+                        print(f"Deferred {len(posts)} gate decisions ({type(error).__name__})", flush=True)
+                        return []
+                    time.sleep(8 * (attempt + 1))
+            record_usage(root, model, "gate", response)
+            choice = response.choices[0]
+            content = re.sub(r"<think>.*?</think>","",choice.message.content or "{}",flags=re.S).strip().strip(chr(96)).removeprefix("json").strip()
+            finish_reason = choice.finish_reason
         try:
-            content=re.sub(r"<think>.*?</think>","",choice.message.content or "{}",flags=re.S).strip().strip(chr(96)).removeprefix("json").strip()
-            ids = json.loads(content).get("ids") if choice.finish_reason == "stop" else None
+            ids = json.loads(content or "{}").get("ids") if finish_reason == "stop" else None
             valid = isinstance(ids, list) and all(isinstance(i, str) for i in ids) and set(ids) <= {p["id"] for p in posts}
         except ValueError:
             valid = False

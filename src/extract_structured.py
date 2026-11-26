@@ -184,6 +184,41 @@ class ChatExtractor:
         return {**packet["identity"], **json.loads(content)}
 
 
+class AutoExtractor:
+    """Run structured extraction via 3-tier router: DashScope free -> OpenCode Go -> DashScope paid."""
+
+    def __init__(self, root: Path | None):
+        from .llm_router import shared_router
+
+        self.root = root
+        self.router = shared_router(root)
+        self.schema = extraction_schema()
+
+    def __call__(self, packet: dict) -> dict:
+        source = {
+            **packet,
+            "identity": {
+                k: v for k, v in packet["identity"].items() if k != "review_status"
+            },
+        }
+        system = EXTRACTION_RULES + "\nOutput only a single valid JSON object matching this JSON Schema: " + encode(self.schema)
+        raw, finish, endpoint, model = self.router.complete_json(
+            stage="extraction",
+            system=system,
+            user=encode(source),
+            max_tokens=3600,
+        )
+        if finish != "stop" or not raw:
+            raise ValueError(f"{endpoint}/{model} extraction produced an incomplete response")
+        try:
+            parsed = json.loads(raw)
+        except ValueError as exc:
+            raise ValueError(f"{endpoint}/{model} extraction returned invalid JSON") from exc
+        if not isinstance(parsed, dict):
+            raise ValueError(f"{endpoint}/{model} extraction returned non-object JSON")
+        return {**packet["identity"], **parsed}
+
+
 class AnnotatedExtractor:
     def __init__(self, path: Path):
         self.entries = read_json(path)
