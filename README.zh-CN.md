@@ -6,7 +6,7 @@
 
 **[▶ 打开 WorldFeed（全屏试玩流）](https://worldfeed.zeshentian1.chatgpt.site/)** · **[浏览生成世界图鉴（1,660 个世界）](https://generated-worlds-atlas.zeshentian1.chatgpt.site/)** · **[前沿趋势报告](reports/frontier_trends_report.md)** · **[公开数据（JSON）](data/exports/ai_worlds.json)**
 
-![WorldFeed 全屏实玩画面](reports/live/worldfeed-topbar-desktop.png)
+![WorldFeed 全屏实玩画面](reports/live/worldfeed-topbar-desktop-zh.png)
 
 ---
 
@@ -17,7 +17,7 @@
 | **[WorldFeed](https://worldfeed.zeshentian1.chatgpt.site/)**（`feed/`） | 极简零遮挡全屏 3D 试玩流。每次切换直接挂载可交互的实时 3D 画布，支持 `↑`/`↓` 或顶栏滚轮切世界、`L` 点赞、`G` 直达作者原站、`O` 查看原帖。 | **223** 个可站内直玩世界（2 个开源同源镜像 + 221 个实时嵌入） |
 | **[生成世界图鉴](https://generated-worlds-atlas.zeshentian1.chatgpt.site/)**（`platform/`） | 全横屏纯静态目录，支持全文检索以及按「可试玩 / 视频演示」、模型（`Claude` / `GPT` / `Gemini` / `其他`）、主题和技术栈筛选。可站内试玩的作品直达 WorldFeed，同时保留作者官方入口与原帖。 | **1,660** 个前沿世界（**331** 个在线试玩 · **1,329** 个视频/代码 3D 演示 · 98.3% 含封面） |
 
-![生成世界图鉴首页](reports/live/atlas-grid-desktop.png)
+![生成世界图鉴首页](reports/live/atlas-grid-desktop-zh.png)
 
 ---
 
