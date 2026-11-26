@@ -11,7 +11,7 @@
     "name": "rolldown-runtime"
   },
   "app/not-found.tsx": {
-    "file": "_next/static/chunks/not-found-D2T3rtcJ.js",
+    "file": "_next/static/chunks/not-found-DBoE6V3f.js",
     "name": "not-found",
     "src": "app/not-found.tsx",
     "isDynamicEntry": true,
@@ -21,7 +21,7 @@
     ]
   },
   "components/atlas-shell.tsx": {
-    "file": "_next/static/chunks/atlas-shell-DXzgyuo3.js",
+    "file": "_next/static/chunks/atlas-shell-CjCwK-rX.js",
     "name": "atlas-shell",
     "src": "components/atlas-shell.tsx",
     "isDynamicEntry": true,
@@ -31,7 +31,7 @@
     ]
   },
   "components/world-catalog.tsx": {
-    "file": "_next/static/chunks/world-catalog-BSQcK5P8.js",
+    "file": "_next/static/chunks/world-catalog-Noh5s97G.js",
     "name": "world-catalog",
     "src": "components/world-catalog.tsx",
     "isDynamicEntry": true,
@@ -42,7 +42,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js": {
-    "file": "_next/static/chunks/app-route-prefetch-policy-CnXHAyhF.js",
+    "file": "_next/static/chunks/app-route-prefetch-policy-CLUydg8i.js",
     "name": "app-route-prefetch-policy",
     "src": "node_modules/vinext/dist/shims/internal/app-route-prefetch-policy.js",
     "isDynamicEntry": true,
@@ -51,7 +51,7 @@
     ]
   },
   "node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "_next/static/chunks/layout-segment-context-Clrx7AYZ.js",
+    "file": "_next/static/chunks/layout-segment-context-B3q9j-Rl.js",
     "name": "layout-segment-context",
     "src": "node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -72,7 +72,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "_next/static/chunks/index-Cz-KFMwu.js",
+    "file": "_next/static/chunks/index-hMjrvYGp.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
