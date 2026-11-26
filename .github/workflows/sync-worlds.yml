@@ -2,7 +2,9 @@ name: Sync worlds
 on:
   workflow_dispatch:
   schedule:
-    - cron: "37 4 * * *"
+    # Twice daily off-peak: 07:23 & 19:23 Asia/Shanghai (ready before 08:00 & 20:00 BJT)
+    - cron: "23 23 * * *"
+    - cron: "23 11 * * *"
 permissions:
   contents: write
 concurrency:
