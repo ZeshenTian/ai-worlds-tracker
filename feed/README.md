@@ -1,9 +1,24 @@
 # WorldFeed
 
-WorldFeed 只展示前沿作品中可镜像或嵌入的世界。进入时直接挂载 iframe，镜像排在首位。方向键和滚轮可在外层页面切换世界。跨域游戏获得焦点后，可点击外侧导航或将指针移至工具栏滚动。
+Full-screen, zero-overlay feed for playable frontier AI-generated 3D worlds (`mirror` + `embed` tiers only).
 
-在 Node.js 22.13+ 下运行 `npm ci` 和 `npm run build`，部署输出目录 `dist/`。`VITE_ATLAS_URL` 指向图鉴。镜像的许可证及固定版本记录位于 `scripts/mirrors.config.json` 和各镜像目录。
+- **Controls**: `↑`/`↓` or scroll over the 48px top bar to switch worlds · `WASD` / mouse inside the canvas to play · `L` to like · `G` for original link · `O` for source post · `?` for shortcuts.
+- **Defaults**: English UI by default (toggle to Chinese in top bar), pure light-mode 48px header, edge-to-edge live 3D iframe below.
 
-在本地分别用 8870、8871 端口提供 Atlas 和 WorldFeed 的静态构建，再运行 `npm run verify`。默认由本机共享浏览器工具打开测试标签页。可用 `TEST_ATLAS_URL`、`TEST_FEED_URL` 或 `TEST_BROWSER_HELPER` 覆盖本机路径。
+## Build & Verify
 
-构建还需要 Python 3.9+，用于复用图鉴已有的前沿模型判定规则。世界标题、模型与互动控件集中在 48px 顶栏，桌面可通过问号查看快捷键。
+Requires **Node.js 22.13+** and **Python 3.9+**.
+
+```bash
+npm ci
+npm run build   # builds dist/ (set VITE_ATLAS_URL to override Atlas link)
+npm run preview
+```
+
+To run real Chrome end-to-end verification (with Atlas served on `:8870` and WorldFeed on `:8871`):
+
+```bash
+npm run verify
+```
+
+Licensed same-origin mirrors and pinned versions are recorded in `scripts/mirrors.config.json` and each mirror's directory under `public/mirrors/`.
