@@ -12,8 +12,11 @@ import yaml
 
 from .enrich_firecrawl import EnrichmentCache
 from .export_and_analyze import REVIEW_FIELDS, write_csv
-from .extract_structured import apply_verified_research
+from .extract_structured import apply_verified_research, mentions_model, source_model_quote
 from .links import identity_url, post_id, repo_root
+from .qualify_candidates import PROMO
+from .recheck_attribution import apply_attribution, load_policy, record_manual_reviews
+from .reconcile_sources import canonical_originals
 from .models import AIWorldCase, DemoHealth, ReviewStatus
 from .storage import read_json, read_rows, run_lock, write_json, write_rows
 
@@ -21,7 +24,20 @@ from .storage import read_json, read_rows, run_lock, write_json, write_rows
 PROJECT = Path(__file__).resolve().parents[1]
 
 
-def trusted(case, config, cache, likes=0):
+CODE_TECH = re.compile(
+    r"\b(?:three[ .]?js|webgpu|webgl|glsl|wgsl|babylon[ .]?js|playcanvas|javascript|typescript|"
+    r"html5?|unity|unreal(?: engine)?|godot|shader[s]?|python)\b", re.I | re.ASCII)
+
+
+def documented_code(case):
+    def technologies(text):
+        return {re.sub(r"[ .]", "", term.casefold()) for term in CODE_TECH.findall(text)}
+    return bool(technologies(" ".join(case.tech_stack)) & technologies(" ".join(case.evidence_quotes)))
+
+
+def trusted(case, config, cache, likes=0, *, video=False, native_presentation=False):
+    if (case.author_handle or "").casefold() in {a.casefold() for a in config.get("excluded_aggregator_accounts", [])}:
+        return False
     host = urlsplit(case.original_post_url).hostname
     catalog = case.source_kind == "primary_page" and host in config.get("trusted_catalog_hosts", [])
     author = case.source_kind == "x_post" and (case.author_handle or "").lower() in {
@@ -29,6 +45,8 @@ def trusted(case, config, cache, likes=0):
     }
     if case.review_status == ReviewStatus.REJECTED or not case.models_used or not case.evidence_quotes or case.possible_duplicate_urls:
         return False
+    if native_presentation and case.model_era == "frontier" and (author or likes >= 15):
+        return True
     if case.demo_health_status == DemoHealth.VERIFIED:
         return True
     repo = repo_root(case.repo_url) if case.repo_url else None
@@ -37,16 +55,28 @@ def trusted(case, config, cache, likes=0):
         return True
     demo_host = urlsplit(case.live_demo_url or "").hostname or ""
     hosted = any(demo_host == h or demo_host.endswith("." + h) for h in config.get("trusted_demo_hosts", []))
+    if case.model_era == "frontier" and case.tech_stack:
+        if (author or case.live_demo_url) and likes >= 1:
+            return True
+        if likes >= 15 and (video or case.work_type == "coded_3d_scene" or documented_code(case)):
+            return True
     return (author or catalog or hosted) and likes >= 40
 
 
 def family(model):
-    for prefix, label in ((r"^(?:openai )?(?:gpt|chatgpt|codex|astra|sol)","GPT"),
-                          (r"^(?:claude|opus|fable|haiku|sonnet)","Claude"),
-                          (r"^(?:gemini|neon|argon|hydrogen)","Gemini"),
-                          (r"^(?:world ?labs? )?marble","Marble"), (r"^kimi","Kimi")):
-        if re.search(prefix, model, re.I):
+    name = model.strip()
+    for prefix, label in (
+        (r"^(?:(?:openai(?:['’]s)?\s+)?(?:gpt|chatgpt|codex|astra|sol)(?=\b|\d)|\d+(?:\.\d+)?\s+astra\b)", "GPT"),
+        (r"^(?:(?:anthropic(?:['’]s)?|routed)\s+)?(?:claude|opus|fable|haiku|sonnet)(?=\b|\d)", "Claude"),
+        (r"^(?:google(?:['’]s)?\s+)?(?:gemini|neon|argon|hydrogen|carbon|antigravity)(?=\b|\d)", "Gemini"),
+        (r"^(?:world ?labs? )?marble\b", "Marble"),
+        (r"^kimi\b", "Kimi"),
+    ):
+        if re.search(prefix, name, re.I | re.ASCII):
             return label
+    for name in ("DeepSeek","Qwen","Grok","MiniMax","Step","GLM","Gemma","Llama","Mistral","Mixtral"):
+        if re.match(re.escape(name)+r"(?=\b|\d)", model.strip(), re.I):
+            return name
     return model
 
 
@@ -68,10 +98,26 @@ def cover_matches(case, source_url, kind):
     return False
 
 
+def earlier_x_duplicate(case):
+    if case.source_kind != "x_post":
+        return False
+    original = int(post_id(case.original_post_url))
+    for url in case.possible_duplicate_urls:
+        try:
+            if int(post_id(url)) < original:
+                return True
+        except ValueError:
+            continue
+    return False
+
+
 def merge_duplicate_demos(cases, legacy):
     # A later post can reveal a demo URL which was unknown when the first post was grouped.
     kept = {}
-    order = sorted(cases.values(), key=lambda c: (c.world_id not in legacy, c.first_seen_at or "", c.world_id))
+    order = sorted(cases.values(), key=lambda c: (
+        earlier_x_duplicate(c),
+        int(post_id(c.original_post_url)) if c.source_kind=="x_post" else float("inf"),
+        c.world_id not in legacy, c.first_seen_at or "", c.world_id))
     for case in order:
         if not case.live_demo_url or case.review_status == ReviewStatus.REJECTED:
             continue
@@ -93,6 +139,7 @@ def merge_duplicate_demos(cases, legacy):
 def import_catalog_batch(cases, path):
     """Import a reviewed source batch without changing existing moderation decisions."""
     known_sources, known_works = set(), set()
+    imported = []
 
     def source_key(case):
         return post_id(case.original_post_url) if case.source_kind == "x_post" else identity_url(case.original_post_url)
@@ -126,6 +173,39 @@ def import_catalog_batch(cases, path):
         case.review_status = ReviewStatus.APPROVED
         cases[case.world_id] = case
         remember(case)
+        imported.append(case)
+    return imported
+
+
+def recover_model_disclosures(cases, root):
+    """Recheck pending extraction proposals against their own source, across the backlog."""
+    missing = {case.world_id: case for case in cases if case.review_status == ReviewStatus.PENDING
+               and case.source_kind == "x_post" and not case.models_used}
+    if not missing:
+        return
+    for path in (root / "processed/extraction").glob("*.json"):
+        proposal = read_json(path)
+        case = missing.get(proposal.get("world_id"))
+        if not case or proposal.get("review_status") == "rejected" or proposal.get("original_post_url") != case.original_post_url:
+            continue
+        raw = root / "raw/x" / (post_id(case.original_post_url) + ".json")
+        if not raw.exists():
+            continue
+        record = read_json(raw)
+        author = record["post"]
+        if author["author_handle"].casefold() != (case.author_handle or "").casefold():
+            continue
+        texts = [author["text"], *(r["text"] for r in record["thread"]
+                 if r["author_handle"].casefold() == author["author_handle"].casefold())]
+        for name in proposal.get("models_used", []):
+            if name in case.models_used:
+                continue
+            quote = next((q for q in case.evidence_quotes if mentions_model(name, q)
+                          and any(q in text for text in texts)), None) or source_model_quote(name, texts)
+            if quote:
+                case.models_used.append(name)
+                if quote not in case.evidence_quotes:
+                    case.evidence_quotes.append(quote)
 
 
 def publish(root, platform, *, curate=False, auto=False, timestamp=None, editorial=None):
@@ -153,7 +233,7 @@ def publish(root, platform, *, curate=False, auto=False, timestamp=None, editori
         for world_id, item in evidence["cases"].items():
             cases[world_id] = apply_verified_research(cases[world_id], item)
     if editorial:
-        import_catalog_batch(cases, editorial)
+        record_manual_reviews(root, import_catalog_batch(cases, editorial))
     health_file = root / "state/demo_health.json"
     health = read_json(health_file) if health_file.exists() else {}
     cover_path = root / "state/x_covers.json"
@@ -162,6 +242,10 @@ def publish(root, platform, *, curate=False, auto=False, timestamp=None, editori
     project_covers = read_json(project_path) if project_path.exists() else {}
     cache = EnrichmentCache(root)
     config = yaml.safe_load((PROJECT / "config/seeds.yaml").read_text())
+    canonical_originals(root, cases.values(), config.get("excluded_aggregator_accounts", ()))
+    policy = load_policy(root)
+    if auto:
+        recover_model_disclosures(cases.values(), root)
     for case in cases.values():
         case.first_seen_at = case.first_seen_at or ("2026-11-24T06:31:01+00:00" if case.world_id in legacy else now)
         check = health.get(case.world_id, {})
@@ -184,21 +268,38 @@ def publish(root, platform, *, curate=False, auto=False, timestamp=None, editori
                     case.cover_source_url = cover["source_url"]
                     break
         info = root / "raw/x/signals" / (case.original_post_url.rsplit("/", 1)[-1] + ".json")
-        likes = int(read_json(info).get("likes") or 0) if info.exists() else 0
+        signal = read_json(info) if info.exists() else {}
+        likes = int(signal.get("likes") or 0)
+        case.normalize_taxonomy()
+        if case.source_kind == "x_post":
+            raw = root / "raw/x" / info.name
+            text = read_json(raw)["post"]["text"] if raw.exists() else " ".join(case.evidence_quotes)
+            if (case.author_handle or "").casefold() in {a.casefold() for a in config.get("excluded_aggregator_accounts", [])} or PROMO.search(text + " " + (signal.get("quoted_text") or "")):
+                case.review_status = ReviewStatus.REJECTED
+        attribution = apply_attribution(case, root, policy)
+        case.normalize_taxonomy()
         case = AIWorldCase.model_validate(case.model_dump())
-        if auto and case.review_status == ReviewStatus.PENDING and trusted(case, config, cache, likes):
+        presentation = (policy or {}).get("presentations", {}).get(case.world_id, {})
+        confirmed_native = attribution == "allow" and presentation.get("reason") == "verified_native_frame"
+        if confirmed_native:
+            from .recheck_attribution import evidence, presentation_matches
+            confirmed_native = presentation_matches(case, evidence(root, case), policy, presentation)
+        video = bool(signal.get("has_video") or re.search(
+            r"(?:ext_tw_video_thumb|amplify_video_thumb|tweet_video_thumb)", signal.get("media_url") or ""))
+        if (auto and attribution in {"unscoped", "allow"} and case.review_status == ReviewStatus.PENDING
+                and trusted(case, config, cache, likes, video=video, native_presentation=confirmed_native)):
             case.review_status = ReviewStatus.APPROVED
         cases[case.world_id] = case
     merge_duplicate_demos(cases, legacy)
     ordered = sorted(cases.values(), key=lambda c: c.world_id)
     public = [c for c in ordered if c.review_status == ReviewStatus.APPROVED or
-              (c.world_id in legacy and c.review_status == ReviewStatus.PENDING)]
+              (c.world_id in legacy and c.review_status == ReviewStatus.PENDING and not earlier_x_duplicate(c))]
     data = [c.model_dump(mode="json") for c in public]
     queue = [c.model_dump(mode="json") for c in ordered if c.review_status == ReviewStatus.PENDING]
     watched = {a.lower() for a in config.get("watch_accounts", [])}
     author_counts = Counter(c.author_handle.lower() for c in public if c.author_handle)
     write_json(root / "state/watch_suggestions.json", {
-        author:n for author,n in sorted(author_counts.items()) if n >= 2 and author not in watched
+        author:n for author,n in sorted(author_counts.items()) if n >= 2 and author not in watched and author not in {a.casefold() for a in config.get("excluded_aggregator_accounts", [])}
     })
     write_rows(processed, ordered)
     exports = root / "exports"
@@ -207,6 +308,9 @@ def publish(root, platform, *, curate=False, auto=False, timestamp=None, editori
     write_csv(exports / "ai_worlds.csv", data, list(AIWorldCase.model_fields))
     meta = {
         "last_updated_at": now, "total": len(public),
+        "frontier_total": sum(c.model_era == "frontier" for c in public),
+        "legacy_total": sum(c.model_era == "legacy" for c in public),
+        "frontier_model_family_counts": dict(Counter(m for c in public if c.model_era == "frontier" for m in set(map(family,c.models_used)))),
         "model_counts": dict(Counter(m for c in public for m in set(c.models_used))),
         "model_family_counts": dict(Counter(m for c in public for m in set(map(family,c.models_used)))),
         "playable_count": sum(c.demo_health_status == DemoHealth.VERIFIED for c in public),
@@ -238,6 +342,7 @@ if __name__ == "__main__":
             if not match:
                 parser.error("unknown world ID")
             match.review_status = ReviewStatus(args.status)
+            record_manual_reviews(args.data_dir, [match])
             write_rows(path, rows)
         publish(args.data_dir, args.platform, curate=args.curate, editorial=args.editorial,
                 auto=os.getenv("AUTO_APPROVE_TRUSTED", "").lower() == "true")

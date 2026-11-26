@@ -1,10 +1,9 @@
 import type { Language } from "./types";
-export function readIDs(key: string): string[] {
+export const likesKey = "worldfeed-liked-ids";
+export function readLikes(): string[] {
   try {
-    const ids: unknown = JSON.parse(localStorage.getItem(key) || "[]");
-    return Array.isArray(ids)
-      ? ids.filter((id): id is string => typeof id === "string")
-      : [];
+    const ids: unknown = JSON.parse(localStorage.getItem(likesKey) || "[]");
+    return Array.isArray(ids) ? ids.filter((id): id is string => typeof id === "string") : [];
   } catch {
     return [];
   }
@@ -23,5 +22,3 @@ export function store(key: string, value: string) {
     /* storage is optional in private browsers */
   }
 }
-export const savedKey = "worldfeed-favorites",
-  seenKey = "worldfeed-seen";

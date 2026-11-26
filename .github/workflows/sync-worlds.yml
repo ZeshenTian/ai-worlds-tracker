@@ -33,23 +33,28 @@ jobs:
         continue-on-error: true
         run: uv run python -m src.catalog_discovery
         env:
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY || secrets.FIRECRAWL_TOKEN }}
       - name: Collect X posts and thread evidence
         id: apify
         continue-on-error: true
         timeout-minutes: 8
-        run: uv run python -m src.apify_x --mode incremental --page-size 20 --budget-usd 0.30
+        run: uv run python -m src.apify_x --mode incremental --actor kaito --page-size 20 --budget-usd 1.50
         env:
           APIFY_API_KEY: ${{ secrets.APIFY_API_KEY }}
       - run: uv run python -m src.sync_catalog
         env:
           X_ADAPTER: apify
           ATLAS_BROWSER_CHANNEL: chrome
-          EXTRACTION_MODEL: gpt-4.1-mini
+          GATE_MODEL: ${{ vars.GATE_MODEL || 'MiniMax-M3' }}
+          EXTRACTION_MODEL: ${{ vars.EXTRACTION_MODEL || 'MiniMax-M3' }}
+          MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY || secrets.FIRECRAWL_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          AUTO_APPROVE_TRUSTED: ${{ vars.AUTO_APPROVE_TRUSTED || 'false' }}
+          ATLAS_FRONTIER_ONLY: 'true'
+          ATLAS_MIN_LIKES: '15'
+          ALIBABA_TOKEN_PLAN_API_KEY: ${{ secrets.ALIBABA_TOKEN_PLAN_API_KEY }}
+          AUTO_APPROVE_TRUSTED: ${{ vars.AUTO_APPROVE_TRUSTED || 'true' }}
       - name: Record confirmed daily Apify charges
         if: always()
         run: uv run python -m src.sync_receipt
@@ -61,16 +66,30 @@ jobs:
             data/processed/extraction
             data/state/apify_x
           key: worlds-sources-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: uv run python -m src.generate_trends_report
+      - run: uv run python -m src.fetch_github_stars --refresh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm ci && node scripts/probe-embeds.mjs && node scripts/build-feed-data.mjs && npm run build
+        working-directory: feed
+        env:
+          VITE_ATLAS_URL: ${{ vars.VITE_ATLAS_URL }}
+      - run: uv run python -m src.generate_trends_report
       - name: Commit snapshot and review queue
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/state data/processed/cases.jsonl data/exports platform/data platform/public/thumbnails
+          git add data/state data/processed/cases.jsonl data/exports reports/frontier_trends_report.md platform/data platform/public/thumbnails feed/public
           if ! git diff --cached --quiet; then
             git commit -m 'Sync catalog and review queue'
             git push origin HEAD:main
           fi
       - uses: ./.github/actions/publish-static
+        env:
+          NEXT_PUBLIC_WORLDFEED_URL: ${{ vars.NEXT_PUBLIC_WORLDFEED_URL }}
       - name: Record provider outcomes
         if: always()
         env:

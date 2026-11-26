@@ -1,0 +1,196 @@
+# Golden Recall & Precision Benchmark v2 (Independent External Holdout — 2026-11-25)
+#
+# CRITICAL RULE:
+#   DO NOT add any URL, tweet_id, or author handle solely from this file into
+#   config/seeds.yaml or any hardcoded query!
+#   Sampled independently from external community showcases (threejsai.com and
+#   bestxbuilds.com, neither of which is in config/catalogs.yaml) to measure
+#   unbiased real-world coverage on active English frontier X works (likes >= 15).
+#
+# Policy (User-approved 2026-11-25):
+#   - Scope: Frontier models (>= GPT-6.2 Astra, Fable 5.2, Opus 5.5/5.6, Gemini 4 series)
+#   - Active community floor: likes >= 15 (low-like long-tail excluded from v2 core)
+#   - Languages: English-first (no non-EN expansion required)
+#   - Work types: Class A (interactive_world) + Class B (coded_3d_scene)
+#   - Exclusions: 2D-only games, tools/plugins/skills without a concrete 3D world,
+#     model release announcements/guides, sponsored/PR promos, aggregator reposts.
+
+version: "2.0"
+created_at: "2026-11-25"
+sampling_sources:
+  - "https://threejsai.com/"
+  - "https://www.bestxbuilds.com/"
+baseline_20261125_phase1:
+  positive_core_hits: 7
+  positive_core_total: 9
+  negative_leakage: 0
+
+# ---------------------------------------------------------------------------
+# 1. Core Positive Set (9 items — independent active English frontier works)
+#    Target: >= 85% (at least 8 / 9 published as frontier)
+# ---------------------------------------------------------------------------
+positive_core:
+  - tweet_id: "2124431846859813234"
+    url: "https://x.com/MengTo/status/2124431846859813234"
+    author: "MengTo"
+    published_at: "2026-11-22"
+    language: "en"
+    model: "GPT-6.2 Astra"
+    work_type: "interactive_world"
+    has_live_link: true
+    live_url: "https://threeui.com/studio-glass"
+    likes_at_curation: 956
+    source_curator: "threejsai.com"
+    title_hint: "Interactive Three.js Studio Desk with Liquid Glass Sunset UI (GPT 6.2 Astra)"
+
+  - tweet_id: "2123306922971656549"
+    url: "https://x.com/PaniaThong/status/2123306922971656549"
+    author: "PaniaThong"
+    published_at: "2026-11-19"
+    language: "en"
+    model: "GPT-6.2 Astra + Claude Fable 5.2"
+    work_type: "interactive_world"
+    has_live_link: true
+    live_url: "https://coco3271.github.io/nova-football-26/"
+    likes_at_curation: 283
+    source_curator: "threejsai.com"
+    title_hint: "NOVA Football 26 3D Soccer Game (GPT-6.2 Astra + Fable 5.2 + Three.js)"
+
+  - tweet_id: "2123826572385833119"
+    url: "https://x.com/GoogleDeepMind/status/2123826572385833119"
+    author: "GoogleDeepMind"
+    published_at: "2026-11-20"
+    language: "en"
+    model: "Gemini 4 Neon"
+    work_type: "interactive_world"
+    has_live_link: true
+    likes_at_curation: 4073
+    source_curator: "threejsai.com"
+    title_hint: "Mont Blanc Real-Terrain Ski Simulator with Custom Shaders (Gemini 4 Neon)"
+
+  - tweet_id: "2125331267512377844"
+    url: "https://x.com/makeshifted/status/2125331267512377844"
+    author: "makeshifted"
+    published_at: "2026-11-24"
+    language: "en"
+    model: "Claude Fable 5.2"
+    work_type: "interactive_world"
+    has_live_link: true
+    live_url: "https://zalo.github.io/LanternTown/town/"
+    likes_at_curation: 161
+    source_curator: "bestxbuilds.com"
+    title_hint: "LanternTown Parametric Three.js Demo with Baked Vertex Lighting (Fable 5.2)"
+
+  - tweet_id: "2125246059232235832"
+    url: "https://x.com/loktar00/status/2125246059232235832"
+    author: "loktar00"
+    published_at: "2026-11-24"
+    language: "en"
+    model: "Claude Fable 5.2"
+    work_type: "interactive_world"
+    has_live_link: true
+    live_url: "https://loktar00.github.io/hexbreach/"
+    likes_at_curation: 55
+    source_curator: "bestxbuilds.com"
+    title_hint: "Hex Stack Interactive 3D Browser Game (Fable 5.2)"
+    notes: "Already crawled into raw/x in Phase 1 but not yet extracted/published."
+
+  - tweet_id: "2119925633564463609"
+    url: "https://x.com/felixrieseberg/status/2119925633564463609"
+    author: "felixrieseberg"
+    published_at: "2026-11-09"
+    language: "en"
+    model: "Claude Fable 5.2"
+    work_type: "interactive_world"
+    has_live_link: true
+    likes_at_curation: 15057
+    source_curator: "bestxbuilds.com"
+    title_hint: "One-Shot 3D Shooter Built from Scratch in 8 Hours (Fable 5.2)"
+
+  - tweet_id: "2119901658394358005"
+    url: "https://x.com/petergyang/status/2119901658394358005"
+    author: "petergyang"
+    published_at: "2026-11-09"
+    language: "en"
+    model: "Claude Fable 5.2"
+    work_type: "interactive_world"
+    has_live_link: true
+    likes_at_curation: 143
+    source_curator: "bestxbuilds.com"
+    title_hint: "Browser 3D Kart Racer with Drifting & Multiplayer (Fable 5.2)"
+
+  - tweet_id: "2119573179773436153"
+    url: "https://x.com/danjan_design/status/2119573179773436153"
+    author: "danjan_design"
+    published_at: "2026-11-08"
+    language: "en"
+    model: "Claude Opus 5.5"
+    work_type: "interactive_world"
+    has_live_link: false
+    repo_url: "https://github.com/danieljan-design/noxe-pixel-engine"
+    likes_at_curation: 138
+    source_curator: "bestxbuilds.com"
+    title_hint: "Noxe Pixel Engine Open-Source Browser 3D Pixel-Art Dioramas (Opus 5.5)"
+    notes: "Missed at crawl in Phase 1; tests Opus 5.5 open-source 3D diorama discovery."
+
+  - tweet_id: "2118800755595292961"
+    url: "https://x.com/AmirMushich/status/2118800755595292961"
+    author: "AmirMushich"
+    published_at: "2026-11-06"
+    language: "en"
+    model: "Claude Opus 5.5"
+    work_type: "coded_3d_scene"
+    has_live_link: true
+    likes_at_curation: 152
+    source_curator: "bestxbuilds.com"
+    title_hint: "Single-HTML Three.js 3D Premium Bottle Render (Opus 5.5)"
+
+# Keep empty lists for schema compatibility with src/eval_golden.py
+positive_long_tail: []
+secondary_leads: []
+borderline_review: []
+
+# ---------------------------------------------------------------------------
+# 2. Negative Controls (5 items — high-similarity non-worlds, MUST be rejected)
+#    Target: 0 / 5 leaked into ai_worlds.json
+# ---------------------------------------------------------------------------
+negative_controls:
+  - tweet_id: "2125304202587234481"
+    url: "https://x.com/Rubzem/status/2125304202587234481"
+    author: "Rubzem"
+    published_at: "2026-11-24"
+    likes_at_curation: 1269
+    reject_category: "2d_only_game"
+    reject_reason: "Explicitly a 2D hand-painted storybook game made with Fable 5.2, not a 3D world or coded 3D scene."
+
+  - tweet_id: "2123815052553650499"
+    url: "https://x.com/dwhitedesign/status/2123815052553650499"
+    author: "dwhitedesign"
+    published_at: "2026-11-20"
+    likes_at_curation: 921
+    reject_category: "tool_or_skill"
+    reject_reason: "Agent skill tool that converts 4 pixel-art views into fake-3D spinning sprites, not a concrete 3D world."
+
+  - tweet_id: "2113250176307536334"
+    url: "https://x.com/Scenario_gg/status/2113250176307536334"
+    author: "Scenario_gg"
+    published_at: "2026-10-22"
+    likes_at_curation: 925
+    reject_category: "tool_or_plugin_promo"
+    reject_reason: "Blender AI plugin product release ('the last Blender AI plugin you'll ever need'), not a frontier 3D world."
+
+  - tweet_id: "2125275658490204231"
+    url: "https://x.com/matthen2/status/2125275658490204231"
+    author: "matthen2"
+    published_at: "2026-11-24"
+    likes_at_curation: 157
+    reject_category: "non_ai_tool"
+    reject_reason: "Open-source WebGL shader animation toolkit (smoothstep.io), not an AI-generated 3D world."
+
+  - tweet_id: "2119898687803621427"
+    url: "https://x.com/ClaudeDevs/status/2119898687803621427"
+    author: "ClaudeDevs"
+    published_at: "2026-11-09"
+    likes_at_curation: 16202
+    reject_category: "model_announcement_guide"
+    reject_reason: "Official Claude model selection guide mentioning Fable 5.2 / Opus 5.5 without a concrete 3D world showcase."

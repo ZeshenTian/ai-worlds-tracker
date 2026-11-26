@@ -1,0 +1,23 @@
+{
+  "Atlas": {
+    "default_frontier": 1175,
+    "including_archive": 1720,
+    "enDetailHasChinese": false,
+    "detail": "world-0153f1b45ca946edd5fda5cb",
+    "chrome": "158.0.8127.37",
+    "scheme_with_dark_os": "light",
+    "js_errors": []
+  },
+  "WorldFeed": {
+    "default_world": "world-3bc9b04773e624981797759d",
+    "archive_deep_link": "world-6319e157c3164e11ddb4cf8a",
+    "archive_toggle": true,
+    "total_worlds": 1720,
+    "frontier_worlds": 1175,
+    "recommended_frontier": 1045,
+    "recommended_with_archive": 1579,
+    "chrome": "158.0.8127.37",
+    "scheme_with_dark_os": "light",
+    "js_errors": []
+  }
+}

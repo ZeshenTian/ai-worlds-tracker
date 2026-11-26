@@ -1,0 +1,406 @@
+# Golden Recall & Precision Benchmark (v1.1 — 2026-11-25, User-Approved Policy)
+#
+# CRITICAL RULE:
+#   DO NOT add any URL or tweet_id in this file to config/seeds.yaml `seed_urls`!
+#   This file is a strictly held-out blind evaluation set used to measure
+#   whether our natural X search queries, author watches, and qualifier rules
+#   discover frontier 3D worlds (recall) and reject non-worlds / ads (precision).
+#
+# Locked User Policies (2026-11-25):
+#   1. Frontier models (>=): GPT-6.2 Astra, Claude Fable 5.2, Claude Opus 5.5/5.6, Gemini 4 series.
+#   2. Date-inferred frontier: Generic family name without version number (e.g. "Claude", "Gemini", "GPT")
+#      published on/after the frontier launch window (2026-11-10 for Claude/Gemini; 2026-11-17 for GPT)
+#      counts as `frontier` unless an older version is explicitly stated.
+#   3. Work types: Class A (interactive_world) + Class B (coded_3d_scene) INCLUDED.
+#   4. Exclusions: Class C (tool/repo listicles), pure diffusion video-gen, secondary aggregator reposts,
+#      AND sponsored / PR promotional posts (e.g. 【PR】, #ad, paid promo deals) are EXCLUDED.
+#
+# Scoring guide:
+#   - Core Recall      = hits in `positive_core` / len(`positive_core`)           (target >= 85%)
+#   - Long-Tail Recall = hits in `positive_long_tail` / len(`positive_long_tail`) (diagnostic for Latest-mode coverage)
+#   - Negative Leakage = false positives in `negative_controls`                   (target = 0%)
+#   - Secondary Leads  = tracked separately; must NOT be published attributed to aggregator handle.
+
+version: "1.1"
+created_at: "2026-11-25"
+scope:
+  frontier_models:
+    - "GPT-6.2 Astra (>= 6.2)"
+    - "Claude Fable 5.2 (>= 5.2)"
+    - "Claude Opus 5.5 / 5.6 (>= 5.5)"
+    - "Gemini 4 series (>= 4, e.g. Gemini 4 Neon / Hydrogen / Carbon / Argon)"
+  date_inferred_frontier_cutoffs:
+    claude: "2026-11-10"
+    gemini: "2026-11-10"
+    gpt: "2026-11-17"
+  included_work_types:
+    - "interactive_world"   # Class A: interactive 3D world / game (live link or recorded video)
+    - "coded_3d_scene"      # Class B: AI-coded 3D rendering / shader / physics animation clip (NOT diffusion video gen)
+  excluded_work_types:
+    - "tool_listicle"       # Class C: repo roundups / tips / tutorials without a concrete world
+    - "diffusion_video_gen" # Pure Sora/Veo/Runway-style video generation without 3D code/engine
+    - "sponsored_pr"        # Sponsored / PR / paid-promo posts (【PR】, #ad, commercial promo pitches)
+    - "aggregator_repost"   # Secondary workflow-breakdown / UGC distribution accounts
+
+# ---------------------------------------------------------------------------
+# 1. Core Positive Set (11 items — must-catch organic original frontier works)
+#    Baseline hit rate in 2026-11-24 898-world snapshot: 0 / 11 (0%)
+#    (Note: 2 of 11 WERE crawled into raw/x, then wrongly dropped before export!)
+# ---------------------------------------------------------------------------
+positive_core:
+  - tweet_id: "2123009738921414788"
+    url: "https://x.com/Saccc_c/status/2123009738921414788"
+    author: "Saccc_c"
+    published_at: "2026-11-18"
+    language: "zh"
+    model: "Claude Fable 5.2"
+    model_era_basis: "explicit"
+    work_type: "interactive_world"
+    has_live_link: false
+    likes_at_curation: 1218
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "GTA Shenzhen (Fable 5.2 + Three.js + Blender + Tripo)"
+    why_include: "Viral Chinese Fable 5.2 browser-playable GTA Shenzhen demo; tests Chinese-language recall and author timeline coverage."
+
+  - tweet_id: "2125293653195415776"
+    url: "https://x.com/kloss_xyz/status/2125293653195415776"
+    author: "kloss_xyz"
+    published_at: "2026-11-24"
+    language: "en"
+    model: "GPT-6.2 Astra"
+    model_era_basis: "explicit"
+    work_type: "interactive_world"
+    has_live_link: false
+    likes_at_curation: 88
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Three Single-HTML Pure-Code 3D Scenes (GPT-6.2 Astra)"
+    why_include: "Pure-code single-HTML 3D scenes with prompts; tests dedicated GPT-6.2 Astra recall without 'three.js' keyword."
+
+  - tweet_id: "2123794210721804750"
+    url: "https://x.com/MengTo/status/2123794210721804750"
+    author: "MengTo"
+    published_at: "2026-11-20"
+    language: "en"
+    model: "GPT-6.2 Astra"
+    model_era_basis: "explicit"
+    work_type: "interactive_world"
+    has_live_link: true
+    live_url: "https://threeui.com/sylva-woodland-landing-page"
+    likes_at_curation: 948
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Sylva Woodland 3D Experience + 3 Open-Source Skills (Astra 6.2)"
+    why_include: "Live Three.js 3D woodland site + 3 open-source GitHub skills; tests 'Astra 6.2' alias (no 'GPT-' prefix)."
+
+  - tweet_id: "2123306526878437857"
+    url: "https://x.com/givros/status/2123306526878437857"
+    author: "givros"
+    published_at: "2026-11-19"
+    language: "en"
+    model: "GPT-6.2 Astra"
+    model_era_basis: "explicit"
+    work_type: "interactive_world"
+    has_live_link: false
+    likes_at_curation: 481
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Temple of the Canopy FPS (GPT 6.2 Astra + UE 5.9 MCP + Three.js)"
+    why_include: "Viral 481-like FPS world using 'GPT 6.2 Astra' (space instead of hyphen); author already exists in DB yet missed."
+
+  - tweet_id: "2125140294530453981"
+    url: "https://x.com/chetanankola/status/2125140294530453981"
+    author: "chetanankola"
+    published_at: "2026-11-24"
+    language: "en"
+    model: "GPT-6.2 Astra"
+    model_era_basis: "explicit"
+    work_type: "interactive_world"
+    has_live_link: true
+    live_url: "https://3ditions.drop3.app/notify/dune-oasis/"
+    likes_at_curation: 74
+    in_20261124_export: false
+    in_20261124_raw: true
+    title_hint: "Dune Oasis Interactive Terrain in Three.js (GPT 6.2 Astra High)"
+    why_include: "Already crawled into raw/x but dropped before export; regression test for qualifier/throughput drop + 'GPT 6.2 Astra' spacing."
+
+  - tweet_id: "2125368341002924390"
+    url: "https://x.com/RezAIT00/status/2125368341002924390"
+    author: "RezAIT00"
+    published_at: "2026-11-24"
+    language: "en"
+    model: "Claude Opus 5.6"
+    model_era_basis: "explicit"
+    work_type: "interactive_world"
+    has_live_link: false
+    likes_at_curation: 155
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Pure Three.js 3D FPS Built in 3 Hours (Opus 5.6)"
+    why_include: "Clear Opus 5.6 pure-code Three.js FPS; tests Opus 5.6 + 'THREE JS' (with space) matching."
+
+  - tweet_id: "2125226204764733481"
+    url: "https://x.com/chetaslua/status/2125226204764733481"
+    author: "chetaslua"
+    published_at: "2026-11-24"
+    language: "en"
+    model: "Claude Opus 5.6"
+    model_era_basis: "explicit"
+    work_type: "coded_3d_scene"
+    has_live_link: false
+    likes_at_curation: 3131
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Pure-Code Anime-Style Visual Clip (Opus 5.6)"
+    why_include: "Viral 3.1k-like Opus 5.6 pure-code visual/3D clip (Class B); tests broad Opus 5.6 + video recall without '3D/Three.js' keywords."
+
+  - tweet_id: "2125327793517146539"
+    url: "https://x.com/Google/status/2125327793517146539"
+    author: "Google"
+    published_at: "2026-11-24"
+    language: "en"
+    model: "Gemini 4 Neon"
+    model_era_basis: "explicit"
+    work_type: "coded_3d_scene"
+    has_live_link: false
+    likes_at_curation: 577
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "1980s Neon Arcade Physics + Path-Traced Sequence (Gemini 4 Neon)"
+    why_include: "Official @Google showcase of Gemini 4 Neon coded physics + 1,728 path-traced frames (Class B); tests official account + Gemini 4 Neon recall."
+
+  - tweet_id: "2123506487792410706"
+    url: "https://x.com/thebuggeddev/status/2123506487792410706"
+    author: "thebuggeddev"
+    published_at: "2026-11-19"
+    language: "en"
+    model: "Gemini 4 Neon"
+    model_era_basis: "explicit"
+    work_type: "interactive_world"
+    has_live_link: false
+    likes_at_curation: 90
+    in_20261124_export: false
+    in_20261124_raw: true
+    title_hint: "Mediterranean Interactive World via 92 Swarm Agents (Gemini 4 Neon + bpy + Three.js WebGPU)"
+    why_include: "Already crawled into raw/x AND author exists in DB, yet dropped before export; key regression test."
+
+  - tweet_id: "2124899361200931069"
+    url: "https://x.com/scottstts/status/2124899361200931069"
+    author: "scottstts"
+    published_at: "2026-11-23"
+    language: "en"
+    model: "Claude Fable 5.2"
+    model_era_basis: "explicit"
+    work_type: "coded_3d_scene"
+    has_live_link: false
+    likes_at_curation: 40
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Amber Hour Procedural 3D Carvings in Three.js (Fable 5.2)"
+    why_include: "100% procedural Three.js 3D architecture/carvings by Fable 5.2; author already has 1 work in DB ('Jelly Baby') yet this was missed."
+
+  - tweet_id: "2125329103289299194"
+    url: "https://x.com/0x_Anni/status/2125329103289299194"
+    author: "0x_Anni"
+    published_at: "2026-11-24"
+    language: "en"
+    model: "Claude"
+    model_era_basis: "date_inferred"
+    work_type: "interactive_world"
+    has_live_link: false
+    likes_at_curation: 53
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Single-HTML WebGPU 3D Island (Walk / Swim / Fly)"
+    why_include: "Pure WebGPU single-HTML explorable 3D island; tests WebGPU recall and date-inferred frontier policy (generic 'Claude' published 2026-11-24)."
+
+# ---------------------------------------------------------------------------
+# 2. Long-Tail Positive Set (5 items — low-like 1–6 faves stress test)
+#    Tests whether Latest-mode queries (no min_faves), author timelines, and
+#    shorthand aliases catch low-engagement hidden gems.
+# ---------------------------------------------------------------------------
+positive_long_tail:
+  - tweet_id: "2124540914093944951"
+    url: "https://x.com/camperaigg/status/2124540914093944951"
+    author: "camperaigg"
+    published_at: "2026-11-22"
+    language: "en"
+    model: "Gemini 4 Neon"
+    model_era_basis: "explicit"
+    work_type: "coded_3d_scene"
+    has_live_link: false
+    likes_at_curation: 5
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Black Myth: Wukong Opening Scene in 3,553 Lines of Pure Three.js/GLSL (Gemini 4 Neon High)"
+    why_include: "Exceptional procedural 3D hidden gem with only 5 likes; author already exists in DB — proves value of author-timeline + Latest-mode crawling."
+
+  - tweet_id: "2125430353494225069"
+    url: "https://x.com/wantlvm/status/2125430353494225069"
+    author: "wantlvm"
+    published_at: "2026-11-25"
+    language: "zh"
+    model: "Claude Opus 5.6"
+    model_era_basis: "explicit"
+    work_type: "coded_3d_scene"
+    has_live_link: false
+    likes_at_curation: 2
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Three.js + Opus 5.6 Lighting & Material 3D Scene"
+    why_include: "Genuine Chinese Opus 5.6 + Three.js showcase with 2 likes (freshly posted); tests low-like Latest-mode recall."
+
+  - tweet_id: "2123475576271012121"
+    url: "https://x.com/BilalGreyrat/status/2123475576271012121"
+    author: "BilalGreyrat"
+    published_at: "2026-11-19"
+    language: "en"
+    model: "Gemini 4 Neon"
+    model_era_basis: "explicit"
+    work_type: "interactive_world"
+    has_live_link: false
+    likes_at_curation: 6
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Tiny Browser 3D World with Dynamic Weather (Gemini 4 Neon + Three.js)"
+    why_include: "Genuine Gemini 4 Neon + Three.js browser world with 6 likes; tests Latest-mode coverage for Gemini 4 Neon."
+
+  - tweet_id: "2123237325765325155"
+    url: "https://x.com/BilalGreyrat/status/2123237325765325155"
+    author: "BilalGreyrat"
+    published_at: "2026-11-19"
+    language: "en"
+    model: "Gemini 4 Neon"
+    model_era_basis: "explicit"
+    work_type: "interactive_world"
+    has_live_link: false
+    likes_at_curation: 1
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Browser-Running 3D World (Gemini 4 Neon + Three.js)"
+    why_include: "Second browser 3D world from @BilalGreyrat with 1 like (companion test; shares author with 2123475576271012121)."
+
+  - tweet_id: "2124438422790254807"
+    url: "https://x.com/fingvo/status/2124438422790254807"
+    author: "fingvo"
+    published_at: "2026-11-22"
+    language: "en"
+    model: "Gemini 4 Neon"
+    model_era_basis: "explicit"
+    work_type: "interactive_world"
+    has_live_link: false
+    likes_at_curation: 3
+    in_20261124_export: false
+    in_20261124_raw: false
+    title_hint: "Offline 3D Walking Machine (Neon 4 + Three.js + WebGL)"
+    why_include: "Genuine browser WebGL 3D experience with 3 likes using shorthand alias 'Neon 4' (no 'Gemini' prefix)."
+
+# ---------------------------------------------------------------------------
+# 3. Secondary / Aggregator Leads (5 items — workflow breakdown account)
+#    @rewind02's bio: "AI systems & workflows | Running distribution via AI UGC".
+#    Must NOT be published attributed to @rewind02; use to test lead discovery
+#    & original creator tracing.
+# ---------------------------------------------------------------------------
+secondary_leads:
+  - tweet_id: "2124877629966709080"
+    url: "https://x.com/rewind02/status/2124877629966709080"
+    author: "rewind02"
+    published_at: "2026-11-23"
+    model: "Claude Opus 5.5"
+    credited_original_dev: null
+    in_20261124_export: false
+    in_20261124_raw: false
+    note: "8-step workflow breakdown of Tripo + Opus 5.5 + Blender + Unity 26s fire-breathing dragon castle cinematic; aggregator format."
+
+  - tweet_id: "2124108900299382873"
+    url: "https://x.com/rewind02/status/2124108900299382873"
+    author: "rewind02"
+    published_at: "2026-11-21"
+    model: "GPT-6.2 Astra"
+    credited_original_dev: null
+    in_20261124_export: false
+    in_20261124_raw: false
+    note: "8-step workflow breakdown of a GPT-6.2 + Three.js 3D fairy-tale hillside village; aggregator format."
+
+  - tweet_id: "2123745767286276410"
+    url: "https://x.com/rewind02/status/2123745767286276410"
+    author: "rewind02"
+    published_at: "2026-11-20"
+    model: "Claude Opus 5.5"
+    credited_original_dev: null
+    in_20261124_export: false
+    in_20261124_raw: true
+    note: "8-step workflow breakdown of Opus 5.5 + Three.js PBR game environment; was in raw/x and filtered out before export."
+
+  - tweet_id: "2123023253182586966"
+    url: "https://x.com/rewind02/status/2123023253182586966"
+    author: "rewind02"
+    published_at: "2026-11-18"
+    model: "Claude Fable 5.2 + Opus"
+    credited_original_dev: "Gabmeister"
+    in_20261124_export: false
+    in_20261124_raw: false
+    note: "Secondary breakdown of GTA Manila in Unreal Engine (credits dev: Gabmeister); pipeline should prefer Gabmeister's original post."
+
+  - tweet_id: "2122658959022502304"
+    url: "https://x.com/rewind02/status/2122658959022502304"
+    author: "rewind02"
+    published_at: "2026-11-17"
+    model: "Claude Fable 5.2 + Opus 5.5"
+    credited_original_dev: "FredrikGateh"
+    in_20261124_export: false
+    in_20261124_raw: false
+    note: "Secondary breakdown of mechanical emu Unreal 5.8 + Blender game (credits dev: FredrikGateh); pipeline should prefer FredrikGateh's original post."
+
+# ---------------------------------------------------------------------------
+# 4. Borderline / Pending Confirmation (1 item)
+#    Needs reply verification before deciding positive vs negative.
+# ---------------------------------------------------------------------------
+borderline_review:
+  - tweet_id: "2125350497238610336"
+    url: "https://x.com/niramayo2096/status/2125350497238610336"
+    author: "niramayo2096"
+    published_at: "2026-11-24"
+    language: "ja"
+    model: "Gemini 4 Neon"
+    likes_at_curation: 193
+    in_20261124_export: false
+    reason_pending: "Text says 'AI生成＋会話だけの自動編集' and '補間スロー' (tools listed in reply). Likely AI video-gen + auto-edit rather than coded 3D; confirm reply before moving to positive_core or negative_controls."
+
+# ---------------------------------------------------------------------------
+# 5. Negative Controls (3 items — must be rejected by qualifier)
+# ---------------------------------------------------------------------------
+negative_controls:
+  - tweet_id: "2124998123210891290"
+    url: "https://x.com/rosemoni18/status/2124998123210891290"
+    author: "rosemoni18"
+    published_at: "2026-11-23"
+    language: "en"
+    likes_at_curation: 1466
+    in_20261124_export: false
+    in_20261124_raw: true
+    reject_category: "tool_listicle"
+    reject_reason: "Class C tool/library listicle ('10 insane GitHub repos for game developers using Claude Code and Codex'), not a concrete 3D world or scene."
+
+  - tweet_id: "2123698922170564671"
+    url: "https://x.com/KanaWorks_AI/status/2123698922170564671"
+    author: "KanaWorks_AI"
+    published_at: "2026-11-20"
+    language: "ja"
+    likes_at_curation: 114
+    in_20261124_export: false
+    in_20261124_raw: false
+    reject_category: "sponsored_pr"
+    reject_reason: "Explicitly labeled 【PR】 Tripo 3D promotional post; user policy excludes sponsored/PR demos."
+
+  - tweet_id: "2123538258265075804"
+    url: "https://x.com/mattshumer_/status/2123538258265075804"
+    author: "mattshumer_"
+    published_at: "2026-11-19"
+    language: "en"
+    likes_at_curation: 1324
+    in_20261124_export: false
+    in_20261124_raw: false
+    reject_category: "sponsored_pr"
+    reject_reason: "Promotional quote-tweet pitching Higgsfield GPU Harness Black Friday deal ('up to 64% OFF'); user policy excludes sponsored/PR promos."

@@ -53,6 +53,8 @@ export function useLang(): [Lang, () => void] {
 
 export const copy = {
   zh: {
+    eraScope:"模型范围", frontierOnly:"仅前沿模型", includeArchive:"全部（含归档）",
+    modes: { playable: "可试玩", video: "视频演示", all: "全部" },
     brand: "生成世界图鉴",
     navCatalog: "目录",
     navTrends: "趋势",
@@ -171,6 +173,8 @@ export const copy = {
     langSwitchAria: "Switch to English",
   },
   en: {
+    modes: { playable: "Playable", video: "Video Demos", all: "All" },
+    eraScope:"Model scope", frontierOnly:"Frontier Only", includeArchive:"All (Incl. Archive)",
     brand: "World Atlas",
     navCatalog: "Catalog",
     navTrends: "Trends",
@@ -285,7 +289,7 @@ export const copy = {
     hoursAgo: (n: number) => `${n}h ago`,
     daysAgo: (n: number) => `${n}d ago`,
     chipKeyword: (v: string) => `“${v}”`,
-    langSwitchLabel: "中文",
-    langSwitchAria: "切换为中文",
+    langSwitchLabel: "ZH",
+    langSwitchAria: "Switch to Chinese",
   },
 } as const;

@@ -1,0 +1,39 @@
+{
+  "Atlas": {
+    "model_chips": [
+      "\u5168\u90e8\u6a21\u578b",
+      "Claude",
+      "GPT",
+      "Gemini",
+      "DeepSeek",
+      "Kimi",
+      "Qwen",
+      "Grok",
+      "MiniMax",
+      "Step"
+    ],
+    "default_frontier": 1660,
+    "including_archive": 2219,
+    "enDetailHasChinese": false,
+    "detail": "world-0153f1b45ca946edd5fda5cb",
+    "chrome": "158.0.8127.37",
+    "shared_test_window": 588113549,
+    "opened_new_tab": true,
+    "scheme_with_dark_os": "light",
+    "js_errors": []
+  },
+  "WorldFeed": {
+    "default_world": "world-3bc9b04773e624981797759d",
+    "archive_deep_link": "world-6319e157c3164e11ddb4cf8a",
+    "archive_toggle": true,
+    "total_worlds": 2219,
+    "frontier_worlds": 1660,
+    "recommended_frontier": 1637,
+    "recommended_with_archive": 2186,
+    "chrome": "158.0.8127.37",
+    "shared_test_window": 588113549,
+    "opened_new_tab": true,
+    "scheme_with_dark_os": "light",
+    "js_errors": []
+  }
+}

@@ -24,7 +24,7 @@ runs:
         fi
         rsync -a --delete --exclude=.git --exclude=_next/static/ platform/out/ "$target/"
         mkdir -p "$target/_next/static"
-        cp -R platform/out/_next/static/. "$target/_next/static/"
+        if [ -d platform/out/_next/static ]; then cp -R platform/out/_next/static/. "$target/_next/static/"; fi
         touch "$target/.nojekyll"
         git -C "$target" add -A
         if ! git -C "$target" diff --cached --quiet; then

@@ -4,6 +4,7 @@ from pathlib import Path
 
 from .models import AIWorldCase, ReviewStatus
 from .publish_catalog import PROJECT, publish
+from .recheck_attribution import record_manual_reviews
 from .storage import read_rows, run_lock, write_rows
 
 
@@ -18,6 +19,7 @@ def review_batch(root, platform, ids, decision):
         for case in rows:
             if case.world_id in wanted:
                 case.review_status = decision
+        record_manual_reviews(root, (case for case in rows if case.world_id in wanted))
         write_rows(ledger, rows)
         publish(root, platform)
 

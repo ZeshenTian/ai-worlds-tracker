@@ -225,7 +225,8 @@ def main():
     expansion = root / "research/expansion"
     ledger = root / "data/processed/cases.jsonl"
     if ledger.exists():
-        rows = [json.loads(line) for line in ledger.read_text().splitlines() if line.strip()]
+        with ledger.open(encoding="utf-8") as source:
+            rows = [json.loads(line) for line in source if line.strip()]
     else:
         rows = json.loads((root / "research/seed_snapshot/worlds.json").read_text())
     for name in ("gpt.json", "gemini.json"):

@@ -1,18 +1,32 @@
+import playableIds from "@/data/embeddable-ids.json";
 import dataset from "@/data/worlds.json";
 import enOverrides from "@/data/worlds-en.json";
 import type { Lang } from "./i18n";
 
-const enMap = enOverrides as Record<string, { wf?: string[]; sp?: string[] }>;
+const enMap = enOverrides as Record<string, { wf?: string[]; sp?: string[]; title?: string; author?: string; summary?: string; tech_stack?: string[] }>;
+
+const englishText = (value?: string | null) => value && !/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}]/u.test(value) ? value : "";
+const englishList = (list: string[]) => list.filter(s => Boolean(englishText(s)));
 
 export function workflowStepsFor(world: World, lang: Lang): string[] {
-  if (lang === "en" && world.workflow_steps_en?.length) return world.workflow_steps_en;
-  if (lang === "en" && enMap[world.world_id]?.wf) return enMap[world.world_id].wf!;
-  return world.workflow_steps;
+  if (lang === "zh") return world.workflow_steps;
+  return englishList(enMap[world.world_id]?.wf ?? (world.workflow_steps_en?.length ? world.workflow_steps_en : world.workflow_steps));
 }
 
 export function skillsFor(world: World, lang: Lang): string[] {
-  if (lang === "en" && enMap[world.world_id]?.sp) return enMap[world.world_id].sp!;
-  return world.skills_or_prompts_used;
+  if (lang === "zh") return world.skills_or_prompts_used;
+  return englishList(enMap[world.world_id]?.sp ?? world.skills_or_prompts_used);
+}
+
+export function localizedWorld(w: World, lang: Lang): World {
+  if (lang === "zh") return w;
+  const tr = enMap[w.world_id] || {};
+  const quotes = englishList(w.evidence_quotes);
+  const summary = englishText(tr.summary) || englishText(w.summary_en) || englishText(w.summary) || quotes[0] || "";
+  return {...w, title: englishText(tr.title) || englishText(w.title) || summary.split(/[.!?]\s/)[0] || "3D scene",
+    author_name: englishText(tr.author) || englishText(w.author_name), author_handle: englishText(w.author_handle),
+    summary, summary_en:summary, models_used:englishList(w.models_used),
+    evidence_quotes:quotes, tech_stack:englishList(tr.tech_stack ?? w.tech_stack)};
 }
 
 export const themes: Record<string, string> = {
@@ -61,6 +75,8 @@ export function levelLabel(key: string, lang: Lang) {
 }
 
 export interface World {
+  model_era?: "frontier" | "legacy";
+  work_type?: "interactive_world" | "coded_3d_scene";
   world_id: string;
   title: string;
   summary: string;
@@ -99,27 +115,20 @@ export const byline = (w: World, lang: Lang = "zh") =>
 
 export const isPlayable = (w: World) => w.demo_health_status === "verified_playable";
 
-export const worlds: World[] = dataset.filter((world) => world.review_status !== "rejected");
-export const featured = [
-  "1 km² of Indiranagar",
-  "Clockwork Observatory",
-  "Francis Turbine Explorer",
-  "Paris Atlas",
-  "Torchlight Depths",
-  "Pixel Village",
-  "Papertrails",
-  "Void Explorer",
-  "Painted Valley",
-];
+export const worlds: World[] = dataset
+  .filter((world) => world.review_status !== "rejected" && world.model_era === "frontier")
+  .map((world) => ({
+    ...world,
+    model_era: world.model_era === "frontier" ? "frontier" : "legacy",
+    work_type: world.work_type === "coded_3d_scene" ? "coded_3d_scene" : "interactive_world",
+  }));
 export function family(name: string) {
-  if (/^(codex|gpt|openai gpt|chatgpt|astra|sol)/i.test(name)) return "GPT";
-  if (/^(claude|fable|opus|sonnet)/i.test(name)) return "Claude";
-  if (/^(gemini|neon|argon|hydrogen)/i.test(name)) return "Gemini";
-  if (/^(world ?labs? )?marble/i.test(name)) return "Marble";
-  if (/^kimi/i.test(name)) return "Kimi";
-  return name;
+  const label = name.trim();
+  if (/^(?:(?:openai(?:['’]s)?\s+)?(?:gpt|chatgpt|codex|astra|sol)(?=\b|\d)|\d+(?:\.\d+)?\s+astra\b)/i.test(label)) return "GPT";
+  if (/^(?:(?:anthropic(?:['’]s)?|routed)\s+)?(?:claude|opus|fable|haiku|sonnet)(?=\b|\d)/i.test(label)) return "Claude";
+  if (/^(?:google(?:['’]s)?\s+)?(?:gemini|neon|argon|hydrogen|carbon|antigravity)(?=\b|\d)/i.test(label)) return "Gemini";
+  return "Other";
 }
-
 export const modelFamilies = [...new Set(["Claude", "GPT", "Gemini", ...worlds.flatMap(w => w.models_used.map(family))])];
 
 export function familyTone(name: string): "claude" | "gpt" | "gemini" | "other" {
@@ -134,14 +143,17 @@ export function values(key: "tech_stack" | "models_used") {
   return [...new Set(worlds.flatMap((world) => world[key]))].sort();
 }
 
-export const count = {
+export const isFrontier = (w: World) => w.model_era === "frontier";
+
+export const countWorlds = (worlds: World[]) => ({
   all: worlds.length,
   playable: worlds.filter(isPlayable).length,
   open: worlds.filter((world) => world.is_open_source === true).length,
   repos: worlds.filter((world) => Boolean(world.repo_url)).length,
   withThumb: worlds.filter((world) => Boolean(world.thumbnail_url)).length,
   withWorkflow: worlds.filter((world) => world.workflow_steps.length > 0).length,
-};
+});
+export const count = countWorlds(worlds);
 
 export function monthOf(world: World) {
   return world.published_at?.slice(0, 7) ?? "";
@@ -158,8 +170,15 @@ export function webLink(value: string | null) {
   return undefined;
 }
 
-export function caseHref(world: World) {
-  return `/worlds/${world.world_id}`;
+export const playable = new Set(playableIds);
+export function feedBase() {
+  return process.env.NEXT_PUBLIC_WORLDFEED_URL || (typeof location !== "undefined" && ["localhost","127.0.0.1"].includes(location.hostname) ? "http://127.0.0.1:8871" : "https://worldfeed.zeshentian1.chatgpt.site");
+}
+export const hasLiveDemo = (world: World) => Boolean(world.live_demo_url) && world.demo_health_status !== "broken";
+
+export function caseHref(world: World, base = feedBase()) {
+  if (!hasLiveDemo(world)) return world.original_post_url;
+  return playable.has(world.world_id) ? base.replace(/\/$/, "") + "/?w=" + world.world_id : world.live_demo_url || world.original_post_url;
 }
 
 const BARE_MODEL_QUOTE = /^(made\s+with\s+)?(claude|gpt|gemini|codex)[\w\s.\-()]{0,24}$/i;

@@ -365,3 +365,175 @@ def test_self_reply_can_arrive_before_original(tmp_path):
     record = RawTweetRecord.model_validate(read_json(tmp_path / "raw/x/10.json"))
     assert [r.tweet_id for r in record.thread] == ["11"]
     assert read_json(tmp_path / "state/apify_x/thread_orphans.json") == {}
+
+
+def test_adaptive_splits_saturated_half_open_windows(monkeypatch):
+    windows = []
+    def capture(ledger, query, label, limit, **kwargs):
+        bounds = query.split(" since:")[1]
+        windows.append(bounds)
+        return [tweet(1)] * (9 if len(windows) == 1 else 3)
+
+    monkeypatch.setattr(x, "search", capture)
+    x.search_adaptive(None, "spatial game", date(2026, 1, 1), date(2026, 1, 5), limit=10)
+    assert set(windows) == {"2026-01-01 until:2026-01-05", "2026-01-01 until:2026-01-03",
+                            "2026-01-03 until:2026-01-05"}
+
+
+@pytest.mark.parametrize("partial", [False, True])
+def test_official_search_falls_back_once(tmp_path, partial):
+    calls = []
+    class Ledger:
+        root = tmp_path
+        actor = x.ACTOR
+        def fetch(self, label, payload):
+            calls.append((self.actor, payload))
+            if self.actor == x.KAITO:
+                return [tweet(719)]
+            if partial:
+                raise ValueError("Partial Apify run")
+            return []
+
+    result = x.search(Ledger(), "conversation_id:123", "official-fixture", 12, fallback_empty=True)
+    assert result[0]["id"] == "719"
+    assert [actor for actor, _ in calls] == [x.ACTOR, x.KAITO]
+    assert calls[-1][1]["searchTerms"] == ["conversation_id:123"]
+    assert (tmp_path / "raw/x/719.json").exists()
+
+
+def test_quoted_promotion_and_aggregator_never_reach_model(tmp_path):
+    from src.qualify_candidates import qualify
+    from src.dedup import deduplicate
+    ad = tweet(610, text="A quote about my scene")
+    ad["quotedTweet"] = {"id": "608", "text": "Black Friday deal, 50% OFF", "author": {"userName": "sponsor"}}
+    other = tweet(620, author="curator", text="Made this clip (dev: @maker) #3D")
+    x.persist([ad, other], tmp_path)
+    signal = read_json(tmp_path / "raw/x/signals/610.json")
+    assert signal["quoted_text"] == ad["quotedTweet"]["text"]
+    assert signal["quoted_author"] == "sponsor"
+    for tid in ("610", "620"):
+        row = RawTweetRecord.model_validate(read_json(tmp_path / f"raw/x/{tid}.json"))
+        assert qualify(deduplicate([row]), tmp_path, model="offline", limit=100,
+                       config={"excluded_aggregator_accounts":["Curator"]}) == []
+    leads = read_json(tmp_path / "state/aggregator_leads.json")
+    assert leads["620"]["credited_dev"] == "maker"
+
+
+def test_actor_charge_placeholders_do_not_enter_raw_or_count_as_results(tmp_path):
+    fee_row = {"id": -1, "type": "mock_tweet", "text": "provider billing notice"}
+    assert not x.is_source_post(fee_row)
+    assert x.persist([fee_row, tweet(731)], tmp_path) == {"731"}
+
+
+def test_malformed_link_does_not_discard_a_search_window(tmp_path):
+    row = tweet(732, text="Built a world. Broken URL https://[invalid and https://example.org/world")
+    assert x.persist([row], tmp_path) == {"732"}
+    parsed = read_json(tmp_path / "raw/x/732.json")
+    assert "https://example.org/world" in parsed["external_urls"]
+
+
+def test_frontier_guard_reserves_dataset_cost_when_immediate_receipt_lags(tmp_path):
+    from src.storage import write_json
+    ledger = x.RunLedger(tmp_path, None, frontier=True, budget=Decimal(".00015"))
+    write_json(ledger.path, {"old": {"actor":x.ACTOR, "period":None, "status":"SUCCEEDED",
+        "maximum_usd":".00015", "items":1, "physical_item_count":1,
+        "charged_events":{"apify-default-dataset-item":0}, "usage_usd":0}})
+    with pytest.raises(ValueError, match="hard budget reached"):
+        ledger.fetch("second", {"mode":"Advanced Search", "query":"example", "max_results":1})
+
+
+@pytest.mark.parametrize("physical_count,allow_second", [(2, False), (None, False), (1, True)])
+def test_frontier_guard_includes_clean_filtered_rows(tmp_path, physical_count, allow_second):
+    starts = []
+    def handler(request):
+        path = request.url.path
+        if path.endswith("/runs"):
+            run = {"id": f"r{len(starts)}", "defaultDatasetId": f"d{len(starts)}", "status": "RUNNING"}
+            starts.append(run)
+            return httpx.Response(201, json={"data": run})
+        if path.endswith("/items"):
+            assert request.url.params["clean"] == "true"
+            return httpx.Response(200, json=[])
+        if "/datasets/" in path:
+            if physical_count is None:
+                return httpx.Response(404)
+            return httpx.Response(200,
+                                  headers={"Date": "Wed, 01 Apr 2026 00:00:15 GMT"},
+                                  json={"data": {"id": path.rsplit("/", 1)[-1], "cleanItemCount": 0,
+                                                 "itemCount": physical_count}})
+        if "/actor-runs/" in path:
+            return httpx.Response(200, json={"data": {
+                "status": "SUCCEEDED", "finishedAt": "2026-04-01T00:00:00Z",
+                "chargedEventCounts": {"apify-default-dataset-item": 0}, "usageTotalUsd": 0}})
+        assert path.endswith(x.KAITO)
+        return httpx.Response(200, json={"data": {"pricingInfos": [{
+            "pricingModel": "PAY_PER_EVENT", "pricingPerEvent": {"actorChargeEvents": {
+                "apify-default-dataset-item": {"eventPriceUsd": 0.00025}}}}]}})
+
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        ledger = x.RunLedger(tmp_path, client, actor=x.KAITO, frontier=True, budget=Decimal(".00050"))
+        assert ledger.fetch("first", {"maxItems": 2}) == []
+        original = next(iter(read_json(ledger.path).values()))
+        assert original["items"] == 0 and original["physical_item_count"] == physical_count
+        if allow_second:
+            assert ledger.fetch("second", {"maxItems": 1}) == []
+        else:
+            with pytest.raises(ValueError, match="hard budget reached"):
+                ledger.fetch("second", {"maxItems": 1})
+    assert len(starts) == (2 if allow_second else 1)
+
+
+def test_frontier_ignores_stale_physical_count(monkeypatch, tmp_path):
+    dates = iter(["Wed, 01 Apr 2026 00:00:03 GMT", "Wed, 01 Apr 2026 00:00:07 GMT"])
+    counts = iter([0, 2])
+    monkeypatch.setattr(x.time, "sleep", lambda _: None)
+    def handler(request):
+        return httpx.Response(200, headers={"Date": next(dates)},
+                              json={"data": {"id": "dataset1", "itemCount": next(counts)}})
+    with httpx.Client(transport=httpx.MockTransport(handler)) as client:
+        ledger = x.RunLedger(tmp_path, client, frontier=True)
+        run = {"status": "SUCCEEDED", "finishedAt": "2026-04-01T00:00:00Z"}
+        assert ledger.physical_item_count("dataset1", run, 0) == 2
+
+def test_saturated_day_cursor_stops_on_ignored_pagination(tmp_path, monkeypatch):
+    from datetime import date
+    from types import SimpleNamespace
+    from src import apify_x as x
+    queries=[]
+    monkeypatch.setattr(x,"tweet_record",lambda item:(SimpleNamespace(post=SimpleNamespace(published_at=datetime(2026,11,10,tzinfo=__import__('datetime').UTC))),{}))
+    def fake(ledger,q,label,limit,**opts):
+        queries.append(q)
+        return [{"id":str(n)} for n in range(100,110)]
+    from datetime import datetime
+    monkeypatch.setattr(x,"search",fake)
+    x.search_adaptive(None,"3d world",date(2026,11,10),date(2026,11,11),10)
+    assert len(queries)==2 and "max_id:99" in queries[-1]
+
+def test_phase2_budget_and_ledger_separate(tmp_path):
+    from src import apify_x as x
+    from decimal import Decimal
+    import pytest
+    with pytest.raises(ValueError):
+        x.RunLedger(tmp_path,None,budget=Decimal("2.51"),frontier=True,recovery=True)
+    l=x.RunLedger(tmp_path,None,budget=Decimal("2.50"),frontier=True,recovery=True)
+    assert l.path.name=="phase2_ledger.json"
+
+def test_gap_retry_replays_only_failed_and_scoped_authors(tmp_path,monkeypatch):
+    from datetime import date
+    from src import apify_x as x
+    from src.storage import write_json, read_json
+    ledger=x.RunLedger(tmp_path,None,frontier=True,recovery=True,budget=1,actor=x.KAITO)
+    audit=tmp_path/"audit.json"
+    authors=tmp_path/"authors.json"
+    seed={"watch_accounts":["historical","existing"]}
+    write_json(audit,{"runs":[dict(run_id="old-fail",status="FAILED",search_terms=["shader 3D"],requested_limit=15),
+                             dict(run_id="old-ok",status="SUCCEEDED",search_terms=["generic"],requested_limit=15)],
+                      "saturated_minimum_windows":[]})
+    write_json(authors,{"added_from_public_catalog":{"historical":"old-world","removed":"old-other"}})
+    requests=[]
+    monkeypatch.setattr(x,"search",lambda ledger,q,label,cap: requests.append(q))
+    x.retry_gaps(ledger,seed,date(2026,11,1),date(2026,11,25),audit,authors)
+    assert len(requests)==2 and "shader 3D" in requests and any("from:historical" in q for q in requests)
+    assert all("from:existing" not in q and "from:removed" not in q and q!="generic" for q in requests)
+    result=read_json(ledger.path.parent/"phase2_recovery.json")
+    assert result["repair_labels"]=={"repair-old-fail":"old-fail"}

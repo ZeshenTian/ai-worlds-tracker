@@ -1,113 +1,50 @@
 "use client";
 /* eslint-disable @next/next/no-html-link-for-pages */
-
-import { Aperture, Plus } from "lucide-react";
 import type { ReactNode } from "react";
 import { copy, useLang } from "@/lib/i18n";
+import { feedBase } from "@/lib/worlds";
 import { CommandSearch } from "./command-search";
-
-export function Header({
-  active,
-  isHome = false,
-}: {
-  active: "catalog" | "trends" | "submit";
-  isHome?: boolean;
-}) {
-  const [lang, toggleLang] = useLang();
-  const t = copy[lang];
-
-  return (
-    <header className="wb-topbar">
-      <div className={isHome ? "wb-topbar-inner wb-topbar-full" : "wb-topbar-inner container"}>
-        <div className="wb-brand-group">
-          <a className="brand" href="/" aria-label={t.brand}>
-            <span className="brand-icon" aria-hidden="true">
-              <Aperture size={17} strokeWidth={1.9} />
-            </span>
-            <span className="brand-name">{t.brand}</span>
-          </a>
-        </div>
-
-        <CommandSearch isHome={isHome} />
-
-        <div className="wb-nav-group">
-          <nav aria-label="Primary" className="primary-nav">
-            <a href="/" aria-current={active === "catalog" ? "page" : undefined}>
-              {t.navCatalog}
-            </a>
-            <a href="/trends" aria-current={active === "trends" ? "page" : undefined}>
-              {t.navTrends}
-            </a>
-          </nav>
-
-          <button
-            type="button"
-            className="lang-toggle"
-            onClick={toggleLang}
-            aria-label={t.langSwitchAria}
-            title={t.langSwitchAria}
-          >
-            {t.langSwitchLabel}
-          </button>
-
-          <a
-            className="button button-primary nav-submit"
-            href="/submit"
-            aria-current={active === "submit" ? "page" : undefined}
-          >
-            <Plus size={15} strokeWidth={2.2} />
-            <span>{t.submit}</span>
-          </a>
-        </div>
-      </div>
-    </header>
+import meta from "@/data/meta.json";
+import { useSyncExternalStore } from "react";
+const subscribe = () => () => {};
+export function useFeedBase() {
+  return useSyncExternalStore(
+    subscribe,
+    feedBase,
+    () =>
+      process.env.NEXT_PUBLIC_WORLDFEED_URL ||
+      "https://worldfeed.zeshentian1.chatgpt.site",
   );
 }
-
-export function Footer() {
-  const [lang] = useLang();
-  const t = copy[lang];
-
-  return (
-    <footer className="site-footer">
-      <div className="container footer-inner">
-        <a className="brand" href="/">
-          <Aperture size={16} />
-          <span>{t.brand}</span>
-        </a>
-        <span>{t.footerNote}</span>
-        <a href="/trends#method" className="text-link">
-          {t.footerMethod}
-        </a>
-      </div>
-    </footer>
-  );
-}
-
 export function Shell({
-  active,
-  isHome = false,
-  hideFooter = false,
   children,
+  isHome = false,
 }: {
-  active: "catalog" | "trends" | "submit";
+  children: ReactNode;
+  active: "catalog";
   isHome?: boolean;
   hideFooter?: boolean;
-  children: ReactNode;
 }) {
-  const [lang] = useLang();
-  const t = copy[lang];
-
+  const [lang, toggle] = useLang(),
+    t = copy[lang],
+    base = useFeedBase();
   return (
     <>
-      <a href="#main" className="skip-link">
-        {t.skipLink}
-      </a>
-      <Header active={active} isHome={isHome} />
-      <main id="main" className={isHome ? "wb-page-main" : undefined}>
-        {children}
-      </main>
-      {!hideFooter && <Footer />}
+      <header>
+        <a className="wordmark" href="/">
+          {t.brand}
+        </a>
+        <CommandSearch isHome={isHome} />
+        <nav>
+          <a href={base}>{lang === "en" ? "WorldFeed ↗" : "刷世界 ↗"}</a>
+          <button onClick={toggle}>{t.langSwitchLabel}</button>
+        </nav>
+      </header>
+      <main>{children}</main>
+      <footer>
+        {t.brand} · © {meta.last_updated_at.slice(0, 4)} ·{" "}
+        {meta.last_updated_at.slice(0, 10)}
+      </footer>
     </>
   );
 }

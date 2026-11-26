@@ -244,8 +244,13 @@ def collect_links(record: RawTweetRecord, client: httpx.Client | None, redirects
         found.extend((url, -1) for url in post.expanded_urls if url not in {item[0] for item in found})
         for url, position in found:
             expanded = post.expanded_urls.get(url, url)
-            if urlsplit(expanded).hostname == "t.co" and client is not None:
-                expanded = expand_short(expanded, client, redirects)
+            if client is not None:
+                try:
+                    short_host = urlsplit(expanded).hostname
+                except ValueError:
+                    continue
+                if short_host == "t.co":
+                    expanded = expand_short(expanded, client, redirects)
             clean = external_url(expanded)
             if clean:
                 external.append(clean)
@@ -350,7 +355,7 @@ def cache_posts(adapter: BaseXAdapter, ids: list[str], raw: Path, client: httpx.
 def import_records(path: Path, root: Path, client: httpx.Client | None) -> list[RawTweetRecord]:
     content = path.read_text(encoding="utf-8")
     payload = json.loads(content) if content.lstrip().startswith("[") else [
-        json.loads(line) for line in content.splitlines() if line.strip()
+        json.loads(line) for line in content.split("\n") if line.strip()
     ]
     records = [RawTweetRecord.model_validate(item) for item in payload]
     raw = root / "raw" / "x"

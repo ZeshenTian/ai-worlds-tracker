@@ -1,6 +1,8 @@
 from collections.abc import Callable
 from html.parser import HTMLParser
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from threading import Lock
 import os
 import time
 from urllib.parse import quote, urlsplit
@@ -12,12 +14,12 @@ from .models import CaseGroup, EnrichedLinkContent
 from .storage import digest, read_json, write_json
 
 
-def retry_rate_limit(call: Callable[[], httpx.Response]) -> httpx.Response:
+def retry_rate_limit(call: Callable[[], httpx.Response], *, transport_retries: int = 3) -> httpx.Response:
     for attempt in range(4):
         try:
             response = call()
         except httpx.TransportError:
-            if attempt == 3:
+            if attempt >= transport_retries:
                 raise
             time.sleep(2**attempt)
             continue
@@ -56,6 +58,9 @@ class Firecrawl:
         key = key or os.environ.get("FIRECRAWL_TOKEN", "")
         self.client = client
         self.public_fallback = public_fallback
+        self.connection_lock = Lock()
+        self.connection_failures = 0
+        self.retry_connection_at = 0.0
         self.headers = {"Authorization": f"Bearer {key}"} if key else {}
         self.github_headers = {"Accept": "application/vnd.github+json"}
         if token:
@@ -64,11 +69,27 @@ class Firecrawl:
     def scrape(self, url: str) -> EnrichedLinkContent:
         if not external_url(url):
             raise ValueError(f"Firecrawl cannot scrape this URL: {url}")
-        response = retry_rate_limit(lambda: self.client.post(
-            "https://api.firecrawl.dev/v2/scrape", headers=self.headers,
-            json={"url": url, "formats": ["markdown"], "onlyMainContent": True,
-                  "timeout": 30000, "blockAds": True},
-        ))
+        # The connection is to one API host. After repeated connection failures
+        # defer remaining pages briefly; no missing evidence is cached as a result.
+        with self.connection_lock:
+            if time.monotonic() < self.retry_connection_at:
+                raise ValueError("Firecrawl connection temporarily unavailable")
+        try:
+            response = retry_rate_limit(lambda: self.client.post(
+                "https://api.firecrawl.dev/v2/scrape", headers=self.headers,
+                json={"url": url, "formats": ["markdown"], "onlyMainContent": True,
+                      "timeout": 30000, "blockAds": True},
+                timeout=httpx.Timeout(45, connect=8),
+            ), transport_retries=1)
+        except (httpx.ConnectError, httpx.ConnectTimeout, httpx.ProxyError):
+            with self.connection_lock:
+                self.connection_failures += 1
+                if self.connection_failures >= 2:
+                    self.retry_connection_at = time.monotonic() + 45
+            raise
+        with self.connection_lock:
+            self.connection_failures = 0
+            self.retry_connection_at = 0.0
         if self.public_fallback and response.status_code in {401, 403}:
             return self.public_document(url, response.status_code)
         if response.status_code in {404, 410}:
@@ -221,21 +242,23 @@ class EnrichmentCache:
                         result[clean] = item["kind"]
         return list(result.items())
 
-    def enrich(self, groups: list[CaseGroup], scraper: Firecrawl | FixtureScraper) -> None:
+    def enrich(self, groups: list[CaseGroup], scraper: Firecrawl | FixtureScraper, *, jobs: int = 1) -> None:
         urls = {url: kind for group in groups for url, kind in self.urls_for(group)}
         failures = []
-        for url, kind in urls.items():
+        def catalog(item):
+            url, kind = item
             if kind != "repository" or self.catalog_path(url).exists():
-                continue
+                return
             try:
                 write_json(self.catalog_path(url), scraper.github_catalog(url))
             except (ValueError, httpx.HTTPError, KeyError) as error:
                 failures.append(f"{url} [catalog]: {error}")
-        urls = {url: kind for group in groups for url, kind in self.urls_for(group)}
-        for url, kind in urls.items():
+
+        def page(item):
+            url, kind = item
             path = self.page_path(url)
             if path.exists():
-                continue
+                return
             try:
                 catalog_path = self.catalog_path(url)
                 catalog = read_json(catalog_path) if kind == "repository" and catalog_path.exists() else {}
@@ -249,6 +272,11 @@ class EnrichmentCache:
                 write_json(path, result.model_dump(mode="json"))
             except (ValueError, httpx.HTTPError, KeyError) as error:
                 failures.append(f"{url}: {error}")
+
+        with ThreadPoolExecutor(max_workers=jobs) as pool:
+            list(pool.map(catalog, urls.items()))
+            urls = {url: kind for group in groups for url, kind in self.urls_for(group)}
+            list(pool.map(page, urls.items()))
         if failures:
             raise ValueError("Enrichment failures:\n" + "\n".join(failures))
 

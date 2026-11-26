@@ -1,17 +1,12 @@
 export type PlayTier = "mirror" | "embed" | "external";
 export type Language = "zh" | "en";
 export type ModelFamily = "Claude" | "GPT" | "Gemini" | "Other";
-export type Tab =
-  | "for-you"
-  | "playable"
-  | "opensource"
-  | "Claude"
-  | "GPT"
-  | "Gemini"
-  | "favorites";
-export type PlayState = "browse" | "loading" | "playing";
 export interface FeedItem {
+  model_era: "frontier" | "legacy";
+  work_type: "interactive_world" | "coded_3d_scene";
   world_id: string;
+  x_likes: number;
+  github_stars: number | null;
   title: string;
   title_en: string;
   author: string;
@@ -19,6 +14,7 @@ export interface FeedItem {
   theme_category: string;
   models_used: string[];
   models_used_en: string[];
+  primary_model: string | null;
   model_family: ModelFamily;
   model_families: ModelFamily[];
   tech_stack: string[];
@@ -41,36 +37,6 @@ export interface FeedItem {
   skills_en: string[];
   evidence_quotes: string[];
   published_at: string | null;
-}
-export const tabs: Tab[] = [
-  "for-you",
-  "playable",
-  "opensource",
-  "Claude",
-  "GPT",
-  "Gemini",
-  "favorites",
-];
-export function inChannel(item: FeedItem, tab: Tab, favorites: string[]) {
-  switch (tab) {
-    case "for-you":
-      return Boolean(
-        item.tier !== "external" ||
-        item.thumbnail_url ||
-        item.preview_video_url,
-      );
-    case "playable":
-      return item.tier !== "external";
-    case "opensource":
-      return item.is_open_source;
-    case "favorites":
-      return favorites.includes(item.world_id);
-    default:
-      return item.model_families.includes(tab);
-  }
-}
-export function original(item: FeedItem) {
-  return item.external_demo_url || item.original_post_url || item.repo_url;
 }
 export const titleOf = (item: FeedItem, lang: Language) =>
   lang === "en" ? item.title_en : item.title;

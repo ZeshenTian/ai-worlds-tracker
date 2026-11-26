@@ -8,8 +8,10 @@ import httpx
 import typer
 import yaml
 
+from .recheck_attribution import record_manual_reviews
 from .apify_x import ApifyXAdapter, RunLedger, api_token, incremental as apify_incremental
 from .dedup import deduplicate
+from .x_media import load_media_evidence
 from .enrich_firecrawl import EnrichmentCache, Firecrawl, FixtureScraper
 from .export_and_analyze import export_cases
 from .extract_structured import AnnotatedExtractor, OpenAIExtractor, extract_cases
@@ -49,7 +51,7 @@ class Pipeline:
             raise ValueError("Use import-x for manual JSON / JSONL. Seed URL lookup requires an X adapter.")
         if self.source == "apify":
             config = yaml.safe_load(self.seeds.read_text(encoding="utf-8"))
-            budget = os.getenv("APIFY_DAILY_BUDGET_USD", "0.30")
+            budget = os.getenv("APIFY_DAILY_BUDGET_USD", "1.50")
             # Keep the Apify credential confined to API requests, never t.co or project URLs.
             with httpx.Client(headers={"Authorization": "Bearer " + api_token()}, timeout=45) as http:
                 ledger = RunLedger(self.root, http, budget, daily=True)
@@ -84,7 +86,9 @@ class Pipeline:
                    for path in (self.root / "raw" / "x").glob("*.json")]
         if not records:
             raise ValueError("No X records. Run ingest or import-x first.")
-        groups = deduplicate(records)
+        config = (yaml.safe_load(self.seeds.read_text(encoding="utf-8")) or {}) if self.seeds.is_file() else {}
+        groups = deduplicate(records, excluded_authors=config.get("excluded_aggregator_accounts", ()),
+                             media_evidence=load_media_evidence(self.root))
         write_rows(self.processed / "groups.jsonl", groups)
         typer.echo(f"Deduplicated {len(records)} posts into {len(groups)} groups.")
 
@@ -229,6 +233,7 @@ def review(ctx: typer.Context, world_id: str, status: ReviewStatus):
         if matched is None:
             raise ValueError(f"Unknown world_id: {world_id}")
         matched.review_status = status
+        record_manual_reviews(pipeline.root, [matched])
         write_rows(pipeline.processed / "cases.jsonl", rows)
         pipeline.export()
 

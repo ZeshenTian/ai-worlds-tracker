@@ -125,3 +125,34 @@ def test_sync_reuses_processed_works_and_keeps_discoveries_pending(tmp_path, mon
         sync(pipeline,platform)
     assert seen == {row.world_id:row.first_seen_at for row in read_rows(root / "processed/cases.jsonl",AIWorldCase)}
     assert not any(row["title"]=="Mosswood" for row in read_json(platform / "data/worlds.json"))
+
+
+def test_native_frame_evidence_is_bound_to_source_and_first_party(tmp_path):
+    from src.frontier_review import native_review_receipt
+    from src.recheck_creator_role import RULES
+    from src.storage import digest, encode
+
+    row = AIWorldCase.model_validate(read_json(BASE)[0]).model_copy(update={
+        "model_era": "frontier", "tech_stack": [], "models_used": ["Fable 5.2"],
+        "evidence_quotes": ["Fable 5.2 generated my navigable 3D island."],
+        "possible_duplicate_urls": [], "repo_url": None, "live_demo_url": None,
+        "demo_health_status": "no_demo", "review_status": ReviewStatus.PENDING})
+    packet = {"post": row.evidence_quotes[0], "thread": [], "own_quote": "", "has_attached_media": True}
+    screen = {"decision": "hold", "reason": "work_or_presentation_unclear"}
+    receipt = dict(source=row.original_post_url, packet_key=digest(encode(packet)),
+                   source_sha256="abc", rules=digest(RULES), provider_model="MiniMax-M3", resolution={
+        "index": 1, "pattern": "model_as_actor", "human_role": "specific_creator_presentation",
+        "scope": "interactive_spatial", "source_basis": "actual_frame_and_original", "counterevidence": "none",
+        "prior_excerpt_resolution": "no_prior_excerpt", "creation_quote": "",
+        "subject_quote": packet["post"], "contrary_quote": "", "observation": "An island in perspective.",
+        "models": [{"term": "Fable 5.2", "quote": packet["post"]}]})
+    cover = {"source_url": row.original_post_url, "source_sha256": "abc"}
+    assert native_review_receipt(row, packet, screen, receipt, cover)["reason"] == "verified_native_frame"
+    assert native_review_receipt(row, packet, screen, receipt, {**cover, "source_sha256":"changed"}) == screen
+    credit = {"decision": "hold", "reason": "third_party_credit"}
+    assert native_review_receipt(row, packet, credit, receipt, cover) == credit
+    cache = EnrichmentCache(tmp_path)
+    assert not trusted(row, {}, cache, 20)
+    assert trusted(row, {}, cache, 20, native_presentation=True)
+    row.possible_duplicate_urls = ["https://x.com/other/status/22"]
+    assert not trusted(row, {}, cache, 20, native_presentation=True)

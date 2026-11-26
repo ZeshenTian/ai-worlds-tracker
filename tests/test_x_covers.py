@@ -1,5 +1,7 @@
+from datetime import UTC, datetime, timedelta
 from io import BytesIO
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 
 from PIL import Image
 import pytest
@@ -176,3 +178,88 @@ def test_article_cover_under_the_focal_author_media_link_must_match_the_displaye
     assert not x_covers.post_media(head + anchor.replace('/123/', '/125/') + img + '</a>', '123')
     assert not x_covers.post_media(head + anchor + '</a>' + img, '123')
     assert not x_covers.post_media(head + anchor + img.replace('actual', 'other') + '</a>', '123')
+
+
+def test_cdn_outage_only_defers_its_own_host_and_retries_skipped_images_next_run(tmp_path, monkeypatch):
+    root, thumbs = tmp_path / "data", tmp_path / "thumbs"
+    rows = []
+    for index in range(8):
+        source = f"https://x.com/creator/status/{index}"
+        write_json(root / "raw/x/signals" / f"{index}.json", {
+            "tweet_id": str(index), "media_url": f"https://pbs.twimg.com/media/pic{index}.jpg",
+        })
+        rows.append({"world_id": f"case-{index}", "original_post_url": source})
+    # This post requires an independent fetch of the original X page.
+    rows.append({"world_id": "metadata-only", "original_post_url": POST})
+    requests = []
+    def outage(url, limit):
+        requests.append(url)
+        if url == POST:
+            return b"<html></html>"
+        raise URLError(TimeoutError("TLS handshake timed out"))
+    monkeypatch.setattr(x_covers, "fetch", outage)
+    assert x_covers.build(rows, root, thumbs, jobs=1) == {}
+    assert requests == [f"https://pbs.twimg.com/media/pic{i}.jpg" for i in range(3)] + [POST]
+    receipts = root / "raw/x/cover_failures"
+    assert len(list(receipts.glob("*.json"))) == 3
+    assert not list(thumbs.iterdir())
+
+    requests.clear()
+    def recover(url, limit):
+        requests.append(url)
+        return image_data()
+    monkeypatch.setattr(x_covers, "fetch", recover)
+    restored = x_covers.build(rows, root, thumbs, jobs=1)
+    assert set(restored) == {f"case-{i}" for i in range(3, 8)}
+    assert len(requests) == 5
+    restored = x_covers.build(rows[:3], root, thumbs, jobs=1, refresh=True)
+    assert len(restored) == 8
+    assert not list(receipts.glob("*.json"))
+
+
+@pytest.mark.parametrize("retry", ["expired", "new_attachment"])
+def test_missed_attachment_retries_after_expiry_or_url_change(tmp_path, monkeypatch, retry):
+    root, thumbs = tmp_path / "data", tmp_path / "thumbs"
+    signal = root / "raw/x/signals/123.json"
+    write_json(signal, {"tweet_id": "123", "media_url": PHOTO})
+    rows = [{"world_id": "case", "original_post_url": POST}]
+    def missing(url, limit):
+        raise HTTPError(url, 404, "Not Found", {}, None)
+    monkeypatch.setattr(x_covers, "fetch", missing)
+    assert x_covers.build(rows, root, thumbs) == {}
+    calls = []
+    def recovered(url, limit):
+        calls.append(url)
+        return image_data()
+    monkeypatch.setattr(x_covers, "fetch", recovered)
+    assert x_covers.build(rows, root, thumbs) == {}
+    assert not calls
+    expected = PHOTO
+    if retry == "expired":
+        receipt, = (root / "raw/x/cover_failures").glob("*.json")
+        write_json(receipt, {"checked_at": (datetime.now(UTC) - timedelta(hours=2)).isoformat()})
+    else:
+        expected = PHOTO.replace("actual", "new")
+        write_json(signal, {"tweet_id": "123", "media_url": expected})
+    recovered_case = x_covers.build(rows, root, thumbs)["case"]
+    assert calls == [expected]
+    assert recovered_case["media_url"] == expected
+    assert recovered_case["source_url"] == POST
+
+
+def test_missing_attachment_status_does_not_disable_host(monkeypatch):
+    def missing(url, limit):
+        raise HTTPError(url, 404, "Not Found", {}, None)
+    monkeypatch.setattr(x_covers, "fetch", missing)
+    network = x_covers.CoverRequests()
+    for _ in range(5):
+        with pytest.raises(HTTPError):
+            network.fetch(PHOTO, 1024)
+    monkeypatch.setattr(x_covers, "fetch", lambda url, limit: b"ok")
+    assert network.fetch(PHOTO, 1024) == b"ok"
+
+
+def test_daily_project_cache_and_hourly_media_retry_have_separate_lifetimes():
+    four_hours_ago = {"checked_at": (datetime.now(UTC) - timedelta(hours=4)).isoformat()}
+    assert x_covers.cache_recent(four_hours_ago, 1)
+    assert not x_covers.cache_recent(four_hours_ago, days=0, hours=1)

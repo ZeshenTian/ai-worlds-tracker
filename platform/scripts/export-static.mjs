@@ -3,7 +3,7 @@ import { cp, mkdir, mkdtemp, readFile, rename, rm, writeFile } from "node:fs/pro
 import path from "node:path";
 import { unstable_dev } from "wrangler";
 
-const worlds = JSON.parse(await readFile("data/worlds.json", "utf8"));
+
 const stage = await mkdtemp(path.resolve(".static-export-"));
 let worker;
 try {
@@ -23,18 +23,12 @@ try {
     await writeFile(dest, html);
   }
   await render("/", "index.html");
-  await render("/trends", "trends/index.html");
-  for (const world of worlds) {
-    const route = "/worlds/" + world.world_id;
-    await render(route, route.slice(1) + "/index.html");
-  }
-  await render("/worlds/missing", "404.html", 404);
-  await mkdir(path.join(stage, "submit"));
-  const issue = "https://github.com/ZeshenTian/ai-worlds-tracker/issues/new?template=new-world.yml";
-  await writeFile(path.join(stage, "submit/index.html"), '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta http-equiv="refresh" content="0;url=' + issue + '"><title>提交新世界</title><a href="' + issue + '">打开投稿表单</a></html>');
+  await render("/missing", "404.html", 404);
+  const { last_updated_at } = JSON.parse(await readFile("data/meta.json", "utf8"));
+  await writeFile(path.join(stage, "atlas-release.json"), JSON.stringify({ format: 1, catalogUpdatedAt: last_updated_at }));
   await rm("out", { recursive: true, force: true });
   await rename(stage, "out");
-  console.log("Static catalog built with " + worlds.length + " detail pages.");
+  console.log("Static frontier catalog built.");
 } finally {
   if (worker) await worker.stop();
   await rm(stage, { recursive: true, force: true });

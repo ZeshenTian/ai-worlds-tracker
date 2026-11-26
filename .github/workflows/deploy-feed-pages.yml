@@ -1,6 +1,8 @@
 name: Deploy WorldFeed to Cloudflare Pages
 on:
   workflow_dispatch:
+env:
+  VITE_ATLAS_URL: ${{ vars.VITE_ATLAS_URL }}
 permissions:
   contents: read
 concurrency:

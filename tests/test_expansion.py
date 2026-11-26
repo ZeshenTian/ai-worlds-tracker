@@ -27,6 +27,21 @@ def test_provenance_and_social_threshold(tmp_path):
     assert not trusted(case, cfg, cache, 100)
 
 
+def test_frontier_interactive_code_evidence_without_an_attached_video(tmp_path):
+    row = source_row()
+    row.update(model_era="frontier", work_type="interactive_world", models_used=["GPT-7"],
+               tech_stack=["Three.js"], evidence_quotes=["I built this playable 3D scene with GPT-7 in ThreeJS."],
+               repo_url=None, live_demo_url=None, demo_health_status="no_demo", thumbnail_url=None,
+               reproducibility_level="video_only",
+               possible_duplicate_urls=[], review_status="pending")
+    case = AIWorldCase.model_validate(row)
+    cache = EnrichmentCache(tmp_path)
+    assert trusted(case, {}, cache, 15)
+    assert not trusted(case, {}, cache, 14)
+    case.evidence_quotes = ["I built the scene with GPT-7."]
+    assert not trusted(case, {}, cache, 15)
+
+
 def test_editorial_import_requires_original_and_preserves_decision(tmp_path):
     row = source_row()
     row.update(summary_en="A described world", evidence_source_urls=[row["original_post_url"]], possible_duplicate_urls=[])
@@ -61,7 +76,7 @@ def test_identical_demo_keeps_first_world_and_adds_creator_credit():
     first.live_demo_url = "https://example.org/distinct-world/"
     later = first.model_copy(deep=True)
     later.world_id = first.world_id + "-later"
-    later.original_post_url = "https://x.com/Maker/status/777"
+    later.original_post_url = "https://x.com/Maker/status/" + str(int(first.original_post_url.rsplit("/",1)[1]) + 1)
     later.author_handle = "Maker"
     later.live_demo_url = first.live_demo_url.rstrip("/")
     merge_duplicate_demos({later.world_id:later, first.world_id:first}, {first.world_id})
@@ -103,3 +118,43 @@ def test_optional_technology_tags_preserve_whole_names(stack):
     row = source_row()
     row.update(models_used=["Codex"], tech_stack=stack)
     assert AIWorldCase.model_validate(row).tech_stack == ["Three.js"]
+
+def test_explicit_author_review_survives_future_publications(tmp_path):
+    from src.recheck_attribution import apply_attribution, load_policy, record_manual_reviews
+    write_json(tmp_path / "state/attribution_policy.json", {"protected": [], "model": "test"})
+    case = AIWorldCase.model_validate(source_row())
+    case.review_status = ReviewStatus.APPROVED
+    record_manual_reviews(tmp_path, [case])
+    assert apply_attribution(case, tmp_path, load_policy(tmp_path)) == "unscoped"
+    case.review_status = ReviewStatus.PENDING
+    record_manual_reviews(tmp_path, [case])
+    assert apply_attribution(case, tmp_path, load_policy(tmp_path)) == "hold"
+
+
+def test_gate_uses_attachment_evidence_and_maps_short_model_ids(tmp_path, monkeypatch):
+    import json
+    from types import SimpleNamespace
+    from src import qualify_candidates as gate
+    from src.models import CaseGroup, RawPost, RawTweetRecord
+    from src.storage import read_json, write_json
+
+    groups = []
+    for i, tid in enumerate(("1800000000000000001", "1800000000000000002")):
+        post = RawPost(tweet_id=tid, author_handle="creator", text="A short clip")
+        group = CaseGroup(original=RawTweetRecord(post=post), fingerprint="x:" + tid)
+        groups.append(group)
+        write_json(tmp_path / "raw/x/signals" / (tid + ".json"), {"likes": 40, "has_video": bool(i)})
+    seen = []
+
+    def create(**request):
+        seen.extend(json.loads(request["messages"][-1]["content"]))
+        choice = SimpleNamespace(finish_reason="stop", message=SimpleNamespace(content='{"ids":["2"]}'))
+        return SimpleNamespace(choices=[choice], usage=None)
+
+    fake = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
+    monkeypatch.setattr(gate, "OpenAI", lambda **kwargs: fake)
+    assert gate.qualify(groups, tmp_path, model="offline", limit=2, config={}) == [groups[1]]
+    assert [item["id"] for item in seen] == ["1", "2"]
+    assert [item["native_media"] for item in seen] == [False, True]
+    assert not read_json(tmp_path / "processed/extraction/gate_by_id/1800000000000000001.json")["accepted"]
+    assert read_json(tmp_path / "processed/extraction/gate_by_id/1800000000000000002.json")["accepted"]

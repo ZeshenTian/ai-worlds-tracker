@@ -133,6 +133,30 @@ def test_x_pagination_and_thread_filter():
     assert [post.tweet_id for post in row.thread] == ["102"]
 
 
+def test_firecrawl_recovers_after_shared_connection_outage(monkeypatch):
+    clock = [0.0]
+    calls = []
+    monkeypatch.setattr("src.enrich_firecrawl.time.monotonic", lambda: clock[0])
+    monkeypatch.setattr("src.enrich_firecrawl.time.sleep", lambda _delay: None)
+
+    def respond(request):
+        calls.append(request)
+        if clock[0] == 0:
+            raise httpx.ConnectTimeout("unreachable", request=request)
+        return httpx.Response(200, json={"success": True, "data": {"markdown": "World demo"}})
+
+    with httpx.Client(transport=httpx.MockTransport(respond)) as http:
+        api = Firecrawl("fake", http)
+        for n in range(2):
+            with pytest.raises(httpx.ConnectTimeout):
+                api.scrape(f"https://example.org/world/{n}")
+        with pytest.raises(ValueError, match="temporarily unavailable"):
+            api.scrape("https://example.org/world/next")
+        assert len(calls) == 4
+        clock[0] = 46.0
+        assert api.scrape("https://example.org/world/next").markdown == "World demo"
+
+
 def test_firecrawl_boundary_rate_limit_and_redirect(monkeypatch):
     monkeypatch.setattr("src.enrich_firecrawl.time.sleep", lambda _: None)
     calls = []
@@ -184,3 +208,76 @@ def test_openai_request_uses_strict_case_schema(monkeypatch, offline, tmp_path):
     assert output["name"] == "AIWorldCase"
     assert output["strict"] is True
     assert "reported_cost_usd" in output["schema"]["required"]
+
+
+def test_exact_duplicate_prefers_creator_over_excluded_curator():
+    demo = "https://example.org/sculpture"
+    curator = RawTweetRecord(post=RawPost(tweet_id="451", author_handle="Gallery", text="A sculpture"), demo_urls=[demo])
+    creator = RawTweetRecord(post=RawPost(tweet_id="452", author_handle="Maker", text="I sculpted this"), demo_urls=[demo])
+    (group,) = deduplicate([curator, creator], excluded_authors=["gallery"])
+    assert group.original == creator
+    assert group.related_post_urls == [curator.original_url]
+
+
+@pytest.mark.parametrize("author,linked,promo,usable", [
+    ("Maker", True, False, True),
+    ("elsewhere", True, False, False),
+    ("Maker", False, False, False),
+    ("Maker", True, True, True),
+])
+def test_creator_self_quote_provenance(tmp_path, author, linked, promo, usable):
+    from src.extract_structured import prepare_case
+    from src.qualify_candidates import qualify
+    from src.storage import write_json
+    from src.sync_catalog import rank_groups
+
+    text = "I built this hillside world with Fable 5.2." + (" #ad" if promo else "")
+    signal = {"quoted_id": "721", "quoted_text": text, "quoted_author": author}
+    record = RawTweetRecord(post=RawPost(tweet_id="722", author_handle="maker",
+        text="Here is a new view of the same hillside.", referenced_post_ids=["721"] if linked else []))
+    group = CaseGroup(original=record, fingerprint="x:722")
+    write_json(tmp_path / "raw/x/signals/722.json", signal)
+    assert bool(rank_groups([group], {}, frontier_only=True, signals={"722": signal})) == usable
+
+    proposal = json.loads((FIXTURES / "extractions.json").read_text())["900001"]
+    proposal.update(models_used=["Fable 5.2"], evidence_quotes=[text, "An invented quote"])
+    seen = []
+    def extract(packet):
+        seen.append(packet)
+        return proposal
+    case = prepare_case(group, [], tmp_path, "test", lambda: extract)
+    assert ("same_author_quoted_post" in seen[0]) == usable
+    assert case.models_used == (["Fable 5.2"] if usable else [])
+    assert case.evidence_quotes == ([text] if usable else [])
+    assert case.evidence_source_urls == (["https://x.com/Maker/status/721"] if usable else [])
+    assert (case.review_status == "rejected") == promo
+    if promo:
+        assert qualify([group], tmp_path, model="offline", limit=12, config={}) == []
+
+
+def test_retry_invalid_cached_proposal_and_ground_native_workflow(tmp_path):
+    from src.extract_structured import prepare_case
+    from src.storage import read_json, write_json
+
+    statement = "I built a 3D scene with Fable 5.2."
+    group = CaseGroup(original=RawTweetRecord(post=RawPost(
+        tweet_id="801", author_handle="maker", text=statement)), fingerprint="x:801")
+    write_json(tmp_path / "raw/x/signals/801.json", {"has_video": True})
+    proposal = json.loads((FIXTURES / "extractions.json").read_text())["900001"]
+    proposal.update(reproducibility_level="unverified", workflow_steps=[{
+        "evidence_quote": statement, "step": "作者制作了 3D 场景。"}])
+    calls = []
+    def extract(packet):
+        calls.append(packet["identity"]["world_id"])
+        return proposal
+
+    case = prepare_case(group, [], tmp_path, "standard", lambda: extract)
+    assert case.workflow_steps == ["作者制作了 3D 场景。"]
+    assert case.reproducibility_level == "video_only"
+    path, = (tmp_path / "processed/extraction").glob("*.json")
+    corrupted = read_json(path)
+    corrupted["workflow_steps"][0]["evidence_quote"] = "outside the author's words"
+    write_json(path, corrupted)
+    second = prepare_case(group, [], tmp_path, "standard", lambda: extract)
+    assert second == case
+    assert len(calls) == 2

@@ -177,6 +177,8 @@ def technology_tags(raw, models):
 
 
 class AIWorldCase(Record):
+    model_era: Literal["frontier", "legacy"] = "legacy"
+    work_type: Literal["interactive_world", "coded_3d_scene"] = "interactive_world"
     world_id: Text
     title: Text
     summary: Text
@@ -227,6 +229,11 @@ class AIWorldCase(Record):
         if isinstance(stack, list) and tools:
             stack = technology_tags(stack + tools, models)
         return {**value, "models_used": models, "tech_stack": stack}
+
+    def normalize_taxonomy(self):
+        from .model_era import canonicalize_models_and_stack, classify_model_era
+        self.models_used, self.tech_stack = canonicalize_models_and_stack(self.models_used, self.tech_stack)
+        self.model_era = classify_model_era(self.models_used, self.published_at)
 
     @field_validator("published_at", "first_seen_at")
     @classmethod

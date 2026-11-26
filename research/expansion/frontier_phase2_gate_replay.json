@@ -1,0 +1,2411 @@
+{
+  "selection": "Previous text-only decline, native media or project link, existing organic frontier activity threshold and ranking. First 400 eligible frozen before final evaluation.",
+  "model": "MiniMax-M3",
+  "stats": {
+    "audited": 400,
+    "accepted": 138,
+    "proposals": 40
+  },
+  "receipts": [
+    {
+      "tweet_id": "2125552451998871973",
+      "accepted": true,
+      "receipt": "ddb73bc42ba02f8720cbb8d6c40f3c6677d0c5af502f30c4b965784dd4406035.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2125545162772267200",
+      "accepted": false,
+      "receipt": "2c1ed3ee74a9bddd68ddec3f56d621583459f6482ecfbfe610c4979fdf8acd80.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123532630645977367",
+      "accepted": false,
+      "receipt": "7c98e38addb506860ecb7ed1c26242011e9743e059c32e8346c1ebc1906bf4cb.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123029626725466255",
+      "accepted": true,
+      "receipt": "12aeccd84eabf0a8264a58ebe4021ae2e07220679e4a124fa7198e0abde185b7.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2120129625099759705",
+      "accepted": false,
+      "receipt": "ced06243af2f4d906fca8927eda482d4e631c8ba970b2d2d44aad2ed0a9df597.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123588334358532208",
+      "accepted": false,
+      "receipt": "1deaf90e0f560652f7c3396302a6d957f6fc0da31210ac632cf9003684839512.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125285452274126856",
+      "accepted": false,
+      "receipt": "baf7def4251dbfd02ab23c8ffe881c9e995cb8c9a87f702ae45f50125ce7b4c1.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122291060869370338",
+      "accepted": false,
+      "receipt": "16c62beab504d532af2dc3c08fd3a48a333dc0612c8fd89cdca7dc0d58a5c60d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123047210182955440",
+      "accepted": false,
+      "receipt": "99b9a6aacab850dfb5b81391fcc05405bfbc4c9f10ebb9b89a233361d2460585.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120744597135806907",
+      "accepted": false,
+      "receipt": "c36e20d41e8996955f0078f16b037757649e97bda73f92ea090fe495e2586010.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119993830695227424",
+      "accepted": false,
+      "receipt": "2b6dd9bce83f91e384b9d8008d47cb0ca923e93cbec594569fbe5fb320f82291.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124906320424014310",
+      "accepted": false,
+      "receipt": "e52cb72456fdec50db0a18a31da220dc21f0f965d99df6f1025ad9d0595af549.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125194477749117348",
+      "accepted": true,
+      "receipt": "5f5175ef9002ad7c9f521b99b6faafedd5c3f0defc03a5d201a356958697af40.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2125339392210583876",
+      "accepted": false,
+      "receipt": "b88ddd42749c92003b17f49122807cf701647627515fdc52738498f653db85ff.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124205345606103149",
+      "accepted": false,
+      "receipt": "8b1a7f83eb1022614f56fcf42e23dcf398c563b32493d526c0eb17cb4ff80b49.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124225587623473600",
+      "accepted": true,
+      "receipt": "79e5b309bdadf4db2c6ea664c5bcfab40492a839ff0fb346b3da5b3552064347.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2122757992311369934",
+      "accepted": false,
+      "receipt": "7abe27138e99206bd1c8ae07c801dc03d3fca618a412068ed3478d165383b763.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123130575230042601",
+      "accepted": false,
+      "receipt": "d2fda53a1aaa817cd1944f74faf2cc3ea5679da777b7c7bad7d359aea0d52622.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124435220929867952",
+      "accepted": false,
+      "receipt": "274202a68743526a31333c94a22b84ba973ee0fcf621e9f6df79456281dbbc8b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125286671016968556",
+      "accepted": true,
+      "receipt": "db372e0e3a56ff286f3c157b8c283fa107b7dcf3500d0514b07503e928e824d7.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2121584900998582668",
+      "accepted": false,
+      "receipt": "be04e27e1ea583e90b5e9ac8068a444acb6958702dd3c8fe3f69c5c65bf9eed7.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125220555238359363",
+      "accepted": true,
+      "receipt": "c45b77f42b32debdb6240cf2545c3d257b381d9879c35bac8772a62781e184c4.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2124494355901640961",
+      "accepted": true,
+      "receipt": "289e46146d53b404a701880547b94c61d505de4a9346659a838751dd2d87b911.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2124470064422527151",
+      "accepted": true,
+      "receipt": "fec3308c9f4fdd7031d162f29adb3f657bfe8bd63ef50dafb42807ac83926024.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2124831684952523057",
+      "accepted": true,
+      "receipt": "d3f315bd2b567191103759695a262e1bb4562e7a145611ae81c7f83ad30e0708.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2123502161749504393",
+      "accepted": true,
+      "receipt": "3437c696a06904e15eac339a75ef08b82d97be96dd57252786958c28c879c0b3.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2124576753817354311",
+      "accepted": false,
+      "receipt": "64bc5ccc0dff8f5f14536588fd6ae13077c20865d69c10dab562cdafc0ce92e3.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125191948898300192",
+      "accepted": true,
+      "receipt": "8b70c6ec63f988196865d146c6e9bfa6e30c69ca573faa9f108c983bc9a1af74.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2124592145088618943",
+      "accepted": false,
+      "receipt": "b8a9600a8318ab678599ad32bd37bd42948890cb7f5bec01d5a0662040c9c2be.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125173832881189104",
+      "accepted": false,
+      "receipt": "1aedd574d745ba3ea0490394dbc624e04d2ee6498f322aee0a4d437214dde760.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124174879180071198",
+      "accepted": false,
+      "receipt": "c98f85ac54989d9df52371fc5509d88358fa182d4062f0d1db619173610ba821.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125546388998287703",
+      "accepted": false,
+      "receipt": "05843c13175834b0b3b82d6a1b4fa2857797d732723e2547be2dd818b9ead8aa.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122799948223631430",
+      "accepted": false,
+      "receipt": "769729993b22ede89033e15129e5aca494590f22fbf51b131d1b9d346e300be1.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124526031197368757",
+      "accepted": false,
+      "receipt": "3a062a30346f8335fae41ac0df8bea45e95061a4e2e7f6d3c59f6f738d807c8f.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124488122104733805",
+      "accepted": false,
+      "receipt": "aa3b53621de4fc93b6e7bc9b5e061adeff772cbd88794e027a8e718f94b366c9.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124479393322107276",
+      "accepted": false,
+      "receipt": "90b1491872cf90ffce93d23caab554f67cd01644e536e0ac5ca4a760d829c93a.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124133328773128526",
+      "accepted": true,
+      "receipt": "2d4614a0b797b40c50f32771003fce84b0a3afeee2c83e6105af6bcbfe764b46.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2124336566734860317",
+      "accepted": true,
+      "receipt": "31836eff9ee2f4d9aed8b20ef42f28f3333c2ee000035f9107543b921abeb0d9.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2124120737510199411",
+      "accepted": false,
+      "receipt": "34bab583782c336250449160cdcc8332328afbac077ae250d353d40c801fc188.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123084412107583954",
+      "accepted": true,
+      "receipt": "44595028f1a9ff68ad6b41572df3105cb46e9d7b0ee96ebe8619967696780e81.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2124559176684704158",
+      "accepted": false,
+      "receipt": "754e9760fe55c887ee986892e6126aa6760740c08ccfb36056387f2f13b6c6c1.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2124191054165360873",
+      "accepted": false,
+      "receipt": "8d035016a37f9b6dae104aa699f90e9d94fa2d0056874034db3256cc5347068f.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124570168827445334",
+      "accepted": true,
+      "receipt": "64d149009a31dfaabe11df151362425e0ed088e425a79251604addfca7bfbf21.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2125332891840172059",
+      "accepted": false,
+      "receipt": "dc4de361297c8123db2939c796f0d0a06923bb37e7299507ba5112182a48b028.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124165218888478777",
+      "accepted": false,
+      "receipt": "0ad98e1b820ff656209df2e1f3af3ead3d9f5b698f8ccbfc29bc996f46f349fa.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122035097503142017",
+      "accepted": true,
+      "receipt": "f2ad761b1ee735fdcc12eea281c076bacda41cef3c60ba74140a49335391a9b9.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2124912978801594780",
+      "accepted": true,
+      "receipt": "ce674351b21a86872ce9f0717f0927275c8589c101737ec527be26647c068004.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2124135969884454975",
+      "accepted": false,
+      "receipt": "bf269795e72b76e898cf5400730378422cb787016abca09748cbcfcbb28a66e8.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124052695820702100",
+      "accepted": false,
+      "receipt": "230c143a1dbc46f11d6b1d6fb1d5f77a4fb193bfd1e5aa728cec75b620e7c6e3.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123481715624587565",
+      "accepted": true,
+      "receipt": "b8b40fd7d39d072580b225654be282d1b603472233958c8c45b5be148fc3a845.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2124888005597106252",
+      "accepted": true,
+      "receipt": "043396d1d0da3608bf1cabac04d5be8e072e9fafa0df805c19554a1a157bd972.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2123762450935771202",
+      "accepted": false,
+      "receipt": "6cc8f3b4fc6364b546923e349e26b0b9e1d8cbf40b75f38e8df24a5737abb55b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123862930152460362",
+      "accepted": true,
+      "receipt": "532257d22db266fe9f0b832bfb161b08f52a9c227b08abd74abc1510df0dbf00.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2122761185678299602",
+      "accepted": false,
+      "receipt": "93a6a879417c5b5cdd41a5e893e855e707e3d02f3adc453ce9b4807efc90a619.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2123692910306836626",
+      "accepted": false,
+      "receipt": "814e00dc580493a3db027e0d74b5ede148f9ea25f709d29fe4e518f8bcc2a644.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123833408447295737",
+      "accepted": true,
+      "receipt": "939f37046a661c9631964718b9432ae4d37d35f86660ceb297022d2e7e7b700e.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2123491299227537773",
+      "accepted": true,
+      "receipt": "f74815d1429d7dd79a55af979bd7066ed455a6de60be264a4a18710e33035a02.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2122966110115135546",
+      "accepted": false,
+      "receipt": "e38e92514ae830e10eb23e6a59bf3b42ec83bc29d760abd090b43bac010b25d9.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123491524704920053",
+      "accepted": false,
+      "receipt": "a0a7afe37204013e7381aa810283fe560e20b646627877773bb6d271c3cfd2fe.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123466846917763232",
+      "accepted": false,
+      "receipt": "99c122b6394be793edc128140c2dc313e27b32a253a0c858ddc04df167ce56f1.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125190307129983265",
+      "accepted": true,
+      "receipt": "806a13f7341911834f487d75d030aa5d544bf1a6d0f4e00a9ce21026059eee8d.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2124155066991202693",
+      "accepted": true,
+      "receipt": "f4f69edfc24887c53b1cdb6b5119d8e46f2c96fe1605c331503f10cd520eefa1.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123404699403469161",
+      "accepted": false,
+      "receipt": "8ddd44cea5dafb66e3de5448fd693c40c4477a8e396d7f6b6a4781988ad3fc17.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123402731175956555",
+      "accepted": false,
+      "receipt": "b4cbeafcb43a7354736ccf7bba538f609041829a8d3c621cb507db6eb27c3ddb.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124104195158507654",
+      "accepted": true,
+      "receipt": "969cbe1c0b88b37c7bf4a40282335b02daa1e0c1bfcce370fc6154fe09297f70.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2119111742446068176",
+      "accepted": false,
+      "receipt": "d579751aec84bc27de4a9c3e98959889060d801a94fe44f3adfe4d92ffafda7e.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123485956737216542",
+      "accepted": false,
+      "receipt": "f6885901b5b9ba936bbeae106adba4eade45e48bd7db632f10579e53aa4a4a5f.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125208879822672154",
+      "accepted": true,
+      "receipt": "ed12873313d6eadada642178bfdc9a5cef812fd79d62a2bdf270323c46ba7cfd.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121302238333407247",
+      "accepted": true,
+      "receipt": "0c8c0a1b36bd3c3c0bc0288b2ffd119d7787af3fc636ac784ef6836dd5fbd904.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123481152681922891",
+      "accepted": false,
+      "receipt": "9dfb86991c3f573c25abe82cc4c4ab69ce975a8480f8039088ddcbbf8b80cce8.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123480162021069101",
+      "accepted": false,
+      "receipt": "1664db291297e3a2fad9cd659f73059cae0815dd6007fbadc5d957ff3723fb12.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124564800382402889",
+      "accepted": false,
+      "receipt": "0f5805270e3a42629633fded711fa919332bad900eb66ea47fc8d4aa8ab82b2d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121012184151167060",
+      "accepted": true,
+      "receipt": "9ee3f3b0270c3ca98a106743bb5a270e5128d3594382db611e5359161d18df99.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2123482927023702287",
+      "accepted": false,
+      "receipt": "1f2886f61721397024503fba60d16bf9c3b131608b68aa590a278e879526c69b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123855313128341863",
+      "accepted": true,
+      "receipt": "c16a76ebd51c2a4829c342054709484fe4b4ec7de0ec8b75cc9fa7920a477115.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2123479611170234441",
+      "accepted": false,
+      "receipt": "d3f48a02b41e862b4311654de16b5dfa78f1cf0a1eda07f442d6841128825ee0.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124877403688259940",
+      "accepted": false,
+      "receipt": "816d91e0c83d887e8446d721c5d48b29f6d7458093ba64d11194b3f97e668e79.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122517583349817563",
+      "accepted": false,
+      "receipt": "fab42b2f6071f1944822070a09a9759b78d458ad9866733d1a69239f64a9acdf.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125498220411568265",
+      "accepted": false,
+      "receipt": "bea091da79dbe354fa37650aaec63a18fe11f2ae97042878e39f7a1ed26b1a49.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2123522074237100144",
+      "accepted": false,
+      "receipt": "a298933d7a5ca7d41e9987c3b1c9ec306631f5dc2f7819330af862a52c6abaf5.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125169925174202463",
+      "accepted": true,
+      "receipt": "162653bd119577ad6be9ffde4ff4da3932f4f85a21d931484a9b8b4ed482b445.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123880652428988683",
+      "accepted": false,
+      "receipt": "0eb819f76562f064258d9efaeed6ad3865914b5dcf935c9cd1a0736345f1a373.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123172282574987698",
+      "accepted": false,
+      "receipt": "0a829a9a20b3a6a38932b58bb820a92272b3266eb405d3d1530451d80ab4de0f.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124967271814910183",
+      "accepted": false,
+      "receipt": "1ec2706199598aeebb00bfe9fb4607096f050aaaba315f16f1816b79b90a6255.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123356718818005018",
+      "accepted": false,
+      "receipt": "76d6cd23f0c7a6637dbb348d9ba2071c801c51954bd682b6e2d0a359ff1e643b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124002679575687663",
+      "accepted": true,
+      "receipt": "62d5d5913f215f55dc136e955875e418f48713aab8e2e0c0e265fae412375a72.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2123227692208476515",
+      "accepted": true,
+      "receipt": "55ebe786818bd0c84e4f9367bf7d6bfc4d741606400bfef91a6201d773cae074.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2123208347029790912",
+      "accepted": false,
+      "receipt": "d777541436fa843111e93163a150645c8b18caf020d1b2f277d44a5a982698fa.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125540432738480199",
+      "accepted": false,
+      "receipt": "c42efe6ccc2f812206e252b89877296940d3c703002f91541e0a579fa7a5885e.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124929125974450503",
+      "accepted": false,
+      "receipt": "0c310ab54dcafb28b8239339c0968021e97c590bc506cfc8a07adca4b4cdb28a.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125265899846520959",
+      "accepted": false,
+      "receipt": "1031bb88d03dc4d1a17d19e4ea498578b551419c6e0ed9c9438266039140e9a3.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124913461759021430",
+      "accepted": false,
+      "receipt": "93958c732d0c19c1afe0253f103a129f6522b92c8ff649c5be1460ed35bccc70.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125500834016539060",
+      "accepted": false,
+      "receipt": "a1a9e89debc5a51929ea4e27edef0930340f1d543c98b805e0241de641fe9964.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121709761830019191",
+      "accepted": true,
+      "receipt": "eb29bbd77f767db621ddaa20db96efd72a4bfd9e3afb2dd86b94983baaa77906.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125350497238610336",
+      "accepted": true,
+      "receipt": "2e2cc861e89c33b915cb767207f34b2509b181deb20eaf62cb86596c2db3d83d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124027564838818038",
+      "accepted": false,
+      "receipt": "40fed05f6aae7857cd6db4590c2ec19df6c8b5d1d818eb95cc5c755b6a7a42f6.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125295561049809286",
+      "accepted": true,
+      "receipt": "e0f951d1c0334dc241e5b0ffd29635d41747ddb433836995af01ee7e6ac456fe.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125276424496107919",
+      "accepted": false,
+      "receipt": "ed263d6febda6b773546b471edf5ca0f6529d4f1681d75c6d64fe96ceaef7785.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123488789796401194",
+      "accepted": true,
+      "receipt": "ef68cc81451999850277b57c22dc0eea7f1332c72ffc3213c28a74caa971b468.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2124943461107576865",
+      "accepted": false,
+      "receipt": "96ebb83c63dd62b18398ae1d787cd0bf7841620a8ba83b7ab0a1c0ecd1a9a2a3.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124585541328896367",
+      "accepted": false,
+      "receipt": "05581033ea5a578b84becd7b47469812fae6eec8588f1c0fa066d145efa7cefa.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123687539642933402",
+      "accepted": false,
+      "receipt": "338433cf7eeb01ed75c917d1bd1e42ec25a6562b7e27f23d7074b73db2e585dd.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124878060621340994",
+      "accepted": false,
+      "receipt": "1d8faec9e5e8d9f0327120a635c587b9a46cf57dbde8022a9ed113955bfd5584.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123362270139109827",
+      "accepted": false,
+      "receipt": "3080235e03b4e5fe03fc6e946eea806e945dec2d1d9cbbea103ef254a98f52b6.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124314607837958408",
+      "accepted": false,
+      "receipt": "153c952a9f87bd25fd4004f0fe0c089d7166fb4aecfe4973c685c7a0a8b9e999.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121993834485924331",
+      "accepted": false,
+      "receipt": "3880af0a593dc627ad5b2a2871e0d6312a4693baa2e3553429024a8e384b49b6.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124916066123981101",
+      "accepted": true,
+      "receipt": "efcb9b617eea4b769ce9fdae9f8d3b1789873bcce36e41f5b826964169d025e6.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124477136807612451",
+      "accepted": false,
+      "receipt": "a38b9618361ec524f2e1d89dac037b1f0e8b1d0c220449d3d91954e80abb21e6.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120958666480513310",
+      "accepted": true,
+      "receipt": "a276d45954edce749acbb54bbe1d6eb564f95104174f65eb57005ad778214aac.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123383272193630401",
+      "accepted": true,
+      "receipt": "5d426bfd002e4230cf60125cae11085df59e6fa77a69f92c00b43d40328a3b10.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123727410642427904",
+      "accepted": false,
+      "receipt": "e95329801c4f1ee7d3f09b32b32f6020c650bb8c1b1c07d1fd3d13c072d76d04.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125078728011342109",
+      "accepted": false,
+      "receipt": "5d5867b054cdcd93ec6cd707f8929e5e280fa39a7d161762ff39fa92215f1fdc.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120963180461769183",
+      "accepted": true,
+      "receipt": "a8a78848fee0636a7cc31193b02f642ea90032289946f95cc7bd90f899a95681.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124175490516918376",
+      "accepted": false,
+      "receipt": "b77f9c0cda30ed175a61e14327a599c61e438c6fef6291d4a8e51d3977c87832.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122204265498198156",
+      "accepted": true,
+      "receipt": "fcfb07c4090dca384cf04c0df28857efe19c2530052b0a96dccc6fc07b680019.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121550764720210412",
+      "accepted": false,
+      "receipt": "b5e899fdfd2f07644a9080cd4ea98c04c3fbccc9f50f64c4f08bcddc58b9f153.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124971254981792213",
+      "accepted": true,
+      "receipt": "26a880e3f48bc4a63da864d27bf8403c11f066ab2350bc2289a8784cb9c5d088.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2124887393341776104",
+      "accepted": true,
+      "receipt": "c041dc6c4c9bdc84b815b364c9c23776a1e88514024b80567ce709388b2c787b.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2124135643626566033",
+      "accepted": false,
+      "receipt": "2cda745312b66236b0a3eb9e2d9ea48cf1521fe13ca4499c816f3877763203b9.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125174634861547590",
+      "accepted": true,
+      "receipt": "2aa0d8283bb2d165ca61eb5e7be375217cfa51c548fd100062cbfe6ec8a77b7d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124510023199920602",
+      "accepted": true,
+      "receipt": "400481017f8df59ba57a016a66405a75628be7f6338aa24b9fa4c316da5c35f3.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2124466330149789976",
+      "accepted": false,
+      "receipt": "28d51af1a615c92850dafc8e81303056fb034fc6fd55d149b83f53ee29e7ef46.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124080629642154476",
+      "accepted": false,
+      "receipt": "dcfddafdee7536cc2697e64a7b02b53209c6be94375e7aa8624a666cd42b8c06.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123832990598045903",
+      "accepted": false,
+      "receipt": "818e9d2f12a59a250229d7bba9a9cebab305bbdec8a309af72d64036ea9e65fb.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124934820509724836",
+      "accepted": false,
+      "receipt": "a050e8e66a3ac9935cc9f1cea841684712299f28ccb2c69bc3cc552a3b792704.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124486689599140276",
+      "accepted": false,
+      "receipt": "c2e4f00922bcb1614d2bd1494f2ee58c6def5b7da16336ef96cacc73859fac8a.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123839733688119496",
+      "accepted": false,
+      "receipt": "6865c62d09a9264ae2a57cf0d1d7795aec19bf9bd866ec4e66aa80c089688c3d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123826843493048770",
+      "accepted": false,
+      "receipt": "9ae611c8098d8607b480ffd783974f68d46ad2d73622f6b2b357e3ca2d248fca.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123636478932881627",
+      "accepted": false,
+      "receipt": "dcd74ac1615c41d1882941fa29b79f0996c31e42f9a891b133fa03ac16ae8462.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121465962863919238",
+      "accepted": false,
+      "receipt": "8933bc9fc215dd07e59ab03155e5e41df035992838e2139fa2891ab3cb0599f0.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123796667942002822",
+      "accepted": true,
+      "receipt": "0c8889247c3c9afdbea4a2559ad861a642e4e833c011ef2345b290bf6aecc72f.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2125296359972421721",
+      "accepted": false,
+      "receipt": "14bfee68ddef58fa69862a86db8a99fe4e610ec9a8035e60701beb973d1c30d0.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124514256938758607",
+      "accepted": true,
+      "receipt": "962e56462ea28b0644ed68d0c4031fd95c8c98286d4042c6aa732f9710b7d9c8.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2123778558233334140",
+      "accepted": true,
+      "receipt": "304970d79ded4f13eaf0cf603a711ac450be860a32a0986a7ecd12bf5202edc8.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2123274228183216442",
+      "accepted": true,
+      "receipt": "f1e86b44415e072799279a16861fb6359cf497f9c8c6e9a4478c0e6f972bc16f.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124922352698073593",
+      "accepted": false,
+      "receipt": "627086388a9a54436cd9b23588c0b976a79801e1cebd4e93d546e0edfba5430d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122016357449679260",
+      "accepted": false,
+      "receipt": "1e38f0de7d61128458116ac310f6f6b8a8d275202b4678efcce52c6770d4b967.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122725118225039786",
+      "accepted": false,
+      "receipt": "f352c0777ec62fe308f9b20f140af4c32c984d70c99542d762cdcbb24f153c4a.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122698475238465960",
+      "accepted": false,
+      "receipt": "c06f7871c0810a3c365cf5b3259d1c56bc672bcf775b1aaf3abc15e93ef99124.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123936021872021506",
+      "accepted": false,
+      "receipt": "15dd68af8d71a4a594b65d2c8d90b48c8abbfce0e8f6444990385dc289a59bc9.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125524076013760588",
+      "accepted": false,
+      "receipt": "0b5d20cdf27456e63193779d5c1ace622a1cb8acce25a72f2125ca0057f4581e.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122687450057429410",
+      "accepted": false,
+      "receipt": "40bd2cc52e80e17b6190d66e82879710d973f53b3cab07d336b72140c4d2821f.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124792127422959781",
+      "accepted": false,
+      "receipt": "b27c2a17cfd668e473d2e83c02f7bd05711e2be0e4d82addbf47366ffe06639a.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125534305002664303",
+      "accepted": false,
+      "receipt": "f8bf81753afda9708d126a2f8efca153133d6c5171725f10bd54280be83c806a.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121603476962852939",
+      "accepted": false,
+      "receipt": "256ceb315f0c9111fe54fa25d4b2d4dff9af76ad3432f761a16026acba036ae9.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123458096429416706",
+      "accepted": false,
+      "receipt": "25d1f54f284638098b41cc94298edc6844c51fc359dbc559f8a14905a16fc993.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123749364963426674",
+      "accepted": false,
+      "receipt": "fcaace48f11cc5613a54c5ef97eb3a687e494316898419b0f069fe6c45a34a82.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123476473013293297",
+      "accepted": false,
+      "receipt": "f993454707fcce83480a011ca8909d2d894af97c308b65d7de2717c12336bd58.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124205275272097970",
+      "accepted": false,
+      "receipt": "2fe76c1a8af7b12b729395dbe6e400e04dddf81fa28e216e9fbcd6d0cb69ef23.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123048735966196224",
+      "accepted": false,
+      "receipt": "45cde65526268f5ffdd786d1ef9872a4fcc964320f8be4569d7f988fc5d39131.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123445726697144671",
+      "accepted": false,
+      "receipt": "f60f164de8d9c36473682545e2b51961c0459f6b4b3772df449f58918fb380f5.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124132471046606916",
+      "accepted": false,
+      "receipt": "924f498b61ea194ab84740e39b32e490fcbd7a488c8753f980420a93cf93f56e.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125522181887000831",
+      "accepted": false,
+      "receipt": "76973a587de9571ac0fe0781c8a759bea803309a92791ce6b2039c66e9946ac1.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123757192721625263",
+      "accepted": false,
+      "receipt": "fa63a2c9dd53686a4556bd5dc867f2f764c3be2a8c9e93ec2f95ea2ef329b133.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122196775511441521",
+      "accepted": false,
+      "receipt": "dbf53d4eee961971459ee99c398ecc3d230fde52e3c40cf6f065b46da2e8c3d6.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125503940569756141",
+      "accepted": true,
+      "receipt": "9d7ea9685be2b755ad0c9cf5eed1737631effb52f748512708849c678c4c9927.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2123035464567590946",
+      "accepted": false,
+      "receipt": "1bdb38522cbc54e52ca39cc164ece9b447b7cdbb4b2602a0977eb0b93aee4690.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119469891959001573",
+      "accepted": false,
+      "receipt": "b338c0874cebb64d2b3de29ebdd71ec13f8420d455492ede96a529540e0480fc.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125541225318994214",
+      "accepted": false,
+      "receipt": "2b8fe78739422d4a01d0395e93de2f18df7772ec5a13e26cfc9339221a47ad48.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123481187196813810",
+      "accepted": false,
+      "receipt": "ee3485b82ac27542896cc20c8b2c239b02d66b885833036c8785c0eea20b7c51.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125307373049012644",
+      "accepted": false,
+      "receipt": "45c70333f709a1f06e302f85044772d5855fd16f945510903598ba9442d0b8e4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124837204862366001",
+      "accepted": false,
+      "receipt": "01bf881f958fb6e61624bc89913087dc4ae3b73e7ad878193b22f5117e4c5540.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123329006170746891",
+      "accepted": false,
+      "receipt": "96f9155ca4846db690a545db27d9ca955261b810f6cf88b91222d2ecf406aa58.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123189255962800591",
+      "accepted": false,
+      "receipt": "ce93483abc7a4a7eb2914a708ad1dc011c672410ec0c861978d07f1030205eda.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124874236892205232",
+      "accepted": false,
+      "receipt": "629f73b33898daa1ec46d1e844dc4cf79e4618464b76d19979c0f9b87d2f0eaf.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124202628850565163",
+      "accepted": false,
+      "receipt": "4ab5ba0485feff85b83f2d3236cc0f9cadce9582bd2455aed34a508e81eda579.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124429149133566238",
+      "accepted": false,
+      "receipt": "adf4c4ebf3aa63adc4681cd60ca9476b6bbace983796455fdfff7c7bec81d1f5.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124165531142152458",
+      "accepted": false,
+      "receipt": "f96a7a82d3b631dac8d9fe6df5866304c5f28afb468e3f4ffd4310bd75e26c09.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124204481021608371",
+      "accepted": false,
+      "receipt": "842e99fb0307b09b5721333dad7550a177597b24a82a1d3c24c4858d3b27f585.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123451308359532551",
+      "accepted": false,
+      "receipt": "a5154f7b3b61a519228a1fdcc5f6d489f69ab3bdb86f123122edcbc05cc66bd3.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125290643757076886",
+      "accepted": false,
+      "receipt": "57bb5b56204688c19046e62afd40e7e827011690cfa205a78865f6e588a56e24.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120933196221333791",
+      "accepted": false,
+      "receipt": "80419d5dc457fcbfdf8f436b0ff58d31931202029e98590508743cecd4be3e8e.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123449380036321503",
+      "accepted": false,
+      "receipt": "57a537006a94804a41990221df4f9b9b2dd1d30fc8a5646996db270cc639e499.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124162320314019969",
+      "accepted": true,
+      "receipt": "84ada1d914be1f507d22ab187ebe5c21043b68f0adecbb087731031ba1ad7e90.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2125186424140128332",
+      "accepted": false,
+      "receipt": "0ed50e93aab6ce56f0c89431c7b0c45ed2613d7ae1ab4f7224632c750b8da121.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125199867660157322",
+      "accepted": true,
+      "receipt": "af3f2b2e7ed07fee30a324887d123039cd24971ebe901e4dfd9724259171c70f.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2124040952658682263",
+      "accepted": false,
+      "receipt": "5a8be7ebb75b44ab339d7e5b8fe1fe1da661cd662a6868a51c6085e25e17dbf8.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124168094025502844",
+      "accepted": false,
+      "receipt": "240f03e638f350a7b20b6b430ed18b004f648f9405ec3fb7ed5def5746c8533c.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122520448432803972",
+      "accepted": false,
+      "receipt": "2ecb507fdafe706d47a7dc9cb9f2be48e8ac28341cf7f0ce5237d57d32eafc40.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120565901787541984",
+      "accepted": true,
+      "receipt": "a520df7b4547e02252324694fd6d1f0c620d0868d18d46ad54d2607ce7834270.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122131817666957823",
+      "accepted": true,
+      "receipt": "0b2c83bfed61769c72819d597407c5686ea8b4d6ee605be58c7c026e65f973f7.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124821789473665220",
+      "accepted": false,
+      "receipt": "16be371cfa8aa06dde61a1866756d7bcf43bad86532e9ec1a2adbda6c6ede0d1.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2124175147871404366",
+      "accepted": false,
+      "receipt": "0ca1b7f82074ed761439816536f18e4589a6d9f8328bc94728e1a11fbad26560.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124071341804630096",
+      "accepted": false,
+      "receipt": "4ef9b451cc2e6fedec7f18b6df7a3dd9a9ace0c43034f0869ba57f9a2e0dfe95.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124948337585738089",
+      "accepted": true,
+      "receipt": "c7f0b3fc62623412c87bd3e1dbf9869cd188c28cef9bd644b854b50396f65d11.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2124091474518130870",
+      "accepted": false,
+      "receipt": "0204fea2b4f77f4634965240194daf4ee4de14ef790f1f010b7387187769456e.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123476246789345780",
+      "accepted": false,
+      "receipt": "502f15842800030ebc65ee002b09e8848293ed06b29bb972c534a01ee02f2877.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124166398880448916",
+      "accepted": false,
+      "receipt": "04d1823d8b2e90bd21d3b3e1b664b188ce050eadc1c81075b78f3d39b84978b4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125079993042821464",
+      "accepted": false,
+      "receipt": "105829bc4dd788f46e36af4c7f243c75c4f631e214580a815a40c71d71400d69.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125401434053075451",
+      "accepted": false,
+      "receipt": "13d248996f19b0bc257bad868c9904420eb08b09339b9762657e40d60d39a14c.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123860569392296342",
+      "accepted": false,
+      "receipt": "0a1002c4708cc78259b6d8e180e0a81bb49d28a9dabe9ffb71981280296af99c.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124740796612317636",
+      "accepted": false,
+      "receipt": "5c493725b8c0858acab729323ab2541d572e151cf1f03c850dcfb2338e278164.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124192191941845177",
+      "accepted": false,
+      "receipt": "2c785a7938544fc9e2969b87c1e7a7746948f05dc208354af1403b8e2a1c888f.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123912614115971124",
+      "accepted": false,
+      "receipt": "6f107920db8ccfc83e96b3c3281d0f9aa7182a1af03b99ffe2066cf87e7008fd.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125468599204843550",
+      "accepted": true,
+      "receipt": "b7fcdc376449430d4b6705b77231aa9e5b04c5cdd490cefa2ad780bf18171877.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123390193889910807",
+      "accepted": false,
+      "receipt": "d6444ad4a114a60bd288093ca841e03473d9265f502ad72bdbf3ebd4b6c88cec.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123790509437018205",
+      "accepted": true,
+      "receipt": "f4fb5a29ab0855dc84d13bbbddbd8ecef1e8af9a996271b8168d14150fb388ab.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2123163135054139559",
+      "accepted": false,
+      "receipt": "9266b8dd6d79f66d1846e144745533a961f32683e3523eb4108be782968be3a2.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125553474339328329",
+      "accepted": true,
+      "receipt": "c87ffd68b262796652643f581b49220dc01e9ec2c3b28dfc4ef1d3427a741f12.json",
+      "review_status": "rejected"
+    },
+    {
+      "tweet_id": "2120443887382860085",
+      "accepted": false,
+      "receipt": "74d7159d131b05ef14b248ff84d8c59db0f85851ec1933c99088ef22eb15b5a0.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125306270655614978",
+      "accepted": true,
+      "receipt": "aa9f907ccfa1b5b3a1c3e3378bd62a24bcd1c1c3c1c3e924893603e39b624592.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125366690343006276",
+      "accepted": true,
+      "receipt": "c370f1a008158c50f76146bff50df8790084205776b19b120a80fcd4f603ef60.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124654159404335232",
+      "accepted": false,
+      "receipt": "dd253f590a8997da0d6766be19ccddb4ce3b731bfcd14d92acd99139b1fbf1f7.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123339825151365512",
+      "accepted": false,
+      "receipt": "5a6668c246f88f35cf7192915b6d9bc6d6fdce1413cb4b4ba2eff5679225b2a8.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124078474243850249",
+      "accepted": false,
+      "receipt": "28ee8edb171c25fe0209b095a061b9fc012d5890dde056fa45185af08869ea64.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124908896490012789",
+      "accepted": false,
+      "receipt": "4581d1ddb7956ee862f9da48e3c5eb1c2e6f00531be60344b5b5a2f8c073b1a1.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123801073060319651",
+      "accepted": false,
+      "receipt": "4745d315c44e50bd75f65ac5b5046c9f80c6371dc3b672c8464cdbbe018820fc.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125537095716581633",
+      "accepted": false,
+      "receipt": "58a6b56f433fb2e89cf86fbbea3d359c186e8e96ed12ffb54fab7307e7ac591b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125533906225045917",
+      "accepted": false,
+      "receipt": "118a549feeefa18ee188bf33e4758735954debcd43aae8e10fc8b6ca190a0f53.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122686114129723750",
+      "accepted": false,
+      "receipt": "5199e126fbc79bed27664ebcf5ebfb1884850afa5997a6fc0084c176ac7bda98.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123434753504477660",
+      "accepted": false,
+      "receipt": "86aeba71e98833b90d8d361fdf40ec000eaa17651778396d1d2e0e1f726989ad.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125453710038110214",
+      "accepted": false,
+      "receipt": "9c41b43eadb89c240c4f53886ae59b144fceef70ea9ef691f4769c4dd6ea6119.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125267930955005962",
+      "accepted": true,
+      "receipt": "21032090e11aba73c48a1279f51463807fcb54b6420486b8047a9cf4f4767636.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123619799687414138",
+      "accepted": true,
+      "receipt": "0c9ba16c8ace5bda2f0b6b42194b3187800cbe19d3bb82b3d65e472ab0e69100.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125320353517867374",
+      "accepted": false,
+      "receipt": "afd47c11c0ad66895b49d2b18d6c4cded1da53b35c7f4c485d3a4b67d561663d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122665720077033654",
+      "accepted": false,
+      "receipt": "8d93e2c22d0bc8ef1c2a4475d72851a6ebb99d445d07953ba788395b356a0e58.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124809263273148794",
+      "accepted": false,
+      "receipt": "ec67c6438c3ef9bc0e39abf951e08696919638718a07e5cb49b6f593ad7d62af.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123785968239177848",
+      "accepted": false,
+      "receipt": "6d38a764b6d4f366e0b64364e587e7addacc7889cfffe48bf7bbd15a5a806976.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125549247500374244",
+      "accepted": false,
+      "receipt": "ce86af2d5db57ed59a0388c2cd6d6125945ec06eaf85cbe77e9a3e726adcaaf0.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2117327401122480510",
+      "accepted": true,
+      "receipt": "2e1890f8e1231c4f8c9e216d82aa4626d9d84e8b08fe4ba720135d4671ac7029.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125321956614615094",
+      "accepted": false,
+      "receipt": "a91dc0271eb7e6118db76fc3989b1b1df3300a5eb28406b7d12202667b126c68.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123387945805644182",
+      "accepted": false,
+      "receipt": "a4f51d12cbe489e64ae55bc2598126191aa44e3dc1aece724c7cd68d892b6aaa.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124912360263651536",
+      "accepted": false,
+      "receipt": "4e686e8a3be93f869fece9f200c24ad094b93639482464e4213b697e7aae43b1.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124284549295231318",
+      "accepted": false,
+      "receipt": "0f7b62afa906521068537a64d74e572afcfd9a19460c9aadbaf49d955d3a8190.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122961825771798821",
+      "accepted": false,
+      "receipt": "5beef6e5d594714f120fdd2debe7b1de088f59ae899652d939dc08b632fb85c8.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124022028168773758",
+      "accepted": false,
+      "receipt": "2a37734a8b82a91fd81ae5db1d119b8651b422e97551f7a6a1042f717030e5a7.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123487027555692858",
+      "accepted": false,
+      "receipt": "ae7592eb5b2b160c692eeff70487aa66b0fb7bb1a3a5db5613aebd1ad6aae8d2.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125523178378166341",
+      "accepted": false,
+      "receipt": "c7539de6c3db63ca21275f03a77a61ee671359559f22f95e5d18f7b16c3e308b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121549362530562403",
+      "accepted": false,
+      "receipt": "e3e834dd2fd0656d7703150466489a90fd8eed3cf55d8e43f1fb6e48f791d997.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123497229088657607",
+      "accepted": false,
+      "receipt": "fe09200386fa9516af52fee05220865442af09e86c473fd9022b26e48837d3af.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124123109955621272",
+      "accepted": false,
+      "receipt": "c96719134ba3033d62d49a14da698e221eea06d6fc694c61fbf23a077e82de04.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2109708195031900310",
+      "accepted": true,
+      "receipt": "2f117447791c60a3665b777f00637a2f13bff32afb97114db2f501c86a674250.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124858348285866437",
+      "accepted": true,
+      "receipt": "75b83f734b5a0b53f1cf69b593f847ed595f3a4d53f3904c62e8f8929c5157be.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124202589000483109",
+      "accepted": false,
+      "receipt": "358a135ffdb01964242f495491adddf8c421057b830b21ec7930425e05c47074.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122681375618974102",
+      "accepted": false,
+      "receipt": "7a14aa0c70e94bb645695a86789c6ed2f9adbcf4e7ba46be03bc9be74a77ea06.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124806236696891466",
+      "accepted": true,
+      "receipt": "0cba7d6bf40f01c6bcc4e25633fd8b5469d2218d2262a1f02f694a90b6e5fffc.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124452067913994543",
+      "accepted": false,
+      "receipt": "d663c593627d2c55a5c0d1c14b09db1d5e5a4054994debcf1105f9ca3409f5a1.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125252536776970251",
+      "accepted": false,
+      "receipt": "707a41e4aec7dcab3e2c5c881ad177c1d49126dc419e53cf77c1b72cc65119c7.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125097616228987299",
+      "accepted": false,
+      "receipt": "4b9bd7ee9c14c1789df4aafb1f4cb9487456fa1fc498b0ab9cb23d15265a0aeb.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123203105370120470",
+      "accepted": false,
+      "receipt": "2c8162775e0a06e552cdf495acba6d9122ec52720dc9dd438cd37525962a3fb4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123484535824506949",
+      "accepted": false,
+      "receipt": "a0eee81b15d96cc2dfb4b5a42c7961c244481107c0ffd51744d72f6fd75d1075.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119940116567478679",
+      "accepted": false,
+      "receipt": "a0581b0aa0a25f7de112b8d51b90fe50bdd9a012c416eebaad4c8f9698a9dfa0.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120538724287324617",
+      "accepted": false,
+      "receipt": "a6e0e1fabbc19b28b4f22ee3cf1252ba63e9e2d17545ad1004d2c3cbf5b39476.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122667693098807731",
+      "accepted": false,
+      "receipt": "d0fbad486c85e3cd6b1905df588b701be57a6e768ece2e8c2304d6e35bf48034.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120473175158849884",
+      "accepted": false,
+      "receipt": "064f68b3e31945debca90110935b1e544e9c1efac0e4a2fa33a5ef265e736f46.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124147727730667560",
+      "accepted": false,
+      "receipt": "907b425e8d9b079efeb0f41c1c1f5a2599f23ee378ec6aab6dd5f9bc546df4ca.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120848839858848006",
+      "accepted": false,
+      "receipt": "098f6d4f7d8d2ef6bba82fc8132ea0c53f7facf026329d7b51dc92aee684a7ee.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124211273684680861",
+      "accepted": false,
+      "receipt": "cf9cb254d6cba610c5f7da47203ed9fab131a3d85d461403c03641e093369f9f.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119899459761131615",
+      "accepted": false,
+      "receipt": "4c6263703fc0ec31198ccc60d337b047ae4ec826d350485e34069e62ca3208b8.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122750124543926515",
+      "accepted": false,
+      "receipt": "2808e8dd4895a4ff68eaffb3af6e015d86e3e072a8f0d87fb64a7461f33e4b8c.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120186185423159331",
+      "accepted": false,
+      "receipt": "147a7ec5d724490ec8369e99382d3911d3e6f413e36162186cf1fd48dc8c29c8.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2110433209909743939",
+      "accepted": false,
+      "receipt": "e95d1cadb74d9b1e87a27748c934bfa6e55a45a53e7e8b0d9261c7640ef58f0e.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122750126297161811",
+      "accepted": false,
+      "receipt": "7876843a0a8ce605b9153192f354e486152f9ea8b3dfa88eee410f752fc6cbda.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2117305921936269425",
+      "accepted": true,
+      "receipt": "79085eff4a71687bb5000886037a70c70a123b4b9ea4bf37f2444cc3310440cd.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2122752256923873753",
+      "accepted": false,
+      "receipt": "0b41dbac0bbea14f562bfb247fc6dcd4afa0797bf51879cb71dab6b0152fc5f4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2110405835067122113",
+      "accepted": false,
+      "receipt": "bfcefccec9a23c2f6583140330e0c90e1d54e3584c8fd7d65b38c93eb767086c.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2107515767986217026",
+      "accepted": false,
+      "receipt": "9d7e74b0bb059a81a40075204497bc9f94dbbaf85d8b54b7e361a97a30707461.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2102533401110802552",
+      "accepted": true,
+      "receipt": "96aacafc39a164d8672a3ab8c8cec53141e43350c81f2c97f0d3486dd96ba3fe.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2116638251025100975",
+      "accepted": false,
+      "receipt": "6b0b9c98867af21e121ed16620aad581bb07d763c015f322ae38526813b93aef.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123407312241262670",
+      "accepted": true,
+      "receipt": "70793d19c22e315ce9befcdfcf477d30c7641e078fbb13e9613a3bd003f79177.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2121312707588583455",
+      "accepted": false,
+      "receipt": "ae1ced9431de883377d18a54f3040a28a759fe993256c6b178f02377e3fdfc84.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123170821250400282",
+      "accepted": true,
+      "receipt": "fd75864b7913cc6146c340a190ae88933a1b775975d2c94e51e113b0fe4702b5.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119899461983822264",
+      "accepted": false,
+      "receipt": "3fa6734a5a11e92be553f80b1b0abeff0925823913d9fd70fd154e9190314976.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122750634210529569",
+      "accepted": false,
+      "receipt": "e656ed510c10eb0cdf4023453a78fd35a8e63fc1dad4356c6c1d65d3aa88e189.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120699556207919454",
+      "accepted": false,
+      "receipt": "28496efa1a468505e91e9337438769fe820f392d241838ffa75e6facc1a1d19c.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119132202952798369",
+      "accepted": false,
+      "receipt": "b1668b442a5e1235ea0ed715d08b4f3ae82d8d169b1ce29bf7b1c1ab752800c3.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2113688082474221830",
+      "accepted": true,
+      "receipt": "3554c6f1a4e117170287085aa388412141b8588a70a33fd22c3a57cfddae1c7f.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2124754614130200818",
+      "accepted": false,
+      "receipt": "cede473772dc1e06bc3b2d7216899d042debc0a5d89c761269d15e612f2646ef.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119884452054937656",
+      "accepted": false,
+      "receipt": "4ec396d6a294b88beb0930e6f5b494ab2891dc2de4e0a5fc9897b1a4645061e4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2113635335267643591",
+      "accepted": false,
+      "receipt": "608be2270f47e88301d77d347246feb6b7aeec358ccab7520bbdf92dac4791d9.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122767521925230896",
+      "accepted": true,
+      "receipt": "7dbc9bac03a0782326e3c78768dada88aa9b0e2ac74c126d278baaeafe22fbd4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125486003859427534",
+      "accepted": false,
+      "receipt": "4a6160d61e546d165f1b7ae8a74d59b0acb33d4e168657c73cd60a03aa159bb4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124951681465000008",
+      "accepted": true,
+      "receipt": "372600ec47fa6800141bbfe803a6b1934697065ffbeb56d4dbbb48e5d51bc5e4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2104634635234005025",
+      "accepted": true,
+      "receipt": "c9597b25863ea1c26789951f841b8bb106a066c5aa2de1df71c5e2bbd33c7d28.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124944225955639430",
+      "accepted": true,
+      "receipt": "27ca393caa01e42018e84d0f069464e74fa935d846922201278cfbcf5d943dcc.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120324708826550328",
+      "accepted": true,
+      "receipt": "2a5bf02c5e49ec3b23f81706dd641c93855898a9db79848c534a9f001b5a7b80.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123723274987114504",
+      "accepted": false,
+      "receipt": "9fbc19f428f52f149047df1e519ae08fd15eacf467a624860874375dcb34bebd.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120568144687460434",
+      "accepted": false,
+      "receipt": "aa1fa4e2454b91902c09f479339e4ce89f194b4deaf3fc27fed11790845530ec.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2112559004941472230",
+      "accepted": false,
+      "receipt": "89c5363c4d46180649e580f8a526bb4a70851bf1999341c96c03bbde14f81eeb.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2107445352622415935",
+      "accepted": true,
+      "receipt": "728e84bdd2079bbeae43a45f54d1aa5ac2ed827cc972beca06d97067efc61e28.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125261986690703620",
+      "accepted": false,
+      "receipt": "57efab169743f76e78d5615b075b1762b5261c3bcf0e0a0f353b1e03ddfa19e8.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2104777202684301750",
+      "accepted": true,
+      "receipt": "e7be19b211d990101b9149f329b5f51385cb642109479bb7f5b99a3885c3b37f.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2107142680782438466",
+      "accepted": true,
+      "receipt": "3b614e312b1f2abb384a5ccec7e7cc047ac8276ab13a728625e3254d9072b10f.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123117803775426737",
+      "accepted": true,
+      "receipt": "537317e3788ad5ec4b6748b5056974bdf178b08cb3404f290e44dccd015f1e49.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121242251468898746",
+      "accepted": true,
+      "receipt": "27df28f3244e42a871b2f9379e4cdeced9397d621039a51e9da70ef6ef22bb36.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121733991342522651",
+      "accepted": false,
+      "receipt": "de5392c2158664761e1dd99724693d92aa1379320d88948aa0269a69ebd1c0fe.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119871207206158459",
+      "accepted": true,
+      "receipt": "ddb7981975250e07ea36b122db6a7c1ad4cd585994f613ef49f35a33a4f0a48c.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122862040326807696",
+      "accepted": true,
+      "receipt": "d3c0e5075cd8e6add0d25c7289dfa914f37cb43f7cd7f3e1f55899ac9b941cae.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120219371473617099",
+      "accepted": false,
+      "receipt": "fbf70fc22b64246951e85af338095d924859fa734e9760b8e94d20a5e2198988.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122755693191287009",
+      "accepted": true,
+      "receipt": "c573429fca0915c75f605562346d3c2f70c03ea939ff7bddf6896b5b1dcca1c9.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121478863523860841",
+      "accepted": false,
+      "receipt": "785c2b581038174f9820ab98aa40ab95073125d43591040bab4b2e701d486f2d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2112583451958538598",
+      "accepted": true,
+      "receipt": "1c04e58d140ee4446c7c5f94f1d107d57f8435b930ef910c90b51b8fdec81f43.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2121371593943466167",
+      "accepted": false,
+      "receipt": "cb8a7ac068dcf18a17ffb9001ec8ce7b9759f161966bc74e43146f4b0f034fe4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119507514459144677",
+      "accepted": true,
+      "receipt": "4f82129ff3d98593b45d63ec30a856ba34a941aafa74b9031703651d999d663d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122043781507948954",
+      "accepted": true,
+      "receipt": "4c3d3ddba3d3fc23173f6238250ff997c75bc545d7848f5dfc85f55d3172dfd1.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2123570732575989832",
+      "accepted": false,
+      "receipt": "74c5f53b8d404a4eb873d3e4034d4271690ccb28e11dbab40e669717a313a66b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2110973461690802487",
+      "accepted": true,
+      "receipt": "f3a26369339730d5a06b58539af9a8a79d680abed897b2943836990d8e75cf09.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2125125308991090749",
+      "accepted": false,
+      "receipt": "af113302902c6181b6eebd416c267652ec305bb0e52a2b90e2627ce5385ad35e.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2121584144194871614",
+      "accepted": false,
+      "receipt": "dd3854b79ff6c4f119062c72b8b199edf181045a7f40366a15911a71c27d3f32.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120752985949057215",
+      "accepted": true,
+      "receipt": "b1bb5d9b6ba1baa3a8a0862dd1d946446a01deff22e0035699660b73b029d39a.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2104624142754398714",
+      "accepted": true,
+      "receipt": "11605f6f2bd16937b75830c854ae3811b5af7e4fdf56700ee489028623542635.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2123175626039304496",
+      "accepted": false,
+      "receipt": "38109aa71e388852078acf2cb8529457debaafcb58a8915255f2636c0433137e.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2117318336837017846",
+      "accepted": false,
+      "receipt": "487d1e714536930a47605cc243b149925112f8c29c178ef2470f848fe0da6d8a.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119966147328299284",
+      "accepted": true,
+      "receipt": "fb091cbd0721b0dc039b85006ab6e743bb2390ec8cb15196b26f0e45b99005af.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2120050837347258451",
+      "accepted": false,
+      "receipt": "e565dee6bd269840a63c3b4f8502d6d1e1d1d7802d0485917cd68fac0e495cea.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120186187298058708",
+      "accepted": false,
+      "receipt": "3c0a28db751b82e850f8dc08ae4441948ed91ec6ef691b6c58861961e59ad661.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2112979473788477905",
+      "accepted": true,
+      "receipt": "1d6fdaca9028bb91de2fa76698f78d7ffbcfd9aac713fa327c7ad45605693c75.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2122691320686751784",
+      "accepted": false,
+      "receipt": "01aebd413a5dbc73041fd726a43bbbf8849ea5b27e5254f661c829006499382b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2110345498028810390",
+      "accepted": true,
+      "receipt": "61d0e981442f65e7b798626374257ece549b18ff6832a63324553adb6c495c08.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2125199598251814951",
+      "accepted": false,
+      "receipt": "e21eb94b2d5990049c8ff001f80d4f533d80858b3362b53fd0559641a6ebf9f1.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2102496940047094124",
+      "accepted": true,
+      "receipt": "43955fa6d454090d8c1bbf0cd8080ed94917681b1d35b0f626665e3c4b7f6f72.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2120187064184664162",
+      "accepted": true,
+      "receipt": "28f920acf532a11ab9cd8ec156a76db47b592b54dc8597a627f14fd34cb59e0d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125337633593422101",
+      "accepted": false,
+      "receipt": "602f0a6a381c1b56d23d54b8f6f361e95cc67fdb4b8829b9c6fdbf0fca9c4165.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125235839126982806",
+      "accepted": true,
+      "receipt": "836affd02f94472ed7ba8e0f2cfb1ece5a8589f848578d2e93867c11977d23f2.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2107516529608700383",
+      "accepted": true,
+      "receipt": "c5ea60e51606a585a6f7cfa45f1ac477305eb3f43d9df2cd9e4b4c99712290e6.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2121196375803121942",
+      "accepted": true,
+      "receipt": "ca1a2a19809cba1707753ea083b5ddbd001ce077217e41833fd406133cf297ba.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2122756144594641061",
+      "accepted": false,
+      "receipt": "b7d544b63ec64520b54dce637d7e07ff008ab3a1a866f218b35697cbaa756bf3.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2111487991633805770",
+      "accepted": false,
+      "receipt": "2d121884434b656522671833c965cfce6b35e98afbeb7dc0cecd396ccfa06c9b.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2119948146474418588",
+      "accepted": false,
+      "receipt": "d89396b85a43acd1cd544b275a0c7d180f78ebd7a57a856c47547c77dd06c696.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123669447248347136",
+      "accepted": false,
+      "receipt": "874932e6674195ee42375ce71db2055f60553aeddea95f247c3b78dc8a5e9504.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2110100567515398534",
+      "accepted": true,
+      "receipt": "82e22d7e26b62c7cc3828fe713a67463723cd1455b0f1159294b8b86f5ec6cc4.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2119456820758524021",
+      "accepted": true,
+      "receipt": "a0093267730095f00e72f6c9f8249edcce799eb60326b2da914bdb817386149c.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2123953444230963544",
+      "accepted": true,
+      "receipt": "f65431a92d274379281369a6badc0cff5a0f128748febeaf0bd8009fe8b16949.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120201759305998343",
+      "accepted": true,
+      "receipt": "4f696e4bbb2c37462274a1fff55a8f4663b3608381ab2d85a3e0fb8e5d85d988.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120754122362339748",
+      "accepted": false,
+      "receipt": "ba2295ae7bde0340c3735668619bbb0bfc9ce5aaa5c47b5c18b93e8bfffd470d.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123164032882659819",
+      "accepted": true,
+      "receipt": "c02dbd4f0abc1fa94b83069bc5a7b0a85fb65b196109e13d3923f971c2462071.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121714155757441227",
+      "accepted": true,
+      "receipt": "26fa53d135cd23248a0593e2840b2d504688839b75aff54dff104d2461bfd673.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2118327475294097710",
+      "accepted": false,
+      "receipt": "51a2c27e8b708699ffb9bea8791ffe333657ee60e29d8dd6841820dc001bad1b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121302218347270625",
+      "accepted": false,
+      "receipt": "85da55b5c5835dd42289b5dab925a39f7d08abd32cec1829af721a1c0ea284d2.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125320110667600176",
+      "accepted": false,
+      "receipt": "1d6009ec476b1dfc6edadabde8cfd26bb3e7697132a56ae00289a0723e00e3c4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122407515606671687",
+      "accepted": true,
+      "receipt": "a91f0455b682c26aa95c56f227720561379cf2c2847f0c8e4cd40238c1fe6c09.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2113246123959668854",
+      "accepted": true,
+      "receipt": "11e5a1d80d798fc5c70891bf784a589bd9ecacc09edcf22c60b0345ff7086799.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119423600692166703",
+      "accepted": false,
+      "receipt": "0bd714f35ef42d41d76cf9567c46e2a70acff04d5464b77b3294166fc372e057.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125038756264837301",
+      "accepted": true,
+      "receipt": "3ba849073dc47a79b0e379ddb51aa1705f2c15ea27f8ee659db2bfe980119f0c.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125254550416175477",
+      "accepted": true,
+      "receipt": "f84d29572b4f5ad88b4809db865e767c0f9a3844035ead8cefb0096cb5fa79ac.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121074413789725164",
+      "accepted": false,
+      "receipt": "d8cdd962ac0f668cbcae35bd7e626c875fcee79fbaa481b281ae6ddb81000009.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2111661203516997828",
+      "accepted": false,
+      "receipt": "efde4802f9e01dc7eed32c14237e4e4d5638b8f499cce4247c32bd05f60f89c0.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119327911521984639",
+      "accepted": false,
+      "receipt": "c45b67af8ae0204e79cfb0a5f456fd92d6565e279089843137f02e7a303a9b1c.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2107062652656869444",
+      "accepted": true,
+      "receipt": "f3358bdf53f47cc72610f8c4a2fc3ff1a866e6c0bc3bdbfde57ede7f026f3198.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2112927492071649450",
+      "accepted": false,
+      "receipt": "ac00a39f652c26db43506c43e2152c2936fbeaf016fc53e12280dd290e31a079.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123164858996908367",
+      "accepted": true,
+      "receipt": "4b3849e59bc1f60c6ac6e6beac8829fc549cdc31031d1cc12e0fee2b4c913395.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2107523510079738228",
+      "accepted": false,
+      "receipt": "959cf1c751dbaf828b5e23a867367e12b457f765e03ebef964aa8b29639f0fa2.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123879309463228445",
+      "accepted": false,
+      "receipt": "050dd914ea8c07ba0490441110f1e632b057ebba4e05e26d19791ea365529576.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2116870398360830183",
+      "accepted": false,
+      "receipt": "b31c8e65158e127c912bca24c4df70379d838cc77075c34a5a7ef3d138e9686a.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2119946561941606493",
+      "accepted": false,
+      "receipt": "24259a9633e175cdf258f49896736f6ae455ac4a23817231e62140d3a3b77cac.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2120939312564842663",
+      "accepted": true,
+      "receipt": "89e5a5f5d871b8c991ab0d85ac10fd5653705d6720e86a5f69070312b94958d0.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2117731211510792580",
+      "accepted": false,
+      "receipt": "76db0ee14ecb00efa18f1f017142e618347facd0ce7ca50e9e8217f2a827ff2a.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119106429185634369",
+      "accepted": false,
+      "receipt": "cec5f5ddd1268ebe89b384fe142c2f6a9af3e26db914e1316116e0b906a475d0.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2122752394002071717",
+      "accepted": false,
+      "receipt": "a381f4e9547a5e66765736b27d2769c9d1088fcf612c8b9af28e33e191bab6cf.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123301467524345892",
+      "accepted": false,
+      "receipt": "cae0d74c4f2efdd14a1285ff863b1aab6dd47569e4fb16d54e4d50c5b8765494.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2113245747814825989",
+      "accepted": true,
+      "receipt": "8248334ee77ed4516371f887a8ba9a418fbf77883cd547504a600389c05e7300.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2116480814217408582",
+      "accepted": true,
+      "receipt": "fb3247dd02adb21bb4e160ac5dae9bf879f12a04c5a36b1ea673226c59ad219c.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2113306254647120334",
+      "accepted": true,
+      "receipt": "26bf596d2347dd7d410fbe546daabc5afd37147d1100acd0fde90d4fe8da3712.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2119515145382633524",
+      "accepted": false,
+      "receipt": "efa28540bea856e230e4b85a0a33dee8f3cc7222b7c48cb17a5698d95aee74ca.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119975721909301684",
+      "accepted": false,
+      "receipt": "66f075ec18698f7ac5a28a1a449d79c35f0fe9362e39c2ef9a77ec6eb7df4027.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2112849450993336595",
+      "accepted": false,
+      "receipt": "5a8083623584a3d49def5f3b6660adc3128c7f28b384090a5e0005c973a90f35.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2113867684609925362",
+      "accepted": true,
+      "receipt": "fbd65ce85a9ebbae9531a3eea7317a4b43e38e22dd7414a3219aaec6559a01d3.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2103537821680304282",
+      "accepted": false,
+      "receipt": "a53c515e6653ae0e3bb66e39e332540299c445843e3a260a6f764ef89f7577b2.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122758425520029886",
+      "accepted": true,
+      "receipt": "c9a5e88dc8433051b863d0d99408470c1b5e719bebf2e63a3f38e48114fcd7db.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2113487524136108460",
+      "accepted": true,
+      "receipt": "9613c60c5cf36886d1552e386c7e2f1909877a71f60a63e0d3df6662c11cac4c.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2119641370465907025",
+      "accepted": false,
+      "receipt": "75d34d9ed2e1c6f5a6ce584518349fd5b62bd8046033e4e31e5cb78305e32468.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2113147947961774124",
+      "accepted": false,
+      "receipt": "c64c81448796e6879177e9ebf3b727dfaa2ccfd25e7f1b969d734a7f4a24c8e6.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2118638845226860933",
+      "accepted": true,
+      "receipt": "a5cbef85d87ac10ee0319ac086e0c944f26279fb05a1b9c05d84b9896430f601.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2111441312323088473",
+      "accepted": true,
+      "receipt": "15b786fd9fd1e6a3c7dc646acadad7d48a3de46fcc0255d95b18c7161e3689f6.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2121268001521762411",
+      "accepted": false,
+      "receipt": "8125c82d7a079af32d8da7f4a888b765cef5dce1355b3d86a0274dbca848c24f.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2112969319105917286",
+      "accepted": false,
+      "receipt": "6233d1f8134ee3663c1203bc2c5c6da1d2c7c6d90b71801383a4ffe85357dbc4.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119536968199741796",
+      "accepted": true,
+      "receipt": "8d3eb3678933329d4b09143c42bca3be1bb589793e94b073d82be2e501bf83fb.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2124247549632799213",
+      "accepted": false,
+      "receipt": "9c9b5302e8107b2debb666e0d902b87dfb93ea98b34c2ebf07bf7666a577d8bd.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2112856590386643413",
+      "accepted": true,
+      "receipt": "7fbd4935cf53c83a29190342cf955929c9ecc6c2d6bfacd52fd1476c5aa21f14.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2111134612814799003",
+      "accepted": true,
+      "receipt": "fe5bb3a08888a85215fc0630ee047f82326d76ecc9c1bcf4aef0df013ad7a405.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119953570430881946",
+      "accepted": false,
+      "receipt": "775747d4719a8cfe3e12bddb80fccf71e2519066422bc5e6b257181f3a7a500b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2112868591066370282",
+      "accepted": false,
+      "receipt": "0bf029f77a307adf138d4e5e423c98b7f740114d5a0b2d2ad964ac9e8efdb33b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2117298037261550073",
+      "accepted": true,
+      "receipt": "a0c8e24b23b0d5e519adb614a40393719645c1bf9aea6235951a014e24583bb1.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2113295069130473903",
+      "accepted": false,
+      "receipt": "44413a73bf05f4ec5bf5aefc96866ec8ac89b08f105c24088df704c4288d9d6c.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2110983989041520870",
+      "accepted": true,
+      "receipt": "b40a4ae28b1286e034dc4a420c8d3a978f512ad6ab030b1f5a80b52329e03fdf.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123859460233793601",
+      "accepted": false,
+      "receipt": "458d4d7295b26167c185baeaeda807b2393e3089a1006d134dd3fe9ec14c06dd.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2123003157613629556",
+      "accepted": true,
+      "receipt": "6b2a8c96c3420852dd04516af4d9de14021c5dd8259e34391b9a69a180558f88.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124290043481338317",
+      "accepted": false,
+      "receipt": "8ed2a76478bbd8e0dafd3f0f7add7a87bfb3d8e0b46d20316860a26d61d46506.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2107696042053431360",
+      "accepted": true,
+      "receipt": "2aa753620d880927a82ed7ce4793ce9a5f024bf2e151042cd218d6bb28064c25.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2110525248257089589",
+      "accepted": true,
+      "receipt": "664d20de5b7a54e603a8b815f0e332daa3d362d4d72ca566bfde62a01ae4ca81.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124986371475640340",
+      "accepted": false,
+      "receipt": "b90f70284cd305be51672b8bff27be1906bac95d6e2538ae2a42afd05f30c9d7.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119862175015854489",
+      "accepted": false,
+      "receipt": "b47554a2c7778d3dea4fa644a889fd9ff460cce51030e337ce56c1efc2390f33.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2125270367187169782",
+      "accepted": true,
+      "receipt": "94f34867be2b2f7dc0e571d5806e93bba873a532b70a98a5f7f17eb7c5d6de0c.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119489762134295014",
+      "accepted": true,
+      "receipt": "0eba015c4c7cdebb46b539f1fd6742c23f352247ff333ffb1af231293b6fe93b.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2125294984949809309",
+      "accepted": false,
+      "receipt": "df613f5bc46564bfbdba33f649a7e464d02b03d6e9edaf5ae778e3b59576a951.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2121023553176760443",
+      "accepted": false,
+      "receipt": "bb7275ab441d7816321962e2e5d9005fb8fa46fcc300634e4e1af5442036101b.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124956200450052431",
+      "accepted": false,
+      "receipt": "560cd51d1501b51398c411d324c157448cefdf36d5fc102b1105f405841f6603.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2122649738587574485",
+      "accepted": false,
+      "receipt": "c0e3458a09db0c3ce9797d1cc10007de3da7257ebfb0e907c451762f5fb6388b.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2122841159739580651",
+      "accepted": true,
+      "receipt": "3b0eb059e181554a26c57e056550897aa57f8f89c686a7d3410543b47238e9ab.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119527589580832780",
+      "accepted": true,
+      "receipt": "9e4d89e83043b3652f51d8e85da32a344f79fec0d4086884f6335a13aa09417a.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2112514417300758643",
+      "accepted": true,
+      "receipt": "32afeb855d6483a463b1f1af4b1d2bf7be197b923c9f16fcaafd0bd5d7ac8f39.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2121651873430052967",
+      "accepted": true,
+      "receipt": "5ff9e9ca4967b6f1645b1039b3b4202354aedcf2213e728fc4f7dba1f001637e.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124932989511447035",
+      "accepted": false,
+      "receipt": "bc31494f3df391738603b3b0f3eda05249a9dd76cab5ec5691881d151ff92b29.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2104674464868762046",
+      "accepted": false,
+      "receipt": "2263768c5cd56501bd08a0148c728474cfd5762de3e64cfa5d23f6f8b7d110bf.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2119433734059401260",
+      "accepted": true,
+      "receipt": "4d50cc84b9bbe0db0e60c76fe0816f51c6c0b86a24740dbdc41b2852dedaef91.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2118058662350766542",
+      "accepted": true,
+      "receipt": "6eda6af5e04f235d82a70326335ffc18ddb94b7c426d91abca06eae58be4eeb8.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2113408447777522140",
+      "accepted": false,
+      "receipt": "8dc09a3153f79f14e2f1c90ede04bace467d09254b8c76bbcda6e4fe614b72ba.json",
+      "review_status": null
+    },
+    {
+      "tweet_id": "2124930681029685440",
+      "accepted": true,
+      "receipt": "7b3a6cc93ccd63f2e5d1983c7d75893aa9356270ec34bd2326a49e2313abc5a7.json",
+      "review_status": "approved"
+    },
+    {
+      "tweet_id": "2120309279618179104",
+      "accepted": true,
+      "receipt": "c5b559b2310de662a8f049bb6fdd5afb4c56264bba5977a4c249876e1134b7c0.json",
+      "review_status": "pending"
+    },
+    {
+      "tweet_id": "2123083869562003745",
+      "accepted": true,
+      "receipt": "a161930747c8cd27243726a62c0cd2c92834cdf8fddc0f74a9b348ea1b005a3c.json",
+      "review_status": "pending"
+    }
+  ]
+}

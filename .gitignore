@@ -27,3 +27,17 @@ data/processed/*
 !data/state/sync_spend.json
 !data/state/embed_probe.json
 !data/state/mirrors.json
+!data/state/golden_eval.json
+!data/state/aggregator_leads.json
+!data/state/attribution_policy.json
+!data/state/attribution_review.json
+!data/state/manual_reviews.json
+!data/state/public_media_origin_audit.json
+!data/state/public_media_origin_semantic_final_audit.json
+!data/state/creator_conflict_media_provenance.json
+!data/state/frontier_presentations.json
+!data/state/phase2_backlog_review.json
+!data/state/golden_eval_v1.json
+!data/state/golden_eval_v2.json
+
+!data/state/github_stars.json

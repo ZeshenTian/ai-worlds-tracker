@@ -1,6 +1,7 @@
 """Cache original X attachments as directory covers when demo screenshots are unavailable."""
 
 import argparse
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, datetime, timedelta
 from hashlib import sha256
@@ -10,7 +11,10 @@ from html.parser import HTMLParser
 from io import BytesIO
 from pathlib import Path
 import re
+from ssl import SSLError
 from tempfile import NamedTemporaryFile
+from threading import Lock
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
 
@@ -185,15 +189,15 @@ def fetch(url, limit):
         return data
 
 
-def cache_recent(cache, days):
+def cache_recent(cache, days=1, *, hours=0):
     try:
         age = datetime.now(UTC) - datetime.fromisoformat(cache["checked_at"])
-        return timedelta(0) <= age < timedelta(days=days)
+        return timedelta(0) <= age < timedelta(days=days, hours=hours)
     except (KeyError, TypeError, ValueError):
         return False
 
 
-def discover(root, source, *, refresh=False):
+def discover(root, source, *, refresh=False, fetcher=None):
     identifier = post_id(source)
     signal_file = root / "raw/x/signals" / f"{identifier}.json"
     if signal_file.exists():
@@ -205,11 +209,12 @@ def discover(root, source, *, refresh=False):
     cached_file = root / "raw/x/cover_sources" / f"{identifier}.json"
     cache = read_json(cached_file) if cached_file.exists() else {}
     if not refresh and same_post_url(cache.get("source_url"), source):
-        if media_kind(cache.get("media_url")) or cache_recent(cache, 1):
+        hours = 1 if cache.get("reason") == "source_unavailable" else 24
+        if media_kind(cache.get("media_url")) or cache_recent(cache, days=0, hours=hours):
             return cache
     now = datetime.now(UTC).isoformat()
     try:
-        payload = fetch(public_post_url(source), 4_000_000)
+        payload = (fetcher or fetch)(public_post_url(source), 4_000_000)
         html = payload.decode("utf-8", errors="replace")
         meta = page_metadata(html)
         entities = attached_media(html)
@@ -245,13 +250,51 @@ def render(data, target, *, frame_index=0):
     return width, height
 
 
-def build(rows, root, thumbnails, *, check_all=False, refresh=False, jobs=3):
+class HostUnavailable(Exception):
+    """No request was made because this host just failed repeatedly."""
+
+
+class CoverRequests:
+    def __init__(self):
+        self.failures = Counter()
+        self.skipped = Counter()
+        self.lock = Lock()
+
+    def fetch(self, url, limit):
+        host = urlsplit(url).hostname
+        with self.lock:
+            if self.failures[host] >= 3:
+                self.skipped[host] += 1
+                raise HostUnavailable(host)
+        try:
+            data = fetch(url, limit)
+        except HTTPError:
+            # A status from the server proves that the network route works.
+            with self.lock:
+                self.failures[host] = 0
+            raise
+        except (URLError, TimeoutError, ConnectionError, SSLError) as error:
+            with self.lock:
+                self.failures[host] += 1
+                if self.failures[host] == 3:
+                    reason = getattr(error, "reason", error)
+                    print(f"{host} connection failed repeatedly ({type(reason).__name__}); deferring further requests in this pass", flush=True)
+            raise
+        with self.lock:
+            self.failures[host] = 0
+        return data
+
+
+def build(rows, root, thumbnails, *, check_all=False, refresh=False, jobs=6):
     state_file = root / "state/x_covers.json"
     thumbnails.mkdir(parents=True, exist_ok=True)
     with run_lock(root / "state/.x-covers"):
         state = read_json(state_file) if state_file.exists() else {}
         health_file = root / "state/demo_health.json"
         health = read_json(health_file) if health_file.exists() else {}
+
+        network = CoverRequests()
+        failure_dir = root / "raw/x/cover_failures"
 
         def process(row):
             key = row["world_id"]
@@ -269,15 +312,30 @@ def build(rows, root, thumbnails, *, check_all=False, refresh=False, jobs=3):
             if (not refresh and previous.get("source_url") == source and previous.get("thumbnail_url") == f"/thumbnails/{filename}"
                     and target.is_file()):
                 return key, None
-            media = discover(root, source, refresh=refresh)
+            try:
+                media = discover(root, source, refresh=refresh, fetcher=network.fetch)
+            except HostUnavailable:
+                return key, None
             if has_demo_cover or not media.get("media_url"):
                 return key, None
+            # Tie retries to the exact attachment. A changed URL is immediately eligible.
+            receipt = failure_dir / (sha256(media["media_url"].encode()).hexdigest() + ".json")
+            if not refresh:
+                try:
+                    if cache_recent(read_json(receipt), days=0, hours=1):
+                        return key, None
+                except FileNotFoundError:
+                    pass
             try:
-                data = fetch(media["media_url"], 12_000_000)
+                data = network.fetch(media["media_url"], 12_000_000)
                 width, height = render(data, target)
+            except HostUnavailable:
+                return key, None
             except (OSError, ValueError, HTTPException, Image.DecompressionBombError) as error:
+                write_json(receipt, {"checked_at": datetime.now(UTC).isoformat(), "error_type": type(error).__name__})
                 print(f"{key} media unavailable ({type(error).__name__})", flush=True)
                 return key, None
+            receipt.unlink(missing_ok=True)
             entry = {**media, "source_url": source, "thumbnail_url": f"/thumbnails/{filename}",
                      "checked_at": datetime.now(UTC).isoformat(), "source_sha256": sha256(data).hexdigest(),
                      "source_width": width, "source_height": height}
@@ -302,6 +360,8 @@ def build(rows, root, thumbnails, *, check_all=False, refresh=False, jobs=3):
                     state[key] = entry
                     write_json(state_file, state)
                     print(key, entry["media_kind"], flush=True)
+        for host, skipped in network.skipped.items():
+            print(f"{host}: deferred {skipped} requests after connection failures", flush=True)
         if not state_file.exists():
             write_json(state_file, state)
         return state
@@ -314,7 +374,7 @@ def main():
     parser.add_argument("--thumbnails", type=Path, default=Path("platform/public/thumbnails"))
     parser.add_argument("--check-all", action="store_true", help="Check post metadata even when a demo screenshot exists.")
     parser.add_argument("--refresh", action="store_true", help="Revalidate cached public sources.")
-    parser.add_argument("--jobs", type=int, choices=range(1, 9), default=3)
+    parser.add_argument("--jobs", type=int, choices=range(1, 9), default=6)
     args = parser.parse_args()
     rows = [row for path in args.input or [args.data_dir / "exports/ai_worlds.json"] for row in read_json(path)]
     state = build(rows, args.data_dir, args.thumbnails, check_all=args.check_all, refresh=args.refresh, jobs=args.jobs)

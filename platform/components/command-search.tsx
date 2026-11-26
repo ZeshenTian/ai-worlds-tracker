@@ -3,7 +3,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUpRight, CodeXml, Search, X } from "lucide-react";
 import { copy, useLang } from "@/lib/i18n";
-import { byline, caseHref, themeLabel, themes, themesEn, worlds } from "@/lib/worlds";
+
+import { byline, caseHref, localizedWorld, themeLabel, themes, themesEn, worlds } from "@/lib/worlds";
 
 export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
   const [lang] = useLang();
@@ -121,9 +122,11 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
     if (dialog?.open) dialog.close();
   }
 
+
+  const scoped = useMemo(() => worlds.map(w => localizedWorld(w,lang)), [lang]);
   const matches = useMemo(() => {
     const terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
-    const list = worlds.filter((w) => {
+    const list = scoped.filter((w) => {
       if (!terms.length) return true;
       const hay = [
         w.title,
@@ -142,7 +145,7 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
       return terms.every((term) => hay.includes(term));
     });
     return list.slice(0, 8);
-  }, [query]);
+  }, [query,scoped]);
 
   function applyToCatalog(value: string) {
     if (isHome) {
@@ -298,7 +301,7 @@ export function CommandSearch({ isHome = false }: { isHome?: boolean }) {
         {open && (
           <div className="cmd-foot">
             <span>{t.searchHints}</span>
-            <span>{t.totalCount(worlds.length)}</span>
+            <span>{t.totalCount(scoped.length)}</span>
           </div>
         )}
       </dialog>

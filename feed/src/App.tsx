@@ -1,371 +1,164 @@
-import { useEffect, useRef, useState } from "react";
-import { Heart, LoaderCircle, Check } from "lucide-react";
+import { useState, useEffect, useRef, useCallback } from "react";
+import { type FeedItem } from "./lib/types";
+import { readLang, readLikes, likesKey, store } from "./lib/storage";
 import { TopBar } from "./components/TopBar";
 import { StageCard } from "./components/StageCard";
-import { ActionRail } from "./components/ActionRail";
-import { InfoDrawer } from "./components/InfoDrawer";
-import { ShortcutsHint } from "./components/ShortcutsHint";
-import { labels } from "./lib/i18n";
-import { readIDs, readLang, store, savedKey, seenKey } from "./lib/storage";
-import {
-  inChannel,
-  original,
-  tabs,
-  type FeedItem,
-  type Tab,
-  type PlayState,
-} from "./lib/types";
-
-function locationState() {
-  const params = new URLSearchParams(location.search),
-    raw = params.get("tab") as Tab;
-  return {
-    tab: tabs.includes(raw) ? raw : ("for-you" as Tab),
-    id: params.get("w") || "",
-  };
-}
-function preload(w: FeedItem | undefined) {
-  if (w?.thumbnail_url) {
-    const img = new Image();
-    img.src = w.thumbnail_url;
-  }
-  if (w?.preview_video_url) {
-    const video = document.createElement("video");
-    video.preload = "metadata";
-    video.src = w.preview_video_url;
-    return () => {
-      video.removeAttribute("src");
-      video.load();
-    };
-  }
-}
 export function App() {
-  const [worlds, setWorlds] = useState<FeedItem[]>([]),
-    [failed, setFailed] = useState(false);
-  const [lang, setLang] = useState(readLang),
-    [favorites, setFavorites] = useState(() => readIDs(savedKey));
-  const [selection, setSelection] = useState(locationState),
-    [linked, setLinked] = useState(() => locationState().id);
-  const [mode, setMode] = useState<PlayState>("browse"),
-    [drawer, setDrawer] = useState(false),
-    [notice, setNotice] = useState("");
-  const [manualLink, setManualLink] = useState("");
-  const seen = useRef(new Set(readIDs(seenKey)));
-  const wheel = useRef({ sum: 0, last: 0, locked: false });
-  const t = labels[lang],
-    { id } = selection;
-  const direct = linked && worlds.find((w) => w.world_id === linked);
-  // A shared URL can name a channel the recipient cannot use (especially Saved).
-  const tab =
-    direct && !inChannel(direct, selection.tab, favorites)
-      ? "for-you"
-      : selection.tab;
-  const filtered = worlds.filter((w) => inChannel(w, tab, favorites));
-  if (direct && !filtered.some((w) => w.world_id === direct.world_id))
-    filtered.unshift(direct);
-  const index = Math.max(
-      0,
-      filtered.findIndex((w) => w.world_id === id),
-    ),
-    item = filtered[index];
-  const activeId = item?.world_id,
-    previous = filtered[index - 1],
-    next =
-      filtered.length > 1 ? filtered[(index + 1) % filtered.length] : undefined;
+  const [rows, setRows] = useState<FeedItem[]>([]),
+    [i, index] = useState(0),
+    [lang, setLang] = useState(readLang),
+    [likes, setLikes] = useState(readLikes),
+    [failed, fail] = useState(false);
+  const touchY = useRef<number | null>(null);
+  const main = useRef<HTMLElement>(null),
+    item = rows[i],
+    en = lang === "en";
   useEffect(() => {
-    const controller = new AbortController();
-    fetch("/data/feed.json", { signal: controller.signal })
+    fetch("/data/feed.json")
       .then((r) => {
         if (!r.ok) throw Error();
         return r.json();
       })
-      .then((data) => {
-        if (!Array.isArray(data) || !data.length) throw Error();
-        setWorlds(data);
+      .then((list: FeedItem[]) => {
+        const clean = list.filter(
+          (w) =>
+            w.model_era === "frontier" &&
+            ["mirror", "embed"].includes(w.tier) &&
+            w.embed_url,
+        );
+        index(
+          Math.max(
+            0,
+            clean.findIndex(
+              (w) =>
+                w.world_id === new URLSearchParams(location.search).get("w"),
+            ),
+          ),
+        );
+        setRows(clean);
       })
-      .catch(() => {
-        if (!controller.signal.aborted) setFailed(true);
-      });
-    return () => controller.abort();
+      .catch(() => fail(true));
   }, []);
+  const move = useCallback(
+    (n: number) => {
+      if (rows.length) {
+        index((v) => (v + n + rows.length) % rows.length);
+        window.focus();
+        main.current?.focus({ preventScroll: true });
+      }
+    },
+    [rows.length],
+  );
   useEffect(() => {
-    const onPop = () => {
-      const s = locationState();
-      setLinked(s.id);
-      setSelection(s);
-      resetPlay();
-    };
-    window.addEventListener("popstate", onPop);
-    return () => window.removeEventListener("popstate", onPop);
-  }, []);
+    if (item) history.replaceState(null, "", "/?w=" + item.world_id);
+  }, [item]);
   useEffect(() => {
-    if (!worlds.length) return;
-    const url = new URL(location.href);
-    if (activeId) url.searchParams.set("w", activeId);
-    else url.searchParams.delete("w");
-    url.searchParams.set("tab", tab);
-    history.replaceState(null, "", url);
-    if (activeId && !seen.current.has(activeId)) {
-      seen.current.add(activeId);
-      store(seenKey, JSON.stringify([...seen.current]));
-    }
-  }, [activeId, tab, worlds]);
-  useEffect(() => {
-    document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
-    store("atlas-lang", lang);
-  }, [lang]);
-  useEffect(() => {
-    const cleanups = [preload(previous), preload(next)];
-    return () => cleanups.forEach((fn) => fn?.());
-  }, [previous, next]);
-  useEffect(() => {
-    if (!notice) return;
-    const timer = setTimeout(() => setNotice(""), 1800);
-    return () => clearTimeout(timer);
-  }, [notice]);
-  function resetPlay() {
-    setMode("browse");
-    setDrawer(false);
-    setManualLink("");
-    setNotice("");
-  }
-  function move(by: number) {
-    if (!filtered.length || (by < 0 && index === 0) || filtered.length < 2)
-      return;
-    const target = filtered[(index + by + filtered.length) % filtered.length];
-    resetPlay();
-    setLinked("");
-    setSelection({ tab, id: target.world_id });
-  }
-  function select(target: Tab) {
-    resetPlay();
-    setLinked("");
-    setSelection({ tab: target, id: "" });
-  }
-  function save() {
+    document.documentElement.lang = en ? "en" : "zh-CN";
+  }, [en]);
+  const toggleLike = useCallback(() => {
     if (!item) return;
-    const updated = favorites.includes(item.world_id)
-      ? favorites.filter((id) => id !== item.world_id)
-      : [...favorites, item.world_id];
-    if (tab === "favorites" && !updated.includes(item.world_id)) {
-      resetPlay();
-      setLinked("");
-      setSelection({ tab, id: next?.world_id || "" });
-    }
-    setFavorites(updated);
-    store(savedKey, JSON.stringify(updated));
-  }
-  function start() {
-    if (!item || mode !== "browse") return;
-    if (item.tier !== "external" && item.embed_url) {
-      setMode("loading");
-      return;
-    }
-    const url = original(item);
-    if (url) window.open(url, "_blank", "noopener,noreferrer");
-  }
-  function info() {
-    setMode("browse");
-    setDrawer((v) => !v);
-  }
-  async function share() {
-    if (!item) return;
-    const url = new URL("/", location.origin);
-    url.searchParams.set("w", item.world_id);
-    try {
-      await navigator.clipboard.writeText(url.href);
-      setNotice(t.copied);
-    } catch {
-      setManualLink(url.href);
-    }
-  }
+    const id = item.world_id;
+    const next = likes.includes(id) ? likes.filter(value => value !== id) : [...likes, id];
+    setLikes(next);
+    store(likesKey, JSON.stringify(next));
+  }, [item, likes]);
+  const handle = useCallback(
+    (e: KeyboardEvent) => {
+      if (!item || e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+      const k = e.key.toLowerCase();
+      if (["arrowup", "k", "arrowdown", "j"].includes(k)) {
+        e.preventDefault();
+        e.stopPropagation();
+        move(k === "arrowup" || k === "k" ? -1 : 1);
+      } else if (k === "l") {
+        toggleLike();
+      } else if (k === "g" || k === "o") {
+        const url = k === "g" ? item.external_demo_url : item.original_post_url;
+        if (url) window.open(url, "_blank", "noopener,noreferrer");
+      }
+    },
+    [item, move, toggleLike],
+  );
   useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (
-        e.ctrlKey ||
-        e.metaKey ||
-        e.altKey ||
-        e.repeat ||
-        e.target instanceof HTMLInputElement ||
-        e.target instanceof HTMLTextAreaElement
-      )
-        return;
-      if (e.key === "Escape") {
-        resetPlay();
-        return;
-      }
-      if (drawer) {
-        if (e.key.toLowerCase() === "i") {
-          e.preventDefault();
-          setDrawer(false);
-        }
-        return;
-      }
-      if (mode !== "browse" || manualLink || !item) return;
-      const key = e.key.toLowerCase();
-      if (
-        (key === " " || key === "enter") &&
-        e.target instanceof Element &&
-        e.target.closest("button,a")
-      )
-        return;
-      switch (key) {
-        case "arrowdown":
-        case "j":
-          e.preventDefault();
-          move(1);
-          break;
-        case "arrowup":
-        case "k":
-          e.preventDefault();
-          move(-1);
-          break;
-        case " ":
-        case "enter":
-          e.preventDefault();
-          start();
-          break;
-        case "i":
-          e.preventDefault();
-          info();
-          break;
-        case "l":
-          e.preventDefault();
-          save();
-          break;
+    let last = 0;
+    function wheel(e: WheelEvent) {
+      if (Math.abs(e.deltaY) > 8 && Date.now() - last > 450) {
+        last = Date.now();
+        move(Math.sign(e.deltaY));
       }
     }
-    function onWheel(e: WheelEvent) {
-      if (
-        mode !== "browse" ||
-        drawer ||
-        !item ||
-        e.ctrlKey ||
-        Math.abs(e.deltaX) > Math.abs(e.deltaY) ||
-        (e.target instanceof Element && e.target.closest("nav,.drawer"))
-      )
-        return;
-      e.preventDefault();
-      const s = wheel.current,
-        now = performance.now();
-      // Keep the lock through the inertial tail. A fresh gesture after a quiet interval can navigate again.
-      if (now - s.last > 420) {
-        s.sum = 0;
-        s.locked = false;
-      }
-      s.last = now;
-      if (s.locked) return;
-      const dy =
-        e.deltaY *
-        (e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? innerHeight : 1);
-      if (Math.sign(s.sum) !== Math.sign(dy)) s.sum = 0;
-      s.sum += dy;
-      if (Math.abs(s.sum) >= 60) {
-        s.locked = true;
-        move(s.sum > 0 ? 1 : -1);
-        s.sum = 0;
-      }
+    function unlock() {
+      if (!document.pointerLockElement) main.current?.focus();
     }
-    function outside(e: PointerEvent) {
-      if (
-        mode !== "browse" &&
-        e.target instanceof Element &&
-        !e.target.closest("[data-world-frame],[data-playbar],.rail")
-      )
-        setMode("browse");
-    }
-    window.addEventListener("keydown", onKey);
-    window.addEventListener("wheel", onWheel, { passive: false });
-    window.addEventListener("pointerdown", outside);
+    window.addEventListener("keydown", handle);
+    window.addEventListener("wheel", wheel, { passive: true });
+    document.addEventListener("pointerlockchange", unlock);
     return () => {
-      window.removeEventListener("keydown", onKey);
-      window.removeEventListener("wheel", onWheel);
-      window.removeEventListener("pointerdown", outside);
+      window.removeEventListener("keydown", handle);
+      window.removeEventListener("wheel", wheel);
+      document.removeEventListener("pointerlockchange", unlock);
     };
-  });
+  }, [handle, move]);
   return (
-    <>
+    <main
+      ref={main}
+      tabIndex={-1}
+      onTouchStart={(e) => {
+        touchY.current = e.touches[0]?.clientY ?? null;
+      }}
+      onTouchEnd={(e) => {
+        const start = touchY.current;
+        touchY.current = null;
+        if (start !== null) {
+          const delta = start - e.changedTouches[0].clientY;
+          if (Math.abs(delta) > 55) move(Math.sign(delta));
+        }
+      }}
+      onPointerDown={(e) => {
+        if (!(e.target as HTMLElement).closest("iframe,input"))
+          main.current?.focus({ preventScroll: true });
+      }}
+    >
       <TopBar
         lang={lang}
-        tab={tab}
-        select={select}
-        toggle={() => setLang(lang === "en" ? "zh" : "en")}
+        item={item}
+        position={i + 1}
+        total={rows.length}
+        move={move}
+        liked={!!item && likes.includes(item.world_id)}
+        toggleLike={toggleLike}
+        reset={() => {
+          index(0);
+          main.current?.focus();
+        }}
+        toggle={() => {
+          const l = en ? "zh" : "en";
+          setLang(l);
+          store("atlas-lang", l);
+        }}
       />
       {item ? (
-        <main className="view">
-          <div className="theatre-layout">
-            <StageCard
-              key={item.world_id}
-              item={item}
-              lang={lang}
-              mode={mode}
-              start={start}
-              exit={() => setMode("browse")}
-              loaded={() =>
-                setMode((current) =>
-                  current === "loading" ? "playing" : current,
-                )
-              }
-              move={move}
-            />
-            <ActionRail
-              item={item}
-              lang={lang}
-              index={index}
-              length={filtered.length}
-              saved={favorites.includes(item.world_id)}
-              move={move}
-              save={save}
-              info={info}
-              share={share}
-            />
-          </div>
-          <ShortcutsHint lang={lang} />
-        </main>
+        <>
+          <StageCard
+            key={item.world_id}
+            item={item}
+            lang={lang}
+            bridge={(e) => {
+              if (e.key.startsWith("Arrow")) handle(e);
+            }}
+          />
+        </>
       ) : (
-        <main className="empty">
-          {!worlds.length && !failed ? (
-            <LoaderCircle className="spin" aria-label={t.loading} />
-          ) : (
-            <>
-              <Heart size={30} />
-              <h1>
-                {failed ? t.error : tab === "favorites" ? t.empty : t.noItems}
-              </h1>
-              {tab === "favorites" && <p>{t.collect}</p>}
-              <button
-                className="empty-action"
-                onClick={() => (failed ? location.reload() : select("for-you"))}
-              >
-                {failed ? t.retry : t.discover}
-              </button>
-            </>
-          )}
-        </main>
+        <p>
+          {failed
+            ? en
+              ? "Feed unavailable"
+              : "加载失败"
+            : en
+              ? "Loading…"
+              : "加载中…"}
+        </p>
       )}
-      {drawer && item && (
-        <InfoDrawer item={item} lang={lang} close={() => setDrawer(false)} />
-      )}
-      {notice && (
-        <div className="toast" role="status">
-          <Check size={16} />
-          {notice}
-        </div>
-      )}
-      {manualLink && (
-        <div className="manual">
-          <label>
-            {t.copyFailed}
-            <input
-              readOnly
-              autoFocus
-              value={manualLink}
-              onFocus={(e) => e.currentTarget.select()}
-            />
-          </label>
-          <button onClick={() => setManualLink("")}>{t.close}</button>
-        </div>
-      )}
-    </>
+    </main>
   );
 }

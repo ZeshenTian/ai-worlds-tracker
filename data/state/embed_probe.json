@@ -35,6 +35,24 @@
     "origin": null,
     "login_required": false
   },
+  "http://sam1983aing.github.io/sacred-monkey-forest/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sam1983aing.github.io/sacred-monkey-forest/",
+    "checked_at": "2026-11-25T12:53:12.117Z",
+    "origin": null,
+    "login_required": false
+  },
+  "http://stageflow.taruma.my.id/": {
+    "embeddable": false,
+    "reason": "http_error",
+    "status": 429,
+    "final_url": "https://stageflow.taruma.my.id/",
+    "checked_at": "2026-11-25T12:53:12.024Z",
+    "origin": null,
+    "login_required": false
+  },
   "http://tinyrj.com/": {
     "embeddable": true,
     "reason": "allowed",
@@ -50,6 +68,15 @@
     "status": 200,
     "final_url": "https://wobble-city.mohantyabhijit.chatgpt.site/",
     "checked_at": "2026-11-24T15:05:01.923Z",
+    "origin": null,
+    "login_required": false
+  },
+  "http://vice-beach-motor-club.deed.page/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://vice-beach-motor-club.deed.page/",
+    "checked_at": "2026-11-25T13:14:55.830Z",
     "origin": null,
     "login_required": false
   },
@@ -77,6 +104,15 @@
     "status": 200,
     "final_url": "https://2861-california-unit-4.vercel.app/",
     "checked_at": "2026-11-24T15:04:58.812Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://3ditions.drop3.app/notify/dune-oasis/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://3ditions.drop3.app/notify/dune-oasis/",
+    "checked_at": "2026-11-25T12:53:11.705Z",
     "origin": null,
     "login_required": false
   },
@@ -276,12 +312,30 @@
     "origin": null,
     "login_required": false
   },
+  "https://app.usecrayon.ai/play/0ad7fcc3-13e3-4d31-8a91-024f445ca94c": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/0ad7fcc3-13e3-4d31-8a91-024f445ca94c",
+    "checked_at": "2026-11-25T13:14:56.407Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://app.usecrayon.ai/play/362ae1e7-29bd-4fbc-9103-00649265d942": {
     "embeddable": false,
     "reason": "x_frame_options",
     "status": 200,
     "final_url": "https://app.usecrayon.ai/play/362ae1e7-29bd-4fbc-9103-00649265d942",
     "checked_at": "2026-11-24T15:05:03.869Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/3a9001a5-28fa-4ae0-ba5c-3b068d1912a4": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/3a9001a5-28fa-4ae0-ba5c-3b068d1912a4",
+    "checked_at": "2026-11-25T12:53:11.377Z",
     "origin": null,
     "login_required": false
   },
@@ -321,12 +375,30 @@
     "origin": null,
     "login_required": false
   },
+  "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8?v=mwn7kej3": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8?v=mwn7kej3",
+    "checked_at": "2026-11-25T12:53:11.354Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8?v=mwsx25rs": {
     "embeddable": false,
     "reason": "x_frame_options",
     "status": 200,
     "final_url": "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8?v=mwsx25rs",
     "checked_at": "2026-11-24T15:05:06.596Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8?v=mwvl7kzu": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/76dbd04f-0684-4486-8cc4-eae0585295e8?v=mwvl7kzu",
+    "checked_at": "2026-11-25T12:53:11.428Z",
     "origin": null,
     "login_required": false
   },
@@ -420,6 +492,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://assets.kylephillips.ai/gemini-neon/index.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://assets.kylephillips.ai/gemini-neon/index.html",
+    "checked_at": "2026-11-25T12:53:12.412Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://asteria.wengsiong22.workers.dev/": {
     "embeddable": true,
     "reason": "allowed",
@@ -435,6 +516,15 @@
     "status": 200,
     "final_url": "https://asteroids-deepfield-cockpit.dan200200.chatgpt.site/",
     "checked_at": "2026-11-24T15:05:07.936Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://astra-jerusalem.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://astra-jerusalem.vercel.app/",
+    "checked_at": "2026-11-25T12:53:12.372Z",
     "origin": null,
     "login_required": false
   },
@@ -618,6 +708,14 @@
     "origin": null,
     "login_required": false
   },
+  "https://black-mass-survivor.openai.chatgpt.site/": {
+    "embeddable": false,
+    "reason": "network_error",
+    "curl_code": 56,
+    "checked_at": "2026-11-25T13:21:00.357Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://blackburn-flight.pages.dev/?fly=1": {
     "embeddable": true,
     "reason": "allowed",
@@ -629,9 +727,10 @@
   },
   "https://blameless.petruha.ge/": {
     "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:05:14.212Z",
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://blameless.petruha.ge/",
+    "checked_at": "2026-11-25T12:57:55.234Z",
     "origin": null,
     "login_required": false
   },
@@ -762,10 +861,11 @@
     "login_required": false
   },
   "https://citywalk-ashy.vercel.app": {
-    "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:05:16.587Z",
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://citywalk-ashy.vercel.app/",
+    "checked_at": "2026-11-25T12:53:12.175Z",
     "origin": null,
     "login_required": false
   },
@@ -876,6 +976,13 @@
     "origin": null,
     "login_required": false
   },
+  "https://claude.ai/artifact/EAV3z8SCR8mwxPzUytxaoQ": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-25T12:53:10.532Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://claude.ai/artifact/EnXF5Lr8hj6mXrVcVAefq9": {
     "embeddable": false,
     "reason": "login_wall",
@@ -911,6 +1018,13 @@
     "origin": null,
     "login_required": false
   },
+  "https://claude.ai/artifact/J1ikTeAJd5GZY2L74uZasx": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-25T12:53:10.538Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://claude.ai/artifact/KyHY2X7VYuaaykiLTBZSzA": {
     "embeddable": false,
     "reason": "login_wall",
@@ -919,13 +1033,6 @@
     "login_required": false
   },
   "https://claude.ai/artifact/Mfr5KgNoj66wYZF1DL7bwU": {
-    "embeddable": false,
-    "reason": "login_wall",
-    "checked_at": "2026-11-24T15:05:12.490Z",
-    "origin": null,
-    "login_required": false
-  },
-  "https://claude.ai/artifact/NwkkBKo523iBanmUyYGLk1": {
     "embeddable": false,
     "reason": "login_wall",
     "checked_at": "2026-11-24T15:05:12.490Z",
@@ -1083,6 +1190,24 @@
     "origin": null,
     "login_required": false
   },
+  "https://codevember-2026-day-16.andrewvoirol.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://codevember-2026-day-16.andrewvoirol.com/",
+    "checked_at": "2026-11-25T12:53:12.118Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://codevember-2026-day-19.andrewvoirol.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://codevember-2026-day-19.andrewvoirol.com/",
+    "checked_at": "2026-11-25T12:53:12.794Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://combos.game/play/c7eea0b6846f90a102537819c9147bd4": {
     "embeddable": false,
     "reason": "frame_ancestors",
@@ -1114,7 +1239,7 @@
     "embeddable": false,
     "reason": "network_error",
     "curl_code": 56,
-    "checked_at": "2026-11-24T15:05:24.391Z",
+    "checked_at": "2026-11-25T13:20:59.483Z",
     "origin": null,
     "login_required": false
   },
@@ -1137,10 +1262,11 @@
     "login_required": false
   },
   "https://cozylisbon.vercel.app/": {
-    "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:05:21.446Z",
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://cozylisbon.vercel.app/",
+    "checked_at": "2026-11-25T12:53:11.450Z",
     "origin": null,
     "login_required": false
   },
@@ -1213,6 +1339,24 @@
     "status": 200,
     "final_url": "https://deathsend.xyz/",
     "checked_at": "2026-11-24T15:05:22.366Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://developers.openai.com/showcase/notre-damn": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://developers.openai.com/showcase/notre-damn",
+    "checked_at": "2026-11-25T12:53:11.458Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://dgreenheck.github.io/threejs-particle-fluids": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://dgreenheck.github.io/threejs-particle-fluids/",
+    "checked_at": "2026-11-25T12:53:11.823Z",
     "origin": null,
     "login_required": false
   },
@@ -1333,6 +1477,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://escape-lucias-safehouse.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://escape-lucias-safehouse.vercel.app/",
+    "checked_at": "2026-11-25T12:53:12.050Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://escapement.openai.chatgpt.site/": {
     "embeddable": true,
     "reason": "allowed",
@@ -1390,16 +1543,17 @@
   "https://fablestar.games/watch.html": {
     "embeddable": false,
     "reason": "network_error",
-    "curl_code": 35,
-    "checked_at": "2026-11-24T15:05:26.892Z",
+    "curl_code": 6,
+    "checked_at": "2026-11-25T13:20:56.709Z",
     "origin": null,
     "login_required": false
   },
   "https://fallline-9zo.pages.dev/": {
-    "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:05:29.287Z",
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://fallline-9zo.pages.dev/",
+    "checked_at": "2026-11-25T12:53:12.228Z",
     "origin": null,
     "login_required": false
   },
@@ -1431,10 +1585,11 @@
     "login_required": false
   },
   "https://fish.kennyatx.com/": {
-    "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:05:29.739Z",
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://fish.kennyatx.com/",
+    "checked_at": "2026-11-25T12:53:14.540Z",
     "origin": null,
     "login_required": false
   },
@@ -1546,6 +1701,24 @@
     "origin": null,
     "login_required": false
   },
+  "https://gema.sonnylab.com/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://gema.sonnylab.com/",
+    "checked_at": "2026-11-25T12:53:12.775Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://gemini-4-neon.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://gemini-4-neon.vercel.app/",
+    "checked_at": "2026-11-25T12:53:12.817Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://genaiexperiments.vercel.app/": {
     "embeddable": true,
     "reason": "allowed",
@@ -1582,6 +1755,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://givros.github.io/kasane-valley/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://givros.github.io/kasane-valley/",
+    "checked_at": "2026-11-25T12:53:13.038Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://givros.github.io/openworld-plane/": {
     "embeddable": true,
     "reason": "allowed",
@@ -1600,6 +1782,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://goblet-hall-opus.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://goblet-hall-opus.vercel.app/",
+    "checked_at": "2026-11-25T12:53:13.120Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://gogh-strike.surge.sh/": {
     "embeddable": true,
     "reason": "allowed",
@@ -1608,13 +1799,6 @@
     "checked_at": "2026-11-24T15:05:33.149Z",
     "origin": null,
     "login_required": false
-  },
-  "https://goo.gle/496Vk4f": {
-    "embeddable": false,
-    "reason": "login_wall",
-    "checked_at": "2026-11-24T15:05:29.385Z",
-    "origin": null,
-    "login_required": true
   },
   "https://gordensun.github.io/last-firewall/": {
     "embeddable": true,
@@ -1761,10 +1945,11 @@
     "login_required": false
   },
   "https://iamsonic.net/2026/mini-games/shells-3d/play.html": {
-    "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:05:37.579Z",
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://iamsonic.net/2026/mini-games/shells-3d/play.html",
+    "checked_at": "2026-11-25T12:53:13.418Z",
     "origin": null,
     "login_required": false
   },
@@ -1876,6 +2061,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://jelly-garden.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://jelly-garden.vercel.app/",
+    "checked_at": "2026-11-25T12:53:12.994Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://jelly.scottsun.io/": {
     "embeddable": true,
     "reason": "allowed",
@@ -1912,6 +2106,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://kaname-chemistry.github.io/separatory-funnel-3d/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://kaname-chemistry.github.io/separatory-funnel-3d/",
+    "checked_at": "2026-11-25T12:53:13.626Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://kengoworks.itch.io/dawnlings": {
     "embeddable": false,
     "reason": "frame_ancestors",
@@ -1936,6 +2139,15 @@
     "status": 200,
     "final_url": "https://kevintngo.github.io/dungeon-game/",
     "checked_at": "2026-11-24T15:05:41.403Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://kevintngo.github.io/procedural-rpg/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://kevintngo.github.io/procedural-rpg/",
+    "checked_at": "2026-11-25T12:53:13.554Z",
     "origin": null,
     "login_required": false
   },
@@ -1994,10 +2206,11 @@
     "login_required": false
   },
   "https://kostikoneuro.github.io/astra-6-2-solo/4-minigolf/?lang=ru": {
-    "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:05:44.250Z",
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://kostikoneuro.github.io/astra-6-2-solo/4-minigolf/?lang=ru",
+    "checked_at": "2026-11-25T12:53:13.562Z",
     "origin": null,
     "login_required": false
   },
@@ -2061,6 +2274,15 @@
     "status": 200,
     "final_url": "https://last-light-northline.pages.dev/",
     "checked_at": "2026-11-24T15:05:43.422Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://last-watch-production.up.railway.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://last-watch-production.up.railway.app/",
+    "checked_at": "2026-11-25T12:53:13.716Z",
     "origin": null,
     "login_required": false
   },
@@ -2236,10 +2458,20 @@
     "login_required": false
   },
   "https://mdhasibul35.github.io/skyshard/": {
-    "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:05:51.214Z",
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://mdhasibul35.github.io/skyshard/",
+    "checked_at": "2026-11-25T12:53:13.559Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://meridian-futuristic-race.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://meridian-futuristic-race.openai.chatgpt.site/",
+    "checked_at": "2026-11-25T12:53:15.287Z",
     "origin": null,
     "login_required": false
   },
@@ -2270,12 +2502,30 @@
     "origin": null,
     "login_required": false
   },
+  "https://minitown-cozy-sim.openai.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://minitown-cozy-sim.openai.chatgpt.site/",
+    "checked_at": "2026-11-25T12:53:15.124Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://missioncontrol.dractec.com/": {
     "embeddable": true,
     "reason": "allowed",
     "status": 200,
     "final_url": "https://missioncontrol.dractec.com/",
     "checked_at": "2026-11-24T15:05:51.210Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://mlegged.kogus.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://mlegged.kogus.dev/",
+    "checked_at": "2026-11-25T12:53:13.530Z",
     "origin": null,
     "login_required": false
   },
@@ -2376,6 +2626,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://new-york-atlas.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://new-york-atlas.vercel.app/",
+    "checked_at": "2026-11-25T12:53:13.535Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://nightborn-clash.dixonefg5.chatgpt.site/": {
     "embeddable": true,
     "reason": "allowed",
@@ -2430,12 +2689,30 @@
     "origin": null,
     "login_required": false
   },
+  "https://noniv.github.io/abyssal-garden": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://noniv.github.io/abyssal-garden/",
+    "checked_at": "2026-11-25T12:53:13.914Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://nova-defender.expo.app/game/index.html": {
     "embeddable": true,
     "reason": "allowed",
     "status": 200,
     "final_url": "https://nova-defender.expo.app/game/index.html",
     "checked_at": "2026-11-24T15:05:55.025Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://nurecas.github.io/wavemodelviz": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://nurecas.github.io/wavemodelviz/",
+    "checked_at": "2026-11-25T12:53:14.127Z",
     "origin": null,
     "login_required": false
   },
@@ -2502,6 +2779,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://origami-carousel.wasmer.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://origami-carousel.wasmer.app/",
+    "checked_at": "2026-11-25T12:53:13.947Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://orr-rush-bengaluru.ravitheja.chatgpt.site/": {
     "embeddable": true,
     "reason": "allowed",
@@ -2533,7 +2819,7 @@
     "embeddable": false,
     "reason": "network_error",
     "curl_code": 35,
-    "checked_at": "2026-11-24T15:05:57.541Z",
+    "checked_at": "2026-11-25T13:20:56.822Z",
     "origin": null,
     "login_required": false
   },
@@ -2547,10 +2833,11 @@
     "login_required": false
   },
   "https://paris-atlas-street-explorer.openai.chatgpt.site/": {
-    "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:05:59.500Z",
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://paris-atlas-street-explorer.openai.chatgpt.site/",
+    "checked_at": "2026-11-25T12:53:15.883Z",
     "origin": null,
     "login_required": false
   },
@@ -2692,6 +2979,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://pogglo.com/shark-demon/piggy-island/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://pogglo.com/shark-demon/piggy-island/",
+    "checked_at": "2026-11-25T12:53:15.039Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://pokemon-battle-arena.greta0086.chatgpt.site/": {
     "embeddable": true,
     "reason": "allowed",
@@ -2716,6 +3012,15 @@
     "status": 200,
     "final_url": "https://primitive-park-walkthrough.miya333.chatgpt.site/",
     "checked_at": "2026-11-24T15:06:02.826Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://proceduralbuildings.chirostudio.xyz/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://proceduralbuildings.chirostudio.xyz/",
+    "checked_at": "2026-11-25T12:53:14.370Z",
     "origin": null,
     "login_required": false
   },
@@ -2818,6 +3123,13 @@
     "origin": null,
     "login_required": false
   },
+  "https://roadster-rush.ai.studio/": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-25T12:53:13.535Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://rokengames.com/roadster-flight": {
     "embeddable": false,
     "reason": "x_frame_options",
@@ -2881,6 +3193,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://sam1983aing.github.io/senna-800kg/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://sam1983aing.github.io/senna-800kg/",
+    "checked_at": "2026-11-25T12:53:14.260Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://samg-coder.github.io/solstice-garden/": {
     "embeddable": true,
     "reason": "allowed",
@@ -2896,6 +3217,15 @@
     "status": 200,
     "final_url": "https://samg-coder.github.io/solstice-racing/",
     "checked_at": "2026-11-24T15:06:05.791Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://samg-coder.github.io/solstice/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://samg-coder.github.io/solstice/",
+    "checked_at": "2026-11-25T12:53:14.393Z",
     "origin": null,
     "login_required": false
   },
@@ -3223,6 +3553,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://starlightx.co/games/shooter-z": {
+    "embeddable": false,
+    "reason": "http_error",
+    "status": 403,
+    "final_url": "https://starlightx.co/games/shooter-z",
+    "checked_at": "2026-11-25T12:53:15.236Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://starrynightrider.com/": {
     "embeddable": false,
     "reason": "x_frame_options",
@@ -3247,6 +3586,15 @@
     "status": 200,
     "final_url": "https://stickman-opus-5-5-game.vercel.app/",
     "checked_at": "2026-11-24T15:06:15.048Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://store.steampowered.com/app/5351000/I_Just_Wanted_to_Fish_Demo/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://store.steampowered.com/app/5351000/I_Just_Wanted_to_Fish_Demo/",
+    "checked_at": "2026-11-25T12:53:14.481Z",
     "origin": null,
     "login_required": false
   },
@@ -3301,6 +3649,15 @@
     "status": 200,
     "final_url": "https://sunwake-the-last-light.openai.chatgpt.site/",
     "checked_at": "2026-11-24T15:06:16.919Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://supernatural-ft.vercel.app/fire-in-ice": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://supernatural-ft.vercel.app/fire-in-ice/",
+    "checked_at": "2026-11-25T12:53:15.473Z",
     "origin": null,
     "login_required": false
   },
@@ -3385,6 +3742,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://theatre-fawn.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://theatre-fawn.vercel.app/",
+    "checked_at": "2026-11-25T12:53:14.363Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://theme-park-hd.vercel.app/": {
     "embeddable": true,
     "reason": "allowed",
@@ -3409,6 +3775,15 @@
     "status": 200,
     "final_url": "https://thestringtheories.github.io/Santa-Game/",
     "checked_at": "2026-11-24T15:06:20.440Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://thtbee.github.io/waggles/plane-of-focus/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://thtbee.github.io/waggles/plane-of-focus/",
+    "checked_at": "2026-11-25T12:53:14.527Z",
     "origin": null,
     "login_required": false
   },
@@ -3445,6 +3820,15 @@
     "status": 200,
     "final_url": "https://timber-atlas.xiaodan.io/",
     "checked_at": "2026-11-24T15:06:23.242Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://tokyodrift.mindblown.ai/": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://tokyodrift.mindblown.ai/",
+    "checked_at": "2026-11-25T12:53:14.948Z",
     "origin": null,
     "login_required": false
   },
@@ -3594,9 +3978,10 @@
   },
   "https://viktorkav.com.br/apoio/uno-com-escada/fable/": {
     "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:06:26.375Z",
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://viktorkav.com.br/apoio/uno-com-escada/fable/",
+    "checked_at": "2026-11-25T12:53:15.332Z",
     "origin": null,
     "login_required": false
   },
@@ -3620,9 +4005,10 @@
   },
   "https://voltaris-nyyo.onrender.com/?webgl=1": {
     "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:06:35.771Z",
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://voltaris-nyyo.onrender.com/?webgl=1",
+    "checked_at": "2026-11-25T12:57:53.427Z",
     "origin": null,
     "login_required": false
   },
@@ -3659,6 +4045,24 @@
     "status": 200,
     "final_url": "https://wavedash.com/games/ink-flight",
     "checked_at": "2026-11-24T15:06:26.865Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://wavedash.com/games/one-more-take": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://wavedash.com/games/one-more-take",
+    "checked_at": "2026-11-25T12:53:15.126Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://wavedash.com/games/overwound": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://wavedash.com/games/overwound",
+    "checked_at": "2026-11-25T12:53:15.114Z",
     "origin": null,
     "login_required": false
   },
@@ -3725,12 +4129,30 @@
     "origin": null,
     "login_required": false
   },
+  "https://worldframe.zavrenn.workers.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://worldframe.zavrenn.workers.dev/",
+    "checked_at": "2026-11-25T12:53:15.727Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://wquguru.github.io/fable52-fps-repro/demos/04-fps/": {
     "embeddable": true,
     "reason": "allowed",
     "status": 200,
     "final_url": "https://wquguru.github.io/fable52-fps-repro/demos/04-fps/",
     "checked_at": "2026-11-24T15:06:27.030Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.agent.family/listing?id=cmwd39x3d00taxe016y9zu2yx": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.agent.family/listing?id=cmwd39x3d00taxe016y9zu2yx",
+    "checked_at": "2026-11-25T12:53:15.247Z",
     "origin": null,
     "login_required": false
   },
@@ -4788,10 +5210,11 @@
     "login_required": false
   },
   "https://www.aigameshare.com/games/silkblade-starfall": {
-    "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:06:56.303Z",
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://www.aigameshare.com/games/silkblade-starfall",
+    "checked_at": "2026-11-25T12:53:15.738Z",
     "origin": null,
     "login_required": false
   },
@@ -5301,9 +5724,10 @@
   },
   "https://www.spawn.co/@mattshumer/earth?room=local": {
     "embeddable": false,
-    "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-24T15:07:07.902Z",
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://www.spawn.co/@mattshumer/earth?room=local",
+    "checked_at": "2026-11-25T12:53:15.465Z",
     "origin": null,
     "login_required": false
   },
@@ -5322,6 +5746,15 @@
     "status": 200,
     "final_url": "https://www.taoistvibe.com/",
     "checked_at": "2026-11-24T15:07:06.596Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://www.youtube.com/watch?v=sGfqAswsZLM": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://www.youtube.com/watch?v=sGfqAswsZLM",
+    "checked_at": "2026-11-25T12:53:15.800Z",
     "origin": null,
     "login_required": false
   },
@@ -5370,12 +5803,66 @@
     "origin": null,
     "login_required": false
   },
+  "https://yfarmx.com/play/island-orchestra/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://yfarmx.com/play/island-orchestra/",
+    "checked_at": "2026-11-25T12:53:16.246Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://youtu.be/SsSKJA0EHD4": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://www.youtube.com/watch?v=SsSKJA0EHD4&feature=youtu.be",
+    "checked_at": "2026-11-25T12:53:17.011Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://youtu.be/W2sVZPBZVag?si=1Ihjd259W45tV5dS": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://www.youtube.com/watch?si=1Ihjd259W45tV5dS&v=W2sVZPBZVag&feature=youtu.be",
+    "checked_at": "2026-11-25T12:53:17.175Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://youtu.be/cxkqqGaX_II": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://www.youtube.com/watch?v=cxkqqGaX_II&feature=youtu.be",
+    "checked_at": "2026-11-25T12:53:17.175Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://zalo.github.io/LanternTown/town/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://zalo.github.io/LanternTown/town/",
+    "checked_at": "2026-11-25T12:53:15.996Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://zhgarylu.github.io/everyday-game/gz/": {
     "embeddable": true,
     "reason": "allowed",
     "status": 200,
     "final_url": "https://zhgarylu.github.io/everyday-game/gz/",
     "checked_at": "2026-11-24T15:07:09.693Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://zipline-aircraft-atlas.swhan0329.chatgpt.site/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://zipline-aircraft-atlas.swhan0329.chatgpt.site/",
+    "checked_at": "2026-11-25T12:53:18.022Z",
     "origin": null,
     "login_required": false
   },

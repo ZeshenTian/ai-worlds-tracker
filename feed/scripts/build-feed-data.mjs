@@ -1,3 +1,4 @@
+import { execFileSync } from "node:child_process";
 import { basename, join } from "node:path";
 import { mkdir, copyFile, access, readdir, unlink } from "node:fs/promises";
 import {
@@ -39,9 +40,10 @@ const english = (values) => strings(values).map(en).filter(Boolean);
 const bareModel =
   /^(?:(?:made|built|created)\s+(?:with|using)\s+)?(?:claude|gpt|gemini|codex|opus|fable|sonnet|astra|neon|marble)(?:[-\s.]*(?:\d+(?:\.\d+)*|opus|sonnet|fable|astra|neon|pro|flash|max|code))*[.!]?$/i;
 function family(model) {
-  if (/^(?:claude|fable|opus|sonnet)/i.test(model)) return "Claude";
-  if (/^(?:codex|gpt|openai|chatgpt|astra|sol\b)/i.test(model)) return "GPT";
-  if (/^(?:gemini|neon|argon|hydrogen)/i.test(model)) return "Gemini";
+  const label = model.trim();
+  if (/^(?:(?:openai(?:['’]s)?\s+)?(?:gpt|chatgpt|codex|astra|sol)(?=\b|\d)|\d+(?:\.\d+)?\s+astra\b)/i.test(label)) return "GPT";
+  if (/^(?:(?:anthropic(?:['’]s)?|routed)\s+)?(?:claude|opus|fable|haiku|sonnet)(?=\b|\d)/i.test(label)) return "Claude";
+  if (/^(?:google(?:['’]s)?\s+)?(?:gemini|neon|argon|hydrogen|carbon|antigravity)(?=\b|\d)/i.test(label)) return "Gemini";
   return "Other";
 }
 async function thumbnail(w) {
@@ -72,9 +74,17 @@ async function thumbnail(w) {
   used.add(name);
   return "/thumbnails/" + name;
 }
+const stars = await readJSON(join(state, "github_stars.json"), {});
+const previousLikes = new Map((await readJSON(join(publicDir,"data/feed.json"),[])).map(w=>[w.world_id,w.x_likes]));
+const frontier = rows.filter(w => w.model_era === "frontier" && w.review_status !== "rejected");
+// Use the catalog's version cutoffs and disclosure-date rules for each label.
+const primaryModels = JSON.parse(execFileSync("python3", ["-m", "src.feed_models"], {
+  cwd: root,
+  input: JSON.stringify(frontier.map(({models_used, published_at}) => ({models_used, published_at}))),
+  encoding: "utf8",
+}));
 const items = [];
-for (const w of rows) {
-  if (w.review_status === "rejected") continue;
+for (const [index, w] of frontier.entries()) {
   if (!/^[a-zA-Z0-9_-]+$/.test(w.world_id)) throw Error("Invalid world ID");
   const m = mirrors[w.world_id];
   if (m) await access(join(publicDir, "mirrors", w.world_id, "index.html"));
@@ -85,6 +95,10 @@ for (const w of rows) {
       ? web(probe.final_url || demo)
       : null;
   const tier = m ? "mirror" : embedded ? "embed" : "external";
+  if (tier === "external") continue;
+  const tweet = w.original_post_url?.match(/\/status\/(\d+)/)?.[1];
+  const signals = tweet ? await readJSON(join(root,"data/raw/x/signals",tweet+".json"), {}) : {};
+  const repo = w.repo_url?.match(/^https:\/\/github\.com\/([\w.-]+\/[\w.-]+)/i)?.[1]?.replace(/\.git$/i,"").toLowerCase();
   const tr = translations[w.world_id] || {};
   const extra = overrides[w.world_id] || {};
   const author =
@@ -105,6 +119,10 @@ for (const w of rows) {
   const videoURL = web(w.preview_video_url);
   items.push({
     world_id: w.world_id,
+    x_likes: Number(signals.likes ?? previousLikes.get(w.world_id)) || 0,
+    github_stars: stars[repo]?.stars ?? null,
+    model_era: w.model_era || "legacy",
+    work_type: w.work_type || "interactive_world",
     title: w.title,
     title_en:
       en(extra.title) ||
@@ -119,7 +137,8 @@ for (const w of rows) {
     theme_category: w.theme_category,
     models_used: models,
     models_used_en: english(models),
-    model_family: families.find((f) => f !== "Other") || "Other",
+    primary_model: primaryModels[index],
+    model_family: primaryModels[index] ? family(primaryModels[index]) : "Other",
     model_families: families,
     tech_stack: strings(w.tech_stack),
     tech_stack_en: english(extra.tech_stack || w.tech_stack),
@@ -151,15 +170,7 @@ for (const w of rows) {
 const ids = new Set(items.map((w) => w.world_id));
 if (ids.size !== items.length) throw Error("Duplicate world IDs in snapshot");
 function rank(w) {
-  if (w.tier === "mirror")
-    return w.thumbnail_url || w.preview_video_url ? 0 : 2;
-  if (w.tier === "embed")
-    return w.verified_playable
-      ? 1
-      : w.preview_video_url || w.thumbnail_url
-        ? 2
-        : 5;
-  return w.preview_video_url ? 3 : w.thumbnail_url ? 4 : 6;
+  return w.tier === "mirror" ? 0 : w.verified_playable ? 1 : 2;
 }
 items.sort(
   (a, b) =>

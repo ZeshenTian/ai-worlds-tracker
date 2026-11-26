@@ -468,6 +468,37 @@ def fresh(record: dict, url: str | None, thumbnail: Path, ttl: timedelta) -> boo
         return False
 
 
+def frontier_demo_queue(rows, health, signals):
+    """Check public frontier links first, in engagement and recency order."""
+    from .model_era import canonicalize_models_and_stack, classify_model_era
+
+    def era(r):
+        models, _ = canonicalize_models_and_stack(r.get("models_used", []), [])
+        return classify_model_era(models, r.get("published_at"))
+
+    pending = [
+        r
+        for r in rows
+        if r.get("live_demo_url")
+        and era(r) == "frontier"
+        and not (
+            health.get(r["world_id"], {}).get("live_demo_url") == r["live_demo_url"]
+            and health[r["world_id"]].get("demo_health_status") == "verified_playable"
+        )
+    ]
+    pending.sort(key=lambda r: r.get("published_at") or "", reverse=True)
+    pending.sort(
+        key=lambda r: (
+            r.get("review_status") != "approved",
+            -int(
+                signals.get(r["original_post_url"].rsplit("/", 1)[-1], {}).get("likes")
+                or 0
+            ),
+        )
+    )
+    return pending
+
+
 async def verify(rows, state_path: Path, thumbnails: Path, *, channel=None, jobs=3, max_age_hours=24):
     # CLI and scheduled sync share a lock. Waiting for another process never stalls the event loop.
     lock = run_lock(state_path.parent / ".demo-verifier")
@@ -494,7 +525,15 @@ async def verify_locked(rows, state_path, thumbnails, channel, jobs, max_age_hou
             raise ValueError("Invalid world ID for preview file")
         url = row.get("live_demo_url")
         output = thumbnails / f"{identifier}.webp"
-        if not fresh(state.get(identifier, {}), url, output, timedelta(hours=max_age_hours)):
+        previous = state.get(identifier, {})
+        # A missing link is deterministic. Forcing a browser recheck of live links
+        # should not rewrite the complete health ledger for every linkless case.
+        if (url is None and previous.get("check_version") == CHECK_VERSION
+                and previous.get("demo_health_status") == "no_demo"
+                and previous.get("live_demo_url") is None and not previous.get("thumbnail_url")
+                and not output.exists()):
+            continue
+        if not fresh(previous, url, output, timedelta(hours=max_age_hours)):
             checks[identifier] = (url, output)
     if not checks:
         return state
