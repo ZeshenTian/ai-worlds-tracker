@@ -1,23 +1,23 @@
-# WorldFeed & 生成世界图鉴
+# WorldFeed
 
 [English](README.md) | **简体中文**
 
-像刷短视频一样全屏连玩 **223 个 AI 创作的实时 3D 世界**——背后由持续自动更新的 **1,660 个前沿 AI 3D 世界开源目录** 驱动。
+像刷短视频一样全屏连玩**全网数百个 AI 创作的实时 3D 世界**——背后由每日自动更新的前沿 AI 3D 世界开源目录驱动（已收录 **1,672** 个且持续增长）。
 
-**[▶ 打开 WorldFeed（全屏试玩流）](https://worldfeed.zeshentian1.chatgpt.site/)** · **[浏览生成世界图鉴（1,660 个世界）](https://generated-worlds-atlas.zeshentian1.chatgpt.site/)** · **[前沿趋势报告](reports/frontier_trends_report.md)** · **[公开数据（JSON）](data/exports/ai_worlds.json)**
+**[▶ 打开 WorldFeed（全屏试玩流）](https://worldfeed.space/)** · **[WorldFeed 探索（全网目录）](https://explore.worldfeed.space/)** · **[前沿趋势报告](reports/frontier_trends_report.md)** · **[公开数据（JSON）](data/exports/ai_worlds.json)**
 
 ![WorldFeed 全屏实玩画面](reports/live/worldfeed-topbar-desktop-zh.png)
 
 ---
 
-## 两个产品，一套管线
+## 两种逛法，一套管线
 
-| 产品 | 定位与体验 | 当前收录 |
+| 模式 | 定位与体验 | 当前收录 |
 |---|---|---|
-| **[WorldFeed](https://worldfeed.zeshentian1.chatgpt.site/)**（`feed/`） | 极简零遮挡全屏 3D 试玩流。每次切换直接挂载可交互的实时 3D 画布，支持 `↑`/`↓` 或顶栏滚轮切世界、`L` 点赞、`G` 直达作者原站、`O` 查看原帖。 | **223** 个可站内直玩世界（2 个开源同源镜像 + 221 个实时嵌入） |
-| **[生成世界图鉴](https://generated-worlds-atlas.zeshentian1.chatgpt.site/)**（`platform/`） | 全横屏纯静态目录，支持全文检索以及按「可试玩 / 视频演示」、模型（`Claude` / `GPT` / `Gemini` / `其他`）、主题和技术栈筛选。可站内试玩的作品直达 WorldFeed，同时保留作者官方入口与原帖。 | **1,660** 个前沿世界（**331** 个在线试玩 · **1,329** 个视频/代码 3D 演示 · 98.3% 含封面） |
+| **[WorldFeed](https://worldfeed.space/)**（`feed/`） | 极简零遮挡全屏 3D 试玩流。每次切换直接挂载可交互的实时 3D 画布，支持 `↑`/`↓` 或顶栏滚轮切世界、`L` 点赞、`G` 直达作者原站、`O` 查看原帖。 | **223** 个可站内直玩世界（2 个开源同源镜像 + 221 个实时嵌入） |
+| **[WorldFeed 探索](https://explore.worldfeed.space/)**（`platform/`） | 全横屏纯静态画廊目录，支持全文检索以及按「可试玩 / 视频演示」、模型（`Claude` / `GPT` / `Gemini` / `其他`）、主题和技术栈筛选。可站内试玩的作品直达 WorldFeed，同时保留作者官方入口与原帖。 | **1,672** 个前沿世界（**331** 个在线试玩 · **1,341** 个视频/代码 3D 演示 · 98.4% 含封面） |
 
-![生成世界图鉴首页](reports/live/atlas-grid-desktop-zh.png)
+![WorldFeed 探索首页](reports/live/atlas-grid-desktop-zh.png)
 
 ---
 
@@ -36,7 +36,7 @@
 
 ```text
 feed/        # WorldFeed（Vite + React）—— 全屏实时 3D 试玩流
-platform/    # 生成世界图鉴（Next.js / vinext 静态导出）—— 全横屏检索目录
+platform/    # WorldFeed 探索（Next.js / vinext 静态导出）—— 全横屏检索画廊
 src/         # Python 采集、归属核验、去重、评测与发布管线
 config/      # 种子配置、目录源与 V1/V2 盲测基准集
 data/        # 公开导出快照（ai_worlds.json、meta.json）与审核台账
@@ -53,7 +53,7 @@ reports/     # 趋势分析报告、上线验收报告与盲测明细
 # 1. 本地预览 WorldFeed
 cd feed && npm ci && npm run build && npm run preview
 
-# 2. 本地构建并预览生成世界图鉴
+# 2. 本地构建并预览 WorldFeed 探索
 cd platform && npm ci && npm run build:static && python3 -m http.server 8000 --directory out
 
 # 3. 运行 Python 离线单测（无需密钥）

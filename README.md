@@ -1,23 +1,23 @@
-# WorldFeed & World Atlas
+# WorldFeed
 
 **English** | [简体中文](README.zh-CN.md)
 
-Swipe through **223 playable AI-generated 3D worlds** full-screen in your browser — backed by an open, continuously updated catalog of **1,660 frontier AI worlds**.
+Swipe through **hundreds of playable AI-generated 3D worlds** full-screen in your browser — backed by a daily-updated open catalog tracking the entire frontier AI 3D scene (**1,672** worlds and growing).
 
-**[▶ Launch WorldFeed (Live 3D Feed)](https://worldfeed.zeshentian1.chatgpt.site/)** · **[Browse World Atlas (1,660 Worlds)](https://generated-worlds-atlas.zeshentian1.chatgpt.site/)** · **[Trends Report](reports/frontier_trends_report.md)** · **[Public Dataset (JSON)](data/exports/ai_worlds.json)**
+**[▶ Launch WorldFeed (Live 3D Feed)](https://worldfeed.space/)** · **[WorldFeed Explore (Full Catalog)](https://explore.worldfeed.space/)** · **[Trends Report](reports/frontier_trends_report.md)** · **[Public Dataset (JSON)](data/exports/ai_worlds.json)**
 
 ![WorldFeed live full-screen 3D preview](reports/live/worldfeed-topbar-desktop.png)
 
 ---
 
-## Two Products, One Pipeline
+## Two Ways to Browse, One Pipeline
 
-| Product | What it does | Live Snapshot |
+| Mode | What it does | Live Snapshot |
 |---|---|---|
-| **[WorldFeed](https://worldfeed.zeshentian1.chatgpt.site/)** (`feed/`) | Full-screen, zero-overlay live 3D feed. Every swipe mounts a real interactive browser world immediately. Use `↑`/`↓` or top-bar scroll to switch, `L` to like, `G` for the creator's original site, and `O` for the source post. | **223** directly playable worlds (2 licensed same-origin mirrors + 221 live embeds) |
-| **[World Atlas](https://generated-worlds-atlas.zeshentian1.chatgpt.site/)** (`platform/`) | Fast, full-width static directory with instant search and filters by Playable / Video Demos, Model (`Claude`, `GPT`, `Gemini`, `Other`), Theme, and Tech Stack. Playable entries jump straight into WorldFeed while preserving original creator links. | **1,660** frontier worlds (**331** live demos · **1,329** video/coded-3D showcases · 98.3% with cover art) |
+| **[WorldFeed](https://worldfeed.space/)** (`feed/`) | Full-screen, zero-overlay live 3D feed. Every swipe mounts a real interactive browser world immediately. Use `↑`/`↓` or top-bar scroll to switch, `L` to like, `G` for the creator's original site, and `O` for the source post. | **223** directly playable worlds (2 licensed same-origin mirrors + 221 live embeds) |
+| **[WorldFeed Explore](https://explore.worldfeed.space/)** (`platform/`) | Fast, full-width static gallery with instant search and filters by Playable / Video Demos, Model (`Claude`, `GPT`, `Gemini`, `Other`), Theme, and Tech Stack. Playable entries jump straight into WorldFeed while preserving original creator links. | **1,672** frontier worlds (**331** live demos · **1,341** video/coded-3D showcases · 98.4% with cover art) |
 
-![World Atlas catalog preview](reports/live/atlas-grid-desktop.png)
+![WorldFeed Explore catalog preview](reports/live/atlas-grid-desktop.png)
 
 ---
 
@@ -36,7 +36,7 @@ Swipe through **223 playable AI-generated 3D worlds** full-screen in your browse
 
 ```text
 feed/        # WorldFeed (Vite + React) — full-screen playable 3D feed
-platform/    # World Atlas (Next.js / vinext static export) — searchable catalog
+platform/    # WorldFeed Explore (Next.js / vinext static export) — searchable gallery
 src/         # Python discovery, attribution, dedup, verification & publishing pipeline
 config/      # Seeds, curated catalogs, and held-out V1/V2 blind benchmarks
 data/        # Public exports (ai_worlds.json, meta.json) & durable review ledger
@@ -53,7 +53,7 @@ Requires **Node.js 22+** and **Python 3.11+**.
 # 1. Run WorldFeed locally
 cd feed && npm ci && npm run build && npm run preview
 
-# 2. Build & preview World Atlas locally
+# 2. Build & preview WorldFeed Explore locally
 cd platform && npm ci && npm run build:static && python3 -m http.server 8000 --directory out
 
 # 3. Run Python unit tests (offline, no API keys required)

@@ -172,7 +172,7 @@ export function webLink(value: string | null) {
 
 export const playable = new Set(playableIds);
 export function feedBase() {
-  return process.env.NEXT_PUBLIC_WORLDFEED_URL || (typeof location !== "undefined" && ["localhost","127.0.0.1"].includes(location.hostname) ? "http://127.0.0.1:8871" : "https://worldfeed.zeshentian1.chatgpt.site");
+  return process.env.NEXT_PUBLIC_WORLDFEED_URL || (typeof location !== "undefined" && ["localhost","127.0.0.1"].includes(location.hostname) ? "http://127.0.0.1:8871" : "https://worldfeed.space");
 }
 export const hasLiveDemo = (world: World) => Boolean(world.live_demo_url) && world.demo_health_status !== "broken";
 

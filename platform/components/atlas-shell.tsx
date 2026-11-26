@@ -13,7 +13,7 @@ export function useFeedBase() {
     feedBase,
     () =>
       process.env.NEXT_PUBLIC_WORLDFEED_URL ||
-      "https://worldfeed.zeshentian1.chatgpt.site",
+      "https://worldfeed.space",
   );
 }
 export function Shell({

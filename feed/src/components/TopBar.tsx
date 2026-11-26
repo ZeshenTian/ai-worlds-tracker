@@ -86,7 +86,7 @@ export function TopBar({
     import.meta.env.VITE_ATLAS_URL ||
     (["localhost", "127.0.0.1"].includes(location.hostname)
       ? "http://127.0.0.1:8870"
-      : "https://generated-worlds-atlas.zeshentian1.chatgpt.site/");
+      : "https://explore.worldfeed.space/");
   const title = item && titleOf(item, lang);
   const author = item && (en ? item.author_en : item.author);
   return (
@@ -182,9 +182,9 @@ export function TopBar({
         <button className="lang" onClick={toggle}>
           {en ? "中文" : "EN"}
         </button>
-        <a className="atlas" href={atlas} aria-label={en ? "Atlas" : "图鉴"}>
+        <a className="atlas" href={atlas} aria-label={en ? "Explore" : "探索"}>
           <Library className="atlas-icon" />
-          <span>{en ? "Atlas" : "图鉴"}</span>
+          <span>{en ? "Explore" : "探索"}</span>
           <ArrowUpRight className="external-icon" />
         </a>
       </nav>

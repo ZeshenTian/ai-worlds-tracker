@@ -55,7 +55,7 @@ export const copy = {
   zh: {
     eraScope:"模型范围", frontierOnly:"仅前沿模型", includeArchive:"全部（含归档）",
     modes: { playable: "可试玩", video: "视频演示", all: "全部" },
-    brand: "生成世界图鉴",
+    brand: "WorldFeed 探索",
     navCatalog: "目录",
     navTrends: "趋势",
     submit: "提交",
@@ -175,7 +175,7 @@ export const copy = {
   en: {
     modes: { playable: "Playable", video: "Video Demos", all: "All" },
     eraScope:"Model scope", frontierOnly:"Frontier Only", includeArchive:"All (Incl. Archive)",
-    brand: "World Atlas",
+    brand: "WorldFeed Explore",
     navCatalog: "Catalog",
     navTrends: "Trends",
     submit: "Submit",
