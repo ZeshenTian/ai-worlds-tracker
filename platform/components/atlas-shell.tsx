@@ -31,9 +31,7 @@ export function Shell({
   return (
     <>
       <header>
-        <a className="wordmark" href="/">
-          {t.brand}
-        </a>
+        <span className="wordmark">{t.brand}</span>
         <CommandSearch isHome={isHome} />
         <nav>
           <a href={base}>{lang === "en" ? "WorldFeed ↗" : "刷世界 ↗"}</a>
