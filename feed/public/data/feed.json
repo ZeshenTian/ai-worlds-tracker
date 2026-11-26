@@ -246,7 +246,7 @@
   },
   {
     "world_id": "world-31c473cd4707b987c36edc02",
-    "x_likes": 563,
+    "x_likes": 596,
     "github_stars": 3,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -2040,7 +2040,7 @@
   },
   {
     "world_id": "world-71b800bc37180ea9f2419a7e",
-    "x_likes": 2004,
+    "x_likes": 900,
     "github_stars": null,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -2093,7 +2093,7 @@
   },
   {
     "world_id": "world-db2572e6a09d8d7fc695c8cd",
-    "x_likes": 61,
+    "x_likes": 62,
     "github_stars": null,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -2159,7 +2159,7 @@
   },
   {
     "world_id": "world-0ebb6f6f42a76fbb7a2fa5d7",
-    "x_likes": 13,
+    "x_likes": 12,
     "github_stars": null,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -2214,7 +2214,7 @@
   },
   {
     "world_id": "world-b58c502148729b73d0e4ccc9",
-    "x_likes": 123,
+    "x_likes": 98,
     "github_stars": null,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -3995,7 +3995,7 @@
   {
     "world_id": "world-f01df3cce30208f69c7e6454",
     "x_likes": 2368,
-    "github_stars": 244,
+    "github_stars": 248,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "Papertrails",

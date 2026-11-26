@@ -1545,8 +1545,8 @@
   "https://fablestar.games/watch.html": {
     "embeddable": false,
     "reason": "network_error",
-    "curl_code": 28,
-    "checked_at": "2026-11-26T06:14:20.664Z",
+    "curl_code": 7,
+    "checked_at": "2026-11-26T11:52:24.325Z",
     "origin": null,
     "login_required": false
   },
@@ -2821,7 +2821,7 @@
     "embeddable": false,
     "reason": "network_error",
     "curl_code": 35,
-    "checked_at": "2026-11-26T06:14:15.924Z",
+    "checked_at": "2026-11-26T11:52:24.477Z",
     "origin": null,
     "login_required": false
   },
