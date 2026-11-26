@@ -246,7 +246,7 @@
   },
   {
     "world_id": "world-31c473cd4707b987c36edc02",
-    "x_likes": 563,
+    "x_likes": 398,
     "github_stars": 3,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -1856,7 +1856,7 @@
   {
     "world_id": "world-f93d3e356f7e05a92902ac46",
     "x_likes": 0,
-    "github_stars": 123,
+    "github_stars": 124,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "SUBLEVEL 07",
@@ -2039,84 +2039,8 @@
     "published_at": "2026-11-24T20:10:45+00:00"
   },
   {
-    "world_id": "world-172e074b9cefadcfc00e1ecd",
-    "x_likes": 4,
-    "github_stars": null,
-    "model_era": "frontier",
-    "work_type": "interactive_world",
-    "title": "Vice Beach Motor Club: Sunset Circuit Ocean Drive Grand Prix",
-    "title_en": "Vice Beach Motor Club: Sunset Circuit Ocean Drive Grand Prix",
-    "author": "@Charl1ehimself",
-    "author_en": "@Charl1ehimself",
-    "theme_category": "city_diorama",
-    "models_used": [
-      "Claude Sonnet 5.5",
-      "Gemini 4 Neon"
-    ],
-    "models_used_en": [
-      "Claude Sonnet 5.5",
-      "Gemini 4 Neon"
-    ],
-    "primary_model": "Gemini 4 Neon",
-    "model_family": "Gemini",
-    "model_families": [
-      "Claude",
-      "Gemini"
-    ],
-    "tech_stack": [
-      "Three.js",
-      "ASCII shaders",
-      "Web Audio",
-      "OpenDesign"
-    ],
-    "tech_stack_en": [
-      "Three.js",
-      "ASCII shaders",
-      "Web Audio",
-      "OpenDesign"
-    ],
-    "generation_mode": "one_shot",
-    "is_open_source": false,
-    "verified_playable": false,
-    "tier": "embed",
-    "embed_url": "https://vice-beach-motor-club.deed.page/",
-    "external_demo_url": "http://vice-beach-motor-club.deed.page/",
-    "repo_url": null,
-    "original_post_url": "https://x.com/Charl1ehimself/status/2125149004170485986",
-    "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-172e074b9cefadcfc00e1ecd.webp",
-    "summary_zh": "这是一个基于Three.js和ASCII着色器绘制街道的3D竞速游戏。游戏中融合了Web Audio生成的引擎和8位无线电声音，玩家可在名为海洋大道的赛道上选手移动，每4秒决策一次。由DeepSeek v4.1 flash和OpenDesign工具构建，整个两个城市场景压缩于单个HTML文件。",
-    "summary_en": "This is a 3D racing game built with Three.js and ASCII shaders drawing the streets. It uses Web Audio for engine sounds and 8-bit radio. Players race on Ocean Drive circuit, making moves every 4 seconds. Built using DeepSeek v4.1 flash in OpenDesign, containing two city scenes in one HTML file.",
-    "workflow_steps_zh": [
-      "将两个城市压缩进单个HTML文件。",
-      "用Three.js结合ASCII着色器绘制街道。",
-      "用Web Audio制作引擎音效及8位无线电。",
-      "用DeepSeek v4.1 flash和OpenDesign构建，消耗7035万token。"
-    ],
-    "workflow_steps_en": [
-      "Fit two cities into one HTML file.",
-      "Use Three.js to draw streets with ASCII shaders.",
-      "Use Web Audio for engine sounds and 8-bit radio.",
-      "Build the game with DeepSeek v4.1 flash in OpenDesign, consuming 70.35M tokens."
-    ],
-    "skills_zh": [
-      "DeepSeek v4.1 flash"
-    ],
-    "skills_en": [
-      "DeepSeek v4.1 flash"
-    ],
-    "evidence_quotes": [
-      "claude sonnet 5.5 vs gemini 4 neon",
-      "building it with DeepSeek v4.1 flash in OpenDesign took 70.35M token.",
-      "building it with DeepSeek v4.1 flash in OpenDesign took 70.35M token",
-      "HOW did i build this game: both cities fit in one HTML file.",
-      "claude sonnet 5.5 vs gemini 4 neon 🏁"
-    ],
-    "published_at": "2026-11-24T08:46:20+00:00"
-  },
-  {
     "world_id": "world-71b800bc37180ea9f2419a7e",
-    "x_likes": 2004,
+    "x_likes": 900,
     "github_stars": null,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -2169,7 +2093,7 @@
   },
   {
     "world_id": "world-db2572e6a09d8d7fc695c8cd",
-    "x_likes": 61,
+    "x_likes": 45,
     "github_stars": null,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -2235,7 +2159,7 @@
   },
   {
     "world_id": "world-0ebb6f6f42a76fbb7a2fa5d7",
-    "x_likes": 13,
+    "x_likes": 12,
     "github_stars": null,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -2290,7 +2214,7 @@
   },
   {
     "world_id": "world-b58c502148729b73d0e4ccc9",
-    "x_likes": 123,
+    "x_likes": 98,
     "github_stars": null,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -2331,7 +2255,7 @@
     "repo_url": null,
     "original_post_url": "https://x.com/thebuggeddev/status/2124916161083314420",
     "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-b58c502148729b73d0e4ccc9.webp",
+    "thumbnail_url": "/thumbnails/world-b58c502148729b73d0e4ccc9-x.webp",
     "summary_zh": "该作品是一个基于WebGPU的无限折纸旋转木马，用户通过滚动操作使纸张层层折叠和展开，形成8种不同的3D雕塑。作品运用XPBD折叠物理模拟和自定义GPU着色器，实现了半透明的日本和纸材料效果。",
     "summary_en": "This work is an infinite origami carousel based on WebGPU where users scroll to fold and unfold paper into 8 distinct 3D sculptures. It uses XPBD folding physics and custom GPU shaders to simulate translucent Japanese washi materials.",
     "workflow_steps_zh": [
@@ -2665,80 +2589,6 @@
     "published_at": "2026-11-22T18:18:22.267000+00:00"
   },
   {
-    "world_id": "world-80b3c976eee364080ee1aee1",
-    "x_likes": 18,
-    "github_stars": null,
-    "model_era": "frontier",
-    "work_type": "interactive_world",
-    "title": "Last Watch",
-    "title_en": "Last Watch",
-    "author": "@thisiskp_",
-    "author_en": "@thisiskp_",
-    "theme_category": "city_diorama",
-    "models_used": [
-      "Claude Code",
-      "Codex",
-      "Gemini",
-      "Claude Fable 5.2"
-    ],
-    "models_used_en": [
-      "Claude Code",
-      "Codex",
-      "Gemini",
-      "Claude Fable 5.2"
-    ],
-    "primary_model": "Claude Fable 5.2",
-    "model_family": "Claude",
-    "model_families": [
-      "Claude",
-      "GPT",
-      "Gemini"
-    ],
-    "tech_stack": [
-      "Three.js",
-      "WebGL2"
-    ],
-    "tech_stack_en": [
-      "Three.js",
-      "WebGL2"
-    ],
-    "generation_mode": "one_shot",
-    "is_open_source": false,
-    "verified_playable": false,
-    "tier": "embed",
-    "embed_url": "https://last-watch-production.up.railway.app/",
-    "external_demo_url": "https://last-watch-production.up.railway.app/",
-    "repo_url": null,
-    "original_post_url": "https://x.com/thisiskp_/status/2124560696494952589",
-    "preview_video_url": null,
-    "thumbnail_url": null,
-    "summary_zh": "这是一款由@kitsutoma1345使用Claude和three.js开发的浏览器射击生存游戏。玩家在一个指挥室内抵御僵尸三波攻击，通过修补门板和购买墙炮防御生存。",
-    "summary_en": "This is a browser shooting survival game developed by @kitsutoma1345 using Claude and three.js. The player defends a command room against three waves of zombies by boarding doors and buying wall guns to survive.",
-    "workflow_steps_zh": [
-      "设计僵尸生存游戏概念和玩法",
-      "使用Claude辅助生成代码和内容",
-      "利用three.js实现游戏图形与交互",
-      "整合武器和音效资源",
-      "测试和调整游戏平衡和运行性能"
-    ],
-    "workflow_steps_en": [],
-    "skills_zh": [
-      "游戏设计",
-      "Claude编程辅助",
-      "three.js图形编程"
-    ],
-    "skills_en": [],
-    "evidence_quotes": [
-      "@kitsutoma1345 used Claude and three.js. You hold a Cold War command room while zombies tear the boards off the doors",
-      "Built with three.js.",
-      "I've been wanting to build a badminton game (I love it and miss playing), so I saved my favorites:",
-      "@RobertJBye made it with Claude",
-      "@AlexStLouis10 built it for the Epic MegaJam on Unreal Engine 5.8 with Claude Code, plus a bit of Codex and Gemini",
-      "@martyswant made it in one shot with Claude Fable 5.2, then did a few rounds of small tweaks"
-    ],
-    "published_at": "2026-11-22T17:48:37+00:00"
-  },
-  {
     "world_id": "world-ce87d2ea45a7758e22d4251d",
     "x_likes": 70,
     "github_stars": null,
@@ -2999,72 +2849,6 @@
     "published_at": "2026-11-21T13:07:41+00:00"
   },
   {
-    "world_id": "world-1971c760d280c8f9b0f53acc",
-    "x_likes": 3,
-    "github_stars": null,
-    "model_era": "frontier",
-    "work_type": "interactive_world",
-    "title": "Gemini 4 Neon",
-    "title_en": "Gemini 4 Neon",
-    "author": "@aaryan_kakad",
-    "author_en": "@aaryan_kakad",
-    "theme_category": "fantasy_rpg",
-    "models_used": [
-      "Gemini 4 Neon",
-      "GPT-6.2 Sol"
-    ],
-    "models_used_en": [
-      "Gemini 4 Neon",
-      "GPT-6.2 Sol"
-    ],
-    "primary_model": "Gemini 4 Neon",
-    "model_family": "Gemini",
-    "model_families": [
-      "Gemini",
-      "GPT"
-    ],
-    "tech_stack": [
-      "HTML"
-    ],
-    "tech_stack_en": [
-      "HTML"
-    ],
-    "generation_mode": "one_shot",
-    "is_open_source": false,
-    "verified_playable": false,
-    "tier": "embed",
-    "embed_url": "https://gemini-4-neon.vercel.app/",
-    "external_demo_url": "https://gemini-4-neon.vercel.app/",
-    "repo_url": null,
-    "original_post_url": "https://x.com/aaryan_kakad/status/2124029019066646658",
-    "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-1971c760d280c8f9b0f53acc-x.webp",
-    "summary_zh": "Gemini 4 Neon包含五个主题互动3D网页世界，分别从印度史诗到黑洞边缘，所有设计与3D场景均单独用一HTML文件实现。",
-    "summary_en": "Gemini 4 Neon includes five themed interactive 3D web worlds ranging from Indian epics to the edge of a black hole, with each design and 3D scene implemented as a single HTML file.",
-    "workflow_steps_zh": [
-      "设计五个不同主题的互动3D场景，主题涵盖印度史诗和宇宙边缘。",
-      "每个世界使用单独HTML文件实现3D设计和代码。",
-      "使用Neon 4 Extra完成设计及3D场景创作。"
-    ],
-    "workflow_steps_en": [
-      "Design five distinct worlds based on Indian epics and cosmic themes.",
-      "Implement each world as a standalone HTML file containing interactive 3D scenes.",
-      "Use Neon 4 Extra for design and 3D creation skills."
-    ],
-    "skills_zh": [
-      "Neon 4 Extra设计与3D技能"
-    ],
-    "skills_en": [],
-    "evidence_quotes": [
-      "Neon 4 Extra's design and 3D skills.",
-      "Every single design and 3D scene is literally just one HTML file.",
-      "Five worlds, from the Indian epics to the edge of a black hole.",
-      "I'm completely shocked by Neon 4 Extra's design and 3D skills.",
-      "the BS landing page is built by GPT-6.2-Sol-high, just focus on the main 5 HTMLs inside the landing page :)"
-    ],
-    "published_at": "2026-11-21T06:35:55+00:00"
-  },
-  {
     "world_id": "world-8904fce7d1be2518f41ebf6a",
     "x_likes": 49,
     "github_stars": null,
@@ -3239,137 +3023,6 @@
       "Claude Opus 5.5 against Gemini 4 Neon"
     ],
     "published_at": "2026-11-20T00:13:35+00:00"
-  },
-  {
-    "world_id": "world-725c6be68d75f31ce713523c",
-    "x_likes": 643,
-    "github_stars": null,
-    "model_era": "frontier",
-    "work_type": "interactive_world",
-    "title": "DESERT FLIGHT · LAUNCH OUTPOST",
-    "title_en": "DESERT FLIGHT · LAUNCH OUTPOST",
-    "author": "@zavrenn",
-    "author_en": "@zavrenn",
-    "theme_category": "physics_sim",
-    "models_used": [
-      "GPT-6.2 Astra"
-    ],
-    "models_used_en": [
-      "GPT-6.2 Astra"
-    ],
-    "primary_model": "GPT-6.2 Astra",
-    "model_family": "GPT",
-    "model_families": [
-      "GPT"
-    ],
-    "tech_stack": [
-      "Three.js"
-    ],
-    "tech_stack_en": [
-      "Three.js"
-    ],
-    "generation_mode": "unknown",
-    "is_open_source": false,
-    "verified_playable": false,
-    "tier": "embed",
-    "embed_url": "https://worldframe.zavrenn.workers.dev/",
-    "external_demo_url": "https://worldframe.zavrenn.workers.dev/",
-    "repo_url": null,
-    "original_post_url": "https://x.com/zavrenn/status/2123566988148846777",
-    "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-725c6be68d75f31ce713523c-x.webp",
-    "summary_zh": "《DESERT FLIGHT · LAUNCH OUTPOST》是用 GPT-6.2 Astra 在 Three.js 中从头构建的交互式沙漠发射前哨，未导入模型。访客可拖动环绕、右键拖动平移、滚轮缩放，并用 WASD 移动、Q/E 调整高度；基地会向目标发射两枚先进导弹，界面列出“发射序列→载具抵达→攻击机器人”，作者表示将在下一段视频展示目标被摧毁。",
-    "summary_en": "“DESERT FLIGHT · LAUNCH OUTPOST” is an interactive desert launch outpost built from scratch in Three.js with GPT-6.2 Astra, with no imported models. Visitors can drag to orbit, right-drag to pan, scroll to zoom, use WASD to move, and use Q/E for height. The base launches two advanced missiles at a target; the interface lists “Launch sequence↗Vehicle arrival↗Attack the robot,” and the author says the target’s destruction will be shown in the next video.",
-    "workflow_steps_zh": [
-      "用 GPT-6.2 Astra 在 Three.js 中构建整个场景，不导入任何模型。",
-      "搭建沙漠飞行发射前哨，并提供拖动环绕、右键拖动平移、滚轮缩放、WASD 移动及 Q/E 调整高度的探索控制。",
-      "设置基地向目标发射两枚先进导弹，呈现“发射序列→载具抵达→攻击机器人”的流程。",
-      "安排在下一段视频中展示目标被摧毁。"
-    ],
-    "workflow_steps_en": [
-      "Use GPT-6.2 Astra to build the entire scene in Three.js without importing any models.",
-      "Create a desert flight launch outpost with exploration controls for dragging to orbit, right-dragging to pan, scrolling to zoom, moving with WASD, and adjusting height with Q/E.",
-      "Set up the base to launch two advanced missiles at a target, presenting the “Launch sequence↗Vehicle arrival↗Attack the robot” flow.",
-      "Plan to show the target being destroyed in the next video."
-    ],
-    "skills_zh": [],
-    "skills_en": [],
-    "evidence_quotes": [
-      "Still experimenting with @threejs",
-      "I built the whole scene in Three.js with GPT-6.2 Astra. No imported models.",
-      "This mini base launches two advanced missiles at a target.",
-      "You’ll see them destroy the target in the next video.",
-      "You can explore the base at: https://t.co/cGh7kPvSY6 https://t.co/dQRA5AdRvI",
-      "Drag to orbit · Right-drag to pan · Scroll to zoom · WASD to move · Q/E for height",
-      "Launch sequence↗Vehicle arrival↗Attack the robot↗",
-      "I built the whole scene in Three.js with GPT-6.2 Astra."
-    ],
-    "published_at": "2026-11-19T23:59:58+00:00"
-  },
-  {
-    "world_id": "world-7685ff80be5205ee2f78b3e5",
-    "x_likes": 19,
-    "github_stars": null,
-    "model_era": "frontier",
-    "work_type": "coded_3d_scene",
-    "title": "Gemini Neon",
-    "title_en": "Gemini Neon",
-    "author": "@hapticdata",
-    "author_en": "@hapticdata",
-    "theme_category": "other",
-    "models_used": [
-      "Gemini"
-    ],
-    "models_used_en": [
-      "Gemini"
-    ],
-    "primary_model": "Gemini",
-    "model_family": "Gemini",
-    "model_families": [
-      "Gemini"
-    ],
-    "tech_stack": [
-      "Blender",
-      "WebGPU"
-    ],
-    "tech_stack_en": [
-      "Blender",
-      "WebGPU"
-    ],
-    "generation_mode": "unknown",
-    "is_open_source": false,
-    "verified_playable": false,
-    "tier": "embed",
-    "embed_url": "https://assets.kylephillips.ai/gemini-neon/index.html",
-    "external_demo_url": "https://assets.kylephillips.ai/gemini-neon/index.html",
-    "repo_url": null,
-    "original_post_url": "https://x.com/hapticdata/status/2123535288408609266",
-    "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-7685ff80be5205ee2f78b3e5-x.webp",
-    "summary_zh": "这是一个使用 Blender + WebGPU 构建的交互式 3D 霓虹灯场景：访客将插头拖到插座，作者还提供“Behind the Scenes”区域，让访客调节滑块并查看制作方式；作品以庆祝 Gemini Neon 为目的。",
-    "summary_en": "An interactive 3D neon-sign scene built with Blender + WebGPU: visitors drag the plug to the outlet, and the author provides a “Behind the Scenes” area where visitors can adjust sliders and see how it was made; the work celebrates Gemini Neon.",
-    "workflow_steps_zh": [
-      "在 Blender 中建模一个真实霓虹灯招牌。",
-      "使用 WebGPU 构建交互式 3D 场景。",
-      "访客将插头拖到插座，并按提示开启声音。",
-      "进入“Behind the Scenes”，调节滑块以查看制作方式。"
-    ],
-    "workflow_steps_en": [
-      "Model a real neon sign in Blender.",
-      "Build the interactive 3D scene with WebGPU.",
-      "Visitors drag the plug to the outlet and turn on sound as suggested.",
-      "Enter “Behind the Scenes” to adjust sliders and see how it was made."
-    ],
-    "skills_zh": [],
-    "skills_en": [],
-    "evidence_quotes": [
-      "Had to celebrate Gemini Neon the only way that made sense: modeling a real neon sign and plugging it in.",
-      "Built in Blender + WebGPU.",
-      "Try it out for yourself and check out the \"behind the scenes\" section to play with sliders and see how this was made",
-      "Drag the plug to the outlet",
-      "Best experienced with sound"
-    ],
-    "published_at": "2026-11-19T21:54:00+00:00"
   },
   {
     "world_id": "world-a383818e816605dc5167044b",
@@ -3830,6 +3483,72 @@
     "published_at": "2026-11-18T06:30:34+00:00"
   },
   {
+    "world_id": "world-c38d567124f015eaa229ce4e",
+    "x_likes": 0,
+    "github_stars": null,
+    "model_era": "frontier",
+    "work_type": "interactive_world",
+    "title": "BlackMass",
+    "title_en": "BlackMass",
+    "author": "@Dimillian",
+    "author_en": "@Dimillian",
+    "theme_category": "fantasy_rpg",
+    "models_used": [
+      "GPT-6.2 Astra"
+    ],
+    "models_used_en": [
+      "GPT-6.2 Astra"
+    ],
+    "primary_model": "GPT-6.2 Astra",
+    "model_family": "GPT",
+    "model_families": [
+      "GPT"
+    ],
+    "tech_stack": [
+      "Blender"
+    ],
+    "tech_stack_en": [
+      "Blender"
+    ],
+    "generation_mode": "one_shot",
+    "is_open_source": false,
+    "verified_playable": false,
+    "tier": "embed",
+    "embed_url": "https://black-mass-survivor.openai.chatgpt.site/",
+    "external_demo_url": "https://black-mass-survivor.openai.chatgpt.site/",
+    "repo_url": null,
+    "original_post_url": "https://x.com/Dimillian/status/2122920777276162489",
+    "preview_video_url": null,
+    "thumbnail_url": "/thumbnails/world-c38d567124f015eaa229ce4e.webp",
+    "summary_zh": "这是使用GPT-6.2 Astra一次性生成的射击游戏，结合了布雷泽Blender建模，将3D枪械手部模型转换成2D精灵，营造Doom风格的画面和游戏体验。",
+    "summary_en": "This is a one-shot generated shooter game using GPT-6.2 Astra, combining Blender modeling to convert 3D gun/hand models into 2D sprites, creating a Doom-style visual and gameplay experience.",
+    "workflow_steps_zh": [
+      "编写包含血腥、冲击反馈和平面敌人的投射游戏提示。",
+      "使用GPT-6.2 Astra一次性生成游戏内容。",
+      "用Blender建模枪和手的3D模型。",
+      "将3D模型转换为2D精灵，用于平面敌人表现。",
+      "整合元素形成可玩的具有Doom风格的3D游戏。"
+    ],
+    "workflow_steps_en": [
+      "Write a prompt describing a boomer shooter game with gore and impact feedback.",
+      "Use GPT-6.2 Astra to generate game content and logic in one shot.",
+      "Model guns and hands in Blender as 3D objects.",
+      "Convert the 3D models into 2D sprites for billboards/enemies.",
+      "Integrate all elements into a playable 3D game rendered with many 2D elements for a Doom vibe."
+    ],
+    "skills_zh": [
+      "boomer shooter描述提示",
+      "3D建模转2D精灵技术"
+    ],
+    "skills_en": [],
+    "evidence_quotes": [
+      "Here is a fun one-shot experiment I built with GPT-6.2 Astra.",
+      "It even used Blender to 3D model guns/hands and then converted them to 2D sprites.",
+      "I wanted a boomer shooter with some gore, good impact feedback, billboard/sprite enemies. It even used Blender to 3D model guns/hands and then converted them to 2D sprites."
+    ],
+    "published_at": "2026-11-18T05:12:09+00:00"
+  },
+  {
     "world_id": "world-67e5164849e214074b8d12e4",
     "x_likes": 6,
     "github_stars": null,
@@ -3874,69 +3593,6 @@
       "just click and drag to play with them?"
     ],
     "published_at": "2026-11-18T02:29:25.418000+00:00"
-  },
-  {
-    "world_id": "world-fa05975255bc14574bc11ee4",
-    "x_likes": 4,
-    "github_stars": null,
-    "model_era": "frontier",
-    "work_type": "interactive_world",
-    "title": "Astra 6.2 Jerusalem 3D Model",
-    "title_en": "Astra 6.2 Jerusalem 3D Model",
-    "author": "@kplikethebird",
-    "author_en": "@kplikethebird",
-    "theme_category": "historical",
-    "models_used": [
-      "GPT-6.2 Astra"
-    ],
-    "models_used_en": [
-      "GPT-6.2 Astra"
-    ],
-    "primary_model": "GPT-6.2 Astra",
-    "model_family": "GPT",
-    "model_families": [
-      "GPT"
-    ],
-    "tech_stack": [
-      "Blender"
-    ],
-    "tech_stack_en": [
-      "Blender"
-    ],
-    "generation_mode": "one_shot",
-    "is_open_source": false,
-    "verified_playable": false,
-    "tier": "embed",
-    "embed_url": "https://astra-jerusalem.vercel.app/",
-    "external_demo_url": "https://astra-jerusalem.vercel.app/",
-    "repo_url": null,
-    "original_post_url": "https://x.com/kplikethebird/status/2122773345339056322",
-    "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-fa05975255bc14574bc11ee4-x.webp",
-    "summary_zh": "使用Blender构建的耶路撒冷复活节周围的沉浸式历史准确3D模型，展示了耶稣最后访问期间的城市景观和相关重要地点。访客可以自由导航Blender场景，查看十一处固定摄像机位置，通过场景浏览耶路撒冷的主要建筑和路线。",
-    "summary_en": "An immersive, historically accurate 3D model of Jerusalem during Passover circa 30 CE built using Blender. Visitors can freely navigate the Blender scene, viewing eleven fixed camera locations, exploring major buildings and routes related to Jesus's final visit.",
-    "workflow_steps_zh": [
-      "使用Blender构建耶路撒冷地形和建筑模型",
-      "依据历史文献和考古发现设计城市布局和关键地点",
-      "导入人物活动场景，重现历史事件",
-      "设置十一处固定摄像机视角，构成游览路线",
-      "导出Blender场景和附带脚本，支持自由导航与浏览"
-    ],
-    "workflow_steps_en": [],
-    "skills_zh": [
-      "\"Build an immersive, historically accurate 3D model of Jerusalem during the week of Jesus's final visit using Blender.\"",
-      "历史资料研究",
-      "3D建模与渲染"
-    ],
-    "skills_en": [
-      "\"Build an immersive, historically accurate 3D model of Jerusalem during the week of Jesus's final visit using Blender.\""
-    ],
-    "evidence_quotes": [
-      "GPT-6.2 Astra's rendition.",
-      "Prompt: \"Build an immersive, historically accurate 3D model of Jerusalem during the week of Jesus's final visit using Blender.\"",
-      "For folks following along with Jerusalem Bench, here is GPT-6.2 Astra's rendition."
-    ],
-    "published_at": "2026-11-17T19:26:19+00:00"
   },
   {
     "world_id": "world-adbc71b7dea29f72f9afbef8",
@@ -4005,7 +3661,7 @@
   {
     "world_id": "world-f01df3cce30208f69c7e6454",
     "x_likes": 2368,
-    "github_stars": 231,
+    "github_stars": 244,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "Papertrails",
@@ -8834,75 +8490,6 @@
     "published_at": "2026-09-29T10:26:31.752000+00:00"
   },
   {
-    "world_id": "world-b219e4d4192185071b6f5a99",
-    "x_likes": 29,
-    "github_stars": null,
-    "model_era": "frontier",
-    "work_type": "interactive_world",
-    "title": "Wave Model Simulation of Psyche-Environment Interaction",
-    "title_en": "Wave Model Simulation of Psyche-Environment Interaction",
-    "author": "@fabinrasheed",
-    "author_en": "@fabinrasheed",
-    "theme_category": "other",
-    "models_used": [
-      "Claude Opus 5.5"
-    ],
-    "models_used_en": [
-      "Claude Opus 5.5"
-    ],
-    "primary_model": "Claude Opus 5.5",
-    "model_family": "Claude",
-    "model_families": [
-      "Claude"
-    ],
-    "tech_stack": [
-      "Three.js",
-      "JavaScript",
-      "WebGL"
-    ],
-    "tech_stack_en": [
-      "Three.js",
-      "JavaScript",
-      "WebGL"
-    ],
-    "generation_mode": "one_shot",
-    "is_open_source": false,
-    "verified_playable": false,
-    "tier": "embed",
-    "embed_url": "https://nurecas.github.io/wavemodelviz/",
-    "external_demo_url": "https://nurecas.github.io/wavemodelviz",
-    "repo_url": null,
-    "original_post_url": "https://x.com/fabinrasheed/status/2104803951296352610",
-    "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-b219e4d4192185071b6f5a99.webp",
-    "summary_zh": "作者请求Claude Opus 5.5根据其关于心灵与环境相互作用的波动模型论文，单轮生成了一个基于three.js的模拟。该模拟呈现了人类心理历程及创伤与欲望的解析，最终达到自我的解脱，形态类似佛教象征的无忧结符号。",
-    "summary_en": "The author asked Claude Opus 5.5 to create a single-shot three.js simulation visualizing a wave model of psyche-environment interaction from the author's paper. The simulation depicts a human life psychological evolution with trauma resolution leading to ego-death, resembling the Unalome symbol from Buddhist tradition.",
-    "workflow_steps_zh": [
-      "作者撰写并发表心理与环境相互作用波动模型论文。",
-      "作者请求Claude Opus 5.5单轮生成对应论文的数学准确视觉化。",
-      "Claude生成基于three.js的交互式模拟。",
-      "模拟展示了结点动态、自我反馈、心理周期及解析过程。",
-      "模拟形象地呈现人类一生心理历程及最终的自我解脱，形似无忧结符号。"
-    ],
-    "workflow_steps_en": [
-      "Author published a wave model paper describing psyche-environment interaction mathematically.",
-      "Author requested Claude Opus 5.5 to create a mathematically accurate visualization of the paper.",
-      "Claude generated a three.js interactive simulation as a single-shot output.",
-      "Simulation displays knots dynamics, ego feedback, psychological cycles, and resolution as described in the paper.",
-      "Simulation visualizes a human lifetime journey of psychological evolution ending in ego-death, resembling the Unalome symbol."
-    ],
-    "skills_zh": [
-      "请求Claude Opus 5.5生成论文数学模型的可视化。"
-    ],
-    "skills_en": [],
-    "evidence_quotes": [
-      "I asked Claude Opus 5.5 to create a simulation of the evolution of human psychology over a lifetime with the resolution of human trauma and desires until full resolution (ego-death) based on my wave-model of psyche-environment interaction paper.",
-      "Claude one-shotted this @threejs visualisation.",
-      "And without explicitly mentioning anything other than to \"create a mathematically accurate visualisation of the paper\", Claude one-shotted this @threejs visualisation."
-    ],
-    "published_at": "2026-09-29T05:22:22+00:00"
-  },
-  {
     "world_id": "world-7ed6a19591415f54f616e01a",
     "x_likes": 11,
     "github_stars": null,
@@ -9033,71 +8620,6 @@
       "I was able to leverage Opus 5.5 to get the library to a more complete state."
     ],
     "published_at": "2026-09-28T15:40:10+00:00"
-  },
-  {
-    "world_id": "world-b391dc7f71baea4162624cba",
-    "x_likes": 934,
-    "github_stars": null,
-    "model_era": "frontier",
-    "work_type": "interactive_world",
-    "title": "Procedural Buildings",
-    "title_en": "Procedural Buildings",
-    "author": "@chirovisuals",
-    "author_en": "@chirovisuals",
-    "theme_category": "city_diorama",
-    "models_used": [
-      "Claude Opus 5.5"
-    ],
-    "models_used_en": [
-      "Claude Opus 5.5"
-    ],
-    "primary_model": "Claude Opus 5.5",
-    "model_family": "Claude",
-    "model_families": [
-      "Claude"
-    ],
-    "tech_stack": [
-      "Blender Geometry Nodes",
-      "Three.js"
-    ],
-    "tech_stack_en": [
-      "Blender Geometry Nodes",
-      "Three.js"
-    ],
-    "generation_mode": "one_shot",
-    "is_open_source": false,
-    "verified_playable": false,
-    "tier": "embed",
-    "embed_url": "https://proceduralbuildings.chirostudio.xyz/",
-    "external_demo_url": "https://proceduralbuildings.chirostudio.xyz/",
-    "repo_url": null,
-    "original_post_url": "https://x.com/chirovisuals/status/2104548658171834749",
-    "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-b391dc7f71baea4162624cba-x.webp",
-    "summary_zh": "使用Opus 5.5将Blender几何节点制作的3座程序化建筑实时运行于three.js中，构建了一个含城市环境与灯光、摄像机预设的程序化城市Web交互世界。包含源码和.blend文件。",
-    "summary_en": "Using Opus 5.5, three procedural buildings created with Blender geometry nodes run live in three.js, wrapped by a procedural city with lighting and camera presets. Source code and .blend files are included.",
-    "workflow_steps_zh": [
-      "使用Opus 5.5搭建Blender几何节点的程序化建筑。",
-      "将节点图移植到three.js实现Web端实时运行。",
-      "构建包含程序化建筑的程序化城市环境。",
-      "加入灯光和摄像机预设以增强交互。",
-      "提供在线演示、源码和.blend文件。"
-    ],
-    "workflow_steps_en": [
-      "Use Opus 5.5 to build procedural buildings with Blender geometry nodes.",
-      "Port the node graphs to three.js for live running on the web.",
-      "Create a procedural city environment wrapping the buildings.",
-      "Add lighting and camera preset controls for interactivity.",
-      "Provide live demo, source code and .blend files for users to access."
-    ],
-    "skills_zh": [
-      "Opus 5.5搭建程序化建筑"
-    ],
-    "skills_en": [],
-    "evidence_quotes": [
-      "I used Opus 5.5 to build &amp; port 3 procedural buildings from Blender geometry nodes to the web."
-    ],
-    "published_at": "2026-09-28T12:27:55+00:00"
   },
   {
     "world_id": "world-bcf55505c74f3ebaef60d95f",
@@ -10951,7 +10473,7 @@
   {
     "world_id": "world-4b1a7e3295ca492e5bb42ff8",
     "x_likes": 0,
-    "github_stars": 7,
+    "github_stars": 8,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "Fall Line",
