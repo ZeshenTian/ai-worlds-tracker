@@ -161,3 +161,35 @@ def test_both_stages_run_once_then_replay_offline(tmp_path, monkeypatch):
     (root / "raw/x/123.json").unlink()
     frame.unlink()
     assert apply_attribution(case, root, module.load_policy(root)) == "allow"
+
+
+def test_cold_checkout_preserves_frontier_presentation_and_thread_append(tmp_path):
+    case = work()
+    pres = {
+        "decision": "allow",
+        "reason": "native_creator_presentation",
+        "source": case.original_post_url,
+        "packet_key": "stale-key",
+        "quote": "Built this 3D island with Claude Opus 5.5.",
+        "models": [{"term": "Claude Opus 5.5", "quote": "Built this 3D island with Claude Opus 5.5."}],
+    }
+    policy = {"model": "mini", "protected": set(), "decisions": {}, "presentations": {case.world_id: pres}}
+    # Cold CI checkout has no raw/x/<id>.json on disk; durable presentation receipt still applies.
+    assert apply_attribution(case, tmp_path, policy) == "allow"
+    assert case.models_used == ["Claude Opus 5.5"]
+    # If Apify later re-fetches the tweet with a new author reply, verbatim quotes still ground the receipt.
+    write_json(
+        tmp_path / "raw/x/123.json",
+        {
+            "post": {"tweet_id": "123", "author_handle": "maker", "text": "Built this 3D island with Claude Opus 5.5."},
+            "thread": [{"tweet_id": "124", "author_handle": "maker", "text": "Link in bio!"}],
+        },
+    )
+    assert apply_attribution(case, tmp_path, policy) == "allow"
+    # If the source text actually changed so quotes are no longer verbatim, fall back to hold.
+    write_json(
+        tmp_path / "raw/x/123.json",
+        {"post": {"tweet_id": "123", "author_handle": "maker", "text": "Unrelated post"}},
+    )
+    assert apply_attribution(case, tmp_path, policy) == "hold"
+    assert case.review_status == ReviewStatus.PENDING

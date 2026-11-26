@@ -1,109 +1,109 @@
 # 前沿世界趋势报告
 
-更新于 2026-11-26T06:00:08+00:00。统计范围为公开目录中的 1,240 个前沿世界。
+更新于 2026-11-26T06:11:06+00:00。统计范围为公开目录中的 1,672 个前沿世界。
 
 ## 核心概览
 
 | 指标 | 数量 |
 |---|---:|
-| 提供试玩入口 | 320 |
+| 提供试玩入口 | 331 |
 | 已验证可玩 | 38 |
-| WorldFeed 可嵌入（含镜像） | 216 |
+| WorldFeed 可嵌入（含镜像） | 223 |
 | 开源且有仓库 | 29 |
-| 封面覆盖 | 1214（97.9%） |
+| 封面覆盖 | 1645（98.4%） |
 
 ## 模型家族（多模型作品可重复计入不同家族）
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| Claude | 917 | 74.0% |
-| Gemini | 238 | 19.2% |
-| GPT | 187 | 15.1% |
-| 其他 | 4 | 0.3% |
+| Claude | 1193 | 71.4% |
+| Gemini | 351 | 21.0% |
+| GPT | 297 | 17.8% |
+| 其他 | 5 | 0.3% |
 
 ## 使用最多的 12 个模型
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| Claude Fable 5.2 | 484 | 39.0% |
-| Claude Opus 5.5 | 411 | 33.1% |
-| GPT-6.2 Astra | 108 | 8.7% |
-| Gemini 4 Neon | 88 | 7.1% |
-| Gemini 4 Carbon | 58 | 4.7% |
-| Gemini 4 Hydrogen | 50 | 4.0% |
-| Gemini 4 Argon | 48 | 3.9% |
-| Claude Code | 38 | 3.1% |
-| Claude | 25 | 2.0% |
-| GPT-6.2 Sol | 24 | 1.9% |
-| GPT-6 Astra | 16 | 1.3% |
-| Codex | 15 | 1.2% |
+| Claude Fable 5.2 | 603 | 36.1% |
+| Claude Opus 5.5 | 553 | 33.1% |
+| GPT-6.2 Astra | 171 | 10.2% |
+| Gemini 4 Neon | 122 | 7.3% |
+| Gemini 4 Carbon | 89 | 5.3% |
+| Gemini 4 Argon | 72 | 4.3% |
+| Gemini 4 Hydrogen | 71 | 4.2% |
+| Claude Code | 55 | 3.3% |
+| Claude | 52 | 3.1% |
+| GPT-6.2 Sol | 44 | 2.6% |
+| GPT-6 Astra | 26 | 1.6% |
+| Codex | 21 | 1.3% |
 
 ## 主题
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| other | 570 | 46.0% |
-| city_diorama | 198 | 16.0% |
-| fantasy_rpg | 168 | 13.5% |
-| physics_sim | 97 | 7.8% |
-| nature_ecosystem | 89 | 7.2% |
-| sci_fi | 61 | 4.9% |
-| historical | 36 | 2.9% |
-| voxel_sandbox | 21 | 1.7% |
+| other | 808 | 48.3% |
+| city_diorama | 248 | 14.8% |
+| fantasy_rpg | 208 | 12.4% |
+| physics_sim | 126 | 7.5% |
+| nature_ecosystem | 122 | 7.3% |
+| sci_fi | 86 | 5.1% |
+| historical | 47 | 2.8% |
+| voxel_sandbox | 27 | 1.6% |
 
 ## 前 15 项技术栈
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| Three.js | 355 | 28.6% |
-| Blender | 159 | 12.8% |
-| HTML | 125 | 10.1% |
-| JavaScript | 94 | 7.6% |
-| WebGL | 51 | 4.1% |
-| WebGPU | 42 | 3.4% |
-| Python | 29 | 2.3% |
-| Tripo | 22 | 1.8% |
-| Blender MCP | 17 | 1.4% |
-| Web Audio | 15 | 1.2% |
-| WebGL2 | 13 | 1.0% |
-| GLSL | 13 | 1.0% |
-| TypeScript | 11 | 0.9% |
-| Rust | 11 | 0.9% |
-| Unreal Engine | 10 | 0.8% |
+| Three.js | 498 | 29.8% |
+| Blender | 272 | 16.3% |
+| HTML | 162 | 9.7% |
+| JavaScript | 108 | 6.5% |
+| WebGL | 65 | 3.9% |
+| WebGPU | 54 | 3.2% |
+| Python | 46 | 2.8% |
+| Tripo | 39 | 2.3% |
+| Blender MCP | 27 | 1.6% |
+| GLSL | 22 | 1.3% |
+| Web Audio | 19 | 1.1% |
+| Unreal Engine | 19 | 1.1% |
+| Godot | 19 | 1.1% |
+| WebGL2 | 15 | 0.9% |
+| Unity | 15 | 0.9% |
 
 ## 作品类型
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| interactive_world | 987 | 79.6% |
-| coded_3d_scene | 253 | 20.4% |
+| interactive_world | 1175 | 70.3% |
+| coded_3d_scene | 497 | 29.7% |
 
 ## 复现层级
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| video_only | 845 | 68.1% |
-| live_demo | 277 | 22.3% |
-| full_repo | 77 | 6.2% |
-| prompt_shared | 41 | 3.3% |
+| video_only | 1217 | 72.8% |
+| live_demo | 288 | 17.2% |
+| full_repo | 90 | 5.4% |
+| prompt_shared | 77 | 4.6% |
 
 ## 工作流模式
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| unknown | 634 | 51.1% |
-| one_shot | 460 | 37.1% |
-| iterative_chat | 83 | 6.7% |
-| hybrid_pipeline | 45 | 3.6% |
-| agentic_loop | 18 | 1.5% |
+| unknown | 891 | 53.3% |
+| one_shot | 565 | 33.8% |
+| iterative_chat | 110 | 6.6% |
+| hybrid_pipeline | 64 | 3.8% |
+| agentic_loop | 42 | 2.5% |
 
-工作流步骤中明确提及参考图驱动的有 19 个。
+工作流步骤中明确提及参考图驱动的有 30 个。
 
-工作流步骤中明确提及迭代调试的有 8 个。
+工作流步骤中明确提及迭代调试的有 10 个。
 
-工作流步骤中明确提及程序化生成的有 108 个。
+工作流步骤中明确提及程序化生成的有 129 个。
 
-44 个作品披露耗时，中位数 55 分钟。
+54 个作品披露耗时，中位数 49 分钟。
 
 1 个作品披露成本，中位数 5.31 美元。
 

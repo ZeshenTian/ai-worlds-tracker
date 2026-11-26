@@ -312,6 +312,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://app.usecrayon.ai/play/0ad7fcc3-13e3-4d31-8a91-024f445ca94c": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://app.usecrayon.ai/play/0ad7fcc3-13e3-4d31-8a91-024f445ca94c",
+    "checked_at": "2026-11-26T06:14:17.235Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://app.usecrayon.ai/play/362ae1e7-29bd-4fbc-9103-00649265d942": {
     "embeddable": false,
     "reason": "x_frame_options",
@@ -483,6 +492,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://assets.kylephillips.ai/gemini-neon/index.html": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://assets.kylephillips.ai/gemini-neon/index.html",
+    "checked_at": "2026-11-26T06:14:17.341Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://asteria.wengsiong22.workers.dev/": {
     "embeddable": true,
     "reason": "allowed",
@@ -498,6 +516,15 @@
     "status": 200,
     "final_url": "https://asteroids-deepfield-cockpit.dan200200.chatgpt.site/",
     "checked_at": "2026-11-24T15:05:07.936Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://astra-jerusalem.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://astra-jerusalem.vercel.app/",
+    "checked_at": "2026-11-26T06:14:17.059Z",
     "origin": null,
     "login_required": false
   },
@@ -1518,8 +1545,8 @@
   "https://fablestar.games/watch.html": {
     "embeddable": false,
     "reason": "network_error",
-    "curl_code": 7,
-    "checked_at": "2026-11-26T06:00:56.967Z",
+    "curl_code": 28,
+    "checked_at": "2026-11-26T06:14:20.664Z",
     "origin": null,
     "login_required": false
   },
@@ -1682,6 +1709,15 @@
     "status": 200,
     "final_url": "https://gema.sonnylab.com/",
     "checked_at": "2026-11-25T12:53:12.775Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://gemini-4-neon.vercel.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://gemini-4-neon.vercel.app/",
+    "checked_at": "2026-11-26T06:14:17.153Z",
     "origin": null,
     "login_required": false
   },
@@ -2243,6 +2279,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://last-watch-production.up.railway.app/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://last-watch-production.up.railway.app/",
+    "checked_at": "2026-11-26T06:14:16.559Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://lauramionel.github.io/cayley-flight-simulator/": {
     "embeddable": true,
     "reason": "allowed",
@@ -2664,6 +2709,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://nurecas.github.io/wavemodelviz": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://nurecas.github.io/wavemodelviz/",
+    "checked_at": "2026-11-26T06:14:17.456Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://nyc.somethingbig.ai/": {
     "embeddable": true,
     "reason": "allowed",
@@ -2767,7 +2821,7 @@
     "embeddable": false,
     "reason": "network_error",
     "curl_code": 35,
-    "checked_at": "2026-11-26T06:00:56.950Z",
+    "checked_at": "2026-11-26T06:14:15.924Z",
     "origin": null,
     "login_required": false
   },
@@ -2963,6 +3017,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://proceduralbuildings.chirostudio.xyz/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://proceduralbuildings.chirostudio.xyz/",
+    "checked_at": "2026-11-26T06:14:16.959Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://profactor.itch.io/nightshoal": {
     "embeddable": false,
     "reason": "frame_ancestors",
@@ -3059,6 +3122,13 @@
     "status": 200,
     "final_url": "https://rivergame-kappa.vercel.app/",
     "checked_at": "2026-11-24T15:06:04.961Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://roadster-rush.ai.studio/": {
+    "embeddable": false,
+    "reason": "login_wall",
+    "checked_at": "2026-11-26T06:14:15.648Z",
     "origin": null,
     "login_required": false
   },
@@ -3518,6 +3588,15 @@
     "status": 200,
     "final_url": "https://stickman-opus-5-5-game.vercel.app/",
     "checked_at": "2026-11-24T15:06:15.048Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://store.steampowered.com/app/5351000/I_Just_Wanted_to_Fish_Demo/": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://store.steampowered.com/app/5351000/I_Just_Wanted_to_Fish_Demo/",
+    "checked_at": "2026-11-26T06:14:16.494Z",
     "origin": null,
     "login_required": false
   },
@@ -4049,6 +4128,15 @@
     "status": 200,
     "final_url": "https://windblown.vercel.app/",
     "checked_at": "2026-11-24T15:06:27.533Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://worldframe.zavrenn.workers.dev/": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://worldframe.zavrenn.workers.dev/",
+    "checked_at": "2026-11-26T06:14:16.915Z",
     "origin": null,
     "login_required": false
   },
@@ -5741,6 +5829,15 @@
     "status": 200,
     "final_url": "https://www.youtube.com/watch?si=1Ihjd259W45tV5dS&v=W2sVZPBZVag&feature=youtu.be",
     "checked_at": "2026-11-25T12:53:17.175Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://youtu.be/cxkqqGaX_II": {
+    "embeddable": false,
+    "reason": "x_frame_options",
+    "status": 200,
+    "final_url": "https://www.youtube.com/watch?v=cxkqqGaX_II&feature=youtu.be",
+    "checked_at": "2026-11-26T06:14:17.624Z",
     "origin": null,
     "login_required": false
   },

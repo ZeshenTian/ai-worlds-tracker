@@ -207,12 +207,25 @@ def remove_nonmodels(proof):
     return {**proof, "decision": "allow" if models else "hold", "models": models}
 
 
+def proof_still_grounded(packet, proof):
+    if not packet or not proof or proof.get("decision") != "allow":
+        return False
+    own = [packet["post"], *packet["thread"], packet["own_quote"]]
+    if not verbatim(proof.get("quote", ""), own):
+        return False
+    models = proof.get("models") or []
+    return bool(models) and all(
+        verbatim(item.get("quote", ""), own) and verbatim(item.get("term", ""), [item.get("quote", "")])
+        for item in models
+    )
+
+
 def previous_proof(case, packet, policy, path):
     entry = policy["decisions"].get(case.world_id, {})
     signature = digest(encode([RULES, policy["model"]]))
-    if (entry.get("source") == case.original_post_url and entry.get("policy") == signature
-            and (packet is None or entry.get("key") == path.stem)):
-        return entry["proof"]
+    if entry.get("source") == case.original_post_url and entry.get("policy") == signature:
+        if packet is None or entry.get("key") == path.stem or proof_still_grounded(packet, entry.get("proof")):
+            return entry["proof"]
     return None
 
 
@@ -228,9 +241,11 @@ def save_decisions(root, additions, policy):
 
 
 def presentation_matches(case, packet, policy, presentation):
-    if (not packet or presentation.get("source") != case.original_post_url
-            or presentation.get("packet_key") != digest(encode(packet))):
+    if not presentation or presentation.get("source") != case.original_post_url:
         return False
+    if packet is not None and presentation.get("packet_key") != digest(encode(packet)):
+        if not proof_still_grounded(packet, presentation):
+            return False
     if presentation.get("reason") != "verified_native_frame":
         return True
     current = policy.get("native_sources", {}).get(case.world_id, {})
