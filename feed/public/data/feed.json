@@ -1856,7 +1856,7 @@
   {
     "world_id": "world-f93d3e356f7e05a92902ac46",
     "x_likes": 0,
-    "github_stars": 124,
+    "github_stars": 125,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "SUBLEVEL 07",
@@ -1904,6 +1904,63 @@
       "MIT License"
     ],
     "published_at": null
+  },
+  {
+    "world_id": "world-851c3b381930d4a2d6da033d",
+    "x_likes": 37,
+    "github_stars": null,
+    "model_era": "frontier",
+    "work_type": "interactive_world",
+    "title": "Snow Day Game",
+    "title_en": "Snow Day Game",
+    "author": "@prasenx",
+    "author_en": "@prasenx",
+    "theme_category": "other",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "models_used_en": [
+      "Claude Fable 5.2"
+    ],
+    "primary_model": "Claude Fable 5.2",
+    "model_family": "Claude",
+    "model_families": [
+      "Claude"
+    ],
+    "tech_stack": [
+      "HTML"
+    ],
+    "tech_stack_en": [
+      "HTML"
+    ],
+    "generation_mode": "unknown",
+    "is_open_source": false,
+    "verified_playable": false,
+    "tier": "embed",
+    "embed_url": "https://starknightt.github.io/paper-snow/",
+    "external_demo_url": "https://starknightt.github.io/paper-snow",
+    "repo_url": null,
+    "original_post_url": "https://x.com/prasenx/status/2126314965833560130",
+    "preview_video_url": null,
+    "thumbnail_url": "/thumbnails/world-851c3b381930d4a2d6da033d-x.webp",
+    "summary_zh": "作者使用 claude fable 5.2 构建了一个雪天游戏，整个项目为一个98KB的HTML文件，不包含图片、3D模型或声音文件。玩家可以在网页上点击游玩，通过鼠标锁定进行pack和throw操作。",
+    "summary_en": "The author used claude fable 5.2 to build a snow day game contained entirely in a single 98kb HTML file with no images, 3D models, or sound files. Players can click to play, lock the mouse to interact, and perform pack and throw actions.",
+    "workflow_steps_zh": [
+      "Asked claude fable 5.2 to build a snow day game",
+      "Generated a single 98kb HTML file containing the entire game without external assets"
+    ],
+    "workflow_steps_en": [
+      "Asked claude fable 5.2 to build a snow day game",
+      "Generated a single 98kb HTML file containing the entire game without external assets"
+    ],
+    "skills_zh": [],
+    "skills_en": [],
+    "evidence_quotes": [
+      "asked claude fable 5.2 to build a snow day game",
+      "the whole thing is one 98kb html file. no images, no 3d models, no sound files",
+      "click to lock mouse, Esc to release"
+    ],
+    "published_at": "2026-11-27T13:59:27+00:00"
   },
   {
     "world_id": "world-0656e76b408b09e6405ea696",
@@ -4090,7 +4147,7 @@
   {
     "world_id": "world-f01df3cce30208f69c7e6454",
     "x_likes": 2368,
-    "github_stars": 256,
+    "github_stars": 262,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "Papertrails",
@@ -4605,6 +4662,56 @@
       "all visuals drawn with code"
     ],
     "published_at": "2026-11-14T20:25:17.266000+00:00"
+  },
+  {
+    "world_id": "world-05d333ae8cb1e17447b8d128",
+    "x_likes": 3770,
+    "github_stars": null,
+    "model_era": "frontier",
+    "work_type": "interactive_world",
+    "title": "Small Magic — wizard sandbox",
+    "title_en": "Small Magic — wizard sandbox",
+    "author": "Blendi",
+    "author_en": "Blendi",
+    "theme_category": "physics_sim",
+    "models_used": [
+      "Claude Fable 5.2"
+    ],
+    "models_used_en": [
+      "Claude Fable 5.2"
+    ],
+    "primary_model": "Claude Fable 5.2",
+    "model_family": "Claude",
+    "model_families": [
+      "Claude"
+    ],
+    "tech_stack": [],
+    "tech_stack_en": [],
+    "generation_mode": "unknown",
+    "is_open_source": false,
+    "verified_playable": false,
+    "tier": "embed",
+    "embed_url": "https://patch.gg/play/blendi/small-magic",
+    "external_demo_url": "https://patch.gg/play/blendi/small-magic",
+    "repo_url": null,
+    "original_post_url": "https://x.com/BlendiByl/status/2121594536153718972",
+    "preview_video_url": null,
+    "thumbnail_url": "/thumbnails/world-05d333ae8cb1e17447b8d128.webp",
+    "summary_zh": "施放七种法术，在浏览器沙盒里击碎约1800个物理碎片。",
+    "summary_en": "Cast seven spells to smash around 1,800 physics pieces in a browser sandbox.",
+    "workflow_steps_zh": [
+      "使用Fable 5.2在一天内构建游戏，所有元素均通过编码实现，无3D模型或纹理。"
+    ],
+    "workflow_steps_en": [
+      "Built the game in one day using Fable 5.2, coding all elements without 3D models or textures."
+    ],
+    "skills_zh": [],
+    "skills_en": [],
+    "evidence_quotes": [
+      "i used fable 5.2 to make this wizard sandbox game",
+      "about 1800 physics pieces to destroy"
+    ],
+    "published_at": "2026-11-14T13:22:09.396000+00:00"
   },
   {
     "world_id": "world-671dd57de3e3a1afda721ac5",
@@ -10521,7 +10628,7 @@
   {
     "world_id": "world-0e689bb4fdf48b0966c6cd79",
     "x_likes": 0,
-    "github_stars": 3,
+    "github_stars": 4,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "广州漂移",

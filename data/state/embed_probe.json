@@ -1546,7 +1546,7 @@
     "embeddable": false,
     "reason": "network_error",
     "curl_code": 7,
-    "checked_at": "2026-11-27T05:47:45.333Z",
+    "checked_at": "2026-11-27T20:16:26.231Z",
     "origin": null,
     "login_required": false
   },
@@ -2821,7 +2821,7 @@
     "embeddable": false,
     "reason": "network_error",
     "curl_code": 35,
-    "checked_at": "2026-11-27T05:47:45.812Z",
+    "checked_at": "2026-11-27T20:16:26.335Z",
     "origin": null,
     "login_required": false
   },
@@ -2898,11 +2898,13 @@
     "login_required": false
   },
   "https://patch.gg/play/blendi/small-magic": {
-    "embeddable": false,
-    "reason": "login_wall",
-    "checked_at": "2026-11-24T15:05:55.795Z",
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://patch.gg/play/blendi/small-magic",
+    "checked_at": "2026-11-27T20:16:25.844Z",
     "origin": null,
-    "login_required": true
+    "login_required": false
   },
   "https://patch.gg/play/blendi/solar": {
     "embeddable": false,
@@ -3534,6 +3536,15 @@
     "status": 200,
     "final_url": "https://stadium-elite.mindblown.ai/",
     "checked_at": "2026-11-24T15:06:13.847Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://starknightt.github.io/paper-snow": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://starknightt.github.io/paper-snow/",
+    "checked_at": "2026-11-27T20:16:25.873Z",
     "origin": null,
     "login_required": false
   },
