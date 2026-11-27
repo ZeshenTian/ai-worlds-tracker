@@ -1546,7 +1546,7 @@
     "embeddable": false,
     "reason": "network_error",
     "curl_code": 7,
-    "checked_at": "2026-11-27T01:13:36.697Z",
+    "checked_at": "2026-11-27T05:47:45.333Z",
     "origin": null,
     "login_required": false
   },
@@ -2821,7 +2821,7 @@
     "embeddable": false,
     "reason": "network_error",
     "curl_code": 35,
-    "checked_at": "2026-11-27T01:13:37.138Z",
+    "checked_at": "2026-11-27T05:47:45.812Z",
     "origin": null,
     "login_required": false
   },

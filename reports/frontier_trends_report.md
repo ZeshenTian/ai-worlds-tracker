@@ -1,6 +1,6 @@
 # 前沿世界趋势报告
 
-更新于 2026-11-27T01:13:06+00:00。统计范围为公开目录中的 1,683 个前沿世界。
+更新于 2026-11-27T05:47:10+00:00。统计范围为公开目录中的 1,689 个前沿世界。
 
 ## 核心概览
 
@@ -10,30 +10,30 @@
 | 已验证可玩 | 39 |
 | WorldFeed 可嵌入（含镜像） | 223 |
 | 开源且有仓库 | 28 |
-| 封面覆盖 | 1656（98.4%） |
+| 封面覆盖 | 1662（98.4%） |
 
 ## 模型家族（多模型作品可重复计入不同家族）
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| Claude | 1199 | 71.2% |
-| Gemini | 357 | 21.2% |
-| GPT | 296 | 17.6% |
+| Claude | 1203 | 71.2% |
+| Gemini | 359 | 21.3% |
+| GPT | 297 | 17.6% |
 | 其他 | 5 | 0.3% |
 
 ## 使用最多的 12 个模型
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| Claude Fable 5.2 | 604 | 35.9% |
-| Claude Opus 5.5 | 557 | 33.1% |
+| Claude Fable 5.2 | 606 | 35.9% |
+| Claude Opus 5.5 | 559 | 33.1% |
 | GPT-6.2 Astra | 170 | 10.1% |
-| Gemini 4 Neon | 127 | 7.5% |
+| Gemini 4 Neon | 129 | 7.6% |
 | Gemini 4 Carbon | 89 | 5.3% |
 | Gemini 4 Argon | 72 | 4.3% |
 | Gemini 4 Hydrogen | 71 | 4.2% |
 | Claude Code | 55 | 3.3% |
-| Claude | 52 | 3.1% |
+| Claude | 53 | 3.1% |
 | GPT-6.2 Sol | 44 | 2.6% |
 | GPT-6 Astra | 26 | 1.5% |
 | Codex | 22 | 1.3% |
@@ -42,12 +42,12 @@
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| other | 809 | 48.1% |
-| city_diorama | 251 | 14.9% |
+| other | 810 | 48.0% |
+| city_diorama | 252 | 14.9% |
 | fantasy_rpg | 209 | 12.4% |
 | physics_sim | 128 | 7.6% |
-| nature_ecosystem | 123 | 7.3% |
-| sci_fi | 87 | 5.2% |
+| nature_ecosystem | 124 | 7.3% |
+| sci_fi | 90 | 5.3% |
 | historical | 49 | 2.9% |
 | voxel_sandbox | 27 | 1.6% |
 
@@ -55,35 +55,35 @@
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| Three.js | 505 | 30.0% |
-| Blender | 273 | 16.2% |
-| HTML | 162 | 9.6% |
+| Three.js | 510 | 30.2% |
+| Blender | 274 | 16.2% |
+| HTML | 164 | 9.7% |
 | JavaScript | 108 | 6.4% |
-| WebGL | 65 | 3.9% |
-| WebGPU | 55 | 3.3% |
-| Python | 49 | 2.9% |
+| WebGL | 65 | 3.8% |
+| WebGPU | 56 | 3.3% |
+| Python | 50 | 3.0% |
 | Tripo | 40 | 2.4% |
 | Blender MCP | 27 | 1.6% |
-| GLSL | 23 | 1.4% |
-| Web Audio | 19 | 1.1% |
+| GLSL | 25 | 1.5% |
+| Web Audio | 20 | 1.2% |
 | Unreal Engine | 19 | 1.1% |
 | Godot | 19 | 1.1% |
-| WebGL2 | 16 | 1.0% |
+| WebGL2 | 18 | 1.1% |
 | TypeScript | 15 | 0.9% |
 
 ## 作品类型
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| interactive_world | 1178 | 70.0% |
-| coded_3d_scene | 505 | 30.0% |
+| interactive_world | 1183 | 70.0% |
+| coded_3d_scene | 506 | 30.0% |
 
 ## 复现层级
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| video_only | 1226 | 72.8% |
-| live_demo | 289 | 17.2% |
+| video_only | 1232 | 72.9% |
+| live_demo | 289 | 17.1% |
 | full_repo | 89 | 5.3% |
 | prompt_shared | 79 | 4.7% |
 
@@ -91,10 +91,10 @@
 
 | 分类 | 世界数 | 占比 |
 |---|---:|---:|
-| unknown | 897 | 53.3% |
-| one_shot | 567 | 33.7% |
-| iterative_chat | 112 | 6.7% |
-| hybrid_pipeline | 62 | 3.7% |
+| unknown | 901 | 53.3% |
+| one_shot | 567 | 33.6% |
+| iterative_chat | 113 | 6.7% |
+| hybrid_pipeline | 63 | 3.7% |
 | agentic_loop | 45 | 2.7% |
 
 工作流步骤中明确提及参考图驱动的有 32 个。
