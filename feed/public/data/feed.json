@@ -1906,6 +1906,101 @@
     "published_at": null
   },
   {
+    "world_id": "world-0656e76b408b09e6405ea696",
+    "x_likes": 1,
+    "github_stars": null,
+    "model_era": "frontier",
+    "work_type": "interactive_world",
+    "title": "Solar Drift",
+    "title_en": "Solar Drift",
+    "author": "@SouranyPhomhome",
+    "author_en": "@SouranyPhomhome",
+    "theme_category": "sci_fi",
+    "models_used": [
+      "GPT-6.2 Astra",
+      "Codex"
+    ],
+    "models_used_en": [
+      "GPT-6.2 Astra",
+      "Codex"
+    ],
+    "primary_model": "GPT-6.2 Astra",
+    "model_family": "GPT",
+    "model_families": [
+      "GPT"
+    ],
+    "tech_stack": [
+      "Three.js",
+      "Vite",
+      "WebGL 2"
+    ],
+    "tech_stack_en": [
+      "Three.js",
+      "Vite",
+      "WebGL 2"
+    ],
+    "generation_mode": "iterative_chat",
+    "is_open_source": false,
+    "verified_playable": false,
+    "tier": "embed",
+    "embed_url": "https://souranyp-stack.github.io/solar-drift/",
+    "external_demo_url": "https://souranyp-stack.github.io/solar-drift/",
+    "repo_url": null,
+    "original_post_url": "https://x.com/SouranyPhomhome/status/2126001440191857101",
+    "preview_video_url": null,
+    "thumbnail_url": "/thumbnails/world-0656e76b408b09e6405ea696-x.webp",
+    "summary_zh": "作者使用 Codex 中的 GPT-6.2 Astra 模型，通过5条提示词构建了 Solar Drift——一款基于 Three.js 和 Vite 的浏览器端3D悬浮摩托竞速游戏。工作流程从生成 DESIGN.md 设计文档开始，逐步构建峡谷赛道、悬浮摩托物理与漂移、追逐相机、圈速计时器、标题画面与飞行员选择界面，并应用了《疯狂的麦克斯》风格调色、长台地阴影以及沙粒击中镜头的特效（被封装为可复用的 Codex skill）。AI 还自行游玩测试了生成的游戏。",
+    "summary_en": "The author used the GPT-6.2 Astra model inside Codex to build Solar Drift, a browser-based 3D hover-bike racing game using Three.js and Vite, through five prompts. The workflow began with generating a DESIGN.md design document, then progressively built a canyon circuit, hover-bike physics with drifting, a chase camera, a lap timer, a title screen with pilot selection, and applied a Fury Road color grade, long mesa shadows, and a sand-hitting-the-lens effect (packaged as a reusable Codex skill). The AI also played the generated game to test it.",
+    "workflow_steps_zh": [
+      "在 Codex 中创建新项目并将模型切换为 GPT-6.2 Astra，推理强度设为 high",
+      "提示词1：让 Astra 编写 DESIGN.md 设计文档，包含视觉参考、调色板和计划",
+      "提示词2：使用 Vite 和 Three.js 构建首个可玩圈，包括围绕三个台地的峡谷赛道、带漂移滑动的悬浮摩托物理、追逐相机、闸门和圈速计时器",
+      "提示词3：构建标题画面和飞行员选择界面，包含三名骑手在砂岩转盘上的展示",
+      "提示词4：应用《疯狂的麦克斯》风格调色、长台地阴影和藏红花色布料，并将沙粒击中镜头的效果制作为可复用的 Codex skill",
+      "提示词5：让 Astra 自行游玩测试并提供反馈修复，添加慢动作终点和圈速卡片",
+      "额外提示词：添加超精细纹理并在比赛中途加入爆炸效果"
+    ],
+    "workflow_steps_en": [
+      "Create a new project in Codex and switch the model to GPT-6.2 Astra with reasoning effort set to high",
+      "Prompt 1: Have Astra write a DESIGN.md design document with visual references, palette, and plan",
+      "Prompt 2: Build the first playable lap using Vite and Three.js, including a canyon circuit around three mesas, hover-bike physics with drift slide, chase camera, gates, and lap timer",
+      "Prompt 3: Build a title screen and pilot select interface featuring three riders on a sandstone turntable",
+      "Prompt 4: Apply a Fury Road color grade, long mesa shadows, and saffron cloth, and turn the sand-hitting-the-lens effect into a reusable Codex skill",
+      "Prompt 5: Let Astra play-test the game and provide feedback fixes, adding a slow-motion finish and lap card",
+      "Bonus prompt: Add ultra-detailed textures and an explosion in the middle of the race"
+    ],
+    "skills_zh": [
+      "DESIGN.md generation",
+      "Canyon circuit and hover-bike physics prompt",
+      "Title screen and pilot select prompt",
+      "Lighting and color grade prompt",
+      "Sand-lens Codex skill",
+      "Play-test feedback prompt",
+      "Ultra-detailed textures and explosion bonus prompt"
+    ],
+    "skills_en": [
+      "DESIGN.md generation",
+      "Canyon circuit and hover-bike physics prompt",
+      "Title screen and pilot select prompt",
+      "Lighting and color grade prompt",
+      "Sand-lens Codex skill",
+      "Play-test feedback prompt",
+      "Ultra-detailed textures and explosion bonus prompt"
+    ],
+    "evidence_quotes": [
+      "I used GPT-6.2 Astra inside Codex to build Solar Drift, a 3D hover-bike racing game that runs in the browser, from five prompts.",
+      "I switch from Sol to GPT-6.2 Astra",
+      "Built with GPT-6.2 Astra in Codex, Three.js and Vite.",
+      "Pick a pilot `ENTER ↵`",
+      "HOLD `W` TO LAUNCH",
+      "Astra plays the game to test its own work",
+      "Sponsored by Design+Code: https://designcode.io?via=sourany",
+      "I built a 3D racing game with just 5 prompts.",
+      "GPT-6.2 Astra in Codex built it, then played it to test its own work."
+    ],
+    "published_at": "2026-11-26T17:13:37+00:00"
+  },
+  {
     "world_id": "world-e5a6c4f56a006ef8b79490b1",
     "x_likes": 4,
     "github_stars": null,
@@ -3995,7 +4090,7 @@
   {
     "world_id": "world-f01df3cce30208f69c7e6454",
     "x_likes": 2368,
-    "github_stars": 248,
+    "github_stars": 251,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "Papertrails",
@@ -8958,7 +9053,7 @@
   {
     "world_id": "world-17f9dd4d3b111ad1cae75aa2",
     "x_likes": 1042,
-    "github_stars": 356,
+    "github_stars": 357,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "Three.js Particle Fluids",
@@ -10994,7 +11089,7 @@
   {
     "world_id": "world-529013cdfd41fd0451991d91",
     "x_likes": 0,
-    "github_stars": 5,
+    "github_stars": 6,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "Ironvale",
@@ -11094,7 +11189,7 @@
   {
     "world_id": "world-659a30bb6e4066fcd8183d9b",
     "x_likes": 0,
-    "github_stars": 5,
+    "github_stars": 6,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "Neon Siege",
@@ -11141,61 +11236,6 @@
     "skills_en": [],
     "evidence_quotes": [
       "Three browser games built with **Claude Opus 5.5** and **three.js**. There is nothing to install: open a link and play."
-    ],
-    "published_at": null
-  },
-  {
-    "world_id": "world-66f8e783b10d431f0927d319",
-    "x_likes": 0,
-    "github_stars": 0,
-    "model_era": "frontier",
-    "work_type": "interactive_world",
-    "title": "Solar Drift",
-    "title_en": "Solar Drift",
-    "author": "souranyp-stack",
-    "author_en": "souranyp-stack",
-    "theme_category": "sci_fi",
-    "models_used": [
-      "GPT-6.2 Astra"
-    ],
-    "models_used_en": [
-      "GPT-6.2 Astra"
-    ],
-    "primary_model": "GPT-6.2 Astra",
-    "model_family": "GPT",
-    "model_families": [
-      "GPT"
-    ],
-    "tech_stack": [
-      "Codex"
-    ],
-    "tech_stack_en": [
-      "Codex"
-    ],
-    "generation_mode": "unknown",
-    "is_open_source": true,
-    "verified_playable": false,
-    "tier": "embed",
-    "embed_url": "https://souranyp-stack.github.io/solar-drift/",
-    "external_demo_url": "https://souranyp-stack.github.io/solar-drift/",
-    "repo_url": "https://github.com/souranyp-stack/solar-drift",
-    "original_post_url": "https://github.com/souranyp-stack/solar-drift",
-    "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-66f8e783b10d431f0927d319.webp",
-    "summary_zh": "在浏览器里驾驶悬浮机车穿越金色日落的沙漠峡谷，漂移、加速并穿过关卡门。",
-    "summary_en": "Drive a hover-bike through a golden-hour desert canyon, drifting, boosting, and steering past gates in the browser.",
-    "workflow_steps_zh": [
-      "使用 Codex 通过五个提示构建了这款游戏。"
-    ],
-    "workflow_steps_en": [
-      "Five prompts were used to build the game in Codex."
-    ],
-    "skills_zh": [],
-    "skills_en": [],
-    "evidence_quotes": [
-      "Built in **Codex** with **GPT-6.2 Astra**",
-      "W / ↑ | Thrust",
-      "MIT License"
     ],
     "published_at": null
   },
