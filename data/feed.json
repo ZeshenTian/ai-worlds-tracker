@@ -1948,7 +1948,7 @@
     "repo_url": null,
     "original_post_url": "https://x.com/SouranyPhomhome/status/2126001440191857101",
     "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-0656e76b408b09e6405ea696-x.webp",
+    "thumbnail_url": "/thumbnails/world-0656e76b408b09e6405ea696.webp",
     "summary_zh": "作者使用 Codex 中的 GPT-6.2 Astra 模型，通过5条提示词构建了 Solar Drift——一款基于 Three.js 和 Vite 的浏览器端3D悬浮摩托竞速游戏。工作流程从生成 DESIGN.md 设计文档开始，逐步构建峡谷赛道、悬浮摩托物理与漂移、追逐相机、圈速计时器、标题画面与飞行员选择界面，并应用了《疯狂的麦克斯》风格调色、长台地阴影以及沙粒击中镜头的特效（被封装为可复用的 Codex skill）。AI 还自行游玩测试了生成的游戏。",
     "summary_en": "The author used the GPT-6.2 Astra model inside Codex to build Solar Drift, a browser-based 3D hover-bike racing game using Three.js and Vite, through five prompts. The workflow began with generating a DESIGN.md design document, then progressively built a canyon circuit, hover-bike physics with drifting, a chase camera, a lap timer, a title screen with pilot selection, and applied a Fury Road color grade, long mesa shadows, and a sand-hitting-the-lens effect (packaged as a reusable Codex skill). The AI also played the generated game to test it.",
     "workflow_steps_zh": [
@@ -2309,7 +2309,7 @@
   },
   {
     "world_id": "world-b58c502148729b73d0e4ccc9",
-    "x_likes": 98,
+    "x_likes": 127,
     "github_stars": null,
     "model_era": "frontier",
     "work_type": "interactive_world",
@@ -4090,7 +4090,7 @@
   {
     "world_id": "world-f01df3cce30208f69c7e6454",
     "x_likes": 2368,
-    "github_stars": 251,
+    "github_stars": 256,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "Papertrails",
