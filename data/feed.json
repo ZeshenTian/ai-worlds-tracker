@@ -1963,6 +1963,65 @@
     "published_at": "2026-11-27T13:59:27+00:00"
   },
   {
+    "world_id": "world-b237a429490dd533568c1eaf",
+    "x_likes": 112,
+    "github_stars": null,
+    "model_era": "frontier",
+    "work_type": "interactive_world",
+    "title": "Microscopic Viruses",
+    "title_en": "Microscopic Viruses",
+    "author": "@exploraX_",
+    "author_en": "@exploraX_",
+    "theme_category": "nature_ecosystem",
+    "models_used": [
+      "GPT-6.2 Astra",
+      "Claude Opus 5.5"
+    ],
+    "models_used_en": [
+      "GPT-6.2 Astra",
+      "Claude Opus 5.5"
+    ],
+    "primary_model": "GPT-6.2 Astra",
+    "model_family": "GPT",
+    "model_families": [
+      "GPT",
+      "Claude"
+    ],
+    "tech_stack": [],
+    "tech_stack_en": [],
+    "generation_mode": "unknown",
+    "is_open_source": false,
+    "verified_playable": false,
+    "tier": "embed",
+    "embed_url": "https://moh4696.github.io/microscopic-viruses/?virus=influenza",
+    "external_demo_url": "https://moh4696.github.io/microscopic-viruses/?virus=influenza",
+    "repo_url": null,
+    "original_post_url": "https://x.com/exploraX_/status/2126237466911027700",
+    "preview_video_url": null,
+    "thumbnail_url": "/thumbnails/world-b237a429490dd533568c1eaf-x.webp",
+    "summary_zh": "作者使用 GPT-6.2 Astra 在不到30分钟内构建了一个交互式3D病毒科普网页，用户可浏览十种人类病毒的3D模型，查看内部结构并了解其引发的疾病。",
+    "summary_en": "The author used GPT-6.2 Astra to build an interactive 3D explainer of microscopic viruses in less than 30 minutes, allowing users to explore ten human viruses in 3D, look inside each particle, and discover the illness it causes.",
+    "workflow_steps_zh": [
+      "Used GPT-6.2 Astra to generate the interactive 3D virus explainer based on a prompt and skill.",
+      "Deployed the generated project to GitHub Pages for public exploration."
+    ],
+    "workflow_steps_en": [
+      "Used GPT-6.2 Astra to generate the interactive 3D virus explainer based on a prompt and skill.",
+      "Deployed the generated project to GitHub Pages for public exploration."
+    ],
+    "skills_zh": [],
+    "skills_en": [],
+    "evidence_quotes": [
+      "GPT-6.2 Astra built this interactive 3D explainer of microscopic viruses in less than 30 mins.",
+      "explore it here:",
+      "check the first comment for the prompt + skill used.",
+      "Explore ten human viruses in 3D. Look inside each particle and discover the illness it causes.",
+      "Use Cutaway to switch between the surface and interior. Drag to orbit, or focus the drawing and use the arrow keys. Use + and − to zoom.",
+      "i built this interactive 3D explainer of how a car engine works using Claude Opus 5.5."
+    ],
+    "published_at": "2026-11-27T08:51:30+00:00"
+  },
+  {
     "world_id": "world-0656e76b408b09e6405ea696",
     "x_likes": 1,
     "github_stars": null,
@@ -2525,7 +2584,7 @@
     "repo_url": null,
     "original_post_url": "https://x.com/GuamLucas/status/2124668723865039192",
     "preview_video_url": null,
-    "thumbnail_url": "/thumbnails/world-da04929aad86fb824318f4a6-x.webp",
+    "thumbnail_url": "/thumbnails/world-da04929aad86fb824318f4a6.webp",
     "summary_zh": "用 Gemini Neon + Antigravity /swarm 单次提示构建的沉浸式 3D 密室逃脱游戏。玩家探索霓虹灯沐浴的公寓，解决谜题，揭开秘密，并找到逃离的方法，灵感来自 Vice City 风格。采用 Three.js 构建，支持浏览器游玩。",
     "summary_en": "A cinematic, Vice City-inspired 3D escape room built with one prompt in Gemini Neon + Antigravity /swarm using Three.js. Explore a neon-soaked apartment, solve puzzles, uncover secrets, and find your way out in-browser.",
     "workflow_steps_zh": [
@@ -4147,7 +4206,7 @@
   {
     "world_id": "world-f01df3cce30208f69c7e6454",
     "x_likes": 2368,
-    "github_stars": 262,
+    "github_stars": 263,
     "model_era": "frontier",
     "work_type": "interactive_world",
     "title": "Papertrails",
@@ -5565,7 +5624,7 @@
   },
   {
     "world_id": "world-9dea0f85534adb23652de045",
-    "x_likes": 1182,
+    "x_likes": 1187,
     "github_stars": null,
     "model_era": "frontier",
     "work_type": "interactive_world",
