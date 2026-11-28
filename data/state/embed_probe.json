@@ -1546,7 +1546,7 @@
     "embeddable": false,
     "reason": "network_error",
     "curl_code": 7,
-    "checked_at": "2026-11-27T20:16:26.231Z",
+    "checked_at": "2026-11-28T01:14:31.121Z",
     "origin": null,
     "login_required": false
   },
@@ -2540,6 +2540,15 @@
     "origin": null,
     "login_required": false
   },
+  "https://moh4696.github.io/microscopic-viruses/?virus=influenza": {
+    "embeddable": true,
+    "reason": "allowed",
+    "status": 200,
+    "final_url": "https://moh4696.github.io/microscopic-viruses/?virus=influenza",
+    "checked_at": "2026-11-28T01:14:31.183Z",
+    "origin": null,
+    "login_required": false
+  },
   "https://monolithwilds.vercel.app/": {
     "embeddable": true,
     "reason": "allowed",
@@ -2821,7 +2830,7 @@
     "embeddable": false,
     "reason": "network_error",
     "curl_code": 35,
-    "checked_at": "2026-11-27T20:16:26.335Z",
+    "checked_at": "2026-11-28T01:14:31.568Z",
     "origin": null,
     "login_required": false
   },
@@ -3698,6 +3707,15 @@
     "status": 200,
     "final_url": "https://tanuu5.github.io/nova-lancer/",
     "checked_at": "2026-11-24T15:06:16.591Z",
+    "origin": null,
+    "login_required": false
+  },
+  "https://teleoperator-new-york-city.mindblown.ai/": {
+    "embeddable": false,
+    "reason": "frame_ancestors",
+    "status": 200,
+    "final_url": "https://teleoperator-new-york-city.mindblown.ai/",
+    "checked_at": "2026-11-28T01:14:31.902Z",
     "origin": null,
     "login_required": false
   },
