@@ -1,9 +1,15 @@
 name: Sync worlds
 on:
   workflow_dispatch:
+    inputs:
+      force:
+        description: '即使本时段已发布，也重新同步'
+        type: boolean
+        default: false
   schedule:
-    # Twice daily off-peak: 07:23 & 19:23 Asia/Shanghai (ready before 08:00 & 20:00 BJT)
-    - cron: "23 23 * * *"
+    # Asia/Shanghai: 06:17 morning, 07:07 morning retry, 19:23 evening.
+    - cron: "17 22 * * *"
+    - cron: "7 23 * * *"
     - cron: "23 11 * * *"
 permissions:
   contents: write
@@ -11,8 +17,54 @@ concurrency:
   group: worlds-catalog
   cancel-in-progress: false
 jobs:
-  sync:
+  freshness:
     if: github.event_name == 'workflow_dispatch' || vars.ENABLE_SCHEDULED_SYNC == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+    outputs:
+      should_sync: ${{ steps.check.outputs.should_sync }}
+    steps:
+      - name: 检查本时段是否已发布
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE_SYNC: ${{ inputs.force }}
+          TZ: Asia/Shanghai
+        run: |
+          set -eu
+          if [[ "$FORCE_SYNC" != true ]]; then
+            read -r day time <<< "$(date '+%F %H:%M')"
+            if [[ "$time" < '06:17' ]]; then
+              day=$(date -d "$day yesterday" +%F)
+              start='19:23'
+            elif [[ "$time" < '19:23' ]]; then
+              start='06:17'
+            else
+              start='19:23'
+            fi
+            since=$(date -u -d "$day $start +0800" '+%FT%TZ')
+            if runs=$(gh api --method GET --paginate \
+              "repos/$GITHUB_REPOSITORY/actions/workflows/sync-worlds.yml/runs" \
+              -f status=completed -f created=">=$since" -f per_page=100 \
+              --jq '.workflow_runs[].id'); then
+              for run in $runs; do
+                if published=$(gh api --method GET \
+                  "repos/$GITHUB_REPOSITORY/actions/runs/$run/jobs" \
+                  --jq '.jobs[].steps[] | select(.name == "Run ./.github/actions/publish-feed" and .conclusion == "success") | .name') && [[ -n "$published" ]]; then
+                  echo 'should_sync=false' >> "$GITHUB_OUTPUT"
+                  echo "WorldFeed 已由运行 $run 发布，跳过重复采集。"
+                  exit 0
+                fi
+              done
+            else
+              echo '::warning::无法查询近期运行记录，继续本次同步。'
+            fi
+          fi
+          echo 'should_sync=true' >> "$GITHUB_OUTPUT"
+  sync:
+    needs: freshness
+    if: needs.freshness.outputs.should_sync == 'true'
     runs-on: ubuntu-22.04
     timeout-minutes: 100
     steps:

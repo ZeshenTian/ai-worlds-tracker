@@ -20,11 +20,18 @@ export function App() {
         return r.json();
       })
       .then((list: FeedItem[]) => {
+        const today = new Date().toLocaleDateString("sv-SE", {
+          timeZone: "Asia/Shanghai",
+        });
         const clean = list.filter(
           (w) =>
             w.model_era === "frontier" &&
             ["mirror", "embed"].includes(w.tier) &&
             w.embed_url,
+        );
+        clean.sort(
+          (a, b) =>
+            Number(b.feed_added_on === today) - Number(a.feed_added_on === today),
         );
         index(
           Math.max(

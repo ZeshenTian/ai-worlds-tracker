@@ -37,6 +37,7 @@ export interface FeedItem {
   skills_en: string[];
   evidence_quotes: string[];
   published_at: string | null;
+  feed_added_on?: string;
 }
 export const titleOf = (item: FeedItem, lang: Language) =>
   lang === "en" ? item.title_en : item.title;

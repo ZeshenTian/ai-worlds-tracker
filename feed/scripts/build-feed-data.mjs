@@ -75,7 +75,9 @@ async function thumbnail(w) {
   return "/thumbnails/" + name;
 }
 const stars = await readJSON(join(state, "github_stars.json"), {});
-const previousLikes = new Map((await readJSON(join(publicDir,"data/feed.json"),[])).map(w=>[w.world_id,w.x_likes]));
+const previousFeed = await readJSON(join(publicDir, "data/feed.json"), null);
+const previousItems = new Map(previousFeed?.map((w) => [w.world_id, w]));
+const buildDay = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Shanghai" });
 const frontier = rows.filter(w => w.model_era === "frontier" && w.review_status !== "rejected");
 // Use the catalog's version cutoffs and disclosure-date rules for each label.
 const primaryModels = JSON.parse(execFileSync("python3", ["-m", "src.feed_models"], {
@@ -117,9 +119,11 @@ for (const [index, w] of frontier.entries()) {
     english(quotes)[0] ||
     "";
   const videoURL = web(w.preview_video_url);
+  const previous = previousItems.get(w.world_id);
+  const feedAddedOn = previous ? previous.feed_added_on : previousFeed && buildDay;
   items.push({
     world_id: w.world_id,
-    x_likes: Number(signals.likes ?? previousLikes.get(w.world_id)) || 0,
+    x_likes: Number(signals.likes ?? previous?.x_likes) || 0,
     github_stars: stars[repo]?.stars ?? null,
     model_era: w.model_era || "legacy",
     work_type: w.work_type || "interactive_world",
@@ -165,6 +169,7 @@ for (const [index, w] of frontier.entries()) {
     skills_en: english(extra.skills || tr.sp || w.skills_or_prompts_used),
     evidence_quotes: quotes,
     published_at: w.published_at || null,
+    ...(feedAddedOn && { feed_added_on: feedAddedOn }),
   });
 }
 const ids = new Set(items.map((w) => w.world_id));
