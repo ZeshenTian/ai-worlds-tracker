@@ -1960,7 +1960,8 @@
       "the whole thing is one 98kb html file. no images, no 3d models, no sound files",
       "click to lock mouse, Esc to release"
     ],
-    "published_at": "2026-11-27T13:59:27+00:00"
+    "published_at": "2026-11-27T13:59:27+00:00",
+    "feed_added_on": "2026-11-28"
   },
   {
     "world_id": "world-b237a429490dd533568c1eaf",
@@ -2019,7 +2020,8 @@
       "Use Cutaway to switch between the surface and interior. Drag to orbit, or focus the drawing and use the arrow keys. Use + and − to zoom.",
       "i built this interactive 3D explainer of how a car engine works using Claude Opus 5.5."
     ],
-    "published_at": "2026-11-27T08:51:30+00:00"
+    "published_at": "2026-11-27T08:51:30+00:00",
+    "feed_added_on": "2026-11-28"
   },
   {
     "world_id": "world-0656e76b408b09e6405ea696",
@@ -4770,7 +4772,8 @@
       "i used fable 5.2 to make this wizard sandbox game",
       "about 1800 physics pieces to destroy"
     ],
-    "published_at": "2026-11-14T13:22:09.396000+00:00"
+    "published_at": "2026-11-14T13:22:09.396000+00:00",
+    "feed_added_on": "2026-11-28"
   },
   {
     "world_id": "world-671dd57de3e3a1afda721ac5",
